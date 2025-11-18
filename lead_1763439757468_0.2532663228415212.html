@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre da Navalha - Barbearia Premium em Curitiba</title>
+    <meta name="description" content="Experimente o luxo e a precisão na Mestre da Navalha. Serviços de barbearia personalizados, consultoria de estilo e atendimento premium em Curitiba.">
+    <meta name="keywords" content="barbearia, curitiba, mestre da navalha, corte de cabelo masculino, barba, navalha, luxo, premium, barbeiro">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:title" content="Mestre da Navalha - Barbearia Premium em Curitiba">
+    <meta property="og:description" content="Onde a tradição encontra a precisão. Atendimento exclusivo e serviços de alto padrão.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1622288432454-2415494d5359?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="#">
+    <meta property="twitter:title" content="Mestre da Navalha - Barbearia Premium em Curitiba">
+    <meta property="twitter:description" content="Onde a tradição encontra a precisão. Atendimento exclusivo e serviços de alto padrão.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1622288432454-2415494d5359?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- PALETA DE CORES: LUXO / PREMIUM --- */
+        :root {
+            --bg-color: #121212;
+            --card-color: #1E1E1E;
+            --primary-accent: #d4af37;
+            --primary-accent-hover: #f0d060;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --shadow-color: rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- RESET E CONFIGURAÇÕES GLOBAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        html::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        html::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+
+        html::-webkit-scrollbar-thumb {
+            background-color: var(--primary-accent);
+            border-radius: 10px;
+        }
+
+        /* --- PRE-LOADER --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease;
+        }
+
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--card-color);
+            border-top-color: var(--primary-accent);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* --- UTILIDADES --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-accent);
+            margin: 10px auto 0;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(45deg, var(--primary-accent), var(--primary-accent-hover));
+            color: var(--bg-color);
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 208, 96, 0.3);
+        }
+
+        /* --- ANIMAÇÕES DE SCROLL --- */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- HEADER --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 20px 0;
+            transition: all 0.3s ease;
+        }
+
+        .header.sticky {
+            padding: 15px 0;
+            background: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px var(--shadow-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary-accent);
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-item {
+            margin-left: 30px;
+        }
+
+        .nav-link {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 400;
+            transition: color 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-accent);
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-primary);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1599351431202-145b0a80145c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80') no-repeat center center/cover;
+            color: var(--text-primary);
+        }
+
+        .hero-content {
+            max-width: 700px;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-accent);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+
+        /* --- SOBRE SECTION --- */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        /* --- SERVIÇOS SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--card-color);
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 20px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+            border-bottom-color: var(--primary-accent);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        /* --- GALERIA SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(18, 18, 18, 0.8), transparent);
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            padding: 20px;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .gallery-overlay i {
+            font-size: 2rem;
+            color: var(--primary-accent);
+        }
+
+        /* --- LIGHTBOX --- */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 1001;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .lightbox.show {
+            display: flex;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .lightbox-close:hover {
+            color: var(--primary-accent);
+        }
+
+        /* --- PROVA SOCIAL / STATS SECTION --- */
+        .stats-section {
+            background-color: var(--card-color);
+        }
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .stat-item .icon {
+            font-size: 2.5rem;
+            color: var(--primary-accent);
+            margin-bottom: 10px;
+        }
+
+        .stat-item .counter {
+            font-size: 2.5rem;
+            font-weight: 700;
+        }
+        
+        .stat-item .counter-label {
+            color: var(--text-secondary);
+        }
+
+        /* --- CONTATO SECTION --- */
+        .contact-wrapper {
+            display: flex;
+            gap: 50px;
+            background-color: var(--card-color);
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px var(--shadow-color);
+        }
+
+        .contact-info, .contact-form-container {
+            flex: 1;
+        }
+
+        .contact-info h3 {
+            margin-bottom: 20px;
+            color: var(--primary-accent);
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .contact-info-item i {
+            font-size: 1.5rem;
+            color: var(--primary-accent);
+            margin-right: 15px;
+            width: 25px;
+        }
+
+        .contact-info-item p {
+            margin: 0;
+        }
+        .contact-info-item p a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .contact-info-item p a:hover {
+            color: var(--primary-accent);
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 20px;
+        }
+
+        .contact-form input, .contact-form select, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            background-color: var(--bg-color);
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .contact-form input:focus, .contact-form select:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-accent);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--card-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer .logo {
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .social-links {
+            margin-bottom: 20px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-accent);
+        }
+
+        .copyright {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* --- BOTÃO VOLTAR AO TOPO --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-accent);
+            color: var(--bg-color);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            text-decoration: none;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            background-color: var(--primary-accent-hover);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .hero-content h1 { font-size: 2.8rem; }
+            .about-content { flex-direction: column; }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 60px 0; }
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--card-color);
+                width: 100%;
+                height: 100vh;
+                text-align: center;
+                transition: 0.3s;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .nav-item {
+                margin: 20px 0;
+            }
+            
+            .nav-link {
+                font-size: 1.5rem;
+            }
+
+            .hamburger {
+                display: block;
+                z-index: 1001; /* Garante que o hamburger fique acima do menu */
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .contact-wrapper {
+                flex-direction: column;
+                padding: 30px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="spinner"></div>
+    </div>
+
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="#" class="logo">Mestre da Navalha</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li class="nav-item"><a href="#servicos" class="nav-link">Serviços</a></li>
+                <li class="nav-item"><a href="#galeria" class="nav-link">Galeria</a></li>
+                <li class="nav-item"><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="container">
+                <div class="hero-content fade-in">
+                    <h1>A Arte da Barbearia de <span>Luxo</span></h1>
+                    <p>Onde a tradição encontra a precisão. Cuidado impecável para o homem moderno que valoriza a excelência.</p>
+                    <a href="https://wa.me/41933332222?text=Ol%C3%A1%21%20Gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="btn">Agendar via WhatsApp</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="sobre">
+            <div class="container">
+                <h2 class="fade-in">Nossa Filosofia</h2>
+                <div class="about-content">
+                    <div class="about-image fade-in">
+                        <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Barbeiro experiente em um ambiente clássico e luxuoso">
+                    </div>
+                    <div class="about-text fade-in">
+                        <h3>Tradição, Precisão e Estilo.</h3>
+                        <p>No Mestre da Navalha, resgatamos a essência da barbearia clássica, combinando técnicas tradicionais com um toque de modernidade. Cada corte, cada barba, é uma obra de arte executada com maestria.</p>
+                        <p>Nossa missão é oferecer mais do que um serviço; proporcionamos uma experiência exclusiva, um momento de pausa e cuidado pessoal em um ambiente sofisticado e acolhedor. Utilizamos os melhores produtos e dedicamos atenção total a cada detalhe para garantir um resultado impecável.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="servicos">
+            <div class="container">
+                <h2 class="fade-in">Nossos Serviços Premium</h2>
+                <div class="services-grid">
+                    <div class="service-card fade-in">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consultoria de Estilo</h3>
+                        <p>Análise de visagismo para encontrar o corte e o estilo de barba que melhor harmonizam com seu rosto e personalidade.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="icon"><i class="fas fa-cut"></i></div>
+                        <h3>Serviço Personalizado</h3>
+                        <p>Corte, barba e finalização executados com técnica apurada, toalha quente, massagem e os melhores produtos do mercado.</p>
+                    </div>
+                    <div class="service-card fade-in">
+                        <div class="icon"><i class="fas fa-gem"></i></div>
+                        <h3>Atendimento Premium</h3>
+                        <p>Uma experiência completa em um ambiente exclusivo, com horário marcado, privacidade e conforto absoluto.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section stats-section">
+            <div class="container">
+                <div class="stats-container">
+                    <div class="stat-item fade-in">
+                        <div class="icon"><i class="fas fa-star"></i></div>
+                        <div class="counter" data-target="4.9">0</div>
+                        <div class="counter-label">Avaliação Média</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+                        <div class="counter" data-target="8">0</div>
+                        <div class="counter-label">Avaliações Positivas</div>
+                    </div>
+                    <div class="stat-item fade-in">
+                        <div class="icon"><i class="fas fa-user-tie"></i></div>
+                        <div class="counter" data-target="100">0</div>
+                        <div class="counter-label">% de Satisfação</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="galeria">
+            <div class="container">
+                <h2 class="fade-in">Nosso Espaço e Estilo</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1536520002442-39764a41e987?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Interior da barbearia com cadeiras de couro e decoração vintage">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1622288394299-805571a3de7a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Detalhe de um corte de cabelo masculino moderno e bem executado">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1585749425332-9b175442651b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Barbeiro utilizando navalha para aparar a barba de um cliente">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item fade-in">
+                        <img src="https://images.unsplash.com/photo-1595476108111-7842a23c6d28?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Produtos de alta qualidade para barba e cabelo em prateleira de madeira">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contato">
+            <div class="container">
+                <h2 class="fade-in">Agende sua Experiência</h2>
+                <div class="contact-wrapper fade-in">
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <div class="contact-info-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Rua XV de Novembro, 1500, Centro, Curitiba - PR, 80020-300</p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <p><a href="https://wa.me/41933332222" target="_blank">(41) 93333-2222</a></p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Horário de Funcionamento: <ul>Não informado</ul></p>
+                        </div>
+                        <div class="contact-info-item">
+                            <i class="fas fa-globe"></i>
+                            <p><a href="#" target="_blank">Redes Sociais</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Envie uma Mensagem Rápida</h3>
+                        <form id="whatsapp-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Seu Nome" required>
+                            </div>
+                            <div class="form-group">
+                                <select id="service" name="service" required>
+                                    <option value="" disabled selected>Selecione o serviço de interesse</option>
+                                    <option value="Consultoria de Estilo">Consultoria de Estilo</option>
+                                    <option value="Serviço Personalizado (Corte + Barba)">Serviço Personalizado (Corte + Barba)</option>
+                                    <option value="Atendimento Premium">Atendimento Premium</option>
+                                    <option value="Outro">Outro</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4" placeholder="Sua mensagem (opcional)"></textarea>
+                            </div>
+                            <button type="submit" class="btn">Agendar via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <a href="#" class="logo">Mestre da Navalha</a>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/41933332222" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">&copy; 2023 Mestre da Navalha. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img src="" alt="Imagem da galeria em destaque" class="lightbox-content">
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // --- PRE-LOADER ---
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                preloader.style.opacity = '0';
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            });
+
+            // --- HEADER STICKY ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('sticky');
+                } else {
+                    header.classList.remove('sticky');
+                }
+            });
+
+            // --- MENU MOBILE ---
+            const hamburger = document.querySelector('.hamburger');
+            const navMenu = document.querySelector('.nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
+            });
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                });
+            });
+
+            // --- ANIMAÇÕES DE SCROLL ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            document.querySelectorAll('.fade-in').forEach(element => {
+                observer.observe(element);
+            });
+
+            // --- CONTADOR ANIMADO ---
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200; 
+
+            const animateCounter = (counter) => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const isFloat = counter.getAttribute('data-target').includes('.');
+
+                const inc = target / speed;
+
+                if (count < target) {
+                    let newCount = count + inc;
+                    if (isFloat) {
+                        counter.innerText = newCount.toFixed(1);
+                    } else {
+                        counter.innerText = Math.ceil(newCount);
+                    }
+                    setTimeout(() => animateCounter(counter), 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        counters.forEach(counter => {
+                            animateCounter(counter);
+                        });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            const statsSection = document.querySelector('.stats-section');
+            if (statsSection) {
+                counterObserver.observe(statsSection);
+            }
+
+            // --- GALERIA LIGHTBOX ---
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxContent = lightbox.querySelector('.lightbox-content');
+            const lightboxClose = lightbox.querySelector('.lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxContent.src = imgSrc;
+                    lightbox.classList.add('show');
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('show');
+            };
+
+            lightboxClose.addEventListener('click', closeLightbox);
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // --- FORMULÁRIO WHATSAPP ---
+            const whatsappForm = document.getElementById('whatsapp-form');
+            whatsappForm.addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById('name').value;
+                const service = document.getElementById('service').value;
+                const message = document.getElementById('message').value;
+                const phone = '41933332222';
+
+                let text = `Olá! Meu nome é ${name}. Gostaria de agendar o serviço de *${service}*.`;
+                if (message) {
+                    text += `\n\nMensagem: ${message}`;
+                }
+
+                const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // --- BOTÃO VOLTAR AO TOPO ---
+            const backToTopButton = document.querySelector('.back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('show');
+                } else {
+                    backToTopButton.classList.remove('show');
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
+```
