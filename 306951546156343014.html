@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Brasil | Atendimento Premium em São Luís</title>
+    <meta name="description" content="Barbearia Brasil em São Luís - MA. Oferecemos consultoria, serviço personalizado e atendimento premium. Agende seu horário e viva uma experiência única.">
+    <meta name="keywords" content="barbearia, são luís, maranhão, corte de cabelo, barba, atendimento premium, barbearia brasil, barbeiro, estilo masculino">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="#">
+    <meta property="og:title" content="Barbearia Brasil | Atendimento Premium em São Luís">
+    <meta property="og:description" content="Experimente o melhor da barbearia com nossos serviços personalizados e consultoria de estilo.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1599351548092-90c197233d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="#">
+    <meta property="twitter:title" content="Barbearia Brasil | Atendimento Premium em São Luís">
+    <meta property="twitter:description" content="Experimente o melhor da barbearia com nossos serviços personalizados e consultoria de estilo.">
+    <meta property="twitter:image" content="https://images.unsplash.com/photo-1599351548092-90c197233d41?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✂️</text></svg>">
+
+    <style>
+        /* --- PALETA DE CORES: LUXO / PREMIUM --- */
+        :root {
+            --bg-color: #121212;
+            --card-color: #1E1E1E;
+            --primary-color: #d4af37;
+            --hover-color: #f0d060;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --shadow-color: rgba(212, 175, 55, 0.1);
+        }
+
+        /* --- RESET E ESTILOS GLOBAIS --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-weight: 600;
+            color: var(--text-primary);
+            line-height: 1.2;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 1.5rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--hover-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* --- UTILITÁRIOS --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-color);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--hover-color));
+            color: var(--bg-color);
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.2);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            color: var(--bg-color);
+        }
+
+        /* --- PRE-LOADER --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--card-color);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- HEADER --- */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .header.scrolled {
+            padding: 0.5rem 0;
+            background: rgba(18, 18, 18, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .nav-logo span {
+            color: var(--primary-color);
+        }
+
+        .nav-list {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1567894340345-2212a5c37693?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            padding-top: 5rem;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content h1 {
+            margin-bottom: 1rem;
+        }
+
+        .hero-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- ABOUT SECTION --- */
+        #about .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        /* --- SERVICES SECTION --- */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background-color: var(--card-color);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid transparent;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary-color);
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            margin-bottom: 1rem;
+        }
+
+        /* --- PROOF SECTION (Avaliações) --- */
+        #proof {
+            background-color: var(--card-color);
+        }
+        .proof-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .proof-item {
+            flex-basis: 250px;
+        }
+        .proof-item .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .proof-item .number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .proof-item .text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+        }
+
+        /* --- GALLERY SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            transition: transform 0.4s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        .gallery-overlay i {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+        }
+
+        /* --- LIGHTBOX --- */
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        .lightbox-content img {
+            max-width: 100%;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            font-size: 2rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* --- CONTACT SECTION --- */
+        #contact .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: flex-start;
+        }
+        .contact-info ul {
+            list-style: none;
+        }
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info i {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        .contact-info h3 {
+            color: var(--text-primary);
+            margin-bottom: 0.2rem;
+        }
+        .contact-info p, .contact-info ul.hours {
+            color: var(--text-secondary);
+        }
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .contact-form label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-secondary);
+        }
+        .contact-form input, .contact-form select {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--card-color);
+            border: 1px solid #333;
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+            transition: border-color 0.3s ease;
+        }
+        .contact-form input:focus, .contact-form select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: var(--card-color);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        .footer p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+        .footer-socials {
+            margin-top: 1rem;
+        }
+        .footer-socials a {
+            font-size: 1.5rem;
+            margin: 0 0.75rem;
+            color: var(--text-secondary);
+        }
+        .footer-socials a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- BACK TO TOP BUTTON --- */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: var(--bg-color);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+            z-index: 900;
+            transform: translateY(20px);
+        }
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* --- SCROLL ANIMATIONS --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            #about .container, #contact .container {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                grid-row: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            html { font-size: 15px; }
+            .section { padding: 4rem 0; }
+            
+            .nav-list {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 70%;
+                height: 100vh;
+                background-color: var(--card-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2.5rem;
+                transition: right 0.4s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            }
+            .nav-list.active {
+                right: 0;
+            }
+            .nav-link {
+                font-size: 1.2rem;
+            }
+            .nav-toggle {
+                display: block;
+                z-index: 1100;
+            }
+            .nav-close {
+                position: absolute;
+                top: 1.5rem;
+                right: 1.5rem;
+                font-size: 2rem;
+            }
+            #hero { min-height: 80vh; }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav-logo">Barbearia<span>Brasil</span></a>
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="#about" class="nav-link">Sobre</a></li>
+                    <li class="nav-item"><a href="#services" class="nav-link">Serviços</a></li>
+                    <li class="nav-item"><a href="#gallery" class="nav-link">Galeria</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contato</a></li>
+                    <i class="fas fa-times nav-close" id="nav-close"></i>
+                </ul>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="hero">
+            <div class="hero-content container animate-on-scroll">
+                <h1>Estilo e Tradição em <span>Cada Corte</span></h1>
+                <p>Na Barbearia Brasil, unimos a arte da barbearia clássica com técnicas modernas para oferecer uma experiência única e um resultado impecável.</p>
+                <a href="#contact" class="btn btn-primary">Agende seu Horário</a>
+            </div>
+        </section>
+
+        <!-- SOBRE -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" alt="Interior da Barbearia Brasil com cadeiras de barbeiro vintage">
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Nossa História</h2>
+                    <p>Fundada com a paixão por resgatar a autêntica cultura da barbearia, a Barbearia Brasil é mais que um lugar para cortar o cabelo e fazer a barba. É um refúgio para o homem moderno que valoriza a qualidade, o atendimento personalizado e um ambiente exclusivo.</p>
+                    <p>Nossa equipe de barbeiros experientes está pronta para oferecer uma consultoria de estilo e garantir que você saia não apenas com um novo visual, mas com a confiança renovada.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVIÇOS -->
+        <section id="services" class="section">
+            <div class="container">
+                <h2 class="section-title">Nossos Diferenciais</h2>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consultoria de Estilo</h3>
+                        <p>Analisamos seu visagismo, tipo de cabelo e estilo de vida para recomendar o corte e a barba que mais valorizam você.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.2s;">
+                        <div class="icon"><i class="fas fa-cut"></i></div>
+                        <h3>Serviço Personalizado</h3>
+                        <p>Cada cliente é único. Oferecemos um atendimento exclusivo e detalhista, focado em suas necessidades e preferências.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll" style="transition-delay: 0.4s;">
+                        <div class="icon"><i class="fas fa-gem"></i></div>
+                        <h3>Atendimento Premium</h3>
+                        <p>Do ambiente sofisticado aos produtos de alta qualidade, tudo é pensado para proporcionar uma experiência de luxo e bem-estar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROVA SOCIAL -->
+        <section id="proof" class="section">
+            <div class="container proof-container">
+                <div class="proof-item animate-on-scroll">
+                    <div class="icon"><i class="fas fa-star"></i></div>
+                    <div class="number">4.7</div>
+                    <div class="text">Avaliação Média</div>
+                </div>
+                <div class="proof-item animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="icon"><i class="fas fa-users"></i></div>
+                    <div class="number" data-target="264">0</div>
+                    <div class="text">Clientes Satisfeitos</div>
+                </div>
+                <div class="proof-item animate-on-scroll" style="transition-delay: 0.4s;">
+                    <div class="icon"><i class="fas fa-award"></i></div>
+                    <div class="number" data-target="10">0</div>
+                    <div class="text">Anos de Experiência</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GALERIA -->
+        <section id="gallery" class="section">
+            <div class="container">
+                <h2 class="section-title">Nosso Espaço e Estilo</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1595133966099-16327b3a3934?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Corte de cabelo masculino moderno">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1622288399333-a987b3a3a405?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Barbeiro profissional aparando barba de cliente">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1536520002442-39764a41e987?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Ambiente interno da barbearia com decoração de luxo">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                    <div class="gallery-item animate-on-scroll" style="transition-delay: 0.3s;">
+                        <img src="https://images.unsplash.com/photo-1633682229199-35a84a377853?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Detalhe de produtos de barbearia premium">
+                        <div class="gallery-overlay"><i class="fas fa-search-plus"></i></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="contact-info animate-on-scroll">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Entre em Contato</h2>
+                    <p>Agende seu horário e venha viver a experiência Barbearia Brasil. Estamos ansiosos para recebê-lo.</p>
+                    <ul>
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h3>Endereço</h3>
+                                <p><a href="https://www.google.com/maps/search/?api=1&query=R.+Pernambuco,+n°+157+-+Chácara+Brasil,+São+Luís+-+MA,+65065-851" target="_blank">R. Pernambuco, n° 157 - Chácara Brasil, São Luís - MA, 65065-851</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h3>Telefone</h3>
+                                <p><a href="tel:+5598991647633">+55 98 99164-7633</a></p>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h3>Horário de Funcionamento</h3>
+                                <div class="hours"><ul>Não informado</ul></div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="contact-form animate-on-scroll" style="transition-delay: 0.2s;">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 2rem;">Agendamento Rápido</h2>
+                    <form id="whatsapp-form">
+                        <div class="form-group">
+                            <label for="name">Seu Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Digite seu nome completo" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="service">Serviço Desejado</label>
+                            <select id="service" name="service" required>
+                                <option value="" disabled selected>Selecione um serviço</option>
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Corte e Barba">Corte e Barba</option>
+                                <option value="Consultoria de Estilo">Consultoria de Estilo</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Agendar via WhatsApp</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Barbearia Brasil. Todos os direitos reservados.</p>
+            <div class="footer-socials">
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5598991647633" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox-content">
+            <img src="" alt="Galeria de imagem ampliada" id="lightbox-img">
+            <span class="lightbox-close" id="lightbox-close">&times;</span>
+        </div>
+    </div>
+
+    <!-- BOTÃO VOLTAR AO TOPO -->
+    <button id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- PRE-LOADER ---
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                preloader.classList.add('hidden');
+            });
+
+            // --- HEADER FIXO ---
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+
+            // --- MENU MOBILE ---
+            const navMenu = document.getElementById('nav-menu');
+            const navToggle = document.getElementById('nav-toggle');
+            const navClose = document.getElementById('nav-close');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (navToggle) {
+                navToggle.addEventListener('click', () => {
+                    navMenu.querySelector('.nav-list').classList.add('active');
+                    document.body.classList.add('no-scroll');
+                });
+            }
+
+            const closeMenu = () => {
+                navMenu.querySelector('.nav-list').classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            };
+
+            if (navClose) {
+                navClose.addEventListener('click', closeMenu);
+            }
+            navLinks.forEach(link => link.addEventListener('click', closeMenu));
+
+            // --- ANIMAÇÕES DE SCROLL ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+            elementsToAnimate.forEach(el => observer.observe(el));
+            
+            // --- CONTADOR ANIMADO ---
+            const counterObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = +el.getAttribute('data-target');
+                        let current = 0;
+                        const increment = target / 100;
+
+                        const updateCounter = () => {
+                            if (current < target) {
+                                current += increment;
+                                el.innerText = Math.ceil(current);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                el.innerText = target;
+                            }
+                        };
+                        updateCounter();
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.8 });
+
+            document.querySelectorAll('.number[data-target]').forEach(el => {
+                if(el.getAttribute('data-target')) { // Ensure it has a target
+                    counterObserver.observe(el);
+                }
+            });
+
+            // --- GALERIA LIGHTBOX ---
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightboxClose = document.getElementById('lightbox-close');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    const imgSrc = item.querySelector('img').src;
+                    lightboxImg.src = imgSrc;
+                    lightbox.classList.add('active');
+                    document.body.classList.add('no-scroll');
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            };
+
+            if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+            if (lightbox) lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // --- FORMULÁRIO PARA WHATSAPP ---
+            const whatsappForm = document.getElementById('whatsapp-form');
+            whatsappForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('name').value;
+                const service = document.getElementById('service').value;
+                const phone = '5598991647633';
+                
+                const message = `Olá, Barbearia Brasil! Meu nome é ${name}. Gostaria de agendar um horário para o serviço de ${service}.`;
+                
+                const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+                
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // --- BOTÃO VOLTAR AO TOPO ---
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.add('visible');
+                } else {
+                    backToTopButton.classList.remove('visible');
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+        });
+    </script>
+</body>
+</html>
+```
