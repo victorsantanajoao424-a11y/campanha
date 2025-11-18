@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil Barber - Barbearia Premium em Taboão da Serra</title>
+    <meta name="description" content="Brasil Barber: a sua barbearia de luxo em Taboão da Serra. Oferecemos consultoria, serviço personalizado e atendimento premium para o homem moderno.">
+    <meta name="keywords" content="barbearia, taboão da serra, brasil barber, corte de cabelo masculino, barba, atendimento premium, barbeiro">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Brasil Barber - Barbearia Premium em Taboão da Serra">
+    <meta property="og:description" content="Experimente o melhor em cuidados masculinos com nosso atendimento personalizado e ambiente exclusivo.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1599338495363-a745516259e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:url" content="#">
+    <meta property="og:type" content="website">
+
+    <!-- Favicon (SVG inline) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* --- PALETA LUXO / PREMIUM --- */
+        :root {
+            --bg-color: #121212;
+            --card-color: #1E1E1E;
+            --primary-color: #d4af37;
+            --hover-color: #f0d060;
+            --text-primary: #ffffff;
+            --text-secondary: #cccccc;
+            --shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* --- RESET E ESTILOS GLOBAIS --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); line-height: 1.1; }
+        h2 { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 2rem; }
+        h3 { font-size: 1.5rem; margin-bottom: 1rem; }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--hover-color);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+        }
+
+        /* --- PRE-LOADER --- */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: var(--bg-color);
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+        #preloader.hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid var(--card-color);
+            border-top-color: var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* --- BOTÕES --- */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, var(--primary-color), var(--hover-color));
+            color: #000;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+            color: #000;
+        }
+
+        /* --- HEADER --- */
+        #main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        #main-header.scrolled {
+            background-color: rgba(30, 30, 30, 0.8);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.5rem 0;
+            box-shadow: var(--shadow);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+        .logo span { color: var(--primary-color); }
+
+        .nav-menu ul {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-menu li {
+            margin-left: 2rem;
+        }
+
+        .nav-menu a {
+            color: var(--text-primary);
+            font-weight: 400;
+            position: relative;
+            padding: 0.5rem 0;
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            font-size: 1.8rem;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION --- */
+        #hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.8)), url('https://images.unsplash.com/photo-1622288432453-39739564a513?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-content .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 1.5rem auto 2.5rem;
+        }
+
+        /* --- SOBRE SECTION --- */
+        #sobre .container {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+        }
+        #sobre .about-image {
+            flex: 1;
+            max-width: 450px;
+        }
+        #sobre .about-image img {
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border: 4px solid var(--card-color);
+        }
+        #sobre .about-content {
+            flex: 1;
+        }
+        #sobre .about-content h2 {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+        #sobre .about-content h2::after {
+            left: 0;
+            transform: translateX(0);
+        }
+
+        /* --- SERVIÇOS SECTION --- */
+        #servicos {
+            background-color: var(--card-color);
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .service-card {
+            background-color: var(--bg-color);
+            padding: 2.5rem 2rem;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 4px solid var(--primary-color);
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+        }
+        .service-card .icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- PROVA SOCIAL / STATS --- */
+        #stats {
+            background: linear-gradient(rgba(18, 18, 18, 0.9), rgba(18, 18, 18, 0.9)), url('https://images.unsplash.com/photo-1585749425121-58e13c531188?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80') no-repeat center center/cover;
+            background-attachment: fixed;
+            text-align: center;
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+        }
+        .stat-item .icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .stat-item .counter {
+            font-size: 3rem;
+            font-weight: 700;
+        }
+        .stat-item p {
+            color: var(--text-secondary);
+            font-size: 1rem;
+        }
+
+        /* --- GALERIA SECTION --- */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .gallery-item img {
+            transition: transform 0.4s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+        .gallery-item .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .gallery-item:hover .overlay {
+            opacity: 1;
+        }
+        .gallery-item .overlay i {
+            font-size: 2.5rem;
+            color: var(--text-primary);
+        }
+
+        /* --- LIGHTBOX --- */
+        #lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        #lightbox.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        #lightbox img {
+            max-width: 90%;
+            max-height: 80%;
+            box-shadow: 0 0 50px rgba(0,0,0,0.5);
+        }
+        .close-lightbox {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            font-size: 2.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+        }
+
+        /* --- CONTATO E FOOTER --- */
+        #contato {
+            background-color: var(--card-color);
+        }
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+        .contact-info, .contact-form-container {
+            background-color: var(--bg-color);
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        .contact-info h3 {
+            color: var(--primary-color);
+        }
+        .contact-info ul {
+            list-style: none;
+        }
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        .contact-info li i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 1rem;
+            margin-top: 0.2rem;
+        }
+        .map-container {
+            margin-top: 2rem;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        .map-container iframe {
+            width: 100%;
+            height: 250px;
+            border: 0;
+        }
+
+        .contact-form .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background-color: var(--card-color);
+            border: 1px solid #444;
+            border-radius: 5px;
+            color: var(--text-primary);
+            font-family: 'Poppins', sans-serif;
+        }
+        .contact-form input:focus, .contact-form textarea:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        footer {
+            background-color: var(--bg-color);
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .social-links a {
+            font-size: 1.5rem;
+            margin: 0 0.7rem;
+            color: var(--text-secondary);
+        }
+        .social-links a:hover {
+            color: var(--primary-color);
+        }
+        footer .copyright {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        /* --- BOTÃO VOLTAR AO TOPO --- */
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color);
+            color: #000;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all 0.3s ease;
+            z-index: 900;
+        }
+        #back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        #back-to-top:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* --- ANIMAÇÕES DE SCROLL --- */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .animate-on-scroll.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 992px) {
+            #sobre .container {
+                flex-direction: column;
+            }
+            .contact-wrapper {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.2rem; }
+            h2 { font-size: 1.8rem; }
+            section { padding: 4rem 0; }
+
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--card-color);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.4s ease;
+                display: flex;
+            }
+            .nav-menu.active {
+                left: 0;
+            }
+            .nav-menu ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            .nav-menu li {
+                margin: 1.5rem 0;
+            }
+            .nav-menu a {
+                font-size: 1.5rem;
+            }
+            .mobile-menu-toggle {
+                display: block;
+                z-index: 1001;
+            }
+            #close-menu-btn {
+                position: absolute;
+                top: 2rem;
+                right: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Pre-loader -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+
+    <!-- Header -->
+    <header id="main-header">
+        <div class="container header-content">
+            <a href="#" class="logo">Brasil<span>Barber</span></a>
+            <nav class="nav-menu">
+                <button id="close-menu-btn" class="mobile-menu-toggle" aria-label="Fechar menu"><i class="fas fa-times"></i></button>
+                <ul>
+                    <li><a href="#hero">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#servicos">Serviços</a></li>
+                    <li><a href="#galeria">Galeria</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <button id="open-menu-btn" class="mobile-menu-toggle" aria-label="Abrir menu"><i class="fas fa-bars"></i></button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="container hero-content animate-on-scroll">
+                <p class="subtitle">Estilo & Tradição em Taboão da Serra</p>
+                <h1>Brasil Barber</h1>
+                <p>Onde a arte da barbearia encontra a excelência. Oferecemos uma experiência única de cuidado masculino, combinando técnicas clássicas com um toque moderno e atendimento impecável.</p>
+                <a href="https://wa.me/5511988923847" target="_blank" class="btn btn-primary">Agendar via WhatsApp</a>
+            </div>
+        </section>
+
+        <!-- Sobre Section -->
+        <section id="sobre">
+            <div class="container">
+                <div class="about-image animate-on-scroll">
+                    <img src="https://images.unsplash.com/photo-1536520002442-9979a838b285?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Interior da barbearia Brasil Barber com cadeiras de couro e decoração vintage">
+                </div>
+                <div class="about-content animate-on-scroll">
+                    <h2 class="section-title">Nossa História</h2>
+                    <h3>Mais que uma barbearia, um refúgio para o homem moderno.</h3>
+                    <p>Fundada com a paixão pela barbearia clássica, a Brasil Barber nasceu para resgatar a tradição do cuidado masculino. Nosso espaço foi projetado para ser um ambiente de relaxamento e confraternização, onde cada cliente recebe um tratamento exclusivo e personalizado.</p>
+                    <p>Nossa equipe é formada por barbeiros experientes e dedicados, que estão sempre se atualizando para oferecer os melhores cortes, tratamentos de barba e serviços de estética masculina. Valorizamos cada detalhe, desde a toalha quente até a finalização perfeita.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços Section -->
+        <section id="servicos">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Nossos Serviços Premium</h2>
+                </div>
+                <div class="services-grid">
+                    <div class="service-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-comments"></i></div>
+                        <h3>Consultoria de Estilo</h3>
+                        <p>Analisamos seu visagismo, tipo de cabelo e estilo de vida para recomendar o corte e a barba que mais valorizam sua imagem pessoal e profissional.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-cut"></i></div>
+                        <h3>Serviço Personalizado</h3>
+                        <p>Cada corte e barba é uma obra de arte. Utilizamos técnicas precisas e produtos de alta qualidade para garantir um resultado impecável e duradouro.</p>
+                    </div>
+                    <div class="service-card animate-on-scroll">
+                        <div class="icon"><i class="fas fa-gem"></i></div>
+                        <h3>Atendimento Premium</h3>
+                        <p>Desfrute de um ambiente exclusivo, com toalhas quentes, massagem capilar e uma bebida de sua preferência. Uma experiência completa de relaxamento e bem-estar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <section id="stats">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-item animate-on-scroll">
+                        <div class="icon"><i class="fas fa-star"></i></div>
+                        <span class="counter" data-target="5">0</span>
+                        <p>Avaliação Média</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="icon"><i class="fas fa-users"></i></div>
+                        <span class="counter" data-target="500">0</span>+
+                        <p>Clientes Satisfeitos</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                        <span class="counter" data-target="5">0</span>+
+                        <p>Anos de Experiência</p>
+                    </div>
+                    <div class="stat-item animate-on-scroll">
+                        <div class="icon"><i class="fas fa-thumbs-up"></i></div>
+                        <span class="counter" data-target="100">0</span>%
+                        <p>Qualidade Garantida</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria Section -->
+        <section id="galeria">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Nosso Espaço e Estilo</h2>
+                </div>
+                <div class="gallery-grid">
+                    <a href="https://images.unsplash.com/photo-1599338495363-a745516259e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1599338495363-a745516259e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Barbeiro profissional finalizando um corte de cabelo masculino com pomada.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1621607512214-68297480165e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Cliente recebendo tratamento de barba com toalha quente na barbearia.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1567894340345-2212a4c13a33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1567894340345-2212a4c13a33?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Detalhe das ferramentas de um barbeiro: tesouras, pentes e navalha.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1585749247492-264a389921de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1585749247492-264a389921de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Ambiente da barbearia com decoração industrial e iluminação aconchegante.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                    <a href="https://images.unsplash.com/photo-1615182544223-527e71352f75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1615182544223-527e71352f75?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Cliente relaxado na cadeira de barbeiro durante o serviço.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                     <a href="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80" class="gallery-item animate-on-scroll">
+                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Barbeiro utilizando navalha para aparar a barba de um cliente com precisão.">
+                        <div class="overlay"><i class="fas fa-search-plus"></i></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contato Section -->
+        <section id="contato">
+            <div class="container">
+                <div class="section-title animate-on-scroll">
+                    <h2>Entre em Contato</h2>
+                </div>
+                <div class="contact-wrapper">
+                    <div class="contact-info animate-on-scroll">
+                        <h3>Informações</h3>
+                        <p>Estamos prontos para te atender. Agende seu horário ou venha nos fazer uma visita!</p>
+                        <ul>
+                            <li>
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Endereço:</strong><br>
+                                    R. Benedito Marinonio Filho, 42 - Jardim Mituzi, Taboão da Serra - SP, 06774-210
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Telefone:</strong><br>
+                                    <a href="tel:+5511988923847">+55 11 98892-3847</a>
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Horário de Funcionamento:</strong><br>
+                                    <ul>Não informado</ul>
+                                </div>
+                            </li>
+                        </ul>
+                        <div class="map-container">
+                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.518970408542!2d-46.8016484!3d-23.6212513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5395679c656b%3A0xe96395b084930353!2sR.%20Benedito%20Marinonio%20Filho%2C%2042%20-%20Jardim%20Mituzi%2C%20Tabo%C3%A3o%20da%20Serra%20-%20SP%2C%2006774-210!5e0!3m2!1spt-BR!2sbr!4v1700000000000!5m2!1spt-BR!2sbr" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                    <div class="contact-form-container animate-on-scroll">
+                        <h3>Agende seu Horário</h3>
+                        <p>Preencha os dados abaixo para enviar uma mensagem rápida e agendar seu horário diretamente pelo WhatsApp.</p>
+                        <form id="whatsapp-form" class="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Seu nome" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" id="phone" name="phone" placeholder="Seu telefone (opcional)">
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" name="message" rows="4" placeholder="Sua mensagem (opcional). Ex: Gostaria de agendar um corte."></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Enviar via WhatsApp</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/5511988923847" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="copyright">&copy; 2024 Brasil Barber. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a id="back-to-top" aria-label="Voltar ao topo"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Lightbox -->
+    <div id="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <img src="" alt="Imagem da galeria em destaque">
+    </div>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- PRE-LOADER ---
+        const preloader = document.getElementById('preloader');
+        window.addEventListener('load', () => {
+            preloader.classList.add('hidden');
+        });
+
+        // --- STICKY HEADER ---
+        const header = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // --- MOBILE MENU ---
+        const openMenuBtn = document.getElementById('open-menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const navMenu = document.querySelector('.nav-menu');
+        const navLinks = document.querySelectorAll('.nav-menu a');
+
+        const toggleMenu = () => navMenu.classList.toggle('active');
+        
+        openMenuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        navLinks.forEach(link => link.addEventListener('click', () => {
+            if (navMenu.classList.contains('active')) {
+                toggleMenu();
+            }
+        }));
+
+        // --- SCROLL ANIMATIONS (INTERSECTION OBSERVER) ---
+        const animatedElements = document.querySelectorAll('.animate-on-scroll');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => observer.observe(el));
+        
+        // --- ANIMATED COUNTER ---
+        const counters = document.querySelectorAll('.counter');
+        let activated = false;
+
+        const statsObserver = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !activated) {
+                activated = true;
+                counters.forEach(counter => {
+                    counter.innerText = '0';
+                    const target = +counter.getAttribute('data-target');
+                    const duration = 1500;
+                    const increment = target / (duration / 16);
+
+                    const updateCount = () => {
+                        const count = +counter.innerText;
+                        if (count < target) {
+                            counter.innerText = `${Math.ceil(count + increment)}`;
+                            requestAnimationFrame(updateCount);
+                        } else {
+                            counter.innerText = target;
+                        }
+                    };
+                    requestAnimationFrame(updateCount);
+                });
+                statsObserver.unobserve(entries[0].target);
+            }
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.getElementById('stats');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+
+        // --- GALLERY LIGHTBOX ---
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = lightbox.querySelector('img');
+        const closeLightbox = document.querySelector('.close-lightbox');
+
+        galleryItems.forEach(item => {
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                const imgSrc = item.getAttribute('href');
+                lightboxImg.setAttribute('src', imgSrc);
+                lightbox.classList.add('active');
+            });
+        });
+
+        const hideLightbox = () => lightbox.classList.remove('active');
+        closeLightbox.addEventListener('click', hideLightbox);
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                hideLightbox();
+            }
+        });
+
+        // --- WHATSAPP FORM ---
+        const whatsappForm = document.getElementById('whatsapp-form');
+        whatsappForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const message = document.getElementById('message').value;
+            
+            let text = `Olá, meu nome é *${name}*.`;
+            if (phone) {
+                text += ` Meu telefone é ${phone}.`;
+            }
+            if (message) {
+                text += `\n\n${message}`;
+            } else {
+                text += ` Gostaria de agendar um horário.`;
+            }
+
+            const whatsappUrl = `https://wa.me/5511988923847?text=${encodeURIComponent(text)}`;
+            window.open(whatsappUrl, '_blank');
+        });
+
+        // --- BACK TO TOP BUTTON ---
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        });
+        backToTopBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+    });
+    </script>
+
+</body>
+</html>
+```
