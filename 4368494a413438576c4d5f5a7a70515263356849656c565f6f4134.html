@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Salão Brasil - São Bento | Estilo & Tradição</title>
+    <meta name="description" content="Barbearia Salão Brasil em São Bento, Centro Histórico de SP. Cortes modernos, barba e tratamentos especiais. Agende seu horário.">
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            450: '#f59e0b', // Gold custom
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for Scrollbar & Animations */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Loader Animation */
+        .loader {
+            border-top-color: #f59e0b;
+            -webkit-animation: spinner 1.5s linear infinite;
+            animation: spinner 1.5s linear infinite;
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-black">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-neutral-950 flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="loader ease-linear rounded-full border-4 border-t-4 border-neutral-800 h-16 w-16 mb-4"></div>
+        <h2 class="text-xl font-bold tracking-widest text-white uppercase">Salão Brasil</h2>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full z-50 top-0 transition-all duration-300 py-4 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold uppercase tracking-tighter flex items-center gap-2">
+                <i class="fa-solid fa-scissors text-amber-500"></i>
+                <span>Salão <span class="text-amber-500">Brasil</span></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+                <a href="#about" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#services" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#location" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Localização</a>
+                <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-black font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105">
+                    Agendar Agora
+                </a>
+            </nav>
+
+            <!-- Mobile Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-neutral-100 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-neutral-900 border-b border-neutral-800 md:hidden flex-col items-center py-6 space-y-4 shadow-2xl">
+            <a href="#home" class="text-lg text-neutral-300 hover:text-amber-500" onclick="toggleMenu()">Início</a>
+            <a href="#about" class="text-lg text-neutral-300 hover:text-amber-500" onclick="toggleMenu()">Sobre</a>
+            <a href="#services" class="text-lg text-neutral-300 hover:text-amber-500" onclick="toggleMenu()">Serviços</a>
+            <a href="#location" class="text-lg text-neutral-300 hover:text-amber-500" onclick="toggleMenu()">Localização</a>
+            <a href="#contact" class="text-amber-500 font-bold" onclick="toggleMenu()">Agendar Agora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">Centro Histórico de São Paulo</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                Excelência em <br> <span class="text-gradient">Cada Detalhe</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                A Barbearia Salão Brasil oferece uma experiência premium de cuidado masculino. Tradição e modernidade na Rua São Bento.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#contact" class="w-full md:w-auto bg-amber-600 hover:bg-amber-500 text-black font-bold py-4 px-10 rounded-xl transition-all shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:shadow-[0_0_30px_rgba(245,158,11,0.5)]">
+                    Agendar Horário
+                </a>
+                <a href="#services" class="w-full md:w-auto border border-neutral-700 hover:border-white bg-transparent text-white font-medium py-4 px-10 rounded-xl transition-all backdrop-blur-sm">
+                    Nossos Serviços
+                </a>
+            </div>
+
+            <!-- Rating Badge -->
+            <div class="mt-12 flex items-center justify-center gap-4">
+                <div class="flex text-amber-500 text-xl">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                </div>
+                <p class="text-neutral-300 font-medium">4.7/5.0 <span class="text-neutral-500 text-sm">(23 Avaliações)</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div>
+                    <h3 class="text-amber-500 font-bold uppercase tracking-widest mb-2">Sobre Nós</h3>
+                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Mais que um corte, <br>um ritual.</h2>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Localizados no coração do Centro Histórico de São Paulo, na Rua São Bento, somos referência em barbearia clássica com toques modernos. Nossa equipe de especialistas entende que cada cliente busca não apenas um corte, mas um momento de renovação e confiança.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check-circle text-amber-500"></i> Profissionais experientes
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check-circle text-amber-500"></i> Ambiente climatizado e exclusivo
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check-circle text-amber-500"></i> Produtos de alta qualidade
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-900 relative">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="text-amber-500 font-bold uppercase tracking-widest mb-2">O Que Oferecemos</h3>
+                <h2 class="text-4xl md:text-5xl font-bold">Nossos Serviços</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Cortes clássicos e modernos, degradê, tesoura ou máquina. Finalização com produtos premium.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 45min</span>
+                        <span class="text-amber-500 font-bold text-lg">R$ Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-face-smile text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Barboterapia com toalha quente, alinhamento dos fios e hidratação profunda da pele.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 30min</span>
+                        <span class="text-amber-500 font-bold text-lg">R$ Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-gem text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Combo Completo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">A experiência definitiva. Corte + Barba + Tratamento facial relaxante. Saia renovado.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 1h 15min</span>
+                        <span class="text-amber-500 font-bold text-lg">R$ Consultar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section (CRITICAL) -->
+    <section id="location" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form & Info -->
+                <div class="flex flex-col justify-center">
+                    <h3 class="text-amber-500 font-bold uppercase tracking-widest mb-2">Agendamento</h3>
+                    <h2 class="text-4xl font-bold mb-6">Reserve seu Horário</h2>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário abaixo para ser redirecionado automaticamente ao nosso WhatsApp e confirmar sua disponibilidade.</p>
+
+                    <form id="whatsapp-form" class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">Seu Nome</label>
+                            <input type="text" id="client-name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Digite seu nome">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">Serviço Desejado</label>
+                            <select id="service-select" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Corte e Barba">Combo (Corte + Barba)</option>
+                                <option value="Outros">Outros Tratamentos</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">Preferência de Horário</label>
+                            <input type="text" id="time-pref" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Ex: Terça à tarde">
+                        </div>
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 text-black font-bold py-4 rounded-lg hover:from-amber-500 hover:to-amber-400 transition-all transform hover:scale-[1.02] shadow-lg">
+                            <i class="fa-brands fa-whatsapp mr-2"></i> Agendar via WhatsApp
+                        </button>
+                    </form>
+
+                    <div class="mt-10 pt-10 border-t border-neutral-800">
+                        <div class="flex items-start gap-4 mb-4">
+                            <i class="fa-solid fa-location-dot text-amber-500 mt-1"></i>
+                            <p class="text-neutral-300">
+                                R. São Bento, 545 - Loja 2<br>
+                                Centro Histórico de São Paulo, SP<br>
+                                CEP: 01011-100
+                            </p>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fa-solid fa-phone text-amber-500"></i>
+                            <p class="text-neutral-300">(11) 3105-5647</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map (Mandatory Iframe) -->
+                <div id="contact" class="h-full min-h-[450px] bg-neutral-900 p-2 rounded-2xl border border-neutral-800 relative overflow-hidden">
+                    <!-- Overlay to prevent accidental scrolling if needed, but map interaction is usually good -->
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20S%C3%A3o%20Bento%2C%20545%20-%20Loja%202%20-%20Centro%20Hist%C3%B3rico%20de%20S%C3%A3o%20Paulo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001011-100%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h4 class="text-xl font-bold text-white mb-1">Salão Brasil</h4>
+                <p class="text-neutral-500 text-sm">Tradição desde sempre. Estilo para sempre.</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-black transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-black transition-all">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/1131055647" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-black transition-all">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-8 pt-8 border-t border-neutral-800 text-center">
+            <p class="text-neutral-600 text-xs">&copy; 2023 Barbearia Salão Brasil. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Sticky Header & Glassmorphism
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-2');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.remove('py-2');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        }
+
+        mobileBtn.addEventListener('click', toggleMenu);
+
+        // WhatsApp Form Logic
+        document.getElementById('whatsapp-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('client-name').value;
+            const service = document.getElementById('service-select').value;
+            const time = document.getElementById('time-pref').value;
+            
+            // Base URL provided in prompt
+            const baseUrl = "https://wa.me/1131055647";
+            
+            // Construct message
+            const message = `Olá! Me chamo *${name}*. Gostaria de agendar um *${service}*. Preferência de horário: ${time}.`;
+            
+            // Encode and Redirect
+            const finalUrl = `${baseUrl}?text=${encodeURIComponent(message)}`;
+            window.open(finalUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
