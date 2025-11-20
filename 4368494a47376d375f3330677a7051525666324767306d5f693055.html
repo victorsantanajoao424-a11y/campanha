@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brasil Barber | Barbearia de Elite em Taboão da Serra</title>
+    <meta name="description" content="Barbearia premium em Taboão da Serra. Cortes modernos, barba e tratamentos especiais. Agende seu horário na Brasil Barber.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop')",
+                        'service-pattern': "url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Loader Animation */
+        .loader-spin {
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .fade-out {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* Text Stroke for specific effects */
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255,255,255,0.1);
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-neutral-950 flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="text-3xl font-heading font-bold tracking-widest text-white mb-4">
+            BRASIL <span class="text-amber-500">BARBER</span>
+        </div>
+        <div class="w-12 h-12 border-4 border-neutral-800 border-t-amber-500 rounded-full loader-spin"></div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 border-b border-transparent">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <a href="#" class="text-2xl font-heading font-bold tracking-wider text-white">
+                    BRASIL <span class="text-amber-500">BARBER</span>
+                </a>
+
+                <!-- Desktop Menu -->
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Sobre</a>
+                    <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+                    <a href="#localizacao" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Localização</a>
+                </nav>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="#agendamento" class="px-6 py-2.5 bg-gradient-to-r from-amber-600 to-amber-500 text-white font-semibold rounded-lg shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 hover:-translate-y-0.5 transition-all duration-300 text-sm">
+                        Agendar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-neutral-100 hover:text-amber-500 focus:outline-none">
+                    <i class="fa-solid fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800 absolute w-full">
+            <div class="px-6 py-4 space-y-4 flex flex-col">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 font-medium">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 font-medium">Serviços</a>
+                <a href="#localizacao" class="text-neutral-300 hover:text-amber-500 font-medium">Localização</a>
+                <a href="#agendamento" class="text-amber-500 font-bold">Agendar Horário</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed"></div>
+        <!-- Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center md:text-left w-full">
+            <div class="md:w-2/3 lg:w-1/2">
+                <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-500 text-xs font-bold uppercase tracking-widest mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-500 animate-pulse"></span>
+                    Taboão da Serra - SP
+                </div>
+                <h1 class="text-5xl md:text-7xl font-heading font-extrabold text-white leading-tight mb-6">
+                    Estilo que define <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">sua personalidade.</span>
+                </h1>
+                <p class="text-lg md:text-xl text-neutral-400 mb-10 font-light leading-relaxed">
+                    Mais que um corte, uma experiência de luxo. Na Brasil Barber, combinamos tradição e técnicas modernas para elevar sua autoestima.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                    <a href="#agendamento" class="px-8 py-4 bg-amber-500 hover:bg-amber-400 text-neutral-950 font-bold rounded-xl transition-all duration-300 shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Agendar Horário
+                    </a>
+                    <a href="#localizacao" class="px-8 py-4 bg-transparent border border-neutral-700 hover:border-neutral-500 text-white font-semibold rounded-xl transition-all duration-300 flex items-center justify-center gap-2 backdrop-blur-sm">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Como Chegar
+                    </a>
+                </div>
+                
+                <!-- Rating Badge -->
+                <div class="mt-12 flex items-center gap-4 justify-center md:justify-start">
+                    <div class="flex -space-x-2">
+                        <div class="w-10 h-10 rounded-full bg-neutral-800 border-2 border-neutral-950 flex items-center justify-center text-xs text-neutral-400">User</div>
+                        <div class="w-10 h-10 rounded-full bg-neutral-700 border-2 border-neutral-950 flex items-center justify-center text-xs text-neutral-400">User</div>
+                    </div>
+                    <div>
+                        <div class="flex text-amber-500 text-sm">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <p class="text-sm text-neutral-400"><span class="font-bold text-white">5.0</span> de avaliação</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Nossos Serviços</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-bold text-white">Menu de Serviços</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-neutral-900 transition-colors">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Corte Premium</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Corte personalizado com lavagem, finalização e consultoria de visagismo para encontrar o melhor estilo para você.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 45min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-500 text-neutral-950 text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-neutral-900 transition-colors">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Barba Terapia</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        Ritual completo com toalha quente, esfoliação, hidratação e alinhamento dos fios com navalha.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 30min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-neutral-900 transition-colors">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Combo Completo</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">
+                        A experiência definitiva. Corte de cabelo + Barba terapia + Tratamento facial relaxante.
+                    </p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">Duração: 1h 15min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Visual Break -->
+    <section id="sobre" class="py-24 bg-neutral-900 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+             <i class="fa-solid fa-quote-right text-[20rem] text-white absolute -top-20 -left-20"></i>
+        </div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-16">
+            <div class="w-full md:w-1/2 relative">
+                <div class="absolute -inset-4 bg-amber-500/20 rounded-2xl blur-xl"></div>
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop" alt="Barber Working" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Sobre Nós</h2>
+                <h3 class="text-4xl font-heading font-bold text-white mb-6">Tradição e Modernidade no Coração de Taboão</h3>
+                <p class="text-neutral-400 mb-6 leading-relaxed">
+                    Localizada no Jardim Mituzi, a Brasil Barber não é apenas um lugar para cortar o cabelo, é um refúgio para o homem moderno. Nosso ambiente foi projetado para oferecer conforto, relaxamento e um serviço de excelência.
+                </p>
+                <p class="text-neutral-400 mb-8 leading-relaxed">
+                    Com profissionais altamente qualificados e produtos de primeira linha, garantimos que você saia da nossa cadeira não apenas com um visual renovado, mas com a confiança restaurada.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6">
+                    <div>
+                        <h4 class="text-3xl font-bold text-white">5.0</h4>
+                        <p class="text-sm text-neutral-500">Estrelas no Google</p>
+                    </div>
+                    <div>
+                        <h4 class="text-3xl font-bold text-white">100%</h4>
+                        <p class="text-sm text-neutral-500">Satisfação Garantida</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="agendamento" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="bg-neutral-900 rounded-3xl p-8 md:p-12 border border-neutral-800 shadow-2xl relative overflow-hidden">
+                <!-- Decorative Gradient -->
+                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+
+                <div class="text-center mb-10">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-4">Agende seu Horário</h2>
+                    <p class="text-neutral-400">Preencha os dados abaixo e entraremos em contato via WhatsApp para confirmar.</p>
+                </div>
+
+                <form id="bookingForm" class="space-y-6 relative z-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-neutral-300">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Ex: João Silva">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-neutral-300">Serviço Desejado</label>
+                            <select id="service" class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Combo (Cabelo + Barba)</option>
+                                <option value="Outro">Outro / Dúvida</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-neutral-300">Data Preferida</label>
+                            <input type="date" id="date" class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-sm font-medium text-neutral-300">Horário Preferido</label>
+                            <select id="time" class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                                <option value="Manhã">Manhã (09:00 - 12:00)</option>
+                                <option value="Tarde">Tarde (13:00 - 18:00)</option>
+                                <option value="Noite">Noite (18:00 - 20:00)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-lg shadow-lg shadow-amber-500/20 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        Solicitar Agendamento
+                    </button>
+                    <p class="text-xs text-center text-neutral-500 mt-4">Você será redirecionado para o WhatsApp da barbearia.</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section (MANDATORY) -->
+    <section id="localizacao" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info -->
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Localização</h2>
+                    <h3 class="text-4xl font-heading font-bold text-white mb-8">Venha nos Visitar</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center text-amber-500 text-xl shrink-0">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">Endereço</h4>
+                                <p class="text-neutral-400 leading-relaxed">
+                                    R. Benedito Marinonio Filho, 42<br>
+                                    Jardim Mituzi, Taboão da Serra - SP<br>
+                                    CEP: 06774-210
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center text-amber-500 text-xl shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">Contato</h4>
+                                <p class="text-neutral-400 mb-1">(11) 98892-3847</p>
+                                <a href="https://wa.me/11988923847" class="text-amber-500 text-sm hover:underline">Chamar no WhatsApp</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-12 h-12 bg-neutral-800 rounded-lg flex items-center justify-center text-amber-500 text-xl shrink-0">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg mb-1">Horário de Funcionamento</h4>
+                                <ul class="text-neutral-400 space-y-1">
+                                    <li class="flex justify-between w-48"><span>Seg - Sex:</span> <span>09:00 - 20:00</span></li>
+                                    <li class="flex justify-between w-48"><span>Sábado:</span> <span>09:00 - 19:00</span></li>
+                                    <li class="flex justify-between w-48"><span>Domingo:</span> <span class="text-neutral-600">Fechado</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Iframe (MANDATORY CODE) -->
+                <div class="w-full h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Benedito%20Marinonio%20Filho%2C%20Filho%2C%2042%20-%20Jardim%20Mituzi%2C%20Tabo%C3%A3o%20da%20Serra%20-%20SP%2C%2006774-210%2C%20Brasil%2C%20Tabo%C3%A3o%20da%20Serra&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <a href="#" class="text-2xl font-heading font-bold tracking-wider text-white block mb-2">
+                    BRASIL <span class="text-amber-500">BARBER</span>
+                </a>
+                <p class="text-neutral-500 text-sm">© 2023 Brasil Barber. Todos os direitos reservados.</p>
+            </div>
+            
+            <div class="flex gap-6">
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-white transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-white transition-all">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/11988923847" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-500/30 transition-all hover:scale-110 animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('fade-out');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1000);
+        });
+
+        // Sticky Header Glassmorphism
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('backdrop-blur-md', 'bg-neutral-950/90', 'shadow-lg', 'border-neutral-800');
+                navbar.classList.remove('border-transparent');
+            } else {
+                navbar.classList.remove('backdrop-blur-md', 'bg-neutral-950/90', 'shadow-lg', 'border-neutral-800');
+                navbar.classList.add('border-transparent');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // WhatsApp Form Handling
+        const bookingForm = document.getElementById('bookingForm');
+        
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const date = document.getElementById('date').value;
+            const time = document.getElementById('time').value;
+            
+            // Format date for better reading if provided
+            let dateStr = date;
+            if(date) {
+                const dateObj = new Date(date);
+                dateStr = dateObj.toLocaleDateString('pt-BR');
+            } else {
+                dateStr = "A definir";
+            }
+
+            const message = `Olá, Brasil Barber! Gostaria de agendar um horário.%0A%0A*Nome:* ${name}%0A*Serviço:* ${service}%0A*Data:* ${dateStr}%0A*Horário:* ${time}`;
+            
+            const whatsappUrl = `https://wa.me/11988923847?text=${message}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
