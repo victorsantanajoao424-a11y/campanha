@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JJ Barber Empire | Barbearia em Embu-Guaçu</title>
+    <meta name="description" content="Barbearia JJ Barber Empire em Embu-Guaçu. Cortes modernos, barba e tratamentos especiais. Agende seu horário.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Custom Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Loader Animation */
+        .loader {
+            border-top-color: #f59e0b;
+            -webkit-animation: spinner 1.5s linear infinite;
+            animation: spinner 1.5s linear infinite;
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Text Gradient */
+        .text-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-white overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-neutral-950 flex items-center justify-center transition-opacity duration-500">
+        <div class="flex flex-col items-center gap-4">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-neutral-800 h-16 w-16"></div>
+            <h2 class="text-xl font-bold tracking-widest text-neutral-400">JJ BARBER EMPIRE</h2>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 top-0 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl md:text-3xl font-black tracking-tighter uppercase">
+                JJ <span class="text-gradient">Barber</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex gap-8 items-center">
+                <a href="#home" class="text-neutral-400 hover:text-amber-500 transition-colors text-sm font-medium uppercase tracking-widest">Início</a>
+                <a href="#services" class="text-neutral-400 hover:text-amber-500 transition-colors text-sm font-medium uppercase tracking-widest">Serviços</a>
+                <a href="#location" class="text-neutral-400 hover:text-amber-500 transition-colors text-sm font-medium uppercase tracking-widest">Localização</a>
+                <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2 rounded-full font-bold transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                    Agendar
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-neutral-100 focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col items-center justify-center gap-8 md:hidden">
+            <button id="close-menu-btn" class="absolute top-8 right-8 text-3xl text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <a href="#home" class="mobile-link text-2xl font-bold text-white hover:text-amber-500">Início</a>
+            <a href="#services" class="mobile-link text-2xl font-bold text-white hover:text-amber-500">Serviços</a>
+            <a href="#location" class="mobile-link text-2xl font-bold text-white hover:text-amber-500">Localização</a>
+            <a href="#contact" class="mobile-link text-2xl font-bold text-amber-500 border border-amber-500 px-8 py-3 rounded-full">Agendar Agora</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barber Shop Background" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1 border border-amber-500/30 rounded-full bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-400 text-xs md:text-sm font-bold tracking-[0.2em] uppercase">Barbearia Premium em Embu-Guaçu</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 leading-tight">
+                ESTILO QUE <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">IMPÕE RESPEITO</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Mais que um corte, uma experiência. A JJ Barber Empire oferece o ambiente perfeito para o homem moderno cuidar do visual.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-white text-lg font-bold px-8 py-4 rounded-xl transition-all shadow-[0_0_30px_-5px_rgba(245,158,11,0.4)] hover:shadow-[0_0_40px_-5px_rgba(245,158,11,0.6)]">
+                    Agendar Horário
+                </a>
+                <a href="#location" class="bg-transparent border border-neutral-700 hover:border-neutral-500 text-white text-lg font-medium px-8 py-4 rounded-xl transition-all backdrop-blur-sm">
+                    Ver Localização
+                </a>
+            </div>
+            
+            <!-- Trust Indicators -->
+            <div class="mt-16 flex items-center justify-center gap-2 text-neutral-300">
+                <div class="flex text-amber-500">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="font-semibold">5.0</span>
+                <span class="text-neutral-500">|</span>
+                <span class="text-sm text-neutral-400">22 Avaliações no Google</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 text-white">Nossos <span class="text-gradient">Serviços</span></h2>
+                <div class="h-1 w-24 bg-amber-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-neutral-400">Cuidado completo para o seu visual.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        Do clássico ao moderno. Fade, social, militar ou personalizado. Nossos barbeiros dominam todas as técnicas.
+                    </p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-300 font-medium">Sessão Completa</span>
+                        <span class="text-amber-500 font-bold">Agendar</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-face-grin-beam-sweat"></i> <!-- Using generic face icon as placeholder for beard -->
+                        <i class="fa-solid fa-user-tie absolute"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        Barboterapia com toalha quente, alinhamento com navalha e hidratação. O ritual que você merece.
+                    </p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-300 font-medium">Ritual Barba</span>
+                        <span class="text-amber-500 font-bold">Agendar</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-3">Tratamentos</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        Pigmentação, sobrancelha, hidratação profunda e acabamentos especiais para um visual impecável.
+                    </p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-300 font-medium">Especiais</span>
+                        <span class="text-amber-500 font-bold">Agendar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visuals / Atmosphere -->
+    <section class="py-0">
+        <div class="grid grid-cols-1 md:grid-cols-4 h-96 md:h-80">
+            <div class="relative group overflow-hidden h-full">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Barber Tools">
+                <div class="absolute inset-0 bg-neutral-950/60 group-hover:bg-neutral-950/30 transition-all"></div>
+            </div>
+            <div class="relative group overflow-hidden h-full">
+                <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Haircut">
+                <div class="absolute inset-0 bg-neutral-950/60 group-hover:bg-neutral-950/30 transition-all"></div>
+            </div>
+            <div class="relative group overflow-hidden h-full">
+                <img src="https://images.unsplash.com/photo-1634480496840-b365e966f14a?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Shaving">
+                <div class="absolute inset-0 bg-neutral-950/60 group-hover:bg-neutral-950/30 transition-all"></div>
+            </div>
+            <div class="relative group overflow-hidden h-full flex items-center justify-center bg-neutral-900">
+                <div class="text-center p-6">
+                    <h4 class="text-2xl font-bold text-white mb-2">JJ Empire</h4>
+                    <p class="text-amber-500 uppercase tracking-widest text-sm">Lifestyle</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Form -->
+                <div id="location">
+                    <h2 class="text-3xl md:text-4xl font-bold mb-2 text-white">Agende seu <span class="text-gradient">Horário</span></h2>
+                    <p class="text-neutral-400 mb-8">Preencha os dados abaixo e entraremos em contato via WhatsApp para confirmar.</p>
+                    
+                    <form id="booking-form" class="space-y-6">
+                        <div>
+                            <label class="block text-neutral-400 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="client-name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Como podemos te chamar?">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-neutral-400 text-sm font-medium mb-2">Serviço</label>
+                                <select id="service-type" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-amber-500 transition-colors appearance-none">
+                                    <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                    <option value="Barba">Barba</option>
+                                    <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                    <option value="Outros">Outros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label class="block text-neutral-400 text-sm font-medium mb-2">Data/Hora Preferida</label>
+                                <input type="text" id="date-pref" class="w-full bg-neutral-900 border border-neutral-800 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Ex: Hoje 18h">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white font-bold py-4 rounded-xl shadow-lg shadow-amber-900/30 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center gap-3">
+                            <span>Confirmar via WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-12 flex flex-col gap-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Endereço</h4>
+                                <p class="text-neutral-400 text-sm">R. Brasil, 301 - Centro, Embu-Guaçu - SP, 06900-456</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Contato</h4>
+                                <p class="text-neutral-400 text-sm">(11) 94274-2633</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Section -->
+                <div class="relative h-full min-h-[450px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                    <!-- MANDATORY IFRAME CODE -->
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Brasil%2C%20301%20-%20Centro%2C%20Embu-Gua%C3%A7u%20-%20SP%2C%2006900-456%2C%20Brasil%2C%20Embu-Gua%C3%A7u&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333; width: 100%; height: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h2 class="text-2xl font-black text-white uppercase">JJ Barber Empire</h2>
+                <p class="text-neutral-500 text-sm mt-1">&copy; 2023 Todos os direitos reservados.</p>
+            </div>
+            <div class="flex gap-6">
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-white transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-500 hover:text-white transition-all">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/11942742633" target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg shadow-green-900/50 transition-all hover:scale-110 animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Preloader Logic
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    setTimeout(() => {
+                        preloader.style.display = 'none';
+                    }, 500);
+                }, 500);
+            });
+
+            // Sticky Header Logic
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('bg-neutral-950/90', 'backdrop-blur-md', 'shadow-lg');
+                    navbar.classList.remove('py-6');
+                    navbar.classList.add('py-4');
+                } else {
+                    navbar.classList.remove('bg-neutral-950/90', 'backdrop-blur-md', 'shadow-lg');
+                    navbar.classList.remove('py-4');
+                    navbar.classList.add('py-6');
+                }
+            });
+
+            // Mobile Menu Logic
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                mobileMenu.classList.toggle('translate-x-full');
+                document.body.classList.toggle('overflow-hidden');
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // WhatsApp Form Logic
+            const form = document.getElementById('booking-form');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('client-name').value;
+                const service = document.getElementById('service-type').value;
+                const date = document.getElementById('date-pref').value;
+                
+                // Base URL provided in requirements
+                const baseUrl = "https://wa.me/11942742633";
+                
+                // Construct message
+                const message = `Olá, meu nome é *${name}*. Gostaria de agendar um horário na JJ Barber Empire.%0A%0A*Serviço:* ${service}%0A*Preferência:* ${date}`;
+                
+                // Redirect
+                window.open(`${baseUrl}?text=${message}`, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
