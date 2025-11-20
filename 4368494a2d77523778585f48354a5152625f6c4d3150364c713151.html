@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nando Barbearia | Estilo & Tradição</title>
+    <meta name="description" content="Barbearia de elite em São Paulo. Cortes modernos, barba terapia e tratamentos especiais. Agende seu horário.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom gold
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for specific effects */
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Loader Animation */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+        }
+
+        .loader-line {
+            width: 200px;
+            height: 3px;
+            position: relative;
+            overflow: hidden;
+            background-color: #262626;
+            border-radius: 20px;
+        }
+
+        .loader-line:before {
+            content: "";
+            position: absolute;
+            left: -50%;
+            height: 3px;
+            width: 40%;
+            background-color: #d97706;
+            animation: lineAnim 1s linear infinite;
+            border-radius: 20px;
+        }
+
+        @keyframes lineAnim {
+            0% { left: -50%; width: 40%; }
+            50% { left: 20%; width: 80%; }
+            100% { left: 100%; width: 100%; }
+        }
+
+        .service-card:hover .service-icon {
+            color: #fbbf24;
+            transform: scale(1.1);
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border-radius: 1rem;
+        }
+    </style>
+</head>
+<body class="antialiased overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="text-center">
+            <h2 class="text-3xl font-bold tracking-widest text-white mb-4 uppercase">Nando<span class="text-amber-500">.</span></h2>
+            <div class="loader-line mx-auto"></div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-white tracking-tighter">
+                NANDO <span class="text-amber-500">BARBEARIA</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+                <a href="#sobre" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#contato" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Localização</a>
+                <a href="#agendar" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-amber-900/20">
+                    Agendar Agora
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-xl z-40 transform translate-x-full transition-transform duration-300 flex flex-col justify-center items-center gap-8 md:hidden">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-neutral-400 hover:text-white text-3xl">
+                <i class="fa-solid fa-times"></i>
+            </button>
+            <a href="#home" class="mobile-link text-2xl font-medium text-white hover:text-amber-500">Início</a>
+            <a href="#sobre" class="mobile-link text-2xl font-medium text-white hover:text-amber-500">Sobre</a>
+            <a href="#servicos" class="mobile-link text-2xl font-medium text-white hover:text-amber-500">Serviços</a>
+            <a href="#contato" class="mobile-link text-2xl font-medium text-white hover:text-amber-500">Localização</a>
+            <a href="#agendar" class="mobile-link px-8 py-3 bg-amber-600 text-white rounded-full font-bold text-lg">Agendar</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center bg-neutral-950 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-neutral-950/80 via-transparent to-neutral-950/80"></div>
+        </div>
+
+        <div class="relative z-10 container mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">Excelência em Estilo Masculino</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight leading-tight">
+                NANDO <br class="md:hidden" /> <span class="text-gradient">BARBEARIA</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed">
+                Mais do que um corte, uma experiência. Localizada na Cohab Adventista, oferecemos o que há de melhor em cuidados masculinos com um ambiente exclusivo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#agendar" class="w-full md:w-auto px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition-all shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp text-xl"></i> Agendar Horário
+                </a>
+                <a href="#contato" class="w-full md:w-auto px-8 py-4 bg-neutral-800 hover:bg-neutral-700 border border-neutral-700 text-white font-bold rounded-xl transition-all flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-location-dot text-amber-500"></i> Ver Localização
+                </a>
+            </div>
+            
+            <!-- Stats -->
+            <div class="mt-16 flex flex-wrap justify-center gap-8 md:gap-16 border-t border-neutral-800 pt-8 max-w-4xl mx-auto">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white mb-1">4.9</div>
+                    <div class="text-amber-500 text-sm mb-1">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="text-neutral-500 text-xs uppercase tracking-wider">Avaliação Google</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white mb-1">28+</div>
+                    <div class="text-amber-500 text-sm mb-1"><i class="fa-solid fa-users"></i></div>
+                    <div class="text-neutral-500 text-xs uppercase tracking-wider">Avaliações Reais</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-white mb-1">VIP</div>
+                    <div class="text-amber-500 text-sm mb-1"><i class="fa-solid fa-crown"></i></div>
+                    <div class="text-neutral-500 text-xs uppercase tracking-wider">Atendimento</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barber working" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Nossa Essência</h2>
+                    <h3 class="text-4xl font-bold text-white mb-6">Tradição e Modernidade em Cada Detalhe</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Na Nando Barbearia, entendemos que o cabelo e a barba são a assinatura do homem moderno. Nossa equipe é especializada em visagismo e técnicas avançadas para entregar não apenas um corte, mas uma renovação de autoestima.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Localizados no coração da Cohab Adventista, criamos um ambiente onde você pode relaxar, tomar uma bebida gelada e sair com o visual impecável.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500 text-xs"><i class="fa-solid fa-check"></i></span>
+                            Profissionais experientes
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500 text-xs"><i class="fa-solid fa-check"></i></span>
+                            Ambiente climatizado e confortável
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-6 h-6 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500 text-xs"><i class="fa-solid fa-check"></i></span>
+                            Produtos de alta qualidade
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Menu de Serviços</h2>
+                <h3 class="text-4xl font-bold text-white">Escolha seu Estilo</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Corte Moderno</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Degradê, social, militar ou tesoura. Acabamento perfeito e lavagem especial.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">45 min</span>
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-face-smile"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Barba Terapia</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Toalha quente, esfoliação, massagem facial e alinhamento com navalha.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Combo Nando</h4>
+                    <p class="text-neutral-400 text-sm mb-6">A experiência completa: Corte + Barba Terapia + Acabamento de sobrancelha.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">60 min</span>
+                        <span class="text-amber-500 font-bold text-lg">Best Seller</span>
+                    </div>
+                </div>
+                
+                <!-- Service Card 4 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-spray-can"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Pigmentação</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Correção de falhas e realce do perfil da barba ou cabelo com tinta específica.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">40 min</span>
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-child"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Corte Kids</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Atendimento especial e paciente para deixar os pequenos no estilo.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="service-card bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 group cursor-pointer">
+                    <div class="service-icon text-neutral-600 text-4xl mb-6 transition-transform duration-300">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2 group-hover:text-amber-500 transition-colors">Tratamentos</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Hidratação profunda, relaxamento e selagem capilar.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">Variável</span>
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking & Location Section -->
+    <section id="agendar" class="py-24 bg-neutral-950 relative overflow-hidden">
+        <!-- Decorative blobs -->
+        <div class="absolute top-0 right-0 w-96 h-96 bg-amber-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Booking Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-3xl border border-neutral-800 shadow-2xl">
+                    <h3 class="text-3xl font-bold text-white mb-2">Agende seu Horário</h3>
+                    <p class="text-neutral-400 mb-8">Preencha os dados abaixo e finalizaremos seu agendamento via WhatsApp.</p>
+                    
+                    <form id="bookingForm" class="space-y-6">
+                        <div>
+                            <label class="block text-neutral-400 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="clientName" required class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Como prefere ser chamado?">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-neutral-400 text-sm font-medium mb-2">Serviço Desejado</label>
+                            <select id="serviceType" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                <option value="Outro">Outro / Tratamento</option>
+                            </select>
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-neutral-400 text-sm font-medium mb-2">Data Preferida</label>
+                                <input type="date" id="bookingDate" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-all">
+                            </div>
+                            <div>
+                                <label class="block text-neutral-400 text-sm font-medium mb-2">Horário (Aprox.)</label>
+                                <input type="time" id="bookingTime" class="w-full bg-neutral-800 border border-neutral-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-all">
+                            </div>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-xl shadow-lg shadow-amber-600/20 transform hover:scale-[1.02] transition-all duration-200 flex items-center justify-center gap-3">
+                            <span>Confirmar no WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </button>
+                        <p class="text-xs text-neutral-500 text-center mt-4">Ao clicar, você será redirecionado para o WhatsApp da barbearia.</p>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Map -->
+                <div id="contato" class="flex flex-col justify-between">
+                    <div class="mb-8">
+                        <h3 class="text-3xl font-bold text-white mb-6">Onde Estamos</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 flex-shrink-0">
+                                    <i class="fa-solid fa-map-pin text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Endereço</h4>
+                                    <p class="text-neutral-400">R. Sousanas, 141 - Cohab Adventista</p>
+                                    <p class="text-neutral-400">São Paulo - SP, 05868-050</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 flex-shrink-0">
+                                    <i class="fa-solid fa-phone text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Contato</h4>
+                                    <p class="text-neutral-400">(11) 98285-2756</p>
+                                    <a href="https://wa.me/11982852756" class="text-amber-500 text-sm hover:underline">Chamar no WhatsApp</a>
+                                </div>
+                            </div>
+
+                            <div class="flex items-start gap-4">
+                                <div class="w-12 h-12 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 flex-shrink-0">
+                                    <i class="fa-solid fa-clock text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-white font-bold text-lg">Horário</h4>
+                                    <p class="text-neutral-400">Atendimento com hora marcada.</p>
+                                    <p class="text-neutral-500 text-sm">Entre em contato para verificar disponibilidade.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- MANDATORY MAP IFRAME -->
+                    <div class="w-full h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-lg map-container">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Sousanas%2C%20141%20-%20Cohab%20Adventista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005868-050%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-2xl font-bold text-white tracking-tighter mb-4">
+                NANDO <span class="text-amber-500">BARBEARIA</span>
+            </h2>
+            <div class="flex justify-center gap-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-600 hover:text-white transition-all">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-600 hover:text-white transition-all">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/11982852756" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-neutral-400 hover:bg-amber-600 hover:text-white transition-all">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+            </div>
+            <p class="text-neutral-600 text-sm">
+                &copy; 2023 Nando Barbearia. Todos os direitos reservados. <br>
+                <span class="text-xs opacity-50">Design by Elite Studio.</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Preloader Logic
+            const preloader = document.getElementById('preloader');
+            window.addEventListener('load', () => {
+                setTimeout(() => {
+                    preloader.style.opacity = '0';
+                    preloader.style.visibility = 'hidden';
+                }, 800);
+            });
+
+            // 2. Sticky Navbar Glassmorphism
+            const navbar = document.getElementById('navbar');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    navbar.classList.add('glass-nav');
+                } else {
+                    navbar.classList.remove('glass-nav');
+                }
+            });
+
+            // 3. Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const closeMenuBtn = document.getElementById('close-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            function toggleMenu() {
+                const isHidden = mobileMenu.classList.contains('translate-x-full');
+                if (isHidden) {
+                    mobileMenu.classList.remove('translate-x-full');
+                } else {
+                    mobileMenu.classList.add('translate-x-full');
+                }
+            }
+
+            mobileMenuBtn.addEventListener('click', toggleMenu);
+            closeMenuBtn.addEventListener('click', toggleMenu);
+
+            // Close menu when clicking a link
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // 4. WhatsApp Form Handler
+            const form = document.getElementById('bookingForm');
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const name = document.getElementById('clientName').value;
+                const service = document.getElementById('serviceType').value;
+                const date = document.getElementById('bookingDate').value;
+                const time = document.getElementById('bookingTime').value;
+                
+                // Format date if present
+                let dateStr = "";
+                if(date) {
+                    const d = new Date(date);
+                    dateStr = d.toLocaleDateString('pt-BR');
+                }
+
+                // Construct Message
+                let message = `Olá Nando Barbearia! Gostaria de agendar um horário.%0A%0A`;
+                message += `👤 *Nome:* ${name}%0A`;
+                message += `✂️ *Serviço:* ${service}%0A`;
+                if(dateStr) message += `📅 *Data:* ${dateStr}%0A`;
+                if(time) message += `⏰ *Horário:* ${time}%0A`;
+                
+                const whatsappUrl = `https://wa.me/11982852756?text=${message}`;
+                
+                // Redirect
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
+</body>
+</html>
