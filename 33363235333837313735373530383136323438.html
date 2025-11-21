@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Brasil 1 | Barbearia Premium</title>
+    <meta name="description" content="Dom Brasil 1 - Barbearia de elite em Bom Retiro, São Paulo. Cortes, barba e tratamentos especiais com estilo e tradição.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom gold
+                            550: '#d97706',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1503951914205-b27cfca5630e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')",
+                        'texture': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+
+        /* Loader Animation */
+        .loader {
+            border-top-color: #d97706;
+            -webkit-animation: spinner 1.5s linear infinite;
+            animation: spinner 1.5s linear infinite;
+        }
+        @keyframes spinner {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Map Filter Override */
+        .map-container iframe {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+            border-radius: 1rem;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased overflow-x-hidden selection:bg-amber-500 selection:text-white">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 z-[9999] bg-neutral-950 flex items-center justify-center transition-opacity duration-500">
+        <div class="text-center">
+            <div class="loader ease-linear rounded-full border-4 border-t-4 border-neutral-800 h-16 w-16 mb-4 mx-auto"></div>
+            <h2 class="text-xl font-display font-bold tracking-widest text-amber-500 uppercase">Dom Brasil 1</h2>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Dom <span class="text-amber-500">Brasil 1</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors uppercase tracking-wide">Início</a>
+                <a href="#sobre" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors uppercase tracking-wide">Sobre</a>
+                <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors uppercase tracking-wide">Serviços</a>
+                <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-lg font-semibold transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                    Agendar Agora
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900/95 backdrop-blur-xl border-b border-neutral-800 absolute w-full left-0 top-full">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="mobile-link text-lg font-medium text-neutral-300 hover:text-amber-500">Início</a>
+                <a href="#sobre" class="mobile-link text-lg font-medium text-neutral-300 hover:text-amber-500">Sobre</a>
+                <a href="#servicos" class="mobile-link text-lg font-medium text-neutral-300 hover:text-amber-500">Serviços</a>
+                <a href="#contato" class="mobile-link text-lg font-bold text-amber-500">Agendar Horário</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed transform scale-105"></div>
+        <!-- Gradient Overlay -->
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Estilo & Tradição
+            </span>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                A Arte do <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Corte Perfeito</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Mais que uma barbearia, um refúgio para o homem moderno. Experiência premium no coração do Bom Retiro.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#contato" class="w-full md:w-auto bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="w-full md:w-auto bg-transparent border border-neutral-700 hover:border-amber-500 text-white hover:text-amber-500 px-8 py-4 rounded-xl font-bold text-lg transition-all">
+                    Nossos Serviços
+                </a>
+            </div>
+            
+            <!-- Stats Badge -->
+            <div class="mt-16 flex justify-center items-center gap-2 text-neutral-300">
+                <div class="flex text-amber-500 text-sm">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <span class="font-medium">5.0 de 32 avaliações</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Interior Barbearia" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="absolute -bottom-6 -right-6 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-xl hidden md:block">
+                        <p class="font-display text-4xl font-bold text-amber-500">5.0</p>
+                        <p class="text-neutral-400 text-sm uppercase tracking-wider">Estrelas no Google</p>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="font-display text-4xl md:text-5xl font-bold mb-6 text-white">
+                        Dom Brasil 1 <span class="text-amber-500">.</span>
+                    </h2>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizada no coração do Bom Retiro, a Dom Brasil 1 não é apenas um lugar para cortar o cabelo. É um espaço onde o clássico encontra o moderno. Nossa equipe de especialistas domina as técnicas mais avançadas para garantir que você saia com a sua melhor versão.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800"><i class="fa-solid fa-check"></i></span>
+                            Profissionais altamente qualificados
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800"><i class="fa-solid fa-check"></i></span>
+                            Ambiente climatizado e exclusivo
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <span class="w-8 h-8 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800"><i class="fa-solid fa-check"></i></span>
+                            Produtos de primeira linha
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 relative overflow-hidden">
+        <!-- Background details -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Menu de Serviços</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2">Escolha seu Estilo</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-2xl text-amber-500 mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-2">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Degradê, social, militar ou tesoura. Acabamento impecável e lavagem inclusa.</p>
+                    <div class="flex justify-between items-center pt-6 border-t border-neutral-900">
+                        <span class="text-neutral-500 text-sm">30-45 min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative">
+                    <div class="absolute top-4 right-4 bg-amber-600 text-white text-xs font-bold px-2 py-1 rounded">POPULAR</div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-2xl text-amber-500 mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-tie"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-2">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Modelagem, toalha quente, esfoliação e hidratação. Relaxamento total.</p>
+                    <div class="flex justify-between items-center pt-6 border-t border-neutral-900">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-2xl text-amber-500 mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-spray-can-sparkles"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-2">Combo Completo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Corte + Barba + Sobrancelha. A renovação completa do seu visual.</p>
+                    <div class="flex justify-between items-center pt-6 border-t border-neutral-900">
+                        <span class="text-neutral-500 text-sm">60 min</span>
+                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section (CRITICAL) -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Booking Form -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Contato</span>
+                        <h2 class="font-display text-4xl font-bold text-white mt-2 mb-4">Agende seu Horário</h2>
+                        <p class="text-neutral-400">Preencha os dados abaixo para ser direcionado ao nosso WhatsApp de atendimento.</p>
+                    </div>
+
+                    <form id="bookingForm" class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-400 mb-1">Seu Nome</label>
+                                <input type="text" id="name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all" placeholder="João Silva">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-neutral-400 mb-1">Serviço</label>
+                                <select id="service" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all">
+                                    <option>Corte de Cabelo</option>
+                                    <option>Barba</option>
+                                    <option>Corte + Barba</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-neutral-400 mb-1">Data/Horário Preferido</label>
+                            <input type="text" id="datetime" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:border-amber-500 focus:ring-1 focus:ring-amber-500 outline-none transition-all" placeholder="Ex: Amanhã às 14h">
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Agendar via WhatsApp
+                        </button>
+                    </form>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-8 border-t border-neutral-900">
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fa-solid fa-location-dot text-amber-500"></i> Endereço</h4>
+                            <p class="text-neutral-400 text-sm">R. Barra do Tibagi, 117<br>Bom Retiro, São Paulo - SP<br>01128-000</p>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold mb-2 flex items-center gap-2"><i class="fa-regular fa-clock text-amber-500"></i> Horários</h4>
+                            <p class="text-neutral-400 text-sm">Consulte disponibilidade<br>via WhatsApp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Iframe (MANDATORY CODE) -->
+                <div class="h-full min-h-[450px] w-full relative map-container">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Barra%20do%20Tibagi%2C%20117%20-%20Bom%20Retiro%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001128-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white mb-4 md:mb-0">
+                    Dom <span class="text-amber-500">Brasil 1</span>
+                </a>
+                <div class="flex space-x-6">
+                    <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+            <div class="text-center border-t border-neutral-800 pt-6">
+                <p class="text-neutral-500 text-sm">&copy; 2023 Dom Brasil 1. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Sticky WhatsApp Button -->
+    <a href="#contato" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg shadow-green-900/30 z-40 transition-all hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
+
+        // Sticky Header Logic with Glassmorphism
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-neutral-950/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('py-6');
+                navbar.classList.add('py-4');
+            } else {
+                navbar.classList.remove('bg-neutral-950/90', 'backdrop-blur-md', 'shadow-lg');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-6');
+            }
+        });
+
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuBtn.querySelector('i').classList.remove('fa-xmark');
+                menuBtn.querySelector('i').classList.add('fa-bars');
+            });
+        });
+
+        // WhatsApp Form Logic
+        const bookingForm = document.getElementById('bookingForm');
+        
+        bookingForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            const datetime = document.getElementById('datetime').value;
+            
+            // Create formatted message
+            const text = `Olá, vim pelo site da Dom Brasil 1.\nMe chamo *${name}*.\nGostaria de agendar: *${service}*.\nPrevisão: ${datetime}`;
+            
+            // Normally we would encode this into a WhatsApp URL like wa.me/PHONE?text=...
+            // But the requirement specifies using the URL "#contato".
+            // Since we don't have a phone number, we will redirect to the anchor as requested
+            // simulating the action. In a real scenario with a number, we'd use window.open.
+            
+            // Alert for user feedback (Simulation)
+            alert("Redirecionando para o WhatsApp...");
+            
+            // Redirect to the critical URL provided
+            window.location.href = "#contato";
+        });
+    </script>
+</body>
+</html>
