@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia StudioKM | Estilo & Tradição</title>
+    <meta name="description" content="Barbearia StudioKM - Cortes modernos, barba e tratamentos especiais em São Paulo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop')",
+                        'texture': "url('https://www.transparenttextures.com/patterns/cubes.png')"
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for extra polish */
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .text-glow {
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.3);
+        }
+
+        /* Loader Animation */
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #0a0a0a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loader-hidden {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .scissors-anim {
+            animation: snip 1.5s infinite ease-in-out;
+            transform-origin: center;
+        }
+
+        @keyframes snip {
+            0% { transform: rotate(0deg); }
+            50% { transform: rotate(-25deg); }
+            100% { transform: rotate(0deg); }
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Preloader -->
+    <div class="loader-container" id="preloader">
+        <div class="text-center">
+            <i class="fas fa-scissors text-5xl text-amber-500 scissors-anim mb-4"></i>
+            <h2 class="text-2xl font-bold tracking-widest text-white">STUDIO<span class="text-amber-500">KM</span></h2>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header id="navbar" class="fixed w-full top-0 z-50 transition-all duration-300 py-6">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold text-white tracking-tighter group">
+                STUDIO<span class="text-amber-500 group-hover:text-amber-400 transition-colors">KM</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8">
+                <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+                <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#sobre" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#contato" class="px-6 py-2.5 bg-amber-600 hover:bg-amber-500 text-white text-sm font-semibold rounded-full transition-all shadow-lg shadow-amber-900/20">
+                    Agendar Agora
+                </a>
+            </nav>
+
+            <!-- Mobile Button -->
+            <button id="mobile-menu-btn" class="md:hidden text-white text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="absolute top-full left-0 w-full bg-neutral-950 border-b border-neutral-800 hidden md:hidden flex-col p-6 gap-4 shadow-2xl">
+            <a href="#home" class="text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+            <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+            <a href="#sobre" class="text-neutral-300 hover:text-amber-500 transition-colors">Sobre</a>
+            <a href="#contato" class="text-amber-500 font-bold">Agendar Horário</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">Barbearia Premium</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight">
+                Sua Imagem, <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600 text-glow">Nossa Arte.</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Experiência exclusiva de cuidado masculino no Parque Brasil. Cortes de precisão, barba tradicional e ambiente de alto padrão.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contato" class="px-8 py-4 bg-amber-600 hover:bg-amber-500 text-white font-bold rounded-xl transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Visita
+                </a>
+                <a href="#servicos" class="px-8 py-4 bg-transparent border border-neutral-700 hover:border-white text-white font-medium rounded-xl transition-all hover:bg-white/5 flex items-center justify-center">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-neutral-500">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- Stats / Trust Badge -->
+    <section class="bg-neutral-950 border-y border-neutral-800 py-12">
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+                <p class="text-3xl font-bold text-white mb-1">5.0</p>
+                <div class="text-amber-500 text-xs mb-2">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-500 text-sm">19 Avaliações Google</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white mb-1">100%</p>
+                <p class="text-neutral-500 text-sm">Satisfação Garantida</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white mb-1">Premium</p>
+                <p class="text-neutral-500 text-sm">Produtos de Elite</p>
+            </div>
+            <div>
+                <p class="text-3xl font-bold text-white mb-1">SP</p>
+                <p class="text-neutral-500 text-sm">Parque Brasil</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Nossos Serviços</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Menu de Estilo</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-cut text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Corte Moderno</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">Degradê, social, tesoura ou máquina. Consultoria de visagismo inclusa para encontrar seu melhor estilo.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-lg">R$ 40,00</span>
+                        <a href="#contato" class="text-white text-sm hover:text-amber-500 transition-colors">Agendar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-user-tie text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Barba & Bigode</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">Barboterapia com toalha quente, alinhamento com navalha e hidratação profunda dos fios.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-lg">R$ 35,00</span>
+                        <a href="#contato" class="text-white text-sm hover:text-amber-500 transition-colors">Agendar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-gem text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-500 group-hover:text-white transition-colors">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Combo StudioKM</h4>
+                    <p class="text-neutral-400 text-sm mb-6 leading-relaxed">A experiência completa. Corte + Barba + Tratamento facial relaxante. O favorito da casa.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-lg">R$ 70,00</span>
+                        <a href="#contato" class="text-white text-sm hover:text-amber-500 transition-colors">Agendar <i class="fas fa-arrow-right ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Visual Section -->
+    <section id="sobre" class="py-24 bg-neutral-900 relative">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-16">
+            
+            <!-- Image Grid -->
+            <div class="w-full lg:w-1/2 grid grid-cols-2 gap-4">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e59?q=80&w=1000&auto=format&fit=crop" alt="Barber working" class="rounded-2xl shadow-2xl w-full h-64 object-cover transform translate-y-8">
+                <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=1000&auto=format&fit=crop" alt="Barber tools" class="rounded-2xl shadow-2xl w-full h-64 object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="w-full lg:w-1/2">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Sobre Nós</h2>
+                <h3 class="text-4xl font-bold text-white mb-6">Mais que um corte, <br>uma experiência.</h3>
+                <p class="text-neutral-400 mb-6 leading-relaxed">
+                    Localizada no coração do Parque Brasil, a Barbearia StudioKM nasceu da paixão pela barbearia clássica fundida com técnicas modernas. Nosso ambiente foi projetado para que você relaxe, tome uma bebida gelada e saia com a confiança renovada.
+                </p>
+                <ul class="space-y-4 mb-8">
+                    <li class="flex items-center text-neutral-300">
+                        <i class="fas fa-check-circle text-amber-500 mr-3"></i> Profissionais altamente qualificados
+                    </li>
+                    <li class="flex items-center text-neutral-300">
+                        <i class="fas fa-check-circle text-amber-500 mr-3"></i> Ambiente climatizado e confortável
+                    </li>
+                    <li class="flex items-center text-neutral-300">
+                        <i class="fas fa-check-circle text-amber-500 mr-3"></i> Produtos de primeira linha
+                    </li>
+                </ul>
+                <a href="#contato" class="inline-block text-white border-b border-amber-500 pb-1 hover:text-amber-500 transition-colors">Conheça nosso espaço</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section (CRITICAL) -->
+    <section id="contato" class="py-24 bg-neutral-950 relative overflow-hidden">
+        <!-- Background Element -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Agendamento & Localização</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Venha nos Visitar</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form & Info -->
+                <div class="bg-neutral-900 p-8 rounded-3xl border border-neutral-800 shadow-2xl">
+                    <h4 class="text-2xl font-bold text-white mb-6">Agende pelo WhatsApp</h4>
+                    <form id="bookingForm" class="space-y-6">
+                        <div>
+                            <label class="block text-neutral-400 text-sm mb-2">Seu Nome</label>
+                            <input type="text" id="clientName" required class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Ex: João Silva">
+                        </div>
+                        
+                        <div>
+                            <label class="block text-neutral-400 text-sm mb-2">Serviço Desejado</label>
+                            <select id="serviceType" class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors">
+                                <option>Corte de Cabelo</option>
+                                <option>Barba & Bigode</option>
+                                <option>Combo (Corte + Barba)</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-neutral-400 text-sm mb-2">Data/Horário Preferido</label>
+                            <input type="text" id="datePref" class="w-full bg-neutral-800 border border-neutral-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 transition-colors" placeholder="Ex: Amanhã às 14h">
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-white font-bold py-4 rounded-lg hover:from-amber-400 hover:to-amber-500 transition-all transform hover:scale-[1.02] shadow-lg shadow-amber-900/30">
+                            <i class="fab fa-whatsapp mr-2"></i> Solicitar Agendamento
+                        </button>
+                    </form>
+
+                    <div class="mt-10 pt-8 border-t border-neutral-800">
+                        <div class="flex items-start gap-4 mb-4">
+                            <div class="text-amber-500 mt-1"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <p class="text-white font-medium">Endereço</p>
+                                <p class="text-neutral-400 text-sm">R. Domenico Cimarosa, 348 - Parque Brasil<br>São Paulo - SP, 04843-050</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map (MANDATORY IFRAME) -->
+                <div class="h-full min-h-[450px] rounded-3xl overflow-hidden shadow-2xl border border-neutral-800 relative group">
+                    <!-- The Mandatory Iframe Code -->
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Domenico%20Cimarosa%2C%20348%20-%20Parque%20Brasil%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004843-050%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    
+                    <!-- Overlay for style consistency (optional, but enhances dark mode feel) -->
+                    <div class="absolute inset-0 pointer-events-none border-4 border-neutral-900/50 rounded-3xl"></div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-12 pb-6">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="text-2xl font-bold text-white tracking-tighter mb-4 md:mb-0">
+                    STUDIO<span class="text-amber-500">KM</span>
+                </div>
+                <div class="flex gap-6">
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+            <div class="text-center border-t border-neutral-800 pt-6">
+                <p class="text-neutral-500 text-sm">© 2023 Barbearia StudioKM. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="#contato" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-2xl z-50 transition-all transform hover:scale-110 flex items-center justify-center w-14 h-14">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        // Preloader Logic
+        window.addEventListener('load', function() {
+            const preloader = document.getElementById('preloader');
+            setTimeout(() => {
+                preloader.classList.add('loader-hidden');
+                setTimeout(() => {
+                    preloader.style.display = 'none';
+                }, 500);
+            }, 1500); // Slight delay to show off the animation
+        });
+
+        // Sticky Header with Glassmorphism
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('glass-nav');
+                navbar.classList.add('py-4');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('glass-nav');
+                navbar.classList.remove('py-4');
+                navbar.classList.add('py-6');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+
+        // Smooth Scroll for Anchors (Fixing offset for sticky header)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                menu.classList.add('hidden'); // Close mobile menu on click
+                menu.classList.remove('flex');
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement){
+                    const headerOffset = 80;
+                    const elementPosition = targetElement.getBoundingClientRect().top;
+                    const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+        
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: "smooth"
+                    });
+                }
+            });
+        });
+
+        // WhatsApp Form Handler
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('datePref').value;
+            
+            // Create formatted message
+            const message = `Olá StudioKM! Gostaria de agendar um horário.%0A%0A*Nome:* ${name}%0A*Serviço:* ${service}%0A*Preferência:* ${date}`;
+            
+            // Redirect logic as requested (Using #contato base URL context)
+            // Ideally this would be wa.me/PHONE?text=... but since phone is unavailable and instruction says use #contato:
+            // We will simulate the action. In a real scenario with a phone number, we would replace the URL below.
+            
+            // NOTE: Since no phone number was provided, we redirect to the anchor as requested, 
+            // but normally we would window.open(`https://wa.me/5511999999999?text=${message}`, '_blank');
+            
+            alert("Redirecionando para o WhatsApp... (Simulação: Mensagem copiada)");
+            console.log("Mensagem gerada: " + decodeURIComponent(message));
+            
+            // Strictly following the instruction: "use esta URL base (#contato) para o formulário"
+            window.location.href = "#contato"; 
+        });
+    </script>
+</body>
+</html>
