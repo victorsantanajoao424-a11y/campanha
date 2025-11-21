@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUTANTÃ HOUSE | Barbearia Premium em São Paulo</title>
+    <meta name="description" content="Barbearia de elite no Butantã. Cortes modernos, barba tradicional e ambiente exclusivo. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            450: '#f59e0b',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'hero-pattern': "linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,1)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop')",
+                        'texture': "url('https://www.transparenttextures.com/patterns/cubes.png')",
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Glassmorphism Utility */
+        .glass {
+            background: rgba(23, 23, 23, 0.7);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-display font-bold tracking-wider text-white uppercase border-2 border-amber-500 px-3 py-1">
+                        Butantã <span class="text-amber-500">House</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Início</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Serviços</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">A Barbearia</a>
+                        <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all shadow-lg shadow-amber-900/20">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <a href="https://wa.me/5511969470193?text=Olá, gostaria de agendar um horário." class="text-amber-500 hover:text-white p-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center bg-hero-pattern bg-cover bg-center bg-fixed bg-no-repeat">
+        <!-- Overlay Gradient -->
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/60 to-neutral-950/30"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="block text-amber-500 font-display font-bold tracking-[0.2em] uppercase mb-4 animate-pulse">Estilo & Tradição</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 uppercase leading-tight">
+                Butantã <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700">House</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 font-light mb-10">
+                Mais que um corte, uma experiência de alto padrão. Localizada no coração do Butantã, oferecemos o cuidado que o homem moderno exige.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511969470193?text=Olá, gostaria de agendar um horário na Butantã House." 
+                   class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-amber-600 font-display uppercase tracking-wider rounded-full hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-600 focus:ring-offset-neutral-900 shadow-lg shadow-amber-900/30">
+                    <span>Agendar Horário</span>
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#servicos" 
+                   class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-neutral-300 transition-all duration-200 border border-neutral-700 font-display uppercase tracking-wider rounded-full hover:bg-neutral-800 hover:text-white focus:outline-none">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Strip -->
+    <div class="bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 py-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+                <div class="p-4">
+                    <i class="fa-solid fa-location-dot text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-white font-display font-bold uppercase mb-1">Localização</h3>
+                    <p class="text-neutral-400 text-sm">Av. Vital Brasil, 572 - Butantã, SP</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-brands fa-whatsapp text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-white font-display font-bold uppercase mb-1">Contato</h3>
+                    <p class="text-neutral-400 text-sm">(11) 96947-0193</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-clock text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-white font-display font-bold uppercase mb-1">Horário</h3>
+                    <p class="text-neutral-400 text-sm">Consulte disponibilidade</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Nossa Especialidade</span>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-white mt-2 mb-4 uppercase">Menu de Serviços</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600/10 w-24 h-24 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-600/20"></div>
+                    <i class="fa-solid fa-scissors text-4xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3 uppercase">Corte Premium</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Corte de cabelo personalizado, lavagem especial, finalização com produtos de alta qualidade e styling.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                        <a href="https://wa.me/5511969470193?text=Gostaria de saber o valor do Corte Premium." class="text-amber-500 text-sm font-bold uppercase tracking-wide hover:text-amber-400">Agendar <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600/10 w-24 h-24 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-600/20"></div>
+                    <i class="fa-solid fa-face-smile text-4xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3 uppercase">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Ritual completo com toalha quente, esfoliação, óleos essenciais e modelagem perfeita da barba.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                        <a href="https://wa.me/5511969470193?text=Gostaria de saber o valor da Barba Terapia." class="text-amber-500 text-sm font-bold uppercase tracking-wide hover:text-amber-400">Agendar <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600/10 w-24 h-24 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-600/20"></div>
+                    <i class="fa-solid fa-gem text-4xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3 uppercase">Combo House</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">A experiência completa: Corte + Barba + Sobrancelha. Saia renovado e com visual impecável.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-white font-bold text-lg">Consultar</span>
+                        <a href="https://wa.me/5511969470193?text=Gostaria de saber o valor do Combo House." class="text-amber-500 text-sm font-bold uppercase tracking-wide hover:text-amber-400">Agendar <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Experience Section -->
+    <section id="sobre" class="py-24 bg-neutral-900 relative overflow-hidden">
+        <!-- Decorative Elements -->
+        <div class="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none" style="background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Interior Barbearia" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-neutral-950 p-6 rounded-xl border border-neutral-800 shadow-xl hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="text-amber-500 text-4xl font-bold font-display">SP</div>
+                            <div class="text-neutral-300 text-sm leading-tight">
+                                Referência em<br>Barbearia no Butantã
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Sobre Nós</span>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mt-2 mb-6 uppercase">Mais que uma barbearia,<br>um refúgio.</h2>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Na <strong>BUTANTÃ HOUSE</strong>, resgatamos a essência da barbearia clássica fundindo-a com técnicas modernas. Nosso espaço foi projetado para que você desconecte da rotina e foque no seu visual e bem-estar.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais altamente qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos premium importados e nacionais
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente climatizado com café e cerveja
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511969470193?text=Olá, gostaria de conhecer a barbearia." class="inline-block bg-transparent border-2 border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white font-display font-bold uppercase tracking-wider py-3 px-8 rounded-full transition-all duration-300">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-neutral-950/80 backdrop-blur-sm"></div>
+        <div class="relative z-10 max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-6 uppercase">Pronto para elevar seu estilo?</h2>
+            <p class="text-neutral-300 text-lg mb-8">Não deixe para depois. Garanta seu horário com os melhores profissionais da região.</p>
+            <a href="https://wa.me/5511969470193?text=Olá, quero agendar meu horário agora." class="inline-block bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-white font-bold py-4 px-10 rounded-full transition-all shadow-lg shadow-amber-900/50 transform hover:scale-105 uppercase tracking-wide">
+                Agendar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Map -->
+                <div class="space-y-8">
+                    <div>
+                        <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Contato</span>
+                        <h2 class="text-4xl font-display font-bold text-white mt-2 mb-4 uppercase">Onde Estamos</h2>
+                        <p class="text-neutral-400 mb-6">Fácil acesso no Butantã. Estacionamento próximo e ambiente seguro.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start p-4 bg-neutral-900 rounded-xl border border-neutral-800">
+                            <div class="bg-amber-500/10 p-3 rounded-lg mr-4">
+                                <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm">Endereço</h4>
+                                <p class="text-neutral-400 text-sm mt-1">Av. Vital Brasil, 572 - sala 1<br>Butantã, São Paulo - SP, 05503-000</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start p-4 bg-neutral-900 rounded-xl border border-neutral-800">
+                            <div class="bg-amber-500/10 p-3 rounded-lg mr-4">
+                                <i class="fa-solid fa-phone text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase text-sm">Telefone / WhatsApp</h4>
+                                <p class="text-neutral-400 text-sm mt-1">(11) 96947-0193</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="w-full h-[300px] rounded-xl overflow-hidden border border-neutral-800 shadow-lg">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Vital%20Brasil%2C%20572%20-%20sala%201%20-%20Butant%C3%A3%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005503-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Smart Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800 shadow-2xl">
+                    <h3 class="text-2xl font-display font-bold text-white mb-2 uppercase">Agendamento Rápido</h3>
+                    <p class="text-neutral-400 mb-8 text-sm">Preencha os dados abaixo e nós te encaminharemos diretamente para o WhatsApp para confirmar seu horário.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-xs font-bold text-neutral-400 uppercase tracking-wide mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-800 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors placeholder-neutral-600" placeholder="Ex: João Silva">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-xs font-bold text-neutral-400 uppercase tracking-wide mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-800 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Corte + Barba">Combo (Corte + Barba)</option>
+                                <option value="Outros">Outros / Dúvidas</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-xs font-bold text-neutral-400 uppercase tracking-wide mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-neutral-800 border border-neutral-700 text-white rounded-lg px-4 py-3 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors placeholder-neutral-600" placeholder="Alguma preferência de horário?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-lg uppercase tracking-wide transition-all duration-300 shadow-lg flex items-center justify-center gap-2 group">
+                            <span>Enviar via WhatsApp</span>
+                            <i class="fa-brands fa-whatsapp text-xl group-hover:scale-110 transition-transform"></i>
+                        </button>
+                        <p class="text-xs text-neutral-500 text-center mt-4">Ao clicar, você abrirá o chat do WhatsApp.</p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="#" class="text-2xl font-display font-bold tracking-wider text-white uppercase border-2 border-amber-500 px-3 py-1">
+                        Butantã <span class="text-amber-500">House</span>
+                    </a>
+                    <p class="text-neutral-500 text-sm mt-4 max-w-xs">A barbearia que define o estilo do homem moderno em São Paulo.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/5511969470193" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-600">
+                <p>&copy; 2023 Butantã House. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Design by Elite Studio</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511969470193?text=Olá, gostaria de agendar um horário." class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-xl hover:shadow-green-900/30 transition-all duration-300 hover:-translate-y-1 animate-bounce">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Form Handler Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture Data
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Build Message
+            var text = "*NOVO AGENDAMENTO VIA SITE* %0A";
+            text += "-----------------------%0A";
+            text += "*Nome:* " + name + "%0A";
+            text += "*Serviço:* " + service + "%0A";
+            if(msg) {
+                text += "*Mensagem:* " + msg + "%0A";
+            }
+            text += "-----------------------%0A";
+            text += "Gostaria de verificar disponibilidade de horários.";
+
+            // Redirect
+            var url = "https://wa.me/5511969470193?text=" + text;
+            window.open(url, '_blank');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.replace('bg-transparent', 'bg-neutral-950/90');
+            } else {
+                nav.classList.remove('shadow-lg');
+                // Keep glass effect consistent or reset if needed
+            }
+        });
+    </script>
+</body>
+</html>
