@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia - Salão Brasil - São Bento | Estilo & Tradição</title>
+    <meta name="description" content="A melhor barbearia do Centro Histórico de São Paulo. Cortes modernos, barba tradicional e ambiente exclusivo.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom gold tone
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background-color: rgba(10, 10, 10, 0.85);
+        }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-serif font-bold tracking-wider text-white">
+                        SALÃO <span class="text-amber-500">BRASIL</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Serviços</a>
+                        <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-lg shadow-amber-900/20">
+                            Agendar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <a href="https://wa.me/551131055647?text=Olá, gostaria de agendar um horário." class="text-amber-500 hover:text-white p-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?q=80&w=2070&auto=format&fit=crop" alt="Barbearia Luxo" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/30"></div>
+            <div class="absolute inset-0 bg-neutral-950/40"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-900/80 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest mb-6 uppercase">
+                São Bento • Centro Histórico
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Excelência em <br> <span class="text-gold-gradient">Cada Detalhe</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                Mais que um corte, uma experiência. Redefinindo o conceito de barbearia clássica no coração de São Paulo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/551131055647?text=Olá, gostaria de agendar um horário." class="bg-amber-600 hover:bg-amber-500 text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all shadow-lg shadow-amber-900/30 flex items-center justify-center gap-2 group">
+                    <i class="fa-brands fa-whatsapp text-xl"></i>
+                    Agendar Horário
+                    <i class="fa-solid fa-arrow-right text-sm opacity-0 group-hover:opacity-100 transition-all -ml-2 group-hover:ml-0"></i>
+                </a>
+                <a href="#servicos" class="bg-neutral-900/50 hover:bg-neutral-800 backdrop-blur-sm border border-neutral-700 text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all flex items-center justify-center">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Intro -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Profissionais de Elite</h3>
+                    <p class="text-neutral-400 leading-relaxed">Nossa equipe é formada por especialistas dedicados à arte da barbearia clássica e moderna.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-chair text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Ambiente Premium</h3>
+                    <p class="text-neutral-400 leading-relaxed">Relaxe em nossas cadeiras de couro, com música ambiente e uma bebida gelada enquanto cuidamos de você.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-clock text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Localização Privilegiada</h3>
+                    <p class="text-neutral-400 leading-relaxed">No coração do Centro Histórico, na Rua São Bento. Fácil acesso e conveniência para o seu dia a dia.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Menu de Serviços</h2>
+                <h3 class="text-4xl md:text-5xl font-serif font-bold text-white">Cuidado Masculino Completo</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="relative h-[600px] rounded-2xl overflow-hidden hidden lg:block shadow-2xl shadow-black">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Barber Tools" class="absolute inset-0 w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-r from-neutral-900 via-transparent to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 p-8">
+                        <div class="bg-neutral-950/80 backdrop-blur-md p-6 rounded-xl border border-neutral-800 inline-block">
+                            <p class="text-amber-500 font-bold text-lg">Desde 2024</p>
+                            <p class="text-neutral-300 text-sm">Tradição e Modernidade</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing List -->
+                <div class="space-y-6">
+                    <!-- Item 1 -->
+                    <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800 flex justify-between items-center hover:border-amber-500/50 transition-colors cursor-default group">
+                        <div>
+                            <h4 class="text-xl font-bold text-white group-hover:text-amber-500 transition-colors">Corte de Cabelo</h4>
+                            <p class="text-neutral-500 text-sm mt-1">Tesoura, máquina e acabamento</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-xl font-bold text-amber-500">Consulte</span>
+                            <a href="https://wa.me/551131055647?text=Olá, qual o valor do corte de cabelo?" class="text-xs text-neutral-400 underline hover:text-white">Saber valor</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800 flex justify-between items-center hover:border-amber-500/50 transition-colors cursor-default group">
+                        <div>
+                            <h4 class="text-xl font-bold text-white group-hover:text-amber-500 transition-colors">Barba Tradicional</h4>
+                            <p class="text-neutral-500 text-sm mt-1">Toalha quente e navalha</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-xl font-bold text-amber-500">Consulte</span>
+                            <a href="https://wa.me/551131055647?text=Olá, qual o valor da barba?" class="text-xs text-neutral-400 underline hover:text-white">Saber valor</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800 flex justify-between items-center hover:border-amber-500/50 transition-colors cursor-default group">
+                        <div>
+                            <h4 class="text-xl font-bold text-white group-hover:text-amber-500 transition-colors">Combo Completo</h4>
+                            <p class="text-neutral-500 text-sm mt-1">Cabelo + Barba + Sobrancelha</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-xl font-bold text-amber-500">Consulte</span>
+                            <a href="https://wa.me/551131055647?text=Olá, qual o valor do combo completo?" class="text-xs text-neutral-400 underline hover:text-white">Saber valor</a>
+                        </div>
+                    </div>
+
+                    <!-- Item 4 -->
+                    <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800 flex justify-between items-center hover:border-amber-500/50 transition-colors cursor-default group">
+                        <div>
+                            <h4 class="text-xl font-bold text-white group-hover:text-amber-500 transition-colors">Selagem / Hidratação</h4>
+                            <p class="text-neutral-500 text-sm mt-1">Tratamento capilar profundo</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-xl font-bold text-amber-500">Consulte</span>
+                            <a href="https://wa.me/551131055647?text=Olá, gostaria de saber sobre hidratação." class="text-xs text-neutral-400 underline hover:text-white">Saber valor</a>
+                        </div>
+                    </div>
+                    
+                    <div class="pt-6">
+                        <a href="https://wa.me/551131055647?text=Olá, gostaria de ver a tabela completa de serviços." class="block w-full bg-amber-600 hover:bg-amber-500 text-white text-center py-4 rounded-xl font-bold transition-all shadow-lg shadow-amber-900/20">
+                            Agendar Serviço Agora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="py-16 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-serif font-bold text-white mb-6">Pronto para elevar seu visual?</h2>
+            <p class="text-neutral-400 mb-8 max-w-2xl mx-auto">Não perca tempo em filas. Agende seu horário antecipadamente pelo WhatsApp e garanta seu atendimento exclusivo.</p>
+            <a href="https://wa.me/551131055647?text=Olá, gostaria de agendar um horário." class="inline-flex items-center gap-3 border border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-white px-8 py-3 rounded-full font-semibold transition-all duration-300">
+                <i class="fa-brands fa-whatsapp"></i> Chamar no WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form Area -->
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Contato</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Fale Conosco</h3>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário abaixo para iniciar seu atendimento diretamente no nosso WhatsApp.</p>
+
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Ex: João Silva">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Combo">Combo (Cabelo + Barba)</option>
+                                <option value="Outros">Outros / Dúvidas</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all" placeholder="Gostaria de agendar para hoje às 18h..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-lg shadow-lg shadow-amber-900/20 transition-all transform hover:-translate-y-1">
+                            Enviar via WhatsApp <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-10 space-y-4">
+                        <div class="flex items-center gap-4 text-neutral-300">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="font-medium">(11) 3105-5647</span>
+                        </div>
+                        <div class="flex items-center gap-4 text-neutral-300">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <span class="font-medium">R. São Bento, 545 - Loja 2 - Centro Histórico, SP</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Area -->
+                <div class="h-full min-h-[400px] bg-neutral-900 rounded-2xl p-2 border border-neutral-800">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20S%C3%A3o%20Bento%2C%20545%20-%20Loja%202%20-%20Centro%20Hist%C3%B3rico%20de%20S%C3%A3o%20Paulo%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001011-100%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333; height: 100%; min-height: 450px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h2 class="text-2xl font-serif font-bold text-white">SALÃO <span class="text-amber-500">BRASIL</span></h2>
+                    <p class="text-neutral-500 text-sm mt-2">Tradição e estilo desde sempre.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/551131055647" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/551131055647" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://wa.me/551131055647" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-8 text-center">
+                <p class="text-neutral-600 text-sm">
+                    &copy; 2024 Barbearia Salão Brasil. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/551131055647?text=Olá, gostaria de agendar um horário." target="_blank" class="fixed bottom-6 right-6 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-xl shadow-black z-50 transition-all transform hover:scale-110 flex items-center justify-center group">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+        <span class="absolute right-full mr-4 bg-white text-neutral-900 px-3 py-1 rounded-lg text-sm font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity shadow-lg">Agende Agora</span>
+    </a>
+
+    <!-- Form Handling Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture values
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct message
+            var text = "Olá, me chamo *" + name + "*.";
+            text += " Tenho interesse no serviço de *" + service + "*.";
+            
+            if(msg) {
+                text += " " + msg;
+            }
+            
+            // Redirect
+            var url = "https://wa.me/551131055647?text=" + encodeURIComponent(text);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
