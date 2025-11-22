@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Brasil | Estilo & Tradição em São Paulo</title>
+    <meta name="description" content="Barbearia Brasil - Cortes modernos, barba feita na navalha e serviços especializados em São Paulo. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Configuração Tailwind Personalizada -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Gold custom
+                            550: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(38, 38, 38, 0.5);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-gradient-bg {
+            background: linear-gradient(to right, #d97706, #b45309);
+        }
+        .gold-gradient-bg:hover {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+        }
+    </style>
+</head>
+<body class="antialiased bg-neutral-950 text-neutral-100 selection:bg-amber-500 selection:text-neutral-950">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white uppercase">
+                        Barbearia <span class="text-amber-500">Brasil</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#inicio" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Início</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Serviços</a>
+                        <a href="#contato" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Localização</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5511963540833?text=Olá, gostaria de mais informações." 
+                       class="gold-gradient-bg text-white px-6 py-2.5 rounded-lg font-bold uppercase text-sm tracking-wider shadow-lg shadow-amber-900/20 transition-all transform hover:scale-105">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#inicio" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#contato" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/70 to-neutral-950/40"></div>
+            <div class="absolute inset-0 bg-black/30"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-sm font-bold tracking-widest uppercase">São Paulo • SP</span>
+            </div>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight uppercase">
+                Estilo <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Lendário</span>
+            </h1>
+            <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Mais que um corte, uma experiência. A Barbearia Brasil redefine o conceito de cuidados masculinos com precisão e sofisticação.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511963540833?text=Olá, gostaria de agendar um horário." 
+                   class="gold-gradient-bg text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider shadow-xl shadow-amber-900/30 transition-all transform hover:-translate-y-1 hover:shadow-amber-500/20">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" 
+                   class="bg-transparent border border-neutral-600 hover:border-white text-white px-8 py-4 rounded-xl font-bold uppercase tracking-wider transition-all hover:bg-white/5 backdrop-blur-sm">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / About Preview -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl opacity-20 blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Mestre Barbeiro" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div>
+                    <h2 class="font-display text-amber-500 text-lg font-bold tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="font-display text-4xl md:text-5xl font-bold text-white mb-6">Tradição Encontra a Modernidade</h3>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizada em São Paulo, a <strong>Barbearia Brasil</strong> é o refúgio para o homem moderno que não abre mão da qualidade. Oferecemos um ambiente exclusivo, onde cada detalhe foi pensado para o seu conforto.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais Altamente Qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos Premium Importados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente Climatizado e Relaxante
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511963540833?text=Olá, gostaria de conhecer a barbearia." class="text-amber-500 font-bold uppercase tracking-wider border-b-2 border-amber-500 pb-1 hover:text-amber-400 transition-colors">
+                        Fale Conosco <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">O Que Oferecemos</span>
+                <h2 class="font-display text-4xl md:text-5xl font-bold text-white mt-2">Serviços Especializados</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-3">Corte Moderno</h3>
+                    <p class="text-neutral-400 mb-6">Degradês, cortes clássicos ou as últimas tendências. Nossos barbeiros dominam todas as técnicas.</p>
+                    <a href="https://wa.me/5511963540833?text=Olá, quero agendar um Corte." class="inline-block text-sm font-bold text-white uppercase tracking-wider bg-neutral-800 py-2 px-4 rounded-lg group-hover:bg-amber-600 transition-colors">
+                        Agendar
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">Toalha quente, navalha afiada e óleos essenciais. O ritual completo para uma barba impecável.</p>
+                    <a href="https://wa.me/5511963540833?text=Olá, quero agendar uma Barba." class="inline-block text-sm font-bold text-white uppercase tracking-wider bg-neutral-800 py-2 px-4 rounded-lg group-hover:bg-amber-600 transition-colors">
+                        Agendar
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group p-8 rounded-2xl bg-neutral-950 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-crown text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-3">Combo Brasil</h3>
+                    <p class="text-neutral-400 mb-6">A experiência completa: Corte + Barba + Sobrancelha. Saia renovado e pronto para qualquer ocasião.</p>
+                    <a href="https://wa.me/5511963540833?text=Olá, quero agendar o Combo Brasil." class="inline-block text-sm font-bold text-white uppercase tracking-wider bg-neutral-800 py-2 px-4 rounded-lg group-hover:bg-amber-600 transition-colors">
+                        Agendar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contato" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form & Info -->
+                <div>
+                    <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Entre em Contato</span>
+                    <h2 class="font-display text-4xl font-bold text-white mt-2 mb-8">Agende Sua Visita</h2>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-white font-bold">Telefone / WhatsApp</p>
+                                <p class="text-neutral-400">(11) 96354-0833</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-white font-bold">Localização</p>
+                                <p class="text-neutral-400">São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-white font-bold">Horário de Atendimento</p>
+                                <p class="text-neutral-400">Atendimento com hora marcada.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Intelligent Form -->
+                    <form id="contactForm" class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-2xl">
+                        <div class="mb-6">
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Digite seu nome">
+                        </div>
+                        <div class="mb-6">
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option>Corte de Cabelo</option>
+                                <option>Barba</option>
+                                <option>Corte + Barba</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Alguma preferência de horário?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full gold-gradient-bg text-white font-bold py-4 rounded-xl uppercase tracking-wider hover:opacity-90 transition-opacity shadow-lg">
+                            Enviar via WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl relative">
+                     <iframe width="100%" height="100%" style="min-height: 500px; filter: grayscale(100%) invert(92%) contrast(83%); border:0;" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Conjunto%20Promprar%20-%20R.%20Clara%20Nunes%2C%20148%20-%20estrada%20da%20Parada%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2002873-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+                     
+                     <!-- Map Overlay Card -->
+                     <div class="absolute bottom-6 left-6 right-6 bg-neutral-950/90 backdrop-blur-md p-4 rounded-xl border border-neutral-800 hidden sm:block">
+                         <p class="text-white font-bold text-sm"><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i> R. Clara Nunes, 148 - São Paulo</p>
+                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="flex items-center gap-3 mb-4 md:mb-0">
+                    <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white uppercase">
+                        Barbearia <span class="text-amber-500">Brasil</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                    <a href="https://wa.me/5511963540833" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 text-center">
+                <p class="text-neutral-600 text-sm">
+                    &copy; 2023 Barbearia Brasil. Todos os direitos reservados. Design Elite.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511963540833?text=Olá, gostaria de agendar um horário." 
+       class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-2xl shadow-green-900/50 transition-all transform hover:scale-110 flex items-center justify-center w-16 h-16">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- Script para Formulário WhatsApp -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            var fullMessage = "Olá, me chamo " + name + ". Tenho interesse em: " + service + ". " + msg;
+            
+            var url = "https://wa.me/5511963540833?text=" + encodeURIComponent(fullMessage);
+            
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
