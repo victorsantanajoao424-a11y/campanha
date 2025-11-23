@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBEARIA MARQUES - Estilo e Tradição em São Paulo</title>
+    <link rel="icon" type="image/x-icon" href="https://via.placeholder.com/32x32/FFD700/000000?text=BM">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d97706;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-neutral-950/80 shadow-lg border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text hover:from-amber-300 hover:to-amber-500 transition-all duration-300">
+                BARBEARIA MARQUES
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-6 rounded-lg shadow-md transition-all duration-300 hidden md:block">
+                Agendar Horário
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900/90 backdrop-blur-sm py-4 border-t border-neutral-800">
+            <div class="flex flex-col items-center space-y-4">
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300 py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300 py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300 py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300 py-2" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+                <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-6 rounded-lg shadow-md transition-all duration-300 w-fit">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center justify-center text-center px-6 pt-24 pb-12">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1595475207221-428b2064906d?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text drop-shadow-lg">
+                BARBEARIA MARQUES
+            </h1>
+            <p class="text-neutral-300 text-xl md:text-2xl mb-10 max-w-2xl mx-auto">
+                Onde a Tradição Encontra a Modernidade. Seu estilo elevado, em cada corte e barba.
+            </p>
+            <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center group">
+                <i class="fab fa-whatsapp text-xl mr-3 group-hover:animate-bounce"></i> Agende seu Horário
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold mb-6 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">
+                    Sobre a Barbearia Marques
+                </h2>
+                <p class="text-neutral-400 leading-relaxed mb-6">
+                    Na Barbearia Marques, em São Paulo, cultivamos a arte da barbearia com paixão e precisão. Nascemos da visão de resgatar a elegância clássica, combinando-a com as tendências contemporâneas. Cada cliente é único, e nossa missão é traduzir sua personalidade em um estilo impecável.
+                </p>
+                <p class="text-neutral-400 leading-relaxed">
+                    Com uma equipe de barbeiros experientes e um ambiente sofisticado, garantimos uma experiência de cuidado e relaxamento inigualável. Venha descobrir o que nos torna a escolha preferida de quem busca excelência e um toque de luxo em seus cuidados pessoais.
+                </p>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                <img src="https://images.unsplash.com/photo-1610061320308-417c88b71d99?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da Barbearia Marques" class="w-full h-96 object-cover transform hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">
+                Nossos Serviços Exclusivos
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Clássico</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Um corte preciso e atemporal, feito sob medida para o seu estilo. Inclui lavagem e finalização.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 80</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar um Corte Clássico." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-beard text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Modelada</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Modelagem e contorno da barba com toalha quente, espuma e produtos de alta qualidade.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 70</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar uma Barba Modelada." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-scissors text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Combo Completo</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Corte de cabelo e barba completa. A experiência Marques para um visual renovado.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 130</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar o Combo Completo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-head-side-mask text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Tratamento Capilar</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Hidratação profunda e tratamento para saúde e brilho dos seus cabelos.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 60</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar um Tratamento Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-brush text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Coloração Masculina</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Retoque de cor ou mudança de visual com produtos específicos para homens.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 150</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar uma Coloração Masculina." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote exclusivo para o noivo, com corte, barba, tratamento e relaxamento.
+                    </p>
+                    <span class="text-3xl font-bold text-amber-500 block mb-4">R$ 350</span>
+                    <a href="https://wa.me/5511998828125?text=Olá, gostaria de agendar o Pacote Dia do Noivo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition-all duration-300">
+                        Agendar
+                    </a>
+                </div>
+            </div>
+            <div class="mt-16">
+                <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações sobre os serviços." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl shadow-xl transition-all duration-300 transform hover:scale-105 inline-flex items-center group">
+                    <i class="fab fa-whatsapp text-xl mr-3 group-hover:animate-bounce"></i> Fale Conosco para Dúvidas
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold mb-12 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">
+                Nossa Arte em Imagens
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1596464871902-15f1f744837b?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo detalhado" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">Corte Detalhado</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1549491681-cb722137937e?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">A Arte do Barbeiro</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1574632007204-c36140411d51?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da barbearia com cadeiras" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">Nosso Ambiente</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1560066984-1380957cd7d9?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente recebendo serviço de barba" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">Experiência Premium</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1559863777-628f80456108?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ferramentas de barbeiro" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">Nossas Ferramentas</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden shadow-lg border border-neutral-800 group">
+                    <img src="https://images.unsplash.com/photo-1555982105-d25ee7543ae6?q=80&w=2574&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro finalizando corte" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                        <p class="text-neutral-100 font-semibold">Toque Final</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-center mb-12 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">
+                Entre em Contato
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Informações de Contato</h3>
+                    <div class="space-y-6 text-neutral-400">
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-xl"></i>
+                            Av. Grande São Paulo, 110 - Parque Brasil, São Paulo - SP, 04843-040
+                        </p>
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-phone-alt text-amber-500 mr-4 text-xl"></i>
+                            <a href="tel:+5511998828125" class="hover:text-amber-500 transition-colors duration-300">(11) 99882-8125</a>
+                        </p>
+                        <p class="flex items-center text-lg">
+                            <i class="fab fa-whatsapp text-amber-500 mr-4 text-xl"></i>
+                            <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition-colors duration-300">Converse conosco no WhatsApp</a>
+                        </p>
+                        <p class="flex items-center text-lg">
+                            <i class="fas fa-clock text-amber-500 mr-4 text-xl"></i>
+                            Horário de Funcionamento: Verifique nossa disponibilidade via WhatsApp
+                        </p>
+                    </div>
+                    <div class="mt-10">
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Encontre-nos no Mapa</h3>
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Grande%20S%C3%A3o%20Paulo%2C%20110%20-%20Parque%20Brasil%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004843-040%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #262626;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-400 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full p-3 rounded-md bg-neutral-800 border border-neutral-700 focus:border-amber-500 focus:ring focus:ring-amber-500 focus:ring-opacity-50 text-neutral-100 placeholder-neutral-500 transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-neutral-400 text-sm font-medium mb-2">Seu Email (Opcional)</label>
+                            <input type="email" id="email" name="email"
+                                class="w-full p-3 rounded-md bg-neutral-800 border border-neutral-700 focus:border-amber-500 focus:ring focus:ring-amber-500 focus:ring-opacity-50 text-neutral-100 placeholder-neutral-500 transition-all duration-300">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-400 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required
+                                class="w-full p-3 rounded-md bg-neutral-800 border border-neutral-700 focus:border-amber-500 focus:ring focus:ring-amber-500 focus:ring-opacity-50 text-neutral-100 placeholder-neutral-500 transition-all duration-300"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-lg shadow-md transition-all duration-300 transform hover:scale-105 inline-flex items-center justify-center group">
+                            <i class="fab fa-whatsapp text-xl mr-3 group-hover:animate-bounce"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="mb-6">
+                <a href="#hero" class="text-3xl font-bold bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text hover:from-amber-300 hover:to-amber-500 transition-all duration-300">
+                    BARBEARIA MARQUES
+                </a>
+            </div>
+            <p class="mb-4">Av. Grande São Paulo, 110 - Parque Brasil, São Paulo - SP, 04843-040</p>
+            <p class="mb-4">Telefone: <a href="tel:+5511998828125" class="hover:text-amber-500 transition-colors duration-300">(11) 99882-8125</a></p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://wa.me/5511998828125?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p>&copy; 2023 BARBEARIA MARQUES. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // JavaScript for Contact Form WhatsApp redirection
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var message = document.getElementById('message').value;
+            var whatsappMessage = "Olá, me chamo " + name + ". " + message;
+            var url = "https://wa.me/5511998828125?text=" + encodeURIComponent(whatsappMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
