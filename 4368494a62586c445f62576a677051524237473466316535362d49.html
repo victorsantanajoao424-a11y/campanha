@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Cruzeiro | Estilo & Tradição em SP</title>
+    <meta name="description" content="Barbearia Cruzeiro em São Paulo. Cortes modernos, barba tradicional e ambiente exclusivo. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .text-shadow {
+            text-shadow: 0 4px 6px rgba(0,0,0,0.5);
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold tracking-wide text-neutral-100">BARBEARIA <span class="text-amber-500">CRUZEIRO</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Início</a>
+                        <a href="#servicos" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Serviços</a>
+                        <a href="#sobre" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Sobre</a>
+                        <a href="#contato" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-bold shadow-lg shadow-amber-900/20 transition-all transform hover:scale-105">
+                            Agendar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="https://wa.me/5511968352786?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Agendar pelo WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                São Paulo • SP
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight text-shadow">
+                Excelência em <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Cada Detalhe</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 mb-10 font-light">
+                A Barbearia Cruzeiro redefine o conceito de cuidado masculino. Ambiente exclusivo, profissionais de elite e o estilo que você merece.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511968352786?text=Olá, gostaria de agendar um horário." class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-xl text-lg font-bold transition-all shadow-lg shadow-amber-900/40 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-neutral-800/50 hover:bg-neutral-800 text-white border border-neutral-700 px-8 py-4 rounded-xl text-lg font-medium backdrop-blur-sm transition-all">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Info Strip -->
+    <div class="bg-neutral-900 border-y border-neutral-800 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+                <div class="p-4">
+                    <i class="fa-solid fa-location-dot text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Localização Premium</h3>
+                    <p class="text-neutral-400 text-sm mt-2">Cidade Dutra, São Paulo</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-star text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Profissionais de Elite</h3>
+                    <p class="text-neutral-400 text-sm mt-2">Especialistas em cortes modernos</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-couch text-amber-500 text-2xl mb-3"></i>
+                    <h3 class="text-lg font-bold text-white">Ambiente Confortável</h3>
+                    <p class="text-neutral-400 text-sm mt-2">Relaxe enquanto cuidamos de você</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-wider uppercase text-sm mb-2">O Que Oferecemos</h2>
+                <h3 class="text-4xl font-serif font-bold text-white">Serviços Especializados</h3>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-500/20"></div>
+                    <i class="fa-solid fa-scissors text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Do clássico ao degradê moderno. Nossos barbeiros dominam todas as técnicas para valorizar seu estilo.</p>
+                    <a href="https://wa.me/5511968352786?text=Olá, gostaria de agendar um Corte de Cabelo." class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-500/20"></div>
+                    <i class="fa-solid fa-face-smile text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba & Bigode</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Barboterapia com toalha quente, alinhamento perfeito e hidratação. O cuidado que sua barba merece.</p>
+                    <a href="https://wa.me/5511968352786?text=Olá, gostaria de agendar Barba." class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-24 h-24 bg-amber-500/10 rounded-bl-full -mr-4 -mt-4 transition-all group-hover:bg-amber-500/20"></div>
+                    <i class="fa-solid fa-spray-can text-4xl text-amber-500 mb-6"></i>
+                    <h4 class="text-xl font-bold text-white mb-3">Química & Tratamentos</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Selagem, pigmentação, hidratação profunda e relaxamento. Renove seu visual completo.</p>
+                    <a href="https://wa.me/5511968352786?text=Olá, gostaria de saber mais sobre Químicas." class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/5511968352786?text=Olá, gostaria de ver a tabela de preços completa." class="inline-block border border-neutral-700 text-neutral-300 hover:text-white hover:border-amber-500 px-8 py-3 rounded-xl transition-all">
+                    Consultar Tabela de Preços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Image Split -->
+    <section id="sobre" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-2 border-l-2 border-amber-500 rounded-tl-3xl z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-2 border-r-2 border-amber-500 rounded-br-3xl z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative z-10 rounded-2xl shadow-2xl shadow-black grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover h-[500px]">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-amber-500 font-bold tracking-wider uppercase text-sm mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Mais que um corte, <br>uma experiência.</h3>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Na <strong>Barbearia Cruzeiro</strong>, acreditamos que o momento do corte é sagrado. Localizados no coração da Cidade Dutra, trouxemos um conceito que une a barbearia clássica com as tendências mais modernas de São Paulo.
+                    </p>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Nossa equipe é treinada para oferecer não apenas um serviço, mas uma consultoria de imagem. Aqui, você relaxa, toma uma bebida gelada e sai com a autoestima renovada.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de alta qualidade
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente climatizado e higienizado
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Atendimento personalizado
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5511968352786?text=Olá, gostaria de conhecer a barbearia." class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-3 rounded-xl font-bold transition-all shadow-lg shadow-amber-900/20">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="py-20 relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-neutral-950/90"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Pronto para elevar seu visual?</h2>
+            <p class="text-neutral-400 text-lg mb-10">Não deixe para a última hora. Garanta seu horário com os melhores profissionais da região.</p>
+            <a href="https://wa.me/5511968352786?text=Olá, quero reservar meu horário agora." class="inline-block bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-white text-xl font-bold px-10 py-4 rounded-full shadow-xl shadow-amber-900/30 transform hover:scale-105 transition-all">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Reservar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-wider uppercase text-sm mb-2">Contato</h2>
+                <h3 class="text-4xl font-serif font-bold text-white">Onde Estamos</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Map -->
+                <div class="space-y-8">
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800">
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="bg-neutral-800 p-3 rounded-lg text-amber-500">
+                                <i class="fa-solid fa-map-pin text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Endereço</h4>
+                                <p class="text-neutral-400">R. Quesnel, 94 - Cidade Dutra<br>São Paulo - SP, 04803-050</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4 mb-6">
+                            <div class="bg-neutral-800 p-3 rounded-lg text-amber-500">
+                                <i class="fa-solid fa-phone text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Telefone / WhatsApp</h4>
+                                <p class="text-neutral-400">(11) 96835-2786</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="bg-neutral-800 p-3 rounded-lg text-amber-500">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Horário de Funcionamento</h4>
+                                <p class="text-neutral-400">Consulte disponibilidade via WhatsApp.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-lg">
+                        <iframe width="100%" height="350" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Quesnel%2C%2094%20-%20Cidade%20Dutra%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004803-050%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800">
+                    <h3 class="text-2xl font-bold text-white mb-2">Envie uma Mensagem</h3>
+                    <p class="text-neutral-400 mb-8">Preencha os dados abaixo para iniciar seu atendimento via WhatsApp.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors placeholder-neutral-600" placeholder="João Silva">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Corte + Barba">Combo: Corte + Barba</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors placeholder-neutral-600" placeholder="Gostaria de agendar para sexta-feira..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-amber-900/20 flex items-center justify-center gap-2">
+                            Enviar para WhatsApp <i class="fa-brands fa-whatsapp text-xl"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="flex items-center gap-3 mb-6 md:mb-0">
+                    <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                    <span class="font-serif text-2xl font-bold text-neutral-100">BARBEARIA <span class="text-amber-500">CRUZEIRO</span></span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                    <a href="https://wa.me/5511968352786" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-900 pt-8 text-center md:text-left flex flex-col md:flex-row justify-between items-center text-sm text-neutral-500">
+                <p>&copy; 2023 Barbearia Cruzeiro. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Design Elite.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct the message
+            var fullMessage = "Olá, me chamo " + name + ".";
+            fullMessage += " Tenho interesse em: " + service + ".";
+            if(msg) {
+                fullMessage += " " + msg;
+            }
+            
+            var url = "https://wa.me/5511968352786?text=" + encodeURIComponent(fullMessage);
+            
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
