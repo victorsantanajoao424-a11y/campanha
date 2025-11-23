@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NR BARBEARIA - Experiência Masculina de Alto Padrão em São Paulo</title>
+    <meta name="description" content="NR Barbearia: Serviços especializados de corte e barba em São Paulo. Estilo, precisão e luxo para o homem moderno. Agende seu horário!">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md py-4 shadow-lg border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold tracking-tight">
+                <span class="text-amber-500">NR</span> BARBEARIA
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Home</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/5511949574648?text=Olá, gostaria de agendar um horário na NR Barbearia." class="hidden md:block bg-amber-600 hover:bg-amber-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300">
+                Agendar Agora
+            </a>
+            <button id="mobile-menu-button" class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-neutral-950/95 backdrop-blur-md z-40 flex flex-col items-center justify-center space-y-8">
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-neutral-100 text-3xl">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#home" class="text-neutral-100 text-3xl hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+            <a href="#servicos" class="text-neutral-100 text-3xl hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Serviços</a>
+            <a href="#galeria" class="text-neutral-100 text-3xl hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeria</a>
+            <a href="#contato" class="text-neutral-100 text-3xl hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+            <a href="https://wa.me/5511949574648?text=Olá, gostaria de agendar um horário na NR Barbearia." class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full text-xl transition-colors duration-300">
+                Agendar Agora
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1621607505310-74945d945199?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior de barbearia luxuosa com cadeira vintage" class="absolute inset-0 w-full h-full object-cover object-center brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6 py-20">
+                <h1 class="text-6xl md:text-8xl font-extrabold mb-4 leading-tight gradient-text" style="--tw-gradient-from: #FBBF24; --tw-gradient-to: #D97706;">NR BARBEARIA</h1>
+                <p class="text-2xl md:text-3xl text-neutral-100 mb-8 font-light">Onde o estilo encontra a precisão. Sua experiência masculina de alto padrão em São Paulo.</p>
+                <a href="https://wa.me/5511949574648?text=Olá, gostaria de agendar um horário na NR Barbearia." class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 px-10 rounded-full text-lg md:text-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i> Agendar Horário
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="bg-neutral-900 py-24 border-t border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold mb-6 text-neutral-100">
+                        A <span class="text-amber-500">NR BARBEARIA</span>: Tradição e Inovação
+                    </h2>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-4">
+                        Na NR Barbearia, combinamos a arte clássica da barbearia com as tendências modernas para oferecer uma experiência singular. Cada corte, cada barba, é tratado como uma obra de arte, realizada com precisão e paixão.
+                    </p>
+                    <p class="text-lg text-neutral-400 leading-relaxed">
+                        Nossos profissionais são especializados e dedicados a realçar sua melhor versão, utilizando produtos de alta qualidade em um ambiente sofisticado e acolhedor. Venha descobrir o que significa ter um estilo impecável.
+                    </p>
+                    <a href="https://wa.me/5511949574648?text=Olá, gostaria de saber mais sobre a NR Barbearia." class="inline-block mt-8 bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300">
+                        <i class="fas fa-info-circle mr-2"></i> Saiba Mais
+                    </a>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1599373976691-382025ed984c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro realizando um corte em cliente" class="rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 bg-neutral-950 border-t border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-16 text-neutral-100">
+                    Nossos <span class="text-amber-500">Serviços</span> Especializados
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-cut"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Corte Masculino Premium</h3>
+                        <p class="text-neutral-400 text-center mb-4">Corte personalizado com técnicas modernas e clássicas, incluindo lavagem e finalização.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">A partir de R$ 60</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-beard"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Barba Modelada e Terapia</h3>
+                        <p class="text-neutral-400 text-center mb-4">Modelagem de barba com navalha, toalha quente e produtos para hidratação e pós-barba.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">A partir de R$ 50</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-scissors"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Combo Corte + Barba</h3>
+                        <p class="text-neutral-400 text-center mb-4">A experiência completa de estilo e cuidado para um visual impecável.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">A partir de R$ 100</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-spray-can"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Tratamento Capilar</h3>
+                        <p class="text-neutral-400 text-center mb-4">Hidratação, nutrição e fortalecimento para cabelos saudáveis e brilhantes.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">A partir de R$ 70</p>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-palette"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Coloração e Disfarce</h3>
+                        <p class="text-neutral-400 text-center mb-4">Serviços de coloração e disfarce de fios brancos para um visual natural.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">A partir de R$ 80</p>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-hand-sparkles"></i></div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3 text-center">Dia do Noivo</h3>
+                        <p class="text-neutral-400 text-center mb-4">Pacote exclusivo para o noivo, com todos os cuidados para o grande dia.</p>
+                        <p class="text-amber-500 text-xl font-bold text-center">Preço sob consulta</p>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <a href="https://wa.me/5511949574648?text=Olá, gostaria de saber mais sobre os serviços da NR Barbearia." class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 px-10 rounded-full text-lg md:text-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Serviços
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="bg-neutral-900 py-24 border-t border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-16 text-neutral-100">
+                    Nossa <span class="text-amber-500">Galeria</span> de Estilos
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1555552309-c76085255979?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo moderno" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Corte Clássico</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1582779953942-0f5f74577f1f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barba bem aparada" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Barba Elegante</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1596465487693-4554c3447936?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior de barbearia com produtos" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Ambiente</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1531317112-be0440375a0e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos de barbearia" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Produtos Premium</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1502845244507-b35399589d84?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro com tesoura" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Profissionalismo</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1560066984-1380958a439d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cadeira de barbeiro vintage" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Detalhes</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1557342738-4e207920155b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo com fade" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Fade Perfeito</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1521590832167-733fd7184bc2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro com navalha" class="w-full h-72 object-cover object-center transform group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                            <p class="text-neutral-100 text-lg font-semibold">Acabamento</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section (before Contact) -->
+        <section class="bg-neutral-950 py-20 border-t border-neutral-800 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-neutral-100 mb-6">
+                    Pronto para uma <span class="text-amber-500">Transformação</span>?
+                </h2>
+                <p class="text-xl text-neutral-400 mb-10">
+                    Agende seu horário hoje mesmo e experimente o padrão de excelência da NR Barbearia.
+                </p>
+                <a href="https://wa.me/5511949574648?text=Olá, gostaria de agendar meu horário na NR Barbearia." class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 px-12 rounded-full text-xl shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="bg-neutral-900 py-24 border-t border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-5xl font-bold text-center mb-16 text-neutral-100">
+                    <span class="text-amber-500">Entre</span> em Contato
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div class="bg-neutral-950 rounded-2xl p-8 shadow-xl border border-neutral-800">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Informações de Contato</h3>
+                        <div class="space-y-6 text-lg">
+                            <p class="text-neutral-400 flex items-start"><i class="fas fa-map-marker-alt text-amber-500 mr-4 text-2xl mt-1"></i> Rua Gil de Siloé, 3 - Jardim Angela, São Paulo - SP, 04947-000</p>
+                            <p class="text-neutral-400 flex items-center"><i class="fas fa-phone-alt text-amber-500 mr-4 text-2xl"></i> <a href="tel:+5511949574648" class="hover:text-amber-500 transition-colors duration-300">(11) 94957-4648</a></p>
+                            <p class="text-neutral-400 flex items-center"><i class="fab fa-whatsapp text-amber-500 mr-4 text-2xl"></i> <a href="https://wa.me/5511949574648?text=Olá, gostaria de mais informações sobre a NR Barbearia." class="hover:text-amber-500 transition-colors duration-300">(11) 94957-4648</a></p>
+                            <p class="text-neutral-400 flex items-center"><i class="fas fa-clock text-amber-500 mr-4 text-2xl"></i> Horário de Funcionamento: <span class="text-neutral-100">Não informado - Agende via WhatsApp</span></p>
+                        </div>
+                        <div class="mt-10">
+                            <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Localização</h3>
+                            <!-- Google Maps Iframe -->
+                            <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Rua%20Gil%20de%20Silo%C3%A9%2C%203%20-%20Jardim%20Angela%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004947-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                        </div>
+                    </div>
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-950 rounded-2xl p-8 shadow-xl border border-neutral-800">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-neutral-400 text-sm font-medium mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" required class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-300 placeholder-neutral-500">
+                            </div>
+                            <div>
+                                <label for="phone" class="block text-neutral-400 text-sm font-medium mb-2">Telefone (Opcional)</label>
+                                <input type="tel" id="phone" name="phone" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-300 placeholder-neutral-500">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-neutral-400 text-sm font-medium mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="6" required class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition-colors duration-300 placeholder-neutral-500"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 rounded-lg text-lg transition-colors duration-300 transform hover:scale-105">
+                                <i class="fab fa-whatsapp mr-2"></i> Enviar Mensagem via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#home" class="text-3xl font-bold tracking-tight mb-4 md:mb-0">
+                    <span class="text-amber-500">NR</span> BARBEARIA
+                </a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://wa.me/5511949574648?text=Olá, gostaria de saber mais sobre a NR Barbearia." class="text-neutral-400 hover:text-amber-500 transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/nrbarbearia" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://facebook.com/nrbarbearia" target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <p class="text-neutral-400 text-sm mb-2">&copy; 2023 NR Barbearia. Todos os direitos reservados.</p>
+            <p class="text-neutral-400 text-sm">Rua Gil de Siloé, 3 - Jardim Angela, São Paulo - SP</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and Contact Form -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-mobile-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        // Contact Form WhatsApp Redirect
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var msg = document.getElementById('message').value;
+
+            var whatsappMessage = "Olá, me chamo " + name + ".";
+            if (phone) {
+                whatsappMessage += " Meu telefone é " + phone + ".";
+            }
+            whatsappMessage += " " + msg;
+
+            var url = "https://wa.me/5511949574648?text=" + encodeURIComponent(whatsappMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
