@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr Américo - Unidade Marajoara | Barbearia Premium</title>
+    <meta name="description" content="Mr Américo - Barbearia de elite no Jardim Marajoara, São Paulo. Cortes modernos, barba terapia e serviços especializados. Agende seu horário.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom Gold
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Map Filter */
+        .map-filter {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-neutral-950">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-display text-2xl font-bold tracking-wider text-white uppercase">
+                        Mr <span class="text-amber-500">Américo</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                        <a href="#about" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                        <a href="#services" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Serviços</a>
+                        <a href="#location" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 rounded-md text-sm font-medium">Localização</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5511938078347?text=Olá, gostaria de agendar um horário no Mr Américo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-2 px-6 rounded-full transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)] hover:shadow-[0_0_25px_rgba(245,158,11,0.5)] flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Agendar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#about" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#services" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#location" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+                <a href="https://wa.me/5511938078347?text=Olá, gostaria de agendar um horário." class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Agendar via WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-sm font-semibold tracking-widest mb-6 backdrop-blur-sm uppercase">
+                Unidade Marajoara
+            </span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight">
+                ESTILO & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">TRADIÇÃO</span>
+            </h1>
+            <p class="mt-4 text-xl text-neutral-300 max-w-2xl mx-auto font-light">
+                Mais que um corte, uma experiência. O cuidado que o homem moderno exige com a técnica da barbearia clássica.
+            </p>
+            <div class="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511938078347?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white text-lg font-bold py-4 px-10 rounded-xl transition-all duration-300 shadow-lg hover:shadow-amber-500/20 flex items-center justify-center gap-3">
+                    <i class="fa-regular fa-calendar-check"></i> Agendar Horário
+                </a>
+                <a href="#services" class="bg-neutral-800/50 hover:bg-neutral-800 text-white border border-neutral-600 hover:border-neutral-500 text-lg font-medium py-4 px-10 rounded-xl backdrop-blur-sm transition-all duration-300 flex items-center justify-center">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats / Features Banner -->
+    <div class="bg-neutral-900 border-y border-neutral-800 relative z-20">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-neutral-800">
+                <div class="p-4">
+                    <i class="fa-solid fa-scissors text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-display font-bold text-white">Profissionais Elite</h3>
+                    <p class="text-neutral-400 mt-2 text-sm">Barbeiros especializados em visagismo.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-beer-mug-empty text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-display font-bold text-white">Ambiente Premium</h3>
+                    <p class="text-neutral-400 mt-2 text-sm">Cerveja gelada e ambiente climatizado.</p>
+                </div>
+                <div class="p-4">
+                    <i class="fa-solid fa-star text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-display font-bold text-white">Produtos Top</h3>
+                    <p class="text-neutral-400 mt-2 text-sm">As melhores marcas para seu cabelo e barba.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div>
+                    <h2 class="text-amber-500 font-display font-bold tracking-wider uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">A Excelência que <br>Você Merece</h3>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizado no coração do Jardim Marajoara, o <strong>Mr Américo</strong> não é apenas uma barbearia, é um refúgio para o homem moderno. Combinamos técnicas tradicionais de barbearia com as tendências mais atuais de estilo.
+                    </p>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Nossa missão é elevar sua autoestima através de um serviço impecável, em um ambiente desenhado para o seu conforto e relaxamento.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Atendimento personalizado
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de alta performance
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente descontraído e luxuoso
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511938078347?text=Olá, gostaria de conhecer a barbearia." class="inline-block text-amber-500 font-bold border-b-2 border-amber-500 pb-1 hover:text-amber-400 hover:border-amber-400 transition-colors">
+                        Fale Conosco <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-display font-bold tracking-wider uppercase mb-2">Nossos Serviços</h2>
+                <h3 class="text-4xl font-bold text-white">Menu de Especialidades</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3">Corte Premium</h4>
+                    <p class="text-neutral-400 mb-6">Consultoria de visagismo, lavagem especial, corte preciso e finalização com produtos de elite.</p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-xl">Consulte</span>
+                        <a href="https://wa.me/5511938078347?text=Gostaria de agendar um Corte Premium." class="text-sm text-neutral-300 hover:text-white uppercase font-semibold tracking-wide">Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-mask text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3">Barba Terapia</h4>
+                    <p class="text-neutral-400 mb-6">Toalha quente, óleos essenciais, esfoliação facial e um barbear suave e relaxante.</p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-xl">Consulte</span>
+                        <a href="https://wa.me/5511938078347?text=Gostaria de agendar uma Barba Terapia." class="text-sm text-neutral-300 hover:text-white uppercase font-semibold tracking-wide">Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-crown text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3">Combo Mr Américo</h4>
+                    <p class="text-neutral-400 mb-6">A experiência completa: Corte + Barba Terapia + Sobrancelha + Bebida cortesia.</p>
+                    <div class="flex items-center justify-between border-t border-neutral-800 pt-4">
+                        <span class="text-amber-500 font-bold text-xl">Consulte</span>
+                        <a href="https://wa.me/5511938078347?text=Gostaria de agendar o Combo Mr Américo." class="text-sm text-neutral-300 hover:text-white uppercase font-semibold tracking-wide">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/5511938078347?text=Quais outros serviços vocês oferecem?" class="inline-flex items-center justify-center px-8 py-3 border border-neutral-700 text-base font-medium rounded-md text-neutral-300 bg-transparent hover:bg-neutral-800 hover:text-white transition-all">
+                    Ver Menu Completo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Separator -->
+    <section class="py-20 relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');">
+        <div class="absolute inset-0 bg-neutral-950/90"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-6">Pronto para elevar seu visual?</h2>
+            <p class="text-neutral-300 text-lg mb-8">Não deixe para depois. Garanta seu horário com os melhores profissionais da região.</p>
+            <a href="https://wa.me/5511938078347?text=Olá, quero reservar meu horário agora." class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold text-xl py-4 px-12 rounded-full shadow-lg hover:shadow-amber-500/30 transition-all transform hover:scale-105">
+                <i class="fa-brands fa-whatsapp mr-2"></i> Reservar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="location" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div>
+                    <h2 class="text-amber-500 font-display font-bold tracking-wider uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-6">Fale Conosco</h3>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário abaixo e entraremos em contato via WhatsApp imediatamente para confirmar seu agendamento.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Nome Completo</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Seu nome">
+                        </div>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                                <select id="service" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                    <option>Corte de Cabelo</option>
+                                    <option>Barba</option>
+                                    <option>Combo (Cabelo + Barba)</option>
+                                    <option>Outros</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="date" class="block text-sm font-medium text-neutral-400 mb-2">Data Preferida</label>
+                                <input type="date" id="date" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white placeholder-neutral-600 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Alguma observação especial?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-amber-500/20 transition-all duration-300">
+                            Enviar via WhatsApp <i class="fa-solid fa-paper-plane ml-2"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-10 flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-neutral-900 rounded-full flex items-center justify-center border border-neutral-800">
+                                <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Localização</h4>
+                            <p class="text-neutral-400 mt-1">R. Roque Giangrande Filho, 58<br>Jardim Marajoara, São Paulo - SP</p>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-neutral-900 rounded-full flex items-center justify-center border border-neutral-800">
+                                <i class="fa-solid fa-phone text-amber-500 text-xl"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Telefone / WhatsApp</h4>
+                            <a href="https://wa.me/5511938078347" class="text-neutral-400 mt-1 hover:text-amber-500 transition-colors">(11) 93807-8347</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Roque%20Giangrande%20Filho%2C%2058%20-%20Jardim%20Marajoara%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004674-110%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); min-height: 500px; border:0;"></iframe>
+                    
+                    <!-- Floating Address Card on Map -->
+                    <div class="absolute bottom-6 left-6 right-6 bg-neutral-950/90 backdrop-blur-md p-4 rounded-xl border border-neutral-800 md:w-auto md:inline-block hidden">
+                        <p class="text-white text-sm font-bold"><i class="fa-solid fa-map-pin text-amber-500 mr-2"></i> Unidade Marajoara</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <!-- Brand -->
+                <div>
+                    <a href="#" class="font-display text-3xl font-bold tracking-wider text-white uppercase block mb-4">
+                        Mr <span class="text-amber-500">Américo</span>
+                    </a>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        Barbearia clássica com alma moderna. O destino definitivo para o homem que valoriza estilo, conforto e excelência no Jardim Marajoara.
+                    </p>
+                </div>
+
+                <!-- Links -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Links Rápidos</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#home" class="text-neutral-500 hover:text-amber-500 transition-colors">Início</a></li>
+                        <li><a href="#services" class="text-neutral-500 hover:text-amber-500 transition-colors">Serviços</a></li>
+                        <li><a href="#about" class="text-neutral-500 hover:text-amber-500 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#location" class="text-neutral-500 hover:text-amber-500 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <h4 class="text-white font-bold uppercase tracking-wider mb-6">Horário de Funcionamento</h4>
+                    <ul class="space-y-3">
+                        <li class="flex justify-between text-neutral-500">
+                            <span>Seg - Sex:</span>
+                            <span class="text-white">09:00 - 20:00</span>
+                        </li>
+                        <li class="flex justify-between text-neutral-500">
+                            <span>Sábado:</span>
+                            <span class="text-white">09:00 - 18:00</span>
+                        </li>
+                        <li class="flex justify-between text-neutral-500">
+                            <span>Domingo:</span>
+                            <span class="text-amber-500">Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-neutral-600 text-sm text-center md:text-left">
+                    &copy; 2023 Mr Américo Barbearia. Todos os direitos reservados.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5511938078347?text=Olá, gostaria de mais informações." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-600 hover:bg-green-500 text-white p-4 rounded-full shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all hover:scale-110 flex items-center justify-center w-16 h-16">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Form Handling Logic for WhatsApp Redirection
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture values
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var date = document.getElementById('date').value;
+            var message = document.getElementById('message').value;
+            
+            // Format Date if present
+            var dateStr = date ? " para o dia " + date.split('-').reverse().join('/') : "";
+
+            // Construct Message
+            var text = `Olá! Me chamo *${name}*.\n`;
+            text += `Gostaria de agendar: *${service}*${dateStr}.\n`;
+            if(message) {
+                text += `Observação: ${message}`;
+            }
+            
+            // Build URL
+            var phoneNumber = "5511938078347";
+            var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(text);
+            
+            // Redirect
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
