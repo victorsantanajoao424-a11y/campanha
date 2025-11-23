@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Jorginho 100 Black | Itapecerica da Serra</title>
+    <meta name="description" content="Barbearia de elite em Itapecerica da Serra. Cortes modernos, barba e serviços especializados. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b; 
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-neutral-800 backdrop-blur-md bg-neutral-950/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between py-4">
+                <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="bg-amber-500 text-neutral-950 w-10 h-10 flex items-center justify-center rounded-full font-bold font-serif text-xl">J</div>
+                    <span class="self-center text-2xl font-serif font-bold whitespace-nowrap text-white tracking-wide">JORGINHO <span class="text-amber-500">100 BLACK</span></span>
+                </a>
+                <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <a href="https://wa.me/5511970229461?text=Olá, gostaria de agendar um horário." 
+                       class="text-neutral-950 bg-gradient-to-r from-amber-500 to-amber-400 hover:from-amber-400 hover:to-amber-300 focus:ring-4 focus:outline-none focus:ring-amber-900 font-medium rounded-lg text-sm px-6 py-2.5 text-center transition-all duration-300 shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                    <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-800 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
+                        <li>
+                            <a href="#home" class="block py-2 px-3 text-white bg-amber-500 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Início</a>
+                        </li>
+                        <li>
+                            <a href="#servicos" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Serviços</a>
+                        </li>
+                        <li>
+                            <a href="#sobre" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Sobre</a>
+                        </li>
+                        <li>
+                            <a href="#contato" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Contato</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Dark Luxury" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-amber-500 uppercase tracking-[0.2em] text-sm font-bold mb-4 animate-pulse">Estilo & Precisão</h2>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                A Excelência que <br> Você <span class="text-gradient">Merece</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Bem-vindo à Barbearia Jorginho 100 Black. Onde a tradição da barbearia clássica encontra as tendências modernas em Itapecerica da Serra.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511970229461?text=Olá, gostaria de mais informações sobre os serviços." 
+                   class="text-neutral-950 bg-amber-500 hover:bg-amber-400 font-bold rounded-xl text-lg px-8 py-4 transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.4)]">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="text-white border border-neutral-600 hover:border-amber-500 hover:text-amber-500 bg-neutral-950/50 backdrop-blur-sm font-medium rounded-xl text-lg px-8 py-4 transition-all">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 text-sm font-bold tracking-widest uppercase">O que fazemos</span>
+                <h2 class="text-4xl font-serif font-bold text-white mt-2">Serviços Especializados</h2>
+                <div class="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-neutral-900"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-3">Corte Moderno</h3>
+                    <p class="text-neutral-400 mb-6">Degradê, social, navalhado ou tesoura. Técnicas precisas para o seu estilo único.</p>
+                    <a href="https://wa.me/5511970229461?text=Olá, gostaria de agendar um Corte." class="text-amber-500 font-medium group-hover:text-amber-400 flex items-center">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-neutral-900"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6">Toalha quente, alinhamento perfeito e hidratação. A verdadeira experiência de barbearia.</p>
+                    <a href="https://wa.me/5511970229461?text=Olá, gostaria de agendar Barba." class="text-amber-500 font-medium group-hover:text-amber-400 flex items-center">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-500 transition-colors">
+                        <i class="fa-solid fa-spray-can-sparkles text-2xl text-amber-500 group-hover:text-neutral-900"></i>
+                    </div>
+                    <h3 class="text-2xl font-serif font-bold text-white mb-3">Tratamentos & Química</h3>
+                    <p class="text-neutral-400 mb-6">Pigmentação, platinado, relaxamento e hidratação profunda. Renove o visual.</p>
+                    <a href="https://wa.me/5511970229461?text=Olá, gostaria de saber sobre Químicas." class="text-amber-500 font-medium group-hover:text-amber-400 flex items-center">
+                        Agendar <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Feature Section -->
+    <section id="sobre" class="py-20 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-amber-500/20 rounded-full blur-2xl"></div>
+                    <div class="absolute -bottom-4 -right-4 w-32 h-32 bg-amber-600/20 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Interior Barbearia" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Mais que um corte, uma <span class="text-amber-500">Experiência</span>.</h2>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Na <strong>Jorginho 100 Black</strong>, entendemos que o seu visual é o seu cartão de visitas. Localizados no coração do Jardim Horizonte Azul, oferecemos um ambiente sofisticado, descontraído e pensado para o homem moderno.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais altamente qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de primeira linha
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente climatizado e confortável
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511970229461?text=Olá, gostaria de conhecer a barbearia." class="inline-block bg-neutral-800 hover:bg-neutral-700 text-white font-medium py-3 px-8 rounded-lg border border-neutral-700 transition-colors">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contato" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Form & Info -->
+                <div>
+                    <span class="text-amber-500 text-sm font-bold tracking-widest uppercase">Contato</span>
+                    <h2 class="text-4xl font-serif font-bold text-white mt-2 mb-6">Agende sua Visita</h2>
+                    <p class="text-neutral-400 mb-10">Preencha o formulário abaixo para ser atendido diretamente pelo nosso WhatsApp com prioridade.</p>
+
+                    <form id="whatsappForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Nome Completo</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block p-4 placeholder-neutral-600" placeholder="Seu nome">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço Desejado</label>
+                            <select id="service" class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block p-4">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Combo (Cabelo + Barba)</option>
+                                <option value="Química/Outros">Química / Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block p-4 placeholder-neutral-600" placeholder="Gostaria de agendar para hoje às 18h..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full text-neutral-950 bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-900 font-bold rounded-lg text-lg px-5 py-4 text-center transition-all">
+                            Enviar via WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+
+                    <div class="mt-10 flex flex-col space-y-4">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-neutral-900 border border-neutral-800 text-amber-500">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-white">Telefone / WhatsApp</p>
+                                <p class="text-neutral-400">(11) 97022-9461</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <div class="flex items-center justify-center h-10 w-10 rounded-full bg-neutral-900 border border-neutral-800 text-amber-500">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                            </div>
+                            <div class="ml-4">
+                                <p class="text-sm font-medium text-white">Endereço</p>
+                                <p class="text-neutral-400">R. Agatino de Esparta, 72 B - Jardim Horizonte Azul<br>Itapecerica da Serra - SP</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl relative bg-neutral-900">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Agatino%20de%20Esparta%2C%2072%20B%20-%20Jardim%20Horizonte%20Azul%2C%20Itapecerica%20da%20Serra%20-%20SP%2C%2004963-130%2C%20Brasil%2C%20Itapecerica%20da%20Serra&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border:0; min-height: 450px;" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <h2 class="text-2xl font-serif font-bold text-white">JORGINHO <span class="text-amber-500">100 BLACK</span></h2>
+                    <p class="text-neutral-500 text-sm mt-2">Estilo e tradição em cada detalhe.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
+                    <a href="https://wa.me/5511970229461" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fa-brands fa-whatsapp text-2xl"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-8 text-center">
+                <p class="text-neutral-600 text-sm">&copy; 2023 Barbearia Jorginho 100 Black. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Logic Script -->
+    <script>
+        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var messageInput = document.getElementById('message').value;
+            
+            // Construct the message
+            var finalMessage = "Olá, me chamo " + name + ". Gostaria de agendar um horário para: " + service + ".";
+            
+            if(messageInput.trim() !== "") {
+                finalMessage += " Obs: " + messageInput;
+            }
+            
+            // Redirect to WhatsApp
+            var url = "https://wa.me/5511970229461?text=" + encodeURIComponent(finalMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
