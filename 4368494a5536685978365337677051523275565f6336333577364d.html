@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Tarantino | Barba, Cabelo, Tattoo & Chopp</title>
+    <meta name="description" content="Barbearia Tarantino em São Paulo. Cortes clássicos, barba, estúdio de tatuagem, piercing e cerveja gelada. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom gold
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706; 
+        }
+        
+        /* Map Filter */
+        .map-container iframe {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+            border-radius: 1rem;
+            border: 1px solid #262626;
+        }
+
+        /* Smooth Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4 md:px-8">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-serif font-bold whitespace-nowrap text-white tracking-wider">
+                    TARANTINO<span class="text-amber-500">.</span>
+                </span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="https://wa.me/551133845530?text=Olá, gostaria de agendar um horário." target="_blank" class="hidden md:inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium text-neutral-950 bg-amber-500 rounded-xl hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-900 transition-all shadow-[0_0_15px_rgba(245,158,11,0.3)]">
+                    <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                </a>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-600" aria-controls="navbar-sticky" aria-expanded="false" id="menu-toggle">
+                    <span class="sr-only">Abrir menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-800 rounded-lg bg-neutral-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white bg-amber-600 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Início</a>
+                    </li>
+                    <li>
+                        <a href="#servicos" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#tattoo" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Tattoo & Piercing</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="block py-2 px-3 text-neutral-300 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+            <div class="absolute inset-0 bg-neutral-950/30 backdrop-blur-[2px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 text-center reveal active">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-xs font-bold tracking-[0.2em] uppercase">São Paulo • Zona Sul</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif font-bold text-white mb-6 leading-tight tracking-tight">
+                ESTILO <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700">TARANTINO</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                Mais que uma barbearia. Um refúgio de cavalheiros. Barba, cabelo, tatuagem, piercing e cerveja gelada em um ambiente exclusivo.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/551133845530?text=Olá, gostaria de agendar um horário." target="_blank" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-neutral-950 bg-gradient-to-r from-amber-500 to-amber-600 rounded-xl hover:from-amber-400 hover:to-amber-500 transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                    AGENDAR HORÁRIO
+                </a>
+                <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border border-neutral-700 bg-neutral-900/50 backdrop-blur-sm rounded-xl hover:bg-neutral-800 transition-all">
+                    NOSSOS SERVIÇOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section -->
+    <section class="py-20 bg-neutral-950 border-b border-neutral-900">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+                <div class="p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-600/30 transition-colors reveal">
+                    <i class="fas fa-cut text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Cortes Clássicos</h3>
+                    <p class="text-sm text-neutral-500">Do old school ao moderno, executado com maestria.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-600/30 transition-colors reveal">
+                    <i class="fas fa-beer text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Chopp & Cerveja</h3>
+                    <p class="text-sm text-neutral-500">Relaxe com uma bebida premium enquanto espera.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-600/30 transition-colors reveal">
+                    <i class="fas fa-dragon text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Tatuagem</h3>
+                    <p class="text-sm text-neutral-500">Artistas residentes prontos para sua próxima arte.</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-neutral-900/50 border border-neutral-800 hover:border-amber-600/30 transition-colors reveal">
+                    <i class="fas fa-ring text-4xl text-amber-500 mb-4"></i>
+                    <h3 class="text-xl font-serif text-white mb-2">Piercing</h3>
+                    <p class="text-sm text-neutral-500">Aplicação profissional com biossegurança total.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-4">MENU DE SERVIÇOS</h2>
+                <div class="h-1 w-24 bg-amber-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group relative bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <div class="absolute top-0 right-0 bg-neutral-800 text-amber-500 text-xs font-bold px-3 py-1 rounded-bl-xl rounded-tr-xl">POPULAR</div>
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Tesoura, máquina ou navalha. Lavagem inclusa e finalização com produtos premium.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Consultar</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de agendar um Corte de Cabelo." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Toalha quente, esfoliação, modelagem e hidratação profunda. A experiência completa.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Consultar</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de agendar uma Barba." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Combo Tarantino</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Cabelo + Barba + Sobrancelha. O pacote completo para renovar o visual.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Consultar</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de agendar o Combo Tarantino." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Acabamento (Pezinho)</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Manutenção do contorno e limpeza do pescoço para manter o corte em dia.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Consultar</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de agendar um Acabamento." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div id="tattoo" class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Tatuagem</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Trabalhos autorais, realismo, old school e fineline. Orçamento sob medida.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Sob Consulta</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de orçar uma Tatuagem." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2 reveal">
+                    <h3 class="text-2xl font-serif text-white mb-2 group-hover:text-amber-500 transition-colors">Body Piercing</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Jóias em titânio e aço cirúrgico. Perfuração segura e asséptica.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-lg font-bold text-white">Consultar</span>
+                        <a href="https://wa.me/551133845530?text=Gostaria de informações sobre Piercing." target="_blank" class="text-amber-500 hover:text-white transition-colors"><i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vibe Section -->
+    <section class="py-20 relative bg-fixed bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1634480491893-19e40366d123?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-neutral-950/80"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center reveal">
+            <i class="fas fa-glass-cheers text-5xl text-amber-500 mb-6"></i>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">BAR & LOUNGE</h2>
+            <p class="text-xl text-neutral-300 mb-8">
+                Na Barbearia Tarantino, a experiência vai além do corte. Desfrute de cervejas artesanais, chopp gelado e um ambiente descontraído para encontrar os amigos.
+            </p>
+            <a href="https://wa.me/551133845530?text=Quero saber mais sobre a barbearia." target="_blank" class="inline-block px-8 py-3 border-2 border-amber-500 text-amber-500 font-bold rounded-xl hover:bg-amber-500 hover:text-neutral-950 transition-all">
+                CONHECER O ESPAÇO
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Form & Info -->
+                <div class="space-y-8 reveal">
+                    <div>
+                        <h2 class="text-4xl font-serif font-bold text-white mb-2">ENTRE EM CONTATO</h2>
+                        <p class="text-neutral-400">Agende seu horário ou tire suas dúvidas diretamente pelo WhatsApp.</p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neutral-900 p-3 rounded-lg text-amber-500">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Endereço</h4>
+                                <p class="text-sm text-neutral-400">R. Américo Brasiliense, 1729 - Loja 02<br>Chácara Santo Antônio, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-neutral-900 p-3 rounded-lg text-amber-500">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Telefone</h4>
+                                <p class="text-sm text-neutral-400">(11) 3384-5530</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 text-sm font-medium text-white">Seu Nome</label>
+                            <input type="text" id="name" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3 placeholder-neutral-600" placeholder="Ex: João Silva" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="service" class="block mb-2 text-sm font-medium text-white">Serviço de Interesse</label>
+                            <select id="service" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Tatuagem">Tatuagem</option>
+                                <option value="Piercing">Piercing</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block mb-2 text-sm font-medium text-white">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3 placeholder-neutral-600" placeholder="Gostaria de agendar para sexta-feira..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-neutral-950 bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-900 font-bold rounded-xl text-sm px-5 py-4 text-center transition-all">
+                            ENVIAR VIA WHATSAPP <i class="fab fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 map-container reveal delay-100">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Am%C3%A9rico%20Brasiliense%2C%201729%20-%20Loja%2002%20-%20Ch%C3%A1cara%20Santo%20Ant%C3%B4nio%20(Zona%20Sul)%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004715-005%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12">
+        <div class="max-w-7xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <span class="text-2xl font-serif font-bold text-white tracking-wider">
+                    TARANTINO<span class="text-amber-500">.</span>
+                </span>
+                <p class="text-sm text-neutral-500 mt-2">© 2023 Barbearia Tarantino. Todos os direitos reservados.</p>
+            </div>
+            <div class="flex space-x-6">
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                <a href="https://wa.me/551133845530" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // 1. Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarSticky = document.getElementById('navbar-sticky');
+        
+        menuToggle.addEventListener('click', () => {
+            navbarSticky.classList.toggle('hidden');
+        });
+
+        // 2. Contact Form Logic (Intercept & Redirect to WhatsApp)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var message = document.getElementById('message').value;
+            
+            // Construct the message
+            var fullMessage = `Olá, me chamo *${name}*.\nTenho interesse em: *${service}*.\n\n${message}`;
+            
+            // Redirect
+            var url = "https://wa.me/551133845530?text=" + encodeURIComponent(fullMessage);
+            window.open(url, '_blank');
+        });
+
+        // 3. Scroll Reveal Animation
+        function reveal() {
+            var reveals = document.querySelectorAll(".reveal");
+            for (var i = 0; i < reveals.length; i++) {
+                var windowHeight = window.innerHeight;
+                var elementTop = reveals[i].getBoundingClientRect().top;
+                var elementVisible = 150;
+                if (elementTop < windowHeight - elementVisible) {
+                    reveals[i].classList.add("active");
+                }
+            }
+        }
+        window.addEventListener("scroll", reveal);
+        reveal(); // Trigger once on load
+    </script>
+</body>
+</html>
