@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tenet Barber Shop | São Paulo</title>
+    <meta name="description" content="Barbearia de elite em São Paulo. Cortes modernos, barba e serviços especializados.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Glassmorphism Utility */
+        .glass {
+            background: rgba(10, 10, 10, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Map Filter */
+        .map-container iframe {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+            border-radius: 1rem;
+            border: 1px solid #333;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-neutral-950">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 cursor-pointer">
+                    <a href="#" class="text-2xl font-serif font-bold tracking-wider text-white">
+                        TENET <span class="text-amber-500">.</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Serviços</a>
+                        <a href="#contato" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Contato</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-neutral-950 font-bold py-2 px-6 rounded-full transition-all transform hover:scale-105 shadow-lg shadow-amber-500/20">
+                        Agendar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#contato" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Contato</a>
+                <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar um horário." class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Agendar Horário</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-sm font-semibold tracking-widest mb-6 uppercase backdrop-blur-sm">
+                São Paulo • Premium Cuts
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Estilo que define <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Sua Personalidade</span>
+            </h1>
+            <p class="text-neutral-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Na Tenet Barber Shop, unimos a tradição da barbearia clássica com técnicas modernas para entregar a melhor versão de você mesmo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-xl transition-all shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-xl"></i> Agendar Visita
+                </a>
+                <a href="#servicos" class="bg-transparent border border-neutral-700 hover:border-neutral-500 text-neutral-300 hover:text-white font-semibold py-4 px-8 rounded-xl transition-all flex items-center justify-center">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 w-full object-cover h-[500px]">
+                    <div class="absolute -bottom-6 -right-6 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-xl hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="text-amber-500 text-4xl">
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg">Qualidade Premium</p>
+                                <p class="text-neutral-400 text-sm">Serviço Garantido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Quem Somos</h2>
+                    <h3 class="text-4xl md:text-5xl font-serif font-bold text-white mb-6">A Arte de Cuidar <br>do Visual Masculino</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Localizada no coração de São Paulo, a Tenet Barber Shop não é apenas um lugar para cortar o cabelo. É um refúgio para o homem moderno que valoriza excelência, conforto e um bom atendimento.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Nossos profissionais são mestres em visagismo e técnicas de corte, garantindo que cada cliente saia da cadeira com a autoestima renovada e um visual impecável.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500"></i> Ambiente Climatizado e Moderno
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500"></i> Produtos de Alta Performance
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5511961689190?text=Olá, gostaria de saber mais sobre a barbearia." target="_blank" class="text-amber-500 font-bold hover:text-amber-400 transition-colors inline-flex items-center gap-2 group">
+                        Falar com um Especialista <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Nossos Serviços</h2>
+                <h3 class="text-4xl font-serif font-bold text-white mb-4">Experiências Exclusivas</h3>
+                <p class="text-neutral-400">Oferecemos um menu completo de serviços especializados para cuidar da sua imagem com a precisão que você exige.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-cut text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte Moderno & Clássico</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Do degradê perfeito ao corte social clássico. Consultoria de visagismo inclusa para encontrar o estilo ideal para seu rosto.</p>
+                    <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar um Corte de Cabelo." class="text-amber-500 text-sm font-bold uppercase tracking-wider hover:text-white transition-colors">Agendar Corte</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba Terapia</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Ritual completo com toalha quente, esfoliação, hidratação e modelagem precisa da barba com navalha.</p>
+                    <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar uma Barba Terapia." class="text-amber-500 text-sm font-bold uppercase tracking-wider hover:text-white transition-colors">Agendar Barba</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group hover:-translate-y-2 duration-300">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-spray-can text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Pigmentação & Acabamento</h4>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">Correção de falhas, pigmentação capilar e de barba, sobrancelha e acabamentos detalhados para um visual sharp.</p>
+                    <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar uma Pigmentação." class="text-amber-500 text-sm font-bold uppercase tracking-wider hover:text-white transition-colors">Agendar Serviço</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Parallax -->
+    <section class="relative py-24 flex items-center justify-center bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-neutral-950/80"></div>
+        <div class="relative z-10 text-center px-6">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Pronto para elevar seu nível?</h2>
+            <p class="text-neutral-300 text-lg mb-8 max-w-2xl mx-auto">Não deixe seu visual para depois. Garanta seu horário com os melhores profissionais da região.</p>
+            <a href="https://wa.me/5511961689190?text=Olá, gostaria de agendar um horário." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-2xl border border-amber-500/20">
+                Reservar Meu Horário
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Map -->
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Localização</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Onde Estamos</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0 border border-neutral-800">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Endereço</h4>
+                                <p class="text-neutral-400">Rua Dr. Sérgio Gonçalves Chaddad, 154<br>Jardim Dabril, São Paulo - SP</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0 border border-neutral-800">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Contato</h4>
+                                <p class="text-neutral-400"><a href="tel:+5511961689190" class="hover:text-amber-500 transition">(11) 96168-9190</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0 border border-neutral-800">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Horário de Funcionamento</h4>
+                                <p class="text-neutral-400">Consulte disponibilidade via WhatsApp</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Iframe -->
+                    <div class="map-container w-full h-[300px] md:h-[400px] rounded-2xl overflow-hidden shadow-lg border border-neutral-800">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Rua%20Dr.%20S%C3%A9rgio%20Gon%C3%A7alves%20Chaddad%2C%20154%20-%20Jardim%20Dabril%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005848-040%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800 shadow-2xl">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Entre em Contato</h3>
+                    <p class="text-neutral-400 mb-8">Preencha os dados abaixo para iniciar seu atendimento via WhatsApp.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Como podemos te chamar?">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                <option value="Pigmentação">Pigmentação</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Alguma preferência de horário ou dúvida?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-neutral-950 font-bold py-4 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
+                            Enviar via WhatsApp <i class="fab fa-whatsapp text-lg"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-12">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="#" class="text-3xl font-serif font-bold tracking-wider text-white">
+                        TENET <span class="text-amber-500">.</span>
+                    </a>
+                    <p class="text-neutral-500 mt-2 text-sm">Excelência em barbearia masculina.</p>
+                </div>
+                
+                <div class="flex space-x-6">
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/5511961689190" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-600">
+                <p>&copy; 2023 Tenet Barber Shop. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Design by Elite Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Redirection Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Format the message
+            var text = "Olá! Me chamo *" + name + "*. \n";
+            text += "Gostaria de informações sobre: *" + service + "*. \n";
+            if(msg) {
+                text += "Mensagem adicional: " + msg;
+            }
+            
+            // Construct URL
+            var url = "https://wa.me/5511961689190?text=" + encodeURIComponent(text);
+            
+            // Redirect
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
