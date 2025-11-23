@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nana's Barber | Barbearia Premium em Itapecerica da Serra</title>
+    <meta name="description" content="A melhor barbearia de Itapecerica da Serra. Cortes modernos, barba e serviços especializados. Agende seu horário no Nana's Barber.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Custom Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            450: '#f59e0b', // Custom gold
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Utility for image overlay */
+        .image-overlay {
+            background: linear-gradient(to top, #0a0a0a 10%, rgba(10,10,10,0.6) 50%, rgba(10,10,10,0.2) 100%);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-neutral-800 bg-neutral-950/80 backdrop-blur-md">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-display font-bold whitespace-nowrap text-white tracking-wider uppercase">
+                    Nana's <span class="text-amber-500">Barber</span>
+                </span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="https://wa.me/5511966552085?text=Olá, gostaria de agendar um horário." 
+                   class="text-neutral-950 bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300 uppercase tracking-wide">
+                   <i class="fa-brands fa-whatsapp mr-2"></i> Agendar
+                </a>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none" aria-controls="navbar-sticky" aria-expanded="false" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                    <span class="sr-only">Abrir menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="mobile-menu">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-800 rounded-lg bg-neutral-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                    <li>
+                        <a href="#" class="block py-2 px-3 text-white bg-amber-600 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Início</a>
+                    </li>
+                    <li>
+                        <a href="#servicos" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">A Barbearia</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barber Shop Background" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <p class="text-amber-500 font-display tracking-[0.2em] uppercase mb-4 text-sm md:text-base animate-fade-in-up">Estilo & Tradição em Itapecerica</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight uppercase drop-shadow-2xl">
+                Nana's <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Barber</span>
+            </h1>
+            <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Mais do que um corte, uma experiência de alto nível. Cuidamos do seu visual com precisão, em um ambiente exclusivo e sofisticado.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511966552085?text=Olá, gostaria de agendar um horário." class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-neutral-950 bg-amber-500 rounded-full hover:bg-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.3)] uppercase tracking-wider">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white border border-neutral-600 rounded-full hover:bg-neutral-800 hover:border-neutral-500 transition-all duration-300 uppercase tracking-wider">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-display text-lg tracking-widest uppercase mb-2">O que fazemos de melhor</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase">Serviços Especializados</h3>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mt-6 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3 uppercase">Corte Moderno</h4>
+                    <p class="text-neutral-400 mb-6">Técnicas avançadas de tesoura e máquina para um visual que combina com seu estilo e personalidade.</p>
+                    <a href="https://wa.me/5511966552085?text=Gostaria de saber o valor do Corte." class="text-amber-500 font-bold text-sm uppercase tracking-wider hover:text-amber-400 flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-face-smile text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3 uppercase">Barba Terapia</h4>
+                    <p class="text-neutral-400 mb-6">O ritual clássico com toalha quente, óleos essenciais e navalha afiada para um acabamento perfeito.</p>
+                    <a href="https://wa.me/5511966552085?text=Gostaria de saber o valor da Barba." class="text-amber-500 font-bold text-sm uppercase tracking-wider hover:text-amber-400 flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-spray-can-sparkles text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-2xl font-display font-bold text-white mb-3 uppercase">Acabamentos</h4>
+                    <p class="text-neutral-400 mb-6">Pezinho, sobrancelha e pigmentação para realçar os traços e garantir um visual impecável.</p>
+                    <a href="https://wa.me/5511966552085?text=Gostaria de saber mais sobre acabamentos." class="text-amber-500 font-bold text-sm uppercase tracking-wider hover:text-amber-400 flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Atmosphere Section -->
+    <section id="sobre" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-500 rounded-tl-3xl z-0"></div>
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-500 rounded-br-3xl z-0"></div>
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1976&auto=format&fit=crop" alt="Interior Barbearia" class="relative z-10 rounded-2xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover h-[500px]">
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-amber-500 font-display text-lg tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase mb-6">Excelência em cada detalhe</h3>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                        Localizada no coração do Jardim Jacira, a <strong>Nana's Barber</strong> é referência em Itapecerica da Serra. Combinamos a tradição da barbearia clássica com as tendências mais modernas do mercado.
+                    </p>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        Nosso ambiente foi pensado para que você relaxe, tome uma bebida gelada e saia com a autoestima renovada. Aqui, o cliente não é apenas um número, é um amigo.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente climatizado
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de alta qualidade
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5511966552085?text=Quero conhecer a barbearia." class="inline-block bg-transparent border-2 border-amber-500 text-amber-500 hover:bg-amber-500 hover:text-neutral-950 font-bold py-3 px-8 rounded-lg transition-all duration-300 uppercase tracking-wider">
+                        Fale Conosco
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Booking Section -->
+    <section id="contato" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-amber-500 font-display text-lg tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-display font-bold text-white uppercase mb-8">Agende sua Visita</h3>
+                    
+                    <div class="space-y-8">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center border border-neutral-800 shrink-0">
+                                <i class="fa-solid fa-location-dot text-amber-500 text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h4 class="text-xl font-display font-bold text-white mb-1">Localização</h4>
+                                <p class="text-neutral-400">R. Vitória Régia, 25 - Jardim Jacira</p>
+                                <p class="text-neutral-400">Itapecerica da Serra - SP, 06864-040</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center border border-neutral-800 shrink-0">
+                                <i class="fa-brands fa-whatsapp text-amber-500 text-xl"></i>
+                            </div>
+                            <div class="ml-6">
+                                <h4 class="text-xl font-display font-bold text-white mb-1">WhatsApp</h4>
+                                <p class="text-neutral-400 mb-2">Agendamento rápido e fácil.</p>
+                                <a href="https://wa.me/5511966552085?text=Olá, gostaria de informações." class="text-amber-500 font-bold hover:text-amber-400 transition-colors text-lg">
+                                    (11) 96655-2085
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Map Container -->
+                        <div class="mt-8 rounded-2xl overflow-hidden border border-neutral-800 shadow-lg h-[300px]">
+                            <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Vit%C3%B3ria%20R%C3%A9gia%2C%2025%20-%20Jardim%20Jacira%2C%20Itapecerica%20da%20Serra%20-%20SP%2C%2006864-040%2C%20Brasil%2C%20Itapecerica%20da%20Serra&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%);"></iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800 shadow-2xl">
+                    <h3 class="text-2xl font-display font-bold text-white uppercase mb-6">Solicitar Horário</h3>
+                    <form id="bookingForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-neutral-400">Seu Nome</label>
+                            <input type="text" id="name" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4 placeholder-neutral-600" placeholder="Digite seu nome" required>
+                        </div>
+                        <div>
+                            <label for="service" class="block mb-2 text-sm font-medium text-neutral-400">Serviço Desejado</label>
+                            <select id="service" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                <option value="Acabamento">Acabamento</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="preference" class="block mb-2 text-sm font-medium text-neutral-400">Dia/Horário de Preferência</label>
+                            <input type="text" id="preference" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4 placeholder-neutral-600" placeholder="Ex: Sexta à tarde" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium text-neutral-400">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="bg-neutral-950 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4 placeholder-neutral-600" placeholder="Alguma observação especial?"></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-neutral-950 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-800 font-bold rounded-lg text-lg px-5 py-4 text-center transition-all duration-300 uppercase tracking-wide shadow-lg">
+                            Enviar pelo WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <span class="text-3xl font-display font-bold text-white uppercase tracking-wider">
+                        Nana's <span class="text-amber-500">Barber</span>
+                    </span>
+                    <p class="text-neutral-500 mt-2 text-sm">Estilo e confiança em cada corte.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <!-- Social Placeholders -->
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl"><i class="fa-brands fa-facebook"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-600">
+                <p>&copy; 2023 Nana's Barber. Todos os direitos reservados.</p>
+                <p class="mt-2 md:mt-0">Design by Elite Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Form Script -->
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture values
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var preference = document.getElementById('preference').value;
+            var userMsg = document.getElementById('message').value;
+            
+            // Construct Message
+            var text = `*Novo Agendamento - Site*\n\n`;
+            text += `👤 *Nome:* ${name}\n`;
+            text += `✂️ *Serviço:* ${service}\n`;
+            text += `📅 *Preferência:* ${preference}\n`;
+            if(userMsg) {
+                text += `💬 *Obs:* ${userMsg}`;
+            }
+            
+            // Redirect
+            var url = "https://wa.me/5511966552085?text=" + encodeURIComponent(text);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
