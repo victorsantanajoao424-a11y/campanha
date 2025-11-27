@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronks Barbear Shop - Estilo e Tradição em São Paulo</title>
+    <meta name="description" content="A melhor barbearia de Cidade Ipava, São Paulo. Cortes modernos, barba e serviços especializados. Agende seu horário.">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Tailwind Config (Shadcn UI Theme Simulation) -->
+    <script>
+        tailwind.config = {
+            darkMode: ["class"],
+            theme: {
+                container: {
+                    center: true,
+                    padding: "2rem",
+                    screens: {
+                        "2xl": "1400px",
+                    },
+                },
+                extend: {
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"],
+                    },
+                    colors: {
+                        border: "hsl(var(--border))",
+                        input: "hsl(var(--input))",
+                        ring: "hsl(var(--ring))",
+                        background: "hsl(var(--background))",
+                        foreground: "hsl(var(--foreground))",
+                        primary: {
+                            DEFAULT: "hsl(var(--primary))",
+                            foreground: "hsl(var(--primary-foreground))",
+                        },
+                        secondary: {
+                            DEFAULT: "hsl(var(--secondary))",
+                            foreground: "hsl(var(--secondary-foreground))",
+                        },
+                        destructive: {
+                            DEFAULT: "hsl(var(--destructive))",
+                            foreground: "hsl(var(--destructive-foreground))",
+                        },
+                        muted: {
+                            DEFAULT: "hsl(var(--muted))",
+                            foreground: "hsl(var(--muted-foreground))",
+                        },
+                        accent: {
+                            DEFAULT: "hsl(var(--accent))",
+                            foreground: "hsl(var(--accent-foreground))",
+                        },
+                        popover: {
+                            DEFAULT: "hsl(var(--popover))",
+                            foreground: "hsl(var(--popover-foreground))",
+                        },
+                        card: {
+                            DEFAULT: "hsl(var(--card))",
+                            foreground: "hsl(var(--card-foreground))",
+                        },
+                    },
+                    borderRadius: {
+                        lg: "var(--radius)",
+                        md: "calc(var(--radius) - 2px)",
+                        sm: "calc(var(--radius) - 4px)",
+                    },
+                    keyframes: {
+                        "accordion-down": {
+                            from: { height: 0 },
+                            to: { height: "var(--radix-accordion-content-height)" },
+                        },
+                        "accordion-up": {
+                            from: { height: "var(--radix-accordion-content-height)" },
+                            to: { height: 0 },
+                        },
+                    },
+                    animation: {
+                        "accordion-down": "accordion-down 0.2s ease-out",
+                        "accordion-up": "accordion-up 0.2s ease-out",
+                    },
+                },
+            },
+        }
+    </script>
+
+    <!-- CSS Variables (Shadcn UI Default) -->
+    <style>
+        :root {
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+            
+            /* Primary Color: Blue-600 equivalent for vibrant trust */
+            --primary: 221.2 83.2% 53.3%;
+            --primary-foreground: 210 40% 98%;
+            
+            --secondary: 210 40% 96.1%;
+            --secondary-foreground: 222.2 47.4% 11.2%;
+            
+            --muted: 210 40% 96.1%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            
+            --accent: 210 40% 96.1%;
+            --accent-foreground: 222.2 47.4% 11.2%;
+            
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+            
+            --radius: 0.5rem;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground antialiased selection:bg-primary/20">
+
+    <!-- Header -->
+    <header class="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+        <div class="container flex h-16 max-w-screen-xl items-center justify-between px-4">
+            <div class="flex items-center gap-2">
+                <!-- Logo Icon -->
+                <div class="bg-primary text-primary-foreground p-1.5 rounded-md">
+                    <i data-lucide="scissors" class="h-5 w-5"></i>
+                </div>
+                <span class="text-xl font-bold tracking-tight text-slate-900">Bronks<span class="text-primary">Barbear</span></span>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-muted-foreground">
+                <a href="#servicos" class="hover:text-foreground transition-colors">Serviços</a>
+                <a href="#sobre" class="hover:text-foreground transition-colors">Sobre</a>
+                <a href="#depoimentos" class="hover:text-foreground transition-colors">Depoimentos</a>
+            </nav>
+
+            <a href="https://wa.me/5511954328285?text=Olá, vi o site e gostaria de agendar." target="_blank" 
+               class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-9 px-4 py-2">
+                Agendar Agora
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="relative py-20 md:py-32 lg:py-36 overflow-hidden">
+            <!-- Background element -->
+            <div class="absolute inset-0 -z-10 h-full w-full bg-white bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:6rem_4rem] opacity-30"></div>
+            <div class="absolute bottom-0 left-0 right-0 top-0 bg-[radial-gradient(circle_800px_at_100%_200px,#d5c5ff,transparent)] opacity-20"></div>
+
+            <div class="container px-4 md:px-6 relative z-10">
+                <div class="flex flex-col items-center space-y-4 text-center">
+                    <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80">
+                        Nova Experiência em Cidade Ipava
+                    </div>
+                    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl max-w-4xl text-slate-900">
+                        Seu estilo define <br class="hidden sm:inline" />
+                        <span class="text-primary">sua atitude.</span>
+                    </h1>
+                    <p class="mx-auto max-w-[700px] text-muted-foreground md:text-xl leading-relaxed">
+                        Cortes modernos, barbas impecáveis e um ambiente pensado para você relaxar. Venha conhecer a Bronks Barbear Shop.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 min-[400px]:flex-row pt-4">
+                        <a href="https://wa.me/5511954328285?text=Olá, vi o site e gostaria de agendar." target="_blank"
+                           class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-11 px-8">
+                            <i data-lucide="calendar-check" class="mr-2 h-4 w-4"></i>
+                            Agendar Horário
+                        </a>
+                        <a href="#servicos"
+                           class="inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground h-11 px-8">
+                            Ver Serviços
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features / Services Section -->
+        <section id="servicos" class="py-16 md:py-24 bg-slate-50/50 border-y border-border/50">
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Nossos Serviços</h2>
+                    <p class="max-w-[900px] text-muted-foreground md:text-lg/relaxed lg:text-base/relaxed xl:text-lg/relaxed">
+                        Qualidade premium e atenção aos detalhes em cada serviço.
+                    </p>
+                </div>
+                
+                <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 max-w-6xl mx-auto">
+                    <!-- Service Card 1 -->
+                    <div class="group rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                        <div class="p-6 space-y-4">
+                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <i data-lucide="scissors" class="h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Corte de Cabelo</h3>
+                            <p class="text-muted-foreground">Do clássico ao degradê moderno. Nossos barbeiros são especialistas em visagismo e tendências.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="group rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                        <div class="p-6 space-y-4">
+                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <i data-lucide="user" class="h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Barba & Bigode</h3>
+                            <p class="text-muted-foreground">Modelagem completa, toalha quente e produtos premium para hidratar e alinhar os fios.</p>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="group rounded-xl border border-border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:-translate-y-1">
+                        <div class="p-6 space-y-4">
+                            <div class="inline-flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
+                                <i data-lucide="sparkles" class="h-6 w-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold">Selagem & Tratamentos</h3>
+                            <p class="text-muted-foreground">Tratamentos capilares para manter seu cabelo saudável, alinhado e com brilho.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Proof -->
+        <section id="depoimentos" class="py-16 md:py-24 bg-background">
+            <div class="container px-4 md:px-6">
+                <div class="flex flex-col items-center justify-center space-y-4 text-center mb-12">
+                    <h2 class="text-3xl font-bold tracking-tighter">O que dizem nossos clientes</h2>
+                </div>
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-3 max-w-5xl mx-auto">
+                    <!-- Review 1 -->
+                    <div class="rounded-lg border bg-card p-6 shadow-sm">
+                        <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-muted-foreground mb-4">"Melhor barbearia da região de Cidade Ipava. O atendimento é nota 10 e o corte ficou exatamente como eu queria."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold">CS</div>
+                            <div>
+                                <p class="text-sm font-semibold leading-none">Carlos Silva</p>
+                                <p class="text-xs text-muted-foreground">Cliente Fiel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 2 -->
+                    <div class="rounded-lg border bg-card p-6 shadow-sm">
+                        <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-muted-foreground mb-4">"Ambiente top, profissionais qualificados. A barba na toalha quente é sensacional. Recomendo demais!"</p>
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold">RA</div>
+                            <div>
+                                <p class="text-sm font-semibold leading-none">Rafael Almeida</p>
+                                <p class="text-xs text-muted-foreground">Cliente Mensal</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Review 3 -->
+                    <div class="rounded-lg border bg-card p-6 shadow-sm">
+                        <div class="flex items-center gap-1 text-yellow-500 mb-4">
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                            <i data-lucide="star" class="h-4 w-4 fill-current"></i>
+                        </div>
+                        <p class="text-muted-foreground mb-4">"Profissionalismo total. Marquei pelo WhatsApp, fui atendido na hora. Serviço rápido e de qualidade."</p>
+                        <div class="flex items-center gap-3">
+                            <div class="h-10 w-10 rounded-full bg-slate-200 flex items-center justify-center text-slate-500 font-bold">JP</div>
+                            <div>
+                                <p class="text-sm font-semibold leading-none">João Paulo</p>
+                                <p class="text-xs text-muted-foreground">Cliente Novo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact -->
+        <section class="py-16 md:py-24 bg-slate-50 border-t border-border">
+            <div class="container px-4 md:px-6">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                    
+                    <!-- Contact Form & Info -->
+                    <div class="space-y-8">
+                        <div>
+                            <h2 class="text-3xl font-bold tracking-tight mb-4">Visite a Bronks Barbear</h2>
+                            <p class="text-muted-foreground">
+                                Estamos localizados no coração de Cidade Ipava. Preencha o formulário para agendar diretamente pelo WhatsApp ou venha nos visitar.
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-primary mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Endereço</h4>
+                                    <p class="text-muted-foreground text-sm">Av. Taquandava, 32 - Cidade Ipava<br>São Paulo - SP, 04950-000</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-3">
+                                <i data-lucide="phone" class="h-5 w-5 text-primary mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Contato</h4>
+                                    <p class="text-muted-foreground text-sm">(11) 95432-8285</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Form -->
+                        <div class="rounded-xl border bg-card text-card-foreground shadow-sm p-6">
+                            <h3 class="font-semibold text-lg mb-4">Agendamento Rápido</h3>
+                            <form id="bookingForm" class="space-y-4">
+                                <div class="space-y-2">
+                                    <label for="name" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Nome</label>
+                                    <input type="text" id="name" required placeholder="Seu nome" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50">
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="service" class="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70">Serviço</label>
+                                    <select id="service" class="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2">
+                                        <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                        <option value="Barba">Barba</option>
+                                        <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                        <option value="Outro">Outro</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="w-full inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground shadow hover:bg-primary/90 h-10 px-4 py-2">
+                                    <i data-lucide="message-circle" class="mr-2 h-4 w-4"></i>
+                                    Enviar para WhatsApp
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="h-full min-h-[400px] w-full rounded-xl overflow-hidden border border-border shadow-md bg-slate-200">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" class="w-full h-full grayscale-[20%] hover:grayscale-0 transition-all duration-500"
+                        src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Taquandava%2C%2032%20-%20Cidade%20Ipava%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2004950-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t bg-white">
+        <div class="container flex flex-col items-center justify-between gap-4 py-10 md:h-24 md:flex-row md:py-0">
+            <div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+                <i data-lucide="scissors" class="h-6 w-6 text-primary"></i>
+                <p class="text-center text-sm leading-loose text-muted-foreground md:text-left">
+                    &copy; 2023 Bronks Barbear Shop. Todos os direitos reservados.
+                </p>
+            </div>
+            <div class="flex gap-4">
+                <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground">Instagram</a>
+                <a href="#" class="text-sm font-medium text-muted-foreground hover:text-foreground">Facebook</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Render Icons
+        lucide.createIcons();
+
+        // Form Logic for WhatsApp
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const service = document.getElementById('service').value;
+            
+            // Format message
+            const message = `Olá, me chamo *${name}*. Gostaria de agendar um horário para *${service}*.`;
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Redirect
+            const whatsappUrl = `https://wa.me/5511954328285?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        });
+    </script>
+</body>
+</html>
