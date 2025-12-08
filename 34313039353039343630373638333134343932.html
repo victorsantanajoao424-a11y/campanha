@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. Hair Club | Barbearia de Elite no Rio de Janeiro</title>
+    <meta name="description" content="Mr. Hair Club - Barbearia premium em Copacabana, Rio de Janeiro. Cortes modernos, barba e serviços especializados.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        
+        /* Text Gradient */
+        .text-gradient {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-display text-2xl font-bold tracking-wider uppercase text-white">
+                        Mr. Hair <span class="text-amber-500">Club</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Serviços</a>
+                        <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2.5 rounded-lg text-sm font-semibold transition-all shadow-lg shadow-amber-900/20">
+                            Agendar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <a href="https://wa.me/552125230926?text=Olá, gostaria de agendar um horário." class="text-amber-500 hover:text-white p-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-900/80 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Rio de Janeiro • Copacabana
+            </span>
+            <h1 class="font-display text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 tracking-tight leading-tight">
+                ESTILO & <br>
+                <span class="text-gradient">TRADIÇÃO</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-400 mb-10 font-light">
+                Mais que um corte, uma experiência. O Mr. Hair Club oferece serviços especializados para o homem moderno que não abre mão da excelência.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/552125230926?text=Olá, gostaria de agendar um horário no Mr. Hair Club." class="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white transition-all duration-200 bg-amber-600 font-display uppercase tracking-wider rounded-lg hover:bg-amber-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-600 focus:ring-offset-neutral-900">
+                    Agendar Horário
+                    <i class="fa-solid fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                </a>
+                <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-neutral-300 transition-all duration-200 bg-transparent border border-neutral-700 font-display uppercase tracking-wider rounded-lg hover:bg-neutral-800 hover:text-white hover:border-neutral-500 focus:outline-none">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-2xl"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 w-full object-cover h-[500px]">
+                    
+                    <div class="absolute -bottom-6 -right-6 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-xl hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-amber-600/10 p-3 rounded-full">
+                                <i class="fa-solid fa-star text-amber-500 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg">Excelência</p>
+                                <p class="text-neutral-400 text-sm">Serviço Premium</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-white mb-6 uppercase tracking-wide">
+                        Sobre o <span class="text-amber-500">Mr. Hair Club</span>
+                    </h2>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizada no coração de Copacabana, somos referência em cuidados masculinos no Rio de Janeiro. Combinamos técnicas clássicas de barbearia com as tendências mais modernas do visagismo.
+                    </p>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Nosso ambiente foi projetado para ser seu refúgio: relaxe, tome uma bebida gelada e deixe nossa equipe de especialistas cuidar do seu visual com a precisão que você merece.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-10">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais Altamente Qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente Climatizado e Exclusivo
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de Primeira Linha
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/552125230926?text=Olá, gostaria de saber mais sobre a barbearia." class="text-amber-500 font-bold hover:text-amber-400 transition-colors inline-flex items-center uppercase tracking-wider text-sm">
+                        Fale Conosco <i class="fa-solid fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 relative">
+        <!-- Decorative elements -->
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold text-white mb-4 uppercase tracking-wide">Nossos <span class="text-amber-500">Serviços</span></h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Experiências personalizadas para elevar sua autoestima e estilo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3 uppercase">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        Do clássico ao moderno, nossos barbeiros dominam todas as técnicas para entregar o corte perfeito para o seu formato de rosto.
+                    </p>
+                    <a href="https://wa.me/552125230926?text=Olá, gostaria de agendar um Corte de Cabelo." class="text-amber-500 text-sm font-bold uppercase tracking-wider group-hover:text-amber-400">Agendar <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3 uppercase">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        Modelagem precisa, toalha quente e óleos essenciais. O ritual completo para uma barba impecável e pele saudável.
+                    </p>
+                    <a href="https://wa.me/552125230926?text=Olá, gostaria de agendar um serviço de Barba." class="text-amber-500 text-sm font-bold uppercase tracking-wider group-hover:text-amber-400">Agendar <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-gem text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-white mb-3 uppercase">Combo Mr. Hair</h3>
+                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
+                        A experiência completa: Corte + Barba + Sobrancelha. Saia renovado com nosso tratamento VIP completo.
+                    </p>
+                    <a href="https://wa.me/552125230926?text=Olá, gostaria de agendar o Combo Mr. Hair." class="text-amber-500 text-sm font-bold uppercase tracking-wider group-hover:text-amber-400">Agendar <i class="fa-solid fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Vibe Section -->
+    <section class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 h-[600px] md:h-[400px]">
+                <div class="md:col-span-1 h-full relative group overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ferramentas de barbeiro">
+                    <div class="absolute inset-0 bg-neutral-950/40 group-hover:bg-neutral-950/20 transition-colors"></div>
+                </div>
+                <div class="md:col-span-1 h-full relative group overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1634480687108-76906a2e4148?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Cadeira de barbeiro">
+                    <div class="absolute inset-0 bg-neutral-950/40 group-hover:bg-neutral-950/20 transition-colors"></div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <h3 class="font-display text-3xl font-bold text-white uppercase tracking-widest drop-shadow-lg">Atmosfera</h3>
+                    </div>
+                </div>
+                <div class="md:col-span-1 h-full relative group overflow-hidden rounded-2xl">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Homem cortando cabelo">
+                    <div class="absolute inset-0 bg-neutral-950/40 group-hover:bg-neutral-950/20 transition-colors"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contato" class="py-24 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                
+                <!-- Contact Info & Form -->
+                <div>
+                    <h2 class="font-display text-4xl font-bold text-white mb-2 uppercase tracking-wide">Entre em <span class="text-amber-500">Contato</span></h2>
+                    <p class="text-neutral-400 mb-8">Agende seu horário ou tire suas dúvidas.</p>
+
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-neutral-800 rounded-lg flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-bold">Localização</h4>
+                                <p class="text-neutral-400 text-sm">Rua Djalma Ulrich, 163 - Copacabana<br>Rio de Janeiro - RJ, 22071-020</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-10 h-10 bg-neutral-800 rounded-lg flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-bold">Telefone</h4>
+                                <a href="https://wa.me/552125230926?text=Olá" class="text-neutral-400 text-sm hover:text-amber-500 transition-colors">(21) 2523-0926</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smart Form -->
+                    <form id="contactForm" class="space-y-4 bg-neutral-950 p-8 rounded-2xl border border-neutral-800">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-1">Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder-neutral-600" placeholder="Seu nome">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-1">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Combo Completo">Combo Completo</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-1">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="3" class="w-full bg-neutral-900 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-all placeholder-neutral-600" placeholder="Preferência de horário, dúvidas..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-lg uppercase tracking-wider transition-all shadow-lg shadow-amber-900/20 flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Rua%20Djalma%20Ulrich%2C%20163%20-%20Copacabana%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022071-020%2C%20Brasil%2C%20Rio%20de%20Janeiro&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0; min-height: 500px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="font-display text-2xl font-bold tracking-wider uppercase text-white">
+                        Mr. Hair <span class="text-amber-500">Club</span>
+                    </a>
+                    <p class="text-neutral-500 text-sm mt-2">Estilo e tradição em Copacabana.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/552125230926" class="text-neutral-400 hover:text-amber-500 transition-colors">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors">
+                        <i class="fa-brands fa-instagram text-2xl"></i>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors">
+                        <i class="fa-brands fa-facebook text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 text-center">
+                <p class="text-neutral-600 text-sm">&copy; 2023 Mr. Hair Club. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Form Logic -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            var fullMessage = "Olá, me chamo *" + name + "*.";
+            fullMessage += " Gostaria de informações sobre *" + service + "*.";
+            
+            if(msg) {
+                fullMessage += " " + msg;
+            }
+
+            var url = "https://wa.me/552125230926?text=" + encodeURIComponent(fullMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
