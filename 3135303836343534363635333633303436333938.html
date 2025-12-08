@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Gonçalves no Savassi | Estilo & Tradição</title>
+    <meta name="description" content="A melhor barbearia da Savassi, Belo Horizonte. Cortes modernos, barba terapia e ambiente exclusivo. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-neutral-800 backdrop-blur-md bg-neutral-950/80">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between px-6 py-4">
+            <a href="#" class="flex items-center space-x-2 rtl:space-x-reverse">
+                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                <span class="self-center text-2xl font-bold whitespace-nowrap text-white tracking-wide">GONÇALVES <span class="text-amber-500 text-sm font-light tracking-widest block -mt-1">SAVASSI</span></span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="https://wa.me/553132616029?text=Olá, gostaria de agendar um horário." 
+                   class="text-white bg-amber-600 hover:bg-amber-500 focus:ring-4 focus:outline-none focus:ring-amber-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center transition-all duration-300 shadow-lg shadow-amber-900/20">
+                    <i class="fa-brands fa-whatsapp mr-2"></i>Agendar Agora
+                </a>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none" aria-controls="navbar-sticky" aria-expanded="false">
+                    <span class="sr-only">Abrir menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-800 rounded-lg bg-neutral-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white bg-amber-600 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Início</a>
+                    </li>
+                    <li>
+                        <a href="#servicos" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">A Barbearia</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Interior Barbearia" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Belo Horizonte • Savassi
+            </span>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Excelência em <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Cada Detalhe</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                A Barbearia Gonçalves traz o equilíbrio perfeito entre a barbearia clássica e o estilo moderno. Uma experiência única no coração da Savassi.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/553132616029?text=Olá, gostaria de agendar um horário." class="inline-flex items-center justify-center px-8 py-4 text-base font-bold text-neutral-950 bg-amber-500 rounded-xl hover:bg-amber-400 transition-all duration-300 shadow-[0_0_20px_rgba(245,158,11,0.3)]">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="inline-flex items-center justify-center px-8 py-4 text-base font-medium text-white border border-neutral-700 rounded-xl hover:bg-neutral-800 hover:border-neutral-600 transition-all duration-300 backdrop-blur-sm">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl border border-neutral-800 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Mais que um corte, <span class="text-amber-500">uma experiência.</span></h2>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Localizada na região nobre da Savassi, a Barbearia Gonçalves é o refúgio do homem moderno. Combinamos técnicas tradicionais com tendências contemporâneas para entregar um visual impecável.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Nosso ambiente foi projetado para o seu conforto. Cerveja gelada, boa conversa e profissionais altamente qualificados esperando por você.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Localização Premium</h4>
+                                <p class="text-sm text-neutral-500">Coração da Savassi</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-neutral-900 border border-neutral-800 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-star text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Profissionais Elite</h4>
+                                <p class="text-sm text-neutral-500">Especialistas em estilo</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-sm font-bold tracking-widest text-amber-500 uppercase mb-2">Nossos Serviços</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">Menu de Estilo</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                            <i class="fa-solid fa-cut text-2xl"></i>
+                        </div>
+                        <span class="text-amber-500 font-bold text-xl">R$ Consulte</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Do clássico ao degradê moderno. Inclui lavagem e finalização com produtos premium.</p>
+                    <a href="https://wa.me/553132616029?text=Olá, gostaria de agendar um Corte de Cabelo." class="text-sm font-bold text-white hover:text-amber-500 uppercase tracking-wider flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                            <i class="fa-solid fa-spray-can text-2xl"></i>
+                        </div>
+                        <span class="text-amber-500 font-bold text-xl">R$ Consulte</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba Terapia</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Toalha quente, esfoliação e hidratação. O cuidado que sua barba merece.</p>
+                    <a href="https://wa.me/553132616029?text=Olá, gostaria de agendar uma Barba." class="text-sm font-bold text-white hover:text-amber-500 uppercase tracking-wider flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group p-8 bg-neutral-950 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-amber-900/10">
+                    <div class="flex justify-between items-start mb-6">
+                        <div class="w-14 h-14 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                            <i class="fa-solid fa-user-tie text-2xl"></i>
+                        </div>
+                        <span class="text-amber-500 font-bold text-xl">R$ Consulte</span>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Combo Gonçalves</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Corte + Barba + Sobrancelha. O pacote completo para renovar o visual.</p>
+                    <a href="https://wa.me/553132616029?text=Olá, gostaria de agendar o Combo Gonçalves." class="text-sm font-bold text-white hover:text-amber-500 uppercase tracking-wider flex items-center gap-2">
+                        Agendar <i class="fa-solid fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/553132616029?text=Olá, gostaria de ver a tabela completa de preços." class="inline-block border-b border-amber-500 text-amber-500 pb-1 hover:text-amber-400 transition-colors">
+                    Ver tabela completa de serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery/Vibe Section -->
+    <section class="py-24 bg-neutral-950 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Nosso Espaço</h2>
+                <p class="text-neutral-400 mt-2">Ambiente climatizado e exclusivo.</p>
+            </div>
+            <div class="hidden md:block">
+                <a href="https://wa.me/553132616029" class="text-amber-500 hover:text-white transition-colors">Siga no Instagram <i class="fa-brands fa-instagram ml-2"></i></a>
+            </div>
+        </div>
+        
+        <!-- Scrolling Gallery -->
+        <div class="flex space-x-4 overflow-x-auto pb-8 px-6 md:justify-center scrollbar-hide">
+            <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e84?q=80&w=600&auto=format&fit=crop" class="h-64 md:h-80 w-auto rounded-xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 object-cover" alt="Ambiente 1">
+            <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=600&auto=format&fit=crop" class="h-64 md:h-80 w-auto rounded-xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 object-cover" alt="Ambiente 2">
+            <img src="https://images.unsplash.com/photo-1635273051937-93c4d3063ceb?q=80&w=600&auto=format&fit=crop" class="h-64 md:h-80 w-auto rounded-xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 object-cover" alt="Ambiente 3">
+            <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=600&auto=format&fit=crop" class="h-64 md:h-80 w-auto rounded-xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500 object-cover" alt="Ambiente 4">
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contato" class="py-24 bg-neutral-900 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Map -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Visite a Gonçalves</h2>
+                    <p class="text-neutral-400 mb-8">Estamos prontos para te receber. Agende seu horário ou venha nos visitar.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <span class="text-neutral-200 text-lg">(31) 3261-6029</span>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-amber-500">
+                                <i class="fa-solid fa-map-pin"></i>
+                            </div>
+                            <span class="text-neutral-200">R. Tomé de Souza, 981 - Funcionários, Belo Horizonte - MG</span>
+                        </div>
+                    </div>
+
+                    <!-- Required Iframe -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Tom%C3%A9%20de%20Souza%2C%20981%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte%20-%20MG%2C%2030140-136%2C%20Brasil%2C%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 h-fit sticky top-24">
+                    <h3 class="text-2xl font-bold text-white mb-6">Mande uma mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2 text-sm font-medium text-neutral-400">Seu Nome</label>
+                            <input type="text" id="name" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4 placeholder-neutral-600" placeholder="João Silva" required>
+                        </div>
+                        <div>
+                            <label for="service" class="block mb-2 text-sm font-medium text-neutral-400">Serviço de Interesse</label>
+                            <select id="service" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Combo">Combo</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2 text-sm font-medium text-neutral-400">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-4 placeholder-neutral-600" placeholder="Gostaria de saber se tem horário para hoje..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full text-neutral-950 bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 font-bold rounded-lg text-lg px-5 py-4 text-center transition-all duration-300 shadow-lg shadow-amber-900/20">
+                            Enviar via WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <a href="#" class="flex items-center space-x-2 mb-4">
+                        <i class="fa-solid fa-scissors text-amber-500 text-xl"></i>
+                        <span class="text-xl font-bold text-white tracking-wide">GONÇALVES</span>
+                    </a>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        Referência em barbearia clássica e moderna em Belo Horizonte. Tradição e estilo se encontram aqui.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="#home" class="hover:text-amber-500 transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-amber-500 transition-colors">Serviços</a></li>
+                        <li><a href="#sobre" class="hover:text-amber-500 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Horários</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li class="flex justify-between"><span>Seg - Sex:</span> <span class="text-white">09:00 - 20:00</span></li>
+                        <li class="flex justify-between"><span>Sábado:</span> <span class="text-white">09:00 - 18:00</span></li>
+                        <li class="flex justify-between"><span>Domingo:</span> <span class="text-neutral-600">Fechado</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-600">
+                <p>&copy; 2023 Barbearia Gonçalves. Todos os direitos reservados.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-lg"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-lg"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Redirect Script -->
+    <script>
+        // Navbar Toggle Logic
+        const btn = document.querySelector('[data-collapse-toggle="navbar-sticky"]');
+        const menu = document.getElementById('navbar-sticky');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Form Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Constructing the message
+            var fullMessage = `Olá, me chamo ${name}. Tenho interesse no serviço de ${service}.`;
+            if(msg) {
+                fullMessage += ` Mensagem adicional: ${msg}`;
+            }
+
+            // WhatsApp API URL
+            var url = "https://wa.me/553132616029?text=" + encodeURIComponent(fullMessage);
+            
+            // Open in new tab
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
