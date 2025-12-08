@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confraria da Barba - Rio de Janeiro | Copa</title>
+    <meta name="description" content="Barbearia de luxo em Copacabana. Estilo, tradição e serviços especializados no Rio de Janeiro.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .text-gold-gradient {
+            background: linear-gradient(to right, #f59e0b, #fbbf24);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(38, 38, 38, 0.5);
+        }
+        .luxury-card {
+            background: linear-gradient(145deg, #171717, #0f0f0f);
+        }
+    </style>
+</head>
+<body class="antialiased bg-neutral-950 text-neutral-100">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-heading text-2xl tracking-wider font-bold text-white uppercase">
+                        Confraria <span class="text-amber-500">da Barba</span>
+                        <span class="block text-xs text-neutral-400 font-sans tracking-widest font-normal normal-case">Rio de Janeiro | Copa</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Início</a>
+                        <a href="#servicos" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">Serviços</a>
+                        <a href="#experiencia" class="text-neutral-300 hover:text-amber-500 px-3 py-2 rounded-md text-sm font-medium transition-colors">A Barbearia</a>
+                        <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                            Agendar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#experiencia" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">A Barbearia</a>
+                <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-amber-500 block px-3 py-2 rounded-md text-base font-bold">Agendar Horário</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Barbearia Luxo" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/50 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Copacabana • Rio de Janeiro
+            </span>
+            <h1 class="text-5xl md:text-7xl font-heading font-bold text-white mb-6 leading-tight">
+                A Excelência do <br>
+                <span class="text-gold-gradient">Cuidado Masculino</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 mb-10 font-light">
+                Mais que um corte, uma experiência. Confraria da Barba, onde tradição e estilo moderno se encontram no coração do Rio.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-neutral-950 font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(245,158,11,0.3)] flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp text-lg"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-transparent border border-neutral-600 hover:border-white text-white font-medium py-4 px-10 rounded-full transition-all hover:bg-white/5 flex items-center justify-center">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features / Vibe -->
+    <section id="experiencia" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="luxury-card p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-couch text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Ambiente Premium</h3>
+                    <p class="text-neutral-400 leading-relaxed">Relaxe em nossas cadeiras de couro clássicas, desfrute de um ambiente climatizado e pensado para o seu conforto absoluto.</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="luxury-card p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-beer text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Bar & Café</h3>
+                    <p class="text-neutral-400 leading-relaxed">Uma cerveja gelada ou um café expresso premium acompanham seu atendimento. Aqui, você está entre amigos.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="luxury-card p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/30 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold text-white mb-3">Profissionais de Elite</h3>
+                    <p class="text-neutral-400 leading-relaxed">Nossos barbeiros são mestres na arte da barbearia clássica e moderna. Técnica apurada e atendimento personalizado.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-bold tracking-widest text-sm uppercase mb-3">Menu de Serviços</h2>
+                <h3 class="text-4xl md:text-5xl font-heading font-bold text-white">Especialidades da Casa</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Service 1 -->
+                <div class="bg-neutral-950 p-6 rounded-2xl border border-neutral-800 hover:border-amber-500 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-cut text-3xl text-neutral-600 group-hover:text-amber-500 transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Corte de Cabelo</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Do clássico ao degradê moderno. Inclui lavagem e finalização.</p>
+                    <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20o%20pre%C3%A7o%20do%20Corte." class="text-amber-500 text-sm font-bold hover:text-amber-400 flex items-center gap-2">
+                        Reservar <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-neutral-950 p-6 rounded-2xl border border-neutral-800 hover:border-amber-500 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-bacon text-3xl text-neutral-600 group-hover:text-amber-500 transition-colors"></i> <!-- Bacon icon looks like beard waves sometimes, or use user-shield -->
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Barba Terapia</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Toalha quente, óleos essenciais e navalha afiada para o barbear perfeito.</p>
+                    <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20o%20pre%C3%A7o%20da%20Barba." class="text-amber-500 text-sm font-bold hover:text-amber-400 flex items-center gap-2">
+                        Reservar <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-neutral-950 p-6 rounded-2xl border border-neutral-800 hover:border-amber-500 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-gem text-3xl text-neutral-600 group-hover:text-amber-500 transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Combo Confraria</h4>
+                    <p class="text-neutral-400 text-sm mb-6">A experiência completa: Corte + Barba com condições especiais.</p>
+                    <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20o%20pre%C3%A7o%20do%20Combo." class="text-amber-500 text-sm font-bold hover:text-amber-400 flex items-center gap-2">
+                        Reservar <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="bg-neutral-950 p-6 rounded-2xl border border-neutral-800 hover:border-amber-500 transition-all group">
+                    <div class="flex justify-between items-start mb-4">
+                        <i class="fas fa-paint-brush text-3xl text-neutral-600 group-hover:text-amber-500 transition-colors"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-2">Camuflagem</h4>
+                    <p class="text-neutral-400 text-sm mb-6">Redução sutil dos fios brancos para um visual rejuvenescido e natural.</p>
+                    <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20o%20pre%C3%A7o%20da%20Camuflagem." class="text-amber-500 text-sm font-bold hover:text-amber-400 flex items-center gap-2">
+                        Reservar <i class="fas fa-arrow-right text-xs"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20quais%20outros%20servi%C3%A7os%20voc%C3%AAs%20oferecem%3F" class="inline-block text-neutral-400 hover:text-white border-b border-neutral-700 hover:border-white pb-1 transition-colors">
+                    Ver todos os serviços e produtos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Divider / CTA -->
+    <section class="relative py-20 bg-fixed bg-center bg-cover" style="background-image: url('https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop');">
+        <div class="absolute inset-0 bg-neutral-950/80"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold text-white mb-6">Pronto para elevar seu estilo?</h2>
+            <p class="text-neutral-300 mb-8 text-lg">Não deixe para depois. Garanta seu horário com os melhores profissionais do Rio de Janeiro.</p>
+            <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20quero%20agendar%20agora." class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-8 rounded-full transition-colors shadow-lg">
+                Agendar via WhatsApp
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+                
+                <!-- Contact Info & Map -->
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest text-sm uppercase mb-3">Localização</h2>
+                    <h3 class="text-4xl font-heading font-bold text-white mb-6">Onde Estamos</h3>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center border border-neutral-800 text-amber-500 flex-shrink-0">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Endereço</h4>
+                                <p class="text-neutral-400">R. Barão de Ipanema, 110 - Loja B<br>Copacabana, Rio de Janeiro - RJ</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center border border-neutral-800 text-amber-500 flex-shrink-0">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold">Telefone</h4>
+                                <p class="text-neutral-400">(21) 2549-9126</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Required Map Iframe -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Bar%C3%A3o%20de%20Ipanema%2C%20110%20-%20Loja%20B%20-%20Copacabana%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2022050-032%2C%20Brasil%2C%20Rio%20de%20Janeiro&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800 sticky top-24">
+                    <h3 class="text-2xl font-heading font-bold text-white mb-2">Fale Conosco</h3>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário abaixo para ser atendido diretamente no WhatsApp.</p>
+
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-1">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="João Silva">
+                        </div>
+
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-1">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Combo (Corte + Barba)">Combo (Corte + Barba)</option>
+                                <option value="Outro">Outro</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-1">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Gostaria de agendar para sexta-feira..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-neutral-950 font-bold py-3.5 rounded-lg transition-all transform hover:scale-[1.02] shadow-lg flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp"></i> Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h4 class="text-2xl font-heading font-bold text-white mb-4">Confraria <span class="text-amber-500">da Barba</span></h4>
+                    <p class="text-neutral-500 text-sm leading-relaxed">
+                        A barbearia que redefine o conceito de cuidado masculino em Copacabana. Tradição, estilo e exclusividade.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2 text-sm text-neutral-500">
+                        <li><a href="#home" class="hover:text-amber-500 transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-amber-500 transition-colors">Serviços</a></li>
+                        <li><a href="#experiencia" class="hover:text-amber-500 transition-colors">Sobre Nós</a></li>
+                        <li><a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold text-white mb-4">Horário de Atendimento</h4>
+                    <p class="text-neutral-500 text-sm">Entre em contato para confirmar a disponibilidade.</p>
+                    <div class="mt-4 flex space-x-4">
+                        <a href="https://wa.me/552125499126" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-amber-600 transition-all">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-amber-600 transition-all">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-neutral-400 hover:text-white hover:bg-amber-600 transition-all">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 text-center text-neutral-600 text-sm">
+                <p>&copy; 2023 Confraria da Barba - Rio de Janeiro | Copa. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/552125499126?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20informa%C3%A7%C3%B5es." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-400 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-lg hover:shadow-green-500/30 transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Critical JS for Form to WhatsApp -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Constructing the message
+            var fullMessage = "Olá, me chamo " + name + ". Tenho interesse em: " + service + ".";
+            if(msg) {
+                fullMessage += " " + msg;
+            }
+            
+            var url = "https://wa.me/552125499126?text=" + encodeURIComponent(fullMessage);
+            
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
