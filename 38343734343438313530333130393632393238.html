@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia GriloGringo Curitiba - Serviços Especializados</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23f59e0b' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z'/%3E%3C/svg%3E" type="image/svg+xml">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom Tailwind config for strict color adherence */
+        /* These variables are for reference, actual classes are used directly */
+        :root {
+            --color-neutral-950: #0a0a0a;
+            --color-neutral-900: #171717;
+            --color-neutral-800: #262626;
+            --color-neutral-100: #f5f5f5;
+            --color-neutral-400: #a3a3a3;
+            --color-amber-500: #f59e0b;
+            --color-amber-600: #d97706;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif; /* A modern sans-serif fallback */
+        }
+        
+        /* Ensure images take full width and maintain aspect ratio */
+        .image-cover {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+    <!-- Header & Hero Section -->
+    <header id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1596431922718-f2a9b3d1b8c0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcHx8fHx8fDE2NzM3MjA5OTc&ixlib=rb-4.0.3&q=80&w=1920" alt="Interior da Barbearia GriloGringo" class="absolute inset-0 image-cover z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
+
+        <nav class="fixed top-0 left-0 right-0 z-50 p-6 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto flex justify-between items-center">
+                <a href="#home" class="text-3xl font-bold text-amber-500 tracking-wider">GriloGringo</a>
+                <div class="flex space-x-8 text-neutral-100 font-semibold">
+                    <a href="#home" class="hover:text-amber-500 transition-colors">Home</a>
+                    <a href="#about" class="hover:text-amber-500 transition-colors">Sobre</a>
+                    <a href="#services" class="hover:text-amber-500 transition-colors">Serviços</a>
+                    <a href="#contact" class="hover:text-amber-500 transition-colors">Contato</a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="relative z-20 text-center px-6">
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-4 leading-tight text-neutral-100">
+                Barbearia <span class="text-amber-500">GriloGringo</span>
+            </h1>
+            <p class="text-2xl md:text-3xl text-neutral-400 mb-8 font-light max-w-3xl mx-auto">
+                Tradição e Estilo em Curitiba. Experiência única para o homem moderno.
+            </p>
+            <a href="https://wa.me/554130950605?text=Olá, gostaria de mais informações." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-3"></i>Agendar Horário
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-5xl font-bold text-neutral-100 mb-6 leading-tight">
+                    A <span class="text-amber-500">Experiência</span> GriloGringo
+                </h2>
+                <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                    Na Barbearia GriloGringo, combinamos a arte clássica da barbearia com as tendências modernas. Nossa equipe de barbeiros especializados está pronta para oferecer um serviço de excelência, desde o corte de cabelo perfeito até a barba modelada com precisão.
+                </p>
+                <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                    Situados no coração de Curitiba, somos mais do que uma barbearia; somos um refúgio onde cada cliente é tratado com a máxima atenção e cuidado, garantindo um visual impecável e uma experiência relaxante.
+                </p>
+                <a href="https://wa.me/554130950605?text=Olá, gostaria de mais informações sobre seus serviços." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-md shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fas fa-info-circle mr-3"></i>Saiba Mais
+                </a>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1599380693700-666324a04d53?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMGludGVyaW9yfHx8fHx8MTY3MzczMzQxMg&ixlib=rb-4.0.3&q=80&w=1080" alt="Barbeiro trabalhando" class="image-cover h-[500px]">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-12">
+                Nossos <span class="text-amber-500">Serviços</span> Especializados
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Corte de Cabelo Clássico</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Cortes precisos e modernos que se adequam ao seu estilo e personalidade.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 60</span>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Barba Modelada</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Modelagem e contorno da barba com toalha quente e produtos premium.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 50</span>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-spray-can text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Tratamento Capilar</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Hidratação e tratamento para a saúde e brilho dos seus cabelos.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 80</span>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-hand-scissors text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Combo Cabelo + Barba</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Corte de cabelo e barba completa com um preço especial.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 100</span>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-face-shave text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Pacote exclusivo para o noivo se preparar para o grande dia.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">Sob Consulta</span>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl transform hover:scale-105 transition-transform duration-300">
+                    <i class="fas fa-head-side-mask text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Limpeza de Pele</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Revitalize sua pele com nossos tratamentos faciais especializados.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 90</span>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="https://wa.me/554130950605?text=Olá, gostaria de agendar um serviço." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3"></i>Agendar Serviço
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-12">
+                Nossa <span class="text-amber-500">Galeria</span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1574634289410-d02168923058?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMGN1dHxlbnwwfHx8fDE2NzM3MzQ2NjA&ixlib=rb-4.0.3&q=80&w=600" alt="Corte de cabelo detalhado" class="image-cover h-80">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1503951458623-90d579294966?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMGludGVyaW9yJTJDY2hhaXJ8ZW58MHx8fHwxNjc0MDE4NzA3&ixlib=rb-4.0.3&q=80&w=600" alt="Cadeira de barbeiro vintage" class="image-cover h-80">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1621607508756-b174ef656d0f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMHRvb2xzfGVufDB8fHx8MTY3NDA2NjU0Ng&ixlib=rb-4.0.3&q=80&w=600" alt="Ferramentas de barbeiro" class="image-cover h-80">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1555431633-820845347209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMGJlYXJkfGVufDB8fHx8MTY3NDA2NjU0Ng&ixlib=rb-4.0.3&q=80&w=600" alt="Barba bem feita" class="image-cover h-80">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1603504386994-39f886470375?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMGNsaWVudHxlbnwwfHx8fDE2NzQwNjY1NDY&ixlib=rb-4.0.3&q=80&w=600" alt="Cliente relaxando" class="image-cover h-80">
+                </div>
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1603504386994-39f886470375?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218fGJhcmJlcnNvcCUyMHRvb2xzfGVufDB8fHx8MTY3NDA2NjU0Ng&ixlib=rb-4.0.3&q=80&w=600" alt="Barbeiro profissional" class="image-cover h-80">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-12">
+                Entre em <span class="text-amber-500">Contato</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info & Map -->
+                <div>
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl mb-8 text-left">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Informações</h3>
+                        <p class="text-neutral-400 text-lg mb-4">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>
+                            R. Fernando Amaro, 801 - Alto da XV, Curitiba - PR, 80045-230
+                        </p>
+                        <p class="text-neutral-400 text-lg mb-4">
+                            <i class="fas fa-phone-alt text-amber-500 mr-3"></i>
+                            (41) 3095-0605
+                        </p>
+                        <p class="text-neutral-400 text-lg mb-6">
+                            <i class="fas fa-clock text-amber-500 mr-3"></i>
+                            Horário: Não informado. Por favor, entre em contato para verificar.
+                        </p>
+                        <a href="https://wa.me/554130950605?text=Olá, gostaria de saber o horário de funcionamento." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-md shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3"></i>WhatsApp
+                        </a>
+                    </div>
+                    <!-- Google Maps Iframe -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-xl">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Fernando%20Amaro%2C%20801%20-%20Alto%20da%20XV%2C%20Curitiba%20-%20PR%2C%2080045-230%2C%20Brasil%2C%20Curitiba&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid var(--color-neutral-800);"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl text-left">
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-400 text-sm font-semibold mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-xl text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Seu nome" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-neutral-400 text-sm font-semibold mb-2">Email (Opcional)</label>
+                            <input type="email" id="email" name="email" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-xl text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="seu.email@exemplo.com">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-400 text-sm font-semibold mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="6" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-xl text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Sua mensagem ou pergunta..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-8 rounded-full text-lg shadow-lg transition-all duration-300 transform hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3"></i>Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <a href="#home" class="text-3xl font-bold text-amber-500 tracking-wider mb-4 inline-block">GriloGringo</a>
+            <p class="text-neutral-400 mb-6">
+                © 2023 Barbearia GriloGringo Curitiba. Todos os direitos reservados.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <!-- Placeholder social media links -->
+                <a href="https://www.instagram.com/barbeariagrilogringo/" target="_blank" class="text-neutral-400 hover:text-amber-500 text-2xl transition-colors">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/barbeariagrilogringo/" target="_blank" class="text-neutral-400 hover:text-amber-500 text-2xl transition-colors">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/554130950605" target="_blank" class="text-neutral-400 hover:text-amber-500 text-2xl transition-colors">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            // Optionally include email if it was filled, but the prompt only asks for name and message
+            // var email = document.getElementById('email').value; 
+            var url = "https://wa.me/554130950605?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+
+</body>
+</html>
