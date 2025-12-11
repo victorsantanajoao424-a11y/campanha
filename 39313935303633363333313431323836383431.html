@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Mafia Barbearia - Cidade Baixa | Experiência Masculina Premium</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuGWV+Q/ZJ0D4gce0X067eN+E11rNqJ+h6A4w0fQ2+lA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles to ensure full height and smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            @apply bg-neutral-950 text-neutral-100 font-sans antialiased;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 px-6 md:px-8 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-amber-500 tracking-wider uppercase">
+                La Mafia <span class="text-neutral-100">Barbearia</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#about" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre Nós</a>
+                <a href="#services" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/555133779761?text=Olá, gostaria de agendar um horário." target="_blank" class="hidden md:block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-2 px-6 rounded-lg transition-colors duration-300 shadow-lg">
+                Agendar Horário
+            </a>
+            <button class="md:hidden text-neutral-100 text-2xl focus:outline-none" id="mobile-menu-button">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-sm z-50 flex flex-col items-center justify-center space-y-8 text-3xl hidden">
+            <button class="absolute top-6 right-6 text-neutral-100 text-4xl focus:outline-none" id="close-mobile-menu">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#about" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Sobre Nós</a>
+            <a href="#services" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Serviços</a>
+            <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeria</a>
+            <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+            <a href="https://wa.me/555133779761?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-lg">
+                Agendar Horário
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1599388701502-39c89423e8f8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Barbearia La Mafia interior com cadeira de barbeiro" class="absolute inset-0 w-full h-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        <div class="relative z-10 p-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-neutral-100">
+                La Mafia Barbearia <br class="md:hidden"> <span class="text-amber-500">Cidade Baixa</span>
+            </h1>
+            <p class="text-lg md:text-2xl text-neutral-300 mb-8">
+                Onde a tradição encontra a excelência. Seu estilo, nossa arte.
+            </p>
+            <a href="https://wa.me/555133779761?text=Olá, gostaria de agendar um horário." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl text-xl transition-colors duration-300 shadow-2xl transform hover:scale-105">
+                Agende Seu Horário <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-100">
+                    Nossa <span class="text-amber-500">História</span>
+                </h2>
+                <p class="text-lg text-neutral-300 leading-relaxed mb-6">
+                    Na La Mafia Barbearia - Cidade Baixa, cultivamos mais do que apenas cortes de cabelo e barbas. Cultivamos uma experiência. Inspirados na elegância clássica e na modernidade urbana de Porto Alegre, nosso espaço é um refúgio masculino onde cada detalhe é pensado para o seu conforto e estilo.
+                </p>
+                <p class="text-lg text-neutral-300 leading-relaxed mb-8">
+                    Nossos serviços especializados são executados por profissionais apaixonados, utilizando as melhores técnicas e produtos premium, garantindo um resultado impecável que reflete sua personalidade. Venha descobrir a diferença de um serviço de elite.
+                </p>
+                <a href="https://wa.me/555133779761?text=Olá, gostaria de saber mais sobre a barbearia." target="_blank" class="inline-block bg-neutral-900 border border-neutral-800 text-amber-500 hover:bg-amber-600 hover:text-neutral-950 font-bold py-3 px-8 rounded-lg transition-colors duration-300 shadow-xl">
+                    Conheça Mais <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="md:w-1/2 relative group rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                <img src="https://images.unsplash.com/photo-1621607512214-de1591901a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Barbeiro trabalhando em cliente" class="w-full h-auto rounded-2xl transform group-hover:scale-105 transition-transform duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-100">
+                Nossos <span class="text-amber-500">Serviços</span>
+            </h2>
+            <p class="text-lg text-neutral-400 mb-12 max-w-3xl mx-auto">
+                Oferecemos uma gama completa de serviços especializados para o homem moderno, combinando técnicas clássicas e tendências contemporâneas.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-cut text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Corte Clássico</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Corte de cabelo tradicional com tesoura e máquina, finalizado com produtos de alta qualidade.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">R$ 70,00</span>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-beard text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Barba Desenhada</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Modelagem e contorno da barba com toalha quente, espuma e navalha, hidratação pós-barba.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">R$ 60,00</span>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-scissors text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Corte + Barba</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote completo de corte de cabelo e barba, para um visual renovado e impecável.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">R$ 120,00</span>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-head-side-mask text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Limpeza de Pele</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Tratamento facial para remover impurezas, hidratar e revitalizar a pele do rosto.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">R$ 90,00</span>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-hand-sparkles text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Manicure Masculina</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Cuidado completo para as mãos e unhas, garantindo higiene e uma aparência elegante.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">R$ 45,00</span>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-500 transition-colors duration-300">
+                    <i class="fas fa-tint text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote exclusivo com corte, barba, tratamento facial e relaxamento para o grande dia.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A Consultar</span>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <a href="https://wa.me/555133779761?text=Olá, gostaria de ver todos os serviços e preços." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-lg text-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
+                    Ver Todos os Serviços <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-100">
+                Nossa <span class="text-amber-500">Galeria</span>
+            </h2>
+            <p class="text-lg text-neutral-400 mb-12 max-w-3xl mx-auto">
+                Inspire-se com alguns dos nossos trabalhos e o ambiente exclusivo da La Mafia Barbearia.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1621607512214-de1591901a18?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Corte de cabelo masculino" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1574635811234-a63e9e315352?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Barbeiro com navalha" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Interior da barbearia vintage" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1596706915243-71822c98d795?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Produtos de barbearia premium" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1602719293881-807d2f95b3b5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Homem com barba bem cuidada" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1621607509170-c0b9a6917f69?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Detalhe de tesoura e pente" class="w-full h-72 object-cover transform group-hover:scale-105 transition-transform duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-70 group-hover:opacity-60 transition-opacity duration-500"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-neutral-100">
+                O Que Nossos <span class="text-amber-500">Clientes Dizem</span>
+            </h2>
+            <p class="text-lg text-neutral-400 mb-12 max-w-3xl mx-auto">
+                A satisfação dos nossos clientes é a nossa maior recompensa. Veja alguns depoimentos:
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg mb-6 italic">
+                        "Ambiente incrível e atendimento impecável! O corte e a barba ficaram perfeitos. Recomendo a todos da Cidade Baixa."
+                    </p>
+                    <div class="text-neutral-100 font-semibold">- João Silva</div>
+                    <div class="text-amber-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg mb-6 italic">
+                        "Profissionais de alto nível e um cuidado que faz toda a diferença. Saio sempre renovado daqui. Melhor barbearia de Porto Alegre!"
+                    </p>
+                    <div class="text-neutral-100 font-semibold">- Pedro Santos</div>
+                    <div class="text-amber-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg mb-6 italic">
+                        "Desde o café de boas-vindas até o último retoque, tudo é perfeito. É mais que um serviço, é uma experiência de luxo."
+                    </p>
+                    <div class="text-neutral-100 font-semibold">- Carlos Mendes</div>
+                    <div class="text-amber-500 mt-2">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-100">
+                Entre em <span class="text-amber-500">Contato</span>
+            </h2>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Form -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                    <h3 class="text-3xl font-bold mb-6 text-neutral-100">Fale Conosco</h3>
+                    <p class="text-lg text-neutral-300 mb-6">
+                        Estamos prontos para atendê-lo e garantir sua melhor experiência.
+                    </p>
+
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-xl"></i>
+                            R. João Alfredo, 208 - Cidade Baixa, Porto Alegre - RS, 90050-230
+                        </li>
+                        <li class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-phone text-amber-500 mr-4 text-xl"></i>
+                            <a href="tel:+555133779761" class="hover:text-amber-500 transition-colors duration-300">(51) 3377-9761</a>
+                        </li>
+                        <li class="flex items-center text-neutral-300 text-lg">
+                            <i class="fab fa-whatsapp text-amber-500 mr-4 text-xl"></i>
+                            <a href="https://wa.me/555133779761?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition-colors duration-300">WhatsApp: (51) 3377-9761</a>
+                        </li>
+                        <li class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-clock text-amber-500 mr-4 text-xl"></i>
+                            Horário: Não informado (Entre em contato para verificar)
+                        </li>
+                    </ul>
+
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-sm font-bold mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:border-amber-500 transition-colors duration-300" placeholder="Seu nome" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-sm font-bold mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:border-amber-500 transition-colors duration-300" placeholder="Olá, gostaria de agendar um corte..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-lg text-lg transition-colors duration-300 shadow-lg transform hover:scale-105">
+                            Enviar Mensagem via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Jo%C3%A3o%20Alfredo%2C%20208%20-%20Cidade%20Baixa%2C%20Porto%20Alegre%20-%20RS%2C%2090050-230%2C%20Brasil%2C%20Porto%20Alegre&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333; min-height: 450px;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <div class="mb-8">
+                <a href="#hero" class="text-3xl font-bold text-amber-500 tracking-wider uppercase">
+                    La Mafia <span class="text-neutral-100">Barbearia</span>
+                </a>
+                <p class="text-neutral-400 mt-4">
+                    Seu estilo, nossa arte.
+                </p>
+            </div>
+
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://instagram.com/lamafiabarbearia" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/lamafiabarbearia" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://wa.me/555133779761" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+
+            <p class="text-neutral-500 text-sm">
+                &copy; 2023 La Mafia Barbearia - Cidade Baixa. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-mobile-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+    </script>
+
+    <!-- JavaScript for Contact Form WhatsApp Integration -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/555133779761?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+
+</body>
+</html>
