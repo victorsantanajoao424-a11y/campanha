@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schnaiden Barbearia & Escola Tradicional | Curitiba</title>
+    <meta name="description" content="Schnaiden Barbearia & Escola Tradicional em Curitiba. Cortes clássicos, modernos e cursos de barbeiro profissional. Agende seu horário.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Manrope:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['Cinzel', 'serif'],
+                        sans: ['Manrope', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .text-gold-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 top-0 start-0 border-b border-neutral-800 backdrop-blur-md bg-neutral-950/80">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between p-4 px-6 lg:px-8">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <span class="self-center text-2xl font-serif font-bold tracking-wider text-white">SCHNAIDEN<span class="text-amber-500">.</span></span>
+            </a>
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                <a href="https://wa.me/5541995386936?text=Olá, gostaria de agendar um horário." 
+                   class="text-neutral-950 bg-gradient-to-r from-amber-400 to-amber-600 hover:from-amber-500 hover:to-amber-700 focus:ring-4 focus:outline-none focus:ring-amber-800 font-medium rounded-lg text-sm px-6 py-2.5 text-center transition-all duration-300 shadow-[0_0_15px_rgba(217,119,6,0.3)]">
+                   <i class="fa-brands fa-whatsapp mr-2"></i> Agendar
+                </a>
+                <button data-collapse-toggle="navbar-sticky" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-neutral-400 rounded-lg md:hidden hover:bg-neutral-800 focus:outline-none focus:ring-2 focus:ring-neutral-600" aria-controls="navbar-sticky" aria-expanded="false" id="menu-toggle">
+                    <span class="sr-only">Abrir menu</span>
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
+                    </svg>
+                </button>
+            </div>
+            <div class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-sticky">
+                <ul class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-neutral-800 rounded-lg bg-neutral-900 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-transparent">
+                    <li>
+                        <a href="#home" class="block py-2 px-3 text-white bg-amber-600 rounded md:bg-transparent md:text-amber-500 md:p-0" aria-current="page">Início</a>
+                    </li>
+                    <li>
+                        <a href="#sobre" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Sobre</a>
+                    </li>
+                    <li>
+                        <a href="#servicos" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Serviços</a>
+                    </li>
+                    <li>
+                        <a href="#escola" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Escola</a>
+                    </li>
+                    <li>
+                        <a href="#contato" class="block py-2 px-3 text-neutral-400 rounded hover:bg-neutral-800 md:hover:bg-transparent md:hover:text-amber-500 md:p-0 transition-colors">Contato</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <!-- Dark Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-4 inline-block px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-sm font-bold tracking-widest uppercase">Curitiba • PR</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Tradição & <br>
+                <span class="text-gold-gradient">Estilo Impecável</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                Schnaiden Barbearia & Escola. Onde a arte da barbearia clássica encontra a excelência moderna.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5541995386936?text=Olá, gostaria de agendar um horário." class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-amber-600/20 transform hover:-translate-y-1">
+                    AGENDAR HORÁRIO
+                </a>
+                <a href="#servicos" class="bg-transparent border border-neutral-600 text-neutral-300 hover:text-white hover:border-white font-bold py-4 px-8 rounded-xl transition-all duration-300">
+                    NOSSOS SERVIÇOS
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl opacity-20 blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase mb-2 text-sm">Nossa História</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Mais que uma barbearia, <br>um legado.</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Localizada no coração do Boqueirão, em Curitiba, a <strong>Schnaiden Barbearia</strong> é sinônimo de excelência. Não apenas cortamos cabelo; nós esculpimos identidades.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Combinamos técnicas tradicionais de barbearia com as tendências mais modernas do visagismo masculino. Além de cuidar do seu visual, somos uma <strong>Escola Tradicional</strong>, formando a próxima geração de barbeiros de elite.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Ambiente Premium e Acolhedor
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500 mr-3"></i> Produtos de Alta Qualidade
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5541995386936?text=Olá, gostaria de saber mais sobre a barbearia." class="text-amber-500 hover:text-amber-400 font-semibold inline-flex items-center transition-colors">
+                        Saiba mais sobre nós <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">O que oferecemos</span>
+                <h2 class="text-4xl font-serif font-bold text-white mt-2">Serviços Especializados</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:shadow-[0_0_20px_rgba(217,119,6,0.15)]">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Corte Premium</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Consultoria de visagismo, lavagem especial, corte preciso com tesoura e máquina, finalização com produtos de alta fixação.
+                    </p>
+                    <a href="https://wa.me/5541995386936?text=Olá, gostaria de agendar um Corte." class="text-sm font-bold text-neutral-500 group-hover:text-amber-500 uppercase tracking-wider">Agendar Corte</a>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:shadow-[0_0_20px_rgba(217,119,6,0.15)]">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-user-tie text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Ritual completo com toalha quente, óleos essenciais, navalha afiada e hidratação profunda para a pele e os fios.
+                    </p>
+                    <a href="https://wa.me/5541995386936?text=Olá, gostaria de agendar uma Barba." class="text-sm font-bold text-neutral-500 group-hover:text-amber-500 uppercase tracking-wider">Agendar Barba</a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:shadow-[0_0_20px_rgba(217,119,6,0.15)]">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-spray-can text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Tratamentos & Química</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Selagem, pigmentação de barba, platinados e hidratação capilar. Renove seu estilo com segurança e qualidade.
+                    </p>
+                    <a href="https://wa.me/5541995386936?text=Olá, gostaria de saber sobre tratamentos." class="text-sm font-bold text-neutral-500 group-hover:text-amber-500 uppercase tracking-wider">Consultar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- School Section -->
+    <section id="escola" class="relative py-24 bg-neutral-950 overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-amber-600 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="bg-neutral-900 rounded-3xl p-8 md:p-16 border border-neutral-800 flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <span class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2 block">Escola Tradicional</span>
+                    <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Torne-se um Mestre da Barbearia</h2>
+                    <p class="text-neutral-400 mb-8 text-lg">
+                        Aprenda com os melhores. Nossos cursos vão do iniciante ao avançado, cobrindo técnicas clássicas, cortes modernos, gestão de barbearia e atendimento de alto padrão.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="https://wa.me/5541995386936?text=Olá, tenho interesse no Curso de Barbeiro." class="inline-flex justify-center items-center bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-8 rounded-xl transition-all">
+                            Matricule-se Agora
+                        </a>
+                        <a href="https://wa.me/5541995386936?text=Gostaria da grade curricular do curso." class="inline-flex justify-center items-center border border-neutral-700 text-neutral-300 hover:border-amber-500 hover:text-amber-500 font-bold py-3 px-8 rounded-xl transition-all">
+                            Ver Grade Curricular
+                        </a>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2 relative">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" alt="Curso de Barbeiro" class="rounded-2xl shadow-2xl border border-neutral-800 transform md:rotate-2 hover:rotate-0 transition-all duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map Section -->
+    <section id="contato" class="py-24 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Localização & Contato</span>
+                <h2 class="text-4xl font-serif font-bold text-white mt-2">Venha nos Visitar</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Info & Form -->
+                <div class="space-y-8">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800">
+                            <i class="fa-solid fa-phone text-amber-500 text-2xl mb-4"></i>
+                            <h4 class="text-white font-bold mb-2">Telefone</h4>
+                            <p class="text-neutral-400 text-sm">(41) 99538-6936</p>
+                        </div>
+                        <div class="bg-neutral-950 p-6 rounded-xl border border-neutral-800">
+                            <i class="fa-solid fa-location-dot text-amber-500 text-2xl mb-4"></i>
+                            <h4 class="text-white font-bold mb-2">Endereço</h4>
+                            <p class="text-neutral-400 text-sm">R. Maestro Carlos Frank, 1703 - Loja 5 - Boqueirão, Curitiba - PR</p>
+                        </div>
+                    </div>
+
+                    <!-- Form -->
+                    <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800">
+                        <h3 class="text-2xl font-serif font-bold text-white mb-6">Envie uma mensagem</h3>
+                        <form id="contactForm" class="space-y-4">
+                            <div>
+                                <label for="name" class="block mb-2 text-sm font-medium text-neutral-400">Seu Nome</label>
+                                <input type="text" id="name" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3 placeholder-neutral-600" placeholder="João Silva" required>
+                            </div>
+                            <div>
+                                <label for="service" class="block mb-2 text-sm font-medium text-neutral-400">Assunto</label>
+                                <select id="service" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3">
+                                    <option value="Agendamento">Agendamento</option>
+                                    <option value="Cursos">Cursos / Escola</option>
+                                    <option value="Dúvida">Dúvida Geral</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="message" class="block mb-2 text-sm font-medium text-neutral-400">Mensagem</label>
+                                <textarea id="message" rows="4" class="bg-neutral-900 border border-neutral-800 text-white text-sm rounded-lg focus:ring-amber-500 focus:border-amber-500 block w-full p-3 placeholder-neutral-600" placeholder="Gostaria de saber se..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full text-neutral-950 bg-amber-500 hover:bg-amber-400 focus:ring-4 focus:outline-none focus:ring-amber-800 font-bold rounded-lg text-sm px-5 py-3 text-center transition-colors">
+                                <i class="fa-brands fa-whatsapp mr-2"></i> ENVIAR VIA WHATSAPP
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-full min-h-[400px] rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Maestro%20Carlos%20Frank%2C%201703%20-%20Loja%205%20-%20Boqueir%C3%A3o%2C%20Curitiba%20-%20PR%2C%2081750-323%2C%20Brasil%2C%20Curitiba&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); min-height: 100%;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <span class="text-2xl font-serif font-bold tracking-wider text-white">SCHNAIDEN<span class="text-amber-500">.</span></span>
+                    <p class="text-neutral-500 mt-4 text-sm leading-relaxed">
+                        A excelência em barbearia e ensino em Curitiba. Transformando visuais e formando profissionais.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Links Rápidos</h4>
+                    <ul class="space-y-2 text-neutral-500 text-sm">
+                        <li><a href="#home" class="hover:text-amber-500 transition-colors">Início</a></li>
+                        <li><a href="#servicos" class="hover:text-amber-500 transition-colors">Serviços</a></li>
+                        <li><a href="#escola" class="hover:text-amber-500 transition-colors">Escola</a></li>
+                        <li><a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4 uppercase text-sm tracking-wider">Contato</h4>
+                    <ul class="space-y-2 text-neutral-500 text-sm">
+                        <li>Boqueirão, Curitiba - PR</li>
+                        <li>(41) 99538-6936</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-6">
+                        <a href="https://wa.me/5541995386936" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 text-center">
+                <p class="text-neutral-600 text-xs">
+                    &copy; 2023 Schnaiden Barbearia & Escola Tradicional. Todos os direitos reservados.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbarSticky = document.getElementById('navbar-sticky');
+
+        menuToggle.addEventListener('click', () => {
+            navbarSticky.classList.toggle('hidden');
+        });
+
+        // WhatsApp Form Interceptor
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct the message
+            var fullMessage = `Olá, me chamo ${name}. \nAssunto: ${service}. \n${msg}`;
+            
+            // WhatsApp URL
+            var url = "https://wa.me/5541995386936?text=" + encodeURIComponent(fullMessage);
+            
+            // Open in new tab
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
