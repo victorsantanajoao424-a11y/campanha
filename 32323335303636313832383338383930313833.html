@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trois Barbearia | Shopping Recife</title>
+    <meta name="description" content="Barbearia de elite no Shopping Recife. Cortes modernos, barba e serviços especializados em um ambiente sofisticado.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-serif font-bold tracking-wider text-white">
+                        TROIS<span class="text-amber-500">.</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 text-sm font-medium">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 text-sm font-medium">Serviços</a>
+                        <a href="#localizacao" class="hover:text-amber-500 transition-colors duration-300 px-3 py-2 text-sm font-medium">Localização</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5581999174789?text=Olá, gostaria de agendar um horário na Trois Barbearia." 
+                       class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 shadow-lg shadow-amber-900/20 border border-transparent hover:border-amber-400">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="text-neutral-400 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#localizacao" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Localização</a>
+                <a href="https://wa.me/5581999174789?text=Olá, gostaria de agendar um horário." class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Agendar via WhatsApp</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-befbb7135952?q=80&w=2070&auto=format&fit=crop" 
+                 alt="Barbearia Luxury" 
+                 class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-900/50 border border-neutral-700 backdrop-blur-sm text-amber-500 text-xs font-bold tracking-widest uppercase mb-6">
+                Shopping Recife
+            </span>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                Estilo que define <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-200 to-amber-600">sua presença.</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 mb-10 font-light">
+                A Trois Barbearia oferece uma experiência de cuidado masculino de alto padrão. Cortes precisos, ambiente exclusivo e atendimento premium.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5581999174789?text=Olá, gostaria de agendar um corte." 
+                   class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-xl text-base font-bold transition-all duration-300 shadow-xl shadow-amber-900/30 hover:scale-105">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" 
+                   class="bg-neutral-800/50 hover:bg-neutral-800 backdrop-blur-md border border-neutral-700 text-white px-8 py-4 rounded-xl text-base font-medium transition-all duration-300">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-900 rounded-2xl blur-lg opacity-30"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" 
+                         alt="Cadeira de Barbeiro" 
+                         class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-700">
+                </div>
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-3">Sobre a Trois</h2>
+                    <h3 class="text-4xl font-serif font-bold text-white mb-6">Mais que um corte, <br>um ritual.</h3>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                        Localizada no coração do Shopping Recife, a Trois Barbearia redefine o conceito de grooming masculino. Combinamos técnicas clássicas de barbearia com as tendências mais modernas do visagismo.
+                    </p>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        Nosso ambiente foi projetado para o homem moderno que valoriza seu tempo e sua imagem. Relaxe em nossas cadeiras de couro enquanto desfruta de um serviço impecável.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Produtos Premium
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Localização Privilegiada
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5581999174789?text=Gostaria de saber mais sobre a Trois." class="text-white border-b border-amber-500 pb-1 hover:text-amber-500 transition-colors">
+                        Fale com um especialista <i class="fas fa-arrow-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-amber-500 font-bold tracking-widest uppercase text-sm">Menu de Serviços</span>
+                <h2 class="mt-2 text-4xl font-serif font-bold text-white">Especialidades da Casa</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fas fa-cut text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6">Consultoria de visagismo, lavagem especial e finalização com produtos premium.</p>
+                    <a href="https://wa.me/5581999174789?text=Gostaria de agendar um Corte de Cabelo." class="inline-flex items-center text-amber-500 font-semibold group-hover:text-amber-400">
+                        Agendar <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fas fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">Ritual com toalha quente, óleos essenciais e navalha para um acabamento perfeito.</p>
+                    <a href="https://wa.me/5581999174789?text=Gostaria de agendar uma Barba." class="inline-flex items-center text-amber-500 font-semibold group-hover:text-amber-400">
+                        Agendar <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-1">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fas fa-gem text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-3">Combo Trois</h3>
+                    <p class="text-neutral-400 mb-6">A experiência completa: Corte + Barba + Hidratação Facial Express.</p>
+                    <a href="https://wa.me/5581999174789?text=Gostaria de agendar o Combo Trois." class="inline-flex items-center text-amber-500 font-semibold group-hover:text-amber-400">
+                        Agendar <i class="fas fa-chevron-right ml-2 text-xs"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section (Parallax feel) -->
+    <section class="relative py-24 flex items-center justify-center">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1634480496821-5580556846c3?q=80&w=2070&auto=format&fit=crop" alt="Barber Tools" class="w-full h-full object-cover opacity-20">
+            <div class="absolute inset-0 bg-neutral-950/80"></div>
+        </div>
+        <div class="relative z-10 text-center max-w-3xl px-6">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold text-white mb-6">Pronto para elevar seu visual?</h2>
+            <p class="text-neutral-300 text-lg mb-8">Não deixe para depois. Garanta seu horário com os melhores profissionais de Recife.</p>
+            <a href="https://wa.me/5581999174789?text=Olá, gostaria de verificar a disponibilidade de horários." 
+               class="inline-block bg-gradient-to-r from-amber-600 to-amber-500 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-amber-500/20 transform hover:scale-105 transition-all duration-300">
+                Reservar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="localizacao" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800">
+                    <h3 class="text-2xl font-serif font-bold text-white mb-2">Entre em Contato</h3>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário para ser atendido diretamente no WhatsApp.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Nome Completo</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option>Corte de Cabelo</option>
+                                <option>Barba</option>
+                                <option>Combo Completo</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-lg transition-all duration-300 shadow-lg">
+                            Enviar via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="space-y-8">
+                    <div>
+                        <h3 class="text-2xl font-serif font-bold text-white mb-6">Onde Estamos</h3>
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 mt-1">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Shopping Recife</h4>
+                                <p class="text-neutral-400">R. Padre Carapuceiro, 777 - Piso 2<br>Boa Viagem, Recife - PE</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start mb-4">
+                            <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 mt-1">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-white font-medium">Telefone / WhatsApp</h4>
+                                <a href="https://wa.me/5581999174789" class="text-neutral-400 hover:text-amber-500 transition-colors">(81) 99917-4789</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Embedded Google Map -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl h-[300px] lg:h-[400px]">
+                        <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Padre%20Carapuceiro%2C%20777%20-%20Piso%202%20-%20Boa%20Viagem%2C%20Recife%20-%20PE%2C%2051020-900%2C%20Brasil%2C%20Recife&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <span class="text-2xl font-serif font-bold text-white">TROIS<span class="text-amber-500">.</span></span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/5581999174789" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5581999174789" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/5581999174789" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-800 pt-8 text-center md:text-left">
+                <p class="text-neutral-500 text-sm">&copy; 2023 Trois Barbearia. Todos os direitos reservados. Design by Elite Studio.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic for WhatsApp Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture values
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct Message
+            var finalMessage = "Olá, me chamo " + name + ". Tenho interesse no serviço de " + service + ".";
+            if(msg) {
+                finalMessage += " " + msg;
+            }
+            
+            // WhatsApp URL
+            var url = "https://wa.me/5581999174789?text=" + encodeURIComponent(finalMessage);
+            
+            // Redirect
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
