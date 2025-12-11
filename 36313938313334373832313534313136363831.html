@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia D.O.N Barber Beer - RioMar Fortaleza | Experiência Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles for gradients or specific overrides if needed, though Tailwind should handle most */
+        .text-gradient {
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gradient-overlay {
+            background: linear-gradient(to top, theme('colors.neutral.950') 0%, theme('colors.neutral.950') 50%, transparent 100%);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto py-4 px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-extrabold text-gradient" style="--tw-gradient-from: #fcd34d; --tw-gradient-to: #d97706;">
+                D.O.N BARBER BEER
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#about" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#services" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-2 px-6 rounded-full transition duration-300 shadow-lg">
+                Agendar Horário
+            </a>
+            <!-- Mobile Menu Toggle (optional for this single file, but good practice) -->
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596434300655-e48d34177895?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-neutral-100 leading-tight mb-4">
+                    <span class="text-gradient" style="--tw-gradient-from: #fcd34d; --tw-gradient-to: #d97706;">D.O.N</span> BARBER BEER
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-400 mb-8">
+                    Sua experiência premium em barbearia, com estilo, conforto e a melhor cerveja.
+                    RioMar Fortaleza.
+                </p>
+                <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-xl transform hover:scale-105">
+                    Agendar Agora <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="bg-neutral-900 py-24 px-6 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                        A Essência da <span class="text-amber-500">Tradição</span> e do <span class="text-amber-500">Estilo</span>
+                    </h2>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-4">
+                        Na Barbearia D.O.N Barber Beer, combinamos a arte clássica da barbearia com um ambiente moderno e exclusivo. Nosso espaço no RioMar Fortaleza foi criado para ser um refúgio masculino, onde cada corte, barba e tratamento é uma experiência única.
+                    </p>
+                    <p class="text-lg text-neutral-400 leading-relaxed">
+                        Desfrute de um atendimento impecável, produtos de alta qualidade e, claro, uma seleção especial de cervejas artesanais para tornar seu momento ainda mais relaxante e sofisticado. Venha descobrir o que significa ser D.O.N.
+                    </p>
+                    <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="mt-8 inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg">
+                        Conheça Mais <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1555026900-b6a8a3a99285?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da Barbearia D.O.N" class="rounded-2xl shadow-2xl border border-neutral-800 object-cover w-full h-96">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-neutral-950 py-24 px-6 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-16">
+                    Nossos <span class="text-amber-500">Serviços</span> Especializados
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-cut text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Clássico & Moderno</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Cortes personalizados que combinam a precisão da tesoura com a versatilidade da máquina, adaptando-se ao seu estilo e formato de rosto.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">A partir de R$ 60,00</p>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-beard text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Modelada & Terapia</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Modelagem de barba com navalha, toalhas quentes, óleos essenciais e loções pós-barba para uma pele macia e hidratada.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">A partir de R$ 50,00</p>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-beer-mug-empty text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Combo D.O.N Barber Beer</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Experimente o pacote completo: corte de cabelo, barba modelada e uma cerveja artesanal selecionada para você.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">A partir de R$ 100,00</p>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-head-side-mask text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Tratamento Capilar & Facial</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Hidratação profunda, esfoliação facial e máscaras que revitalizam o couro cabeludo e a pele, deixando você renovado.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">A partir de R$ 70,00</p>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-paint-brush text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Coloração Masculina</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Discretas ou ousadas, nossas técnicas de coloração realçam seu visual, cobrindo grisalhos ou criando um novo estilo.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">A partir de R$ 90,00</p>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 text-left shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-hand-sparkles text-amber-500 text-4xl mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Dia do Noivo Premium</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Um pacote exclusivo para o dia mais importante, com serviços completos de beleza e relaxamento para o noivo e padrinhos.
+                        </p>
+                        <p class="text-amber-500 text-xl font-bold">Personalizado</p>
+                    </div>
+                </div>
+                <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações sobre os serviços." target="_blank" class="mt-16 inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-lg transition duration-300 shadow-lg">
+                    Agendar Seu Serviço <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="bg-neutral-900 py-24 px-6 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-16">
+                    Nossa <span class="text-amber-500">Galeria</span> de Estilo
+                </h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <img src="https://images.unsplash.com/photo-1503951458623-90d65b7501a4?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo moderno" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1621607507117-0f81d11b8979?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1599380628291-38a3297a7a1c?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior luxuoso da barbearia" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1560066986-cd13e70d4947?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Detalhe de barbearia" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1509923842103-6232f38d613e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Homem com barba bem cuidada" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1555026922-82386851147a?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos de barbearia" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1605497825000-880c54157d6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ambiente da barbearia" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                    <img src="https://images.unsplash.com/photo-1596434300655-e48d34177895?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bancada de barbeiro" class="rounded-xl object-cover h-64 w-full border border-neutral-800 shadow-md">
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="bg-neutral-950 py-24 px-6 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-16">
+                    Por Que Escolher <span class="text-amber-500">D.O.N BARBER BEER</span>?
+                </h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-gem text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Ambiente Exclusivo</h3>
+                        <p class="text-neutral-400">
+                            Um espaço sofisticado e confortável, projetado para proporcionar o máximo relaxamento e privacidade.
+                        </p>
+                    </div>
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-award text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Profissionais Premiados</h3>
+                        <p class="text-neutral-400">
+                            Nossa equipe de barbeiros é altamente qualificada, com anos de experiência e paixão pela arte.
+                        </p>
+                    </div>
+                    <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
+                        <i class="fas fa-glass-cheers text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Cerveja Artesanal</h3>
+                        <p class="text-neutral-400">
+                            Desfrute de uma seleção de cervejas especiais enquanto cuidamos do seu visual. Estilo e sabor em um só lugar.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="bg-neutral-900 py-24 px-6">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-neutral-100 text-center mb-16">
+                    Fale Conosco & <span class="text-amber-500">Agende</span> Seu Horário
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Info -->
+                    <div>
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Informações de Contato</h3>
+                        <p class="text-lg text-neutral-400 mb-4 flex items-center">
+                            <i class="fas fa-phone-alt text-amber-500 mr-3"></i>
+                            Telefone: <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="ml-2 text-neutral-100 hover:text-amber-500">(85) 3235-0064</a>
+                        </p>
+                        <p class="text-lg text-neutral-400 mb-4 flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-3 mt-1"></i>
+                            Endereço: R. Des. Lauro Nogueira, 1500 - Papicu, RioMar Fortaleza, Fortaleza - CE, 60175-055
+                        </p>
+                        <p class="text-lg text-neutral-400 mb-8 flex items-center">
+                            <i class="fas fa-clock text-amber-500 mr-3"></i>
+                            Horário de Funcionamento: Consultar via WhatsApp
+                        </p>
+
+                        <!-- Google Maps -->
+                        <div class="mt-8">
+                            <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Nossa Localização</h3>
+                            <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Des.%20Lauro%20Nogueira%2C%201500%20-%20Papicu%2C%20Fortaleza%20-%20CE%2C%2060175-055%2C%20Brasil%2C%20Fortaleza&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-neutral-400 text-sm font-bold mb-2">Seu Nome</label>
+                                <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Seu nome completo" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-neutral-400 text-sm font-bold mb-2">Seu E-mail (Opcional)</label>
+                                <input type="email" id="email" name="email" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="seu.email@exemplo.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-neutral-400 text-sm font-bold mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="6" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-500" placeholder="Gostaria de agendar um corte..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full text-lg transition duration-300 shadow-lg transform hover:scale-105">
+                                Enviar Via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 px-6 border-t border-neutral-800 text-center text-neutral-400">
+        <div class="max-w-7xl mx-auto">
+            <p class="mb-4 text-neutral-100 font-bold text-lg">D.O.N BARBER BEER - RioMar Fortaleza</p>
+            <p class="mb-4">
+                <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> (85) 3235-0064
+                </a>
+                <span class="mx-3">|</span>
+                <a href="https://maps.app.goo.gl/YourGoogleMapsLink" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300">
+                    <i class="fas fa-map-marker-alt mr-2"></i> RioMar Fortaleza
+                </a>
+            </p>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-neutral-400 hover:text-amber-500 text-2xl transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 text-2xl transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/558532350064?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 text-2xl transition duration-300"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p>&copy; 2023 D.O.N Barber Beer. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/558532350064?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
