@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBEARIA RUIZ - Savassi | Cortes e Barbear Clássico em BH</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom styles to ensure smooth scrolling for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Hide scrollbar for aesthetic, but allow scrolling */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+        body {
+            -ms-overflow-style: none; /* IE and Edge */
+            scrollbar-width: none; /* Firefox */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header (Glassmorphism) -->
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-amber-500 tracking-wider">BARBEARIA RUIZ</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Home</a>
+                <a href="#services" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/5531991511034?text=Olá, gostaria de agendar um horário na Barbearia Ruiz." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-6 rounded-lg transition duration-300 shadow-lg hidden md:block">
+                Agendar Horário
+            </a>
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-neutral-100 focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="md:hidden fixed inset-0 bg-neutral-950/90 backdrop-blur-sm z-40 hidden">
+            <div class="flex flex-col items-center justify-center h-full space-y-8">
+                <a href="#hero" class="text-3xl text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Home</a>
+                <a href="#services" class="text-3xl text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Serviços</a>
+                <a href="#gallery" class="text-3xl text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Galeria</a>
+                <a href="#contact" class="text-3xl text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contato</a>
+                <a href="https://wa.me/5531991511034?text=Olá, gostaria de agendar um horário na Barbearia Ruiz." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-lg text-2xl">
+                    Agendar Horário
+                </a>
+            </div>
+            <button id="close-mobile-menu" class="absolute top-6 right-6 text-neutral-100 focus:outline-none">
+                <i class="fas fa-times text-3xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1503951458624-a745585f67a6?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1920');">
+                <!-- Dark overlay gradient -->
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            </div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-neutral-100 mb-6 drop-shadow-lg">
+                    BARBEARIA RUIZ <br><span class="text-amber-500">SAVASSI</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-300 mb-10 leading-relaxed">
+                    A arte do corte e barbear clássico com um toque moderno em Belo Horizonte.
+                </p>
+                <a href="https://wa.me/5531991511034?text=Olá, gostaria de agendar um horário na Barbearia Ruiz." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-lg text-xl transition duration-300 shadow-xl transform hover:scale-105">
+                    Agende seu Horário <i class="fab fa-whatsapp ml-3"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1596434311893-b2657e00d72f?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Barbearia Ruiz Interior" class="w-full h-96 object-cover object-center transform hover:scale-105 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-amber-500 mb-6">Sobre Nós</h2>
+                    <p class="text-lg text-neutral-300 leading-relaxed mb-6">
+                        Na Barbearia Ruiz, combinamos a tradição do barbear clássico com as tendências mais modernas em cortes masculinos. Localizada na vibrante Savassi, Belo Horizonte, somos o refúgio perfeito para o homem que busca excelência, estilo e um momento de relaxamento.
+                    </p>
+                    <p class="text-lg text-neutral-300 leading-relaxed">
+                        Nossos barbeiros são especialistas dedicados a proporcionar uma experiência premium, utilizando apenas produtos de alta qualidade e técnicas apuradas para garantir que você saia não apenas com um visual impecável, mas com a confiança renovada.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-neutral-950 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-amber-500 mb-12">Nossos Serviços Especializados</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Corte Masculino Clássico</h3>
+                        <p class="text-neutral-400 mb-6">Cortes tradicionais e modernos, adaptados ao seu estilo e formato de rosto.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 60</span>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-shower text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Barba Terapêutica</h3>
+                        <p class="text-neutral-400 mb-6">Toalhas quentes, óleos essenciais e um barbear perfeito para sua pele.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 50</span>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-scissors text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Corte e Barba Combo</h3>
+                        <p class="text-neutral-400 mb-6">O pacote completo para um visual impecável da cabeça aos pés.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 100</span>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-palette text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Coloração e Pigmentação</h3>
+                        <p class="text-neutral-400 mb-6">Realce sua barba e cabelo com técnicas de coloração e pigmentação.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 80</span>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-head-side-mask text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Tratamento Capilar</h3>
+                        <p class="text-neutral-400 mb-6">Hidratação profunda e tratamentos específicos para a saúde do seu cabelo.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 70</span>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300 transform hover:scale-105">
+                        <i class="fas fa-child-reaching text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Corte Infantil</h3>
+                        <p class="text-neutral-400 mb-6">Cortes modernos e divertidos para os pequenos, com todo cuidado e atenção.</p>
+                        <span class="text-3xl font-bold text-amber-500">R$ 45</span>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <a href="https://wa.me/5531991511034?text=Olá, gostaria de saber mais sobre os serviços da Barbearia Ruiz." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-lg text-xl transition duration-300 shadow-xl transform hover:scale-105">
+                        Ver Todos os Serviços <i class="fab fa-whatsapp ml-3"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="gallery" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-amber-500 mb-12">Nossa Galeria</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1582772027588-1246733f1146?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Barber Chair" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Ambiente Clássico</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1547073238-d65e7141f173?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Barber working on client" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Corte Perfeito</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1560066984-1380958a439d?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Barber tools detail" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Detalhes Premium</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1621607509426-f761765c3639?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Modern barber interior" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Espaço Moderno</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1547073238-d65e7141f173?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Shaving client" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Barba Impecável</div>
+                    </div>
+                    <div class="relative rounded-2xl overflow-hidden shadow-xl group">
+                        <img src="https://images.unsplash.com/photo-1503951458624-a745585f67a6?crop=entropy&cs=tinysrgb&fit=max&fm=webp&q=80&w=1080" alt="Barber shop front" class="w-full h-80 object-cover transform group-hover:scale-110 transition duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/30 to-transparent opacity-80 group-hover:opacity-60 transition duration-300"></div>
+                        <div class="absolute bottom-6 left-6 text-neutral-100 text-xl font-semibold">Nossa Fachada</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 bg-neutral-950 border-b border-neutral-800">
+            <div class="max-w-4xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">Pronto para transformar seu estilo?</h2>
+                <p class="text-xl text-neutral-300 mb-10">
+                    Agende seu horário agora e experimente o padrão de excelência da Barbearia Ruiz.
+                </p>
+                <a href="https://wa.me/5531991511034?text=Olá, gostaria de agendar um horário na Barbearia Ruiz." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-12 rounded-lg text-xl transition duration-300 shadow-xl transform hover:scale-105">
+                    Agendar pelo WhatsApp <i class="fab fa-whatsapp ml-3"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-amber-500 text-center mb-16">Entre em Contato</h2>
+                <div class="grid md:grid-cols-2 gap-16 items-start">
+                    <!-- Contact Info & Map -->
+                    <div>
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-8">Informações de Contato</h3>
+                        <div class="space-y-6 mb-10 text-lg text-neutral-300">
+                            <p><i class="fas fa-map-marker-alt text-amber-500 mr-4"></i>Av. do Contorno, 6.244 - Funcionários, Belo Horizonte - MG</p>
+                            <p><i class="fas fa-phone-alt text-amber-500 mr-4"></i><a href="tel:+5531991511034" class="hover:text-amber-500 transition duration-300">(31) 99151-1034</a></p>
+                            <p><i class="fab fa-whatsapp text-amber-500 mr-4"></i><a href="https://wa.me/5531991511034" target="_blank" class="hover:text-amber-500 transition duration-300">(31) 99151-1034</a></p>
+                            <p><i class="fas fa-clock text-amber-500 mr-4"></i>Horário: Não informado (Verifique nosso WhatsApp para agendamento)</p>
+                        </div>
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-8">Nossa Localização</h3>
+                        <div class="rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                            <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20do%20Contorno%2C%206.244%20-%20Funcion%C3%A1rios%2C%20Belo%20Horizonte%20-%20MG%2C%2030110-042%2C%20Brasil%2C%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-950 p-10 rounded-2xl shadow-2xl border border-neutral-800">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-8">Envie uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-neutral-300 text-lg font-medium mb-2">Seu Nome</label>
+                                <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-amber-500 focus:border-amber-500 text-neutral-100 placeholder-neutral-500" placeholder="Seu nome completo" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-neutral-300 text-lg font-medium mb-2">Seu E-mail (Opcional)</label>
+                                <input type="email" id="email" name="email" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-amber-500 focus:border-amber-500 text-neutral-100 placeholder-neutral-500" placeholder="seu.email@exemplo.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-neutral-300 text-lg font-medium mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="6" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-amber-500 focus:border-amber-500 text-neutral-100 placeholder-neutral-500" placeholder="Descreva sua dúvida ou solicitação..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-6 rounded-lg text-xl transition duration-300 shadow-lg transform hover:scale-105">
+                                Enviar Mensagem via WhatsApp <i class="fab fa-whatsapp ml-3"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800 text-center">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="text-neutral-400 text-lg mb-4">&copy; 2023 BARBEARIA RUIZ - Savassi. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://instagram.com/barbeariaruiz" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="https://facebook.com/barbeariaruiz" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5531991511034" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('hidden');
+        });
+
+        document.getElementById('close-mobile-menu').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('hidden');
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var message = document.getElementById('message').value;
+            var email = document.getElementById('email').value; // Optional field
+
+            var whatsappText = "Olá, me chamo " + name + ". ";
+            if (email) {
+                whatsappText += "Meu e-mail é " + email + ". ";
+            }
+            whatsappText += message;
+
+            var url = "https://wa.me/5531991511034?text=" + encodeURIComponent(whatsappText);
+            window.open(url, '_blank');
+        });
+    </script>
+
+</body>
+</html>
