@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delta - Barbearia em Fortaleza | Estilo & Tradição</title>
+    <meta name="description" content="Delta Barbearia em Fortaleza. Cortes modernos, barba terapia e serviços especializados em um ambiente de luxo. Agende seu horário.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config for Custom Colors/Fonts -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #262626;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <a href="#" class="font-heading text-3xl font-bold tracking-wider text-white">
+                        DELTA<span class="text-amber-500">.</span>
+                    </a>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Início</a>
+                    <a href="#sobre" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">A Barbearia</a>
+                    <a href="#servicos" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Serviços</a>
+                    <a href="#contato" class="text-sm font-medium text-neutral-300 hover:text-amber-500 transition-colors">Contato</a>
+                    <a href="https://wa.me/5585992179655?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-full font-medium transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-neutral-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-b border-neutral-800 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-2">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-white hover:bg-neutral-800 rounded-md">Início</a>
+                <a href="#sobre" class="block px-3 py-2 text-base font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white rounded-md">A Barbearia</a>
+                <a href="#servicos" class="block px-3 py-2 text-base font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white rounded-md">Serviços</a>
+                <a href="#contato" class="block px-3 py-2 text-base font-medium text-neutral-300 hover:bg-neutral-800 hover:text-white rounded-md">Contato</a>
+                <a href="https://wa.me/5585992179655?text=Olá, gostaria de agendar um horário." target="_blank" class="block mt-4 text-center bg-amber-600 text-white px-4 py-3 rounded-lg font-bold">
+                    Agendar Agora
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Parallax feel -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover object-center">
+            <!-- Dark Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+            <div class="absolute inset-0 bg-neutral-950/30 backdrop-blur-[2px]"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-amber-500 font-bold tracking-[0.2em] uppercase text-sm md:text-base mb-4 animate-fade-in-up">Fortaleza • Ceará</h2>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                ESTILO <br class="md:hidden"> & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">TRADIÇÃO</span>
+            </h1>
+            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 mb-10 font-light">
+                A experiência definitiva em cuidados masculinos. Cortes de precisão e ambiente exclusivo para o homem moderno.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="https://wa.me/5585992179655?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.3)] hover:shadow-[0_0_30px_rgba(217,119,6,0.5)] flex items-center justify-center">
+                    <i class="fab fa-whatsapp mr-2"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="border border-neutral-600 hover:border-white text-white hover:bg-white/5 px-8 py-4 rounded-lg font-medium text-lg transition-all duration-300 flex items-center justify-center">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <!-- Image Grid -->
+                <div class="relative grid grid-cols-2 gap-4">
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=1000&auto=format&fit=crop" alt="Corte de cabelo" class="rounded-2xl shadow-2xl border border-neutral-800 transform translate-y-8">
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb7135952?q=80&w=1000&auto=format&fit=crop" alt="Ferramentas de barbeiro" class="rounded-2xl shadow-2xl border border-neutral-800">
+                    <!-- Decorative Element -->
+                    <div class="absolute -z-10 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-amber-600/10 blur-3xl rounded-full"></div>
+                </div>
+
+                <!-- Content -->
+                <div>
+                    <div class="inline-block px-3 py-1 mb-4 text-xs font-semibold tracking-wider text-amber-500 uppercase bg-amber-900/10 rounded-full border border-amber-900/20">
+                        Sobre a Delta
+                    </div>
+                    <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6">
+                        Mais que um corte, <br>um <span class="text-amber-500">Ritual.</span>
+                    </h2>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizada no coração de Fortaleza, a Delta Barbearia redefine o conceito de cuidado masculino. Combinamos técnicas clássicas de barbearia com as tendências mais modernas do visagismo.
+                    </p>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Nosso ambiente foi projetado para ser seu refúgio: música de qualidade, cerveja gelada e profissionais que entendem exatamente o que você precisa para elevar sua imagem.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Produtos de Alta Performance
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Ambiente Climatizado e Exclusivo
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5585992179655?text=Olá, gostaria de conhecer a barbearia." target="_blank" class="inline-flex items-center text-amber-500 font-semibold hover:text-amber-400 transition-colors group">
+                        Fale com a gente <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 relative">
+        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-800 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-4xl md:text-5xl font-bold text-white mb-4">Nossos Serviços</h2>
+                <p class="text-neutral-400 max-w-2xl mx-auto">Excelência em cada detalhe. Escolha o serviço ideal para o seu estilo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Corte Premium</h3>
+                    <p class="text-neutral-400 mb-6">Consultoria de visagismo, lavagem especial e finalização com produtos de alta qualidade.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar um Corte Premium." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">Toalha quente, óleos essenciais e lâmina precisa para um barbear relaxante e perfeito.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar uma Barba Terapia." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Camuflagem</h3>
+                    <p class="text-neutral-400 mb-6">Disfarce natural dos fios brancos da barba ou cabelo, rejuvenescendo o visual com sutileza.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar uma Camuflagem." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-child"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Corte Kids</h3>
+                    <p class="text-neutral-400 mb-6">Atendimento especial para os pequenos, com paciência e estilo para todas as idades.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar um Corte Kids." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-gem"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Selagem</h3>
+                    <p class="text-neutral-400 mb-6">Tratamento para alinhamento dos fios e redução de volume, mantendo o aspecto natural.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar uma Selagem." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-10 -mt-10 transition-all group-hover:bg-amber-600/20"></div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 border border-neutral-800 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h3 class="font-heading text-2xl font-bold text-white mb-3">Combo Delta</h3>
+                    <p class="text-neutral-400 mb-6">A experiência completa: Corte + Barba + Bebida de cortesia. O favorito da casa.</p>
+                    <a href="https://wa.me/5585992179655?text=Gostaria de agendar o Combo Delta." class="text-amber-500 font-medium text-sm uppercase tracking-wider hover:text-amber-400">Agendar <i class="fas fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Strip -->
+    <section class="py-16 bg-gradient-to-r from-amber-600 to-amber-700 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-20"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between">
+            <div class="mb-6 md:mb-0 text-center md:text-left">
+                <h2 class="font-heading text-3xl md:text-4xl font-bold text-white mb-2">Pronto para elevar seu estilo?</h2>
+                <p class="text-amber-100 text-lg">Não deixe para depois. A sua melhor versão começa aqui.</p>
+            </div>
+            <a href="https://wa.me/5585992179655?text=Olá, quero agendar meu horário agora!" target="_blank" class="bg-neutral-950 text-white hover:bg-neutral-900 px-8 py-4 rounded-lg font-bold text-lg transition-all duration-300 shadow-lg transform hover:-translate-y-1">
+                Agendar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Location & Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info & Map -->
+                <div>
+                    <h2 class="font-heading text-4xl font-bold text-white mb-6">Onde Estamos</h2>
+                    <p class="text-neutral-400 mb-8">Venha nos visitar na Praia de Iracema. Estacionamento fácil e localização privilegiada.</p>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-white font-bold text-lg">Endereço</h3>
+                                <p class="text-neutral-400">R. Gonçalves Lêdo, 539 - Praia de Iracema<br>Fortaleza - CE, 60110-261</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-white font-bold text-lg">Telefone / WhatsApp</h3>
+                                <p class="text-neutral-400">(85) 99217-9655</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 w-12 h-12 bg-neutral-900 rounded-lg flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h3 class="text-white font-bold text-lg">Horário de Atendimento</h3>
+                                <p class="text-neutral-400">Atendimento com Hora Marcada<br>Consulte disponibilidade</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map Iframe -->
+                    <div class="rounded-xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Gon%C3%A7alves%20L%C3%AAdo%2C%20539%20-%20Praia%20de%20Iracema%2C%20Fortaleza%20-%20CE%2C%2060110-261%2C%20Brasil%2C%20Fortaleza&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Smart Contact Form -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-2xl">
+                    <h3 class="font-heading text-2xl font-bold text-white mb-2">Envie uma Mensagem</h3>
+                    <p class="text-neutral-400 mb-8 text-sm">Preencha o formulário abaixo e iniciaremos a conversa diretamente no WhatsApp.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Ex: João Silva">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Combo (Corte + Barba)">Combo (Corte + Barba)</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Gostaria de saber se tem horário para hoje..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-900/30 flex items-center justify-center">
+                            <i class="fab fa-whatsapp text-xl mr-2"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-800 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="font-heading text-3xl font-bold tracking-wider text-white">
+                        DELTA<span class="text-amber-500">.</span>
+                    </a>
+                    <p class="text-neutral-500 text-sm mt-2">Barbearia Premium em Fortaleza.</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://wa.me/5585992179655" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-2xl">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-neutral-900 pt-8 text-center text-neutral-600 text-sm">
+                <p>&copy; 2023 Delta Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Smart Form Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct the message
+            var finalMsg = `Olá, me chamo *${name}*.\nTenho interesse em: *${service}*.\n\n${msg}`;
+            
+            // WhatsApp URL
+            var url = "https://wa.me/5585992179655?text=" + encodeURIComponent(finalMsg);
+            
+            // Redirect
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
