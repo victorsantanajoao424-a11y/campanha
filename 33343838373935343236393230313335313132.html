@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clube da Barba BH: Barbearia Premium em Belo Horizonte</title>
+    <meta name="description" content="Clube da Barba BH - Sua barbearia de elite em Belo Horizonte. Cortes de cabelo, barba clássica e serviços especializados para o homem moderno.">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23fbbf24'%3E%3Cpath d='M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8zm-1-12h2v6h-2v-6zm0 8h2v2h-2v-2z'%3E%3C/path%3E%3C/svg%3E">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fff3c7',
+                            200: '#ffe699',
+                            300: '#fddf6b',
+                            400: '#fcc746',
+                            500: '#fbbf24',
+                            600: '#e5a50d',
+                            700: '#c28500',
+                            800: '#9f6b00',
+                            900: '#835400',
+                            950: '#4e3100',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts - Inter and Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header / Navbar -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-display font-bold text-amber-500 hover:text-amber-400 transition-colors duration-300">Clube da Barba BH</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações." target="_blank" rel="noopener noreferrer" class="hidden md:inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300 shadow-lg">
+                <i class="fab fa-whatsapp mr-2"></i> Agendar Horário
+            </a>
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-neutral-100 text-2xl focus:outline-none" aria-label="Open menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative w-full h-screen flex items-center justify-center text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1595475207798-b80c27599014?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbearia de luxo com cliente sendo atendido" class="absolute inset-0 w-full h-full object-cover z-0">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
+        <div class="relative z-20 max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-7xl font-display font-bold leading-tight mb-6 text-neutral-100 drop-shadow-lg">
+                Clube da Barba BH: <span class="text-amber-500">A Arte da Barbearia</span> em Belo Horizonte
+            </h1>
+            <p class="text-xl md:text-2xl text-neutral-300 mb-10 drop-shadow-md">
+                Experiência premium, cortes impecáveis e o cuidado que você merece.
+            </p>
+            <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 bg-amber-600 text-neutral-950 text-xl font-semibold rounded-2xl hover:bg-amber-500 transition-all duration-300 shadow-xl transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-3"></i> Agende seu Horário
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1">
+                <h2 class="text-5xl font-display font-bold text-amber-500 mb-8 leading-tight">
+                    Mais que um Corte, <br> Uma Experiência Exclusiva.
+                </h2>
+                <p class="text-neutral-300 text-lg leading-relaxed mb-6">
+                    No Clube da Barba BH, resgatamos a essência da barbearia clássica e a elevamos a um novo patamar de luxo e sofisticação. Cada visita é uma jornada de relaxamento e transformação, onde a precisão de nossos barbeiros se une a um ambiente acolhedor e exclusivo.
+                </p>
+                <p class="text-neutral-400 text-md leading-relaxed mb-8">
+                    Utilizamos apenas produtos de alta qualidade e técnicas refinadas para garantir que cada corte, barba ou tratamento reflita sua personalidade e estilo. Venha descobrir por que somos a escolha de quem busca excelência em Belo Horizonte.
+                </p>
+                <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações sobre os profissionais do Clube da Barba BH." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-8 py-3 bg-neutral-800 text-neutral-100 font-semibold rounded-xl hover:bg-neutral-700 transition-all duration-300 border border-neutral-700">
+                    <i class="fas fa-users mr-2"></i> Conheça Nossos Profissionais
+                </a>
+            </div>
+            <div class="order-1 md:order-2">
+                <img src="https://images.unsplash.com/photo-1560066984-138c16a67853?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando em cliente" class="rounded-2xl shadow-2xl border border-neutral-800">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-display font-bold text-neutral-100 mb-12">
+                Nossos <span class="text-amber-500">Serviços Especializados</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Corte Masculino</h3>
+                    <p class="text-neutral-400 mb-6">Cortes modernos e clássicos, adaptados ao seu estilo e formato de rosto, com acabamento impecável.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 60</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar um Corte Masculino." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-beard text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Barba Clássica</h3>
+                    <p class="text-neutral-400 mb-6">Experiência completa com toalhas quentes, espuma cremosa e navalha para um barbear perfeito e relaxante.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 50</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar uma Barba Clássica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-scissors text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Corte & Barba</h3>
+                    <p class="text-neutral-400 mb-6">O combo perfeito para renovar seu visual com um corte impecável e uma barba bem cuidada.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 100</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar um combo Corte e Barba." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Barba Terapêutica</h3>
+                    <p class="text-neutral-400 mb-6">Um tratamento relaxante para a pele e a barba, com produtos específicos e massagem facial.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 70</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar uma Barba Terapêutica." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-face-mask text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Limpeza de Pele</h3>
+                    <p class="text-neutral-400 mb-6">Revitalize sua pele com nossa limpeza facial profunda, ideal para remover impurezas e hidratar.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 90</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar uma Limpeza de Pele." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-eyebrow text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-display font-semibold text-neutral-100 mb-4">Design de Sobrancelha</h3>
+                    <p class="text-neutral-400 mb-6">Um toque final para realçar seu olhar e harmonizar com o formato do seu rosto.</p>
+                    <span class="text-amber-500 text-2xl font-bold block mb-6">A partir de R$ 40</span>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de agendar um Design de Sobrancelha." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-950 font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+            </div>
+            <div class="mt-16">
+                <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações sobre todos os serviços do Clube da Barba BH." target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-10 py-4 bg-neutral-800 text-neutral-100 text-xl font-semibold rounded-2xl hover:bg-neutral-700 transition-all duration-300 border border-neutral-700 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3"></i> Ver Todos os Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-display font-bold text-neutral-100 text-center mb-16">
+                Fale Conosco e <span class="text-amber-500">Agende Sua Visita</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Info -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl">
+                    <h3 class="text-3xl font-display font-semibold text-amber-500 mb-6">Informações de Contato</h3>
+                    <ul class="space-y-6 text-lg text-neutral-300">
+                        <li>
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>
+                            <span class="font-semibold text-neutral-100">Endereço:</span> R. Gentios, 161 - Loja 2 - Luxemburgo, Belo Horizonte - MG, 30380-490, Brasil
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt text-amber-500 mr-3"></i>
+                            <span class="font-semibold text-neutral-100">Telefone:</span> <a href="tel:+5531975449071" class="hover:text-amber-500 transition-colors duration-300">(31) 97544-9071</a>
+                        </li>
+                        <li>
+                            <i class="fab fa-whatsapp text-amber-500 mr-3"></i>
+                            <span class="font-semibold text-neutral-100">WhatsApp:</span> <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações." target="_blank" rel="noopener noreferrer" class="hover:text-amber-500 transition-colors duration-300">(31) 97544-9071</a>
+                        </li>
+                        <li>
+                            <i class="fas fa-clock text-amber-500 mr-3"></i>
+                            <span class="font-semibold text-neutral-100">Horário de Funcionamento:</span> Agende seu horário via WhatsApp.
+                        </li>
+                    </ul>
+
+                    <div class="mt-10">
+                        <h4 class="text-2xl font-display font-semibold text-amber-500 mb-4">Localização</h4>
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Gentios%2C%20161%20-%20Loja%202%20-%20Luxemburgo%2C%20Belo%20Horizonte%20-%20MG%2C%2030380-490%2C%20Brasil%2C%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl">
+                    <h3 class="text-3xl font-display font-semibold text-amber-500 mb-6">Envie sua Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent outline-none text-neutral-100 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-neutral-300 text-sm font-medium mb-2">Seu Email (Opcional)</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent outline-none text-neutral-100 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-xl focus:ring-2 focus:ring-amber-600 focus:border-transparent outline-none text-neutral-100 placeholder-neutral-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full flex items-center justify-center px-8 py-4 bg-amber-600 text-neutral-950 text-lg font-semibold rounded-xl hover:bg-amber-500 transition-all duration-300 shadow-lg transform hover:scale-105">
+                            <i class="fab fa-whatsapp mr-3"></i> Enviar Mensagem via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-16 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-10">
+                <a href="#hero" class="text-3xl font-display font-bold text-amber-500 hover:text-amber-400 transition-colors duration-300 mb-6 md:mb-0">Clube da Barba BH</a>
+                <div class="flex space-x-6 text-neutral-400 mb-6 md:mb-0">
+                    <a href="#" aria-label="Facebook" class="hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações." target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <div class="flex flex-col md:flex-row space-y-3 md:space-y-0 md:space-x-8 text-neutral-300">
+                    <a href="#sobre" class="hover:text-amber-500 transition-colors duration-300">Sobre Nós</a>
+                    <a href="#servicos" class="hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                    <a href="#contato" class="hover:text-amber-500 transition-colors duration-300">Contato</a>
+                </div>
+            </div>
+            <p class="text-neutral-500 text-sm mt-10">&copy; 2023 Clube da Barba BH. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/5531975449071?text=Olá, gostaria de mais informações." target="_blank" rel="noopener noreferrer" class="fixed bottom-8 right-8 bg-amber-600 text-neutral-950 p-4 rounded-full shadow-lg hover:bg-amber-500 transition-all duration-300 z-50 transform hover:scale-110" aria-label="WhatsApp Chat">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5531975449071?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+
+        // Simple Mobile Menu Toggle (Optional, but good for responsiveness)
+        const mobileMenuButton = document.querySelector('header nav button');
+        const navLinks = document.querySelector('header nav > div'); // The div containing the nav links
+        mobileMenuButton.addEventListener('click', () => {
+            navLinks.classList.toggle('hidden');
+            navLinks.classList.toggle('flex');
+            navLinks.classList.toggle('flex-col');
+            navLinks.classList.toggle('absolute');
+            navLinks.classList.toggle('top-full');
+            navLinks.classList.toggle('left-0');
+            navLinks.classList.toggle('w-full');
+            navLinks.classList.toggle('bg-neutral-950/90');
+            navLinks.classList.toggle('backdrop-blur-sm');
+            navLinks.classList.toggle('p-4');
+            navLinks.classList.toggle('space-y-4');
+            navLinks.classList.toggle('md:space-y-0'); // Reset for desktop
+            navLinks.classList.toggle('md:space-x-8'); // Reset for desktop
+            navLinks.classList.toggle('md:flex'); // Reset for desktop
+        });
+    </script>
+</body>
+</html>
