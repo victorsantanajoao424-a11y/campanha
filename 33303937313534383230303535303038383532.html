@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divina Barbearia - Varjota Fortaleza-Ce | Estilo e Tradição</title>
+    <link rel="icon" href="https://via.placeholder.com/32/d97706/0a0a0a?text=DB" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Cinzel', serif;
+        }
+        /* Custom animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeIn 0.8s ease-out forwards;
+            opacity: 0; /* Hidden by default */
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fff3cd',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 shadow-lg">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-amber-500 tracking-wide">Divina Barbearia</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/5585989280802?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-5 rounded-full transition duration-300 flex items-center group">
+                <i class="fab fa-whatsapp mr-2 group-hover:scale-110 transition-transform duration-300"></i> Agendar Horário
+            </a>
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1596431988118-e32501a35560?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior de barbearia luxuosa com cadeiras de couro" class="absolute inset-0 w-full h-full object-cover z-0 brightness-75">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
+        <div class="relative z-20 max-w-4xl px-6">
+            <h1 class="text-5xl md:text-7xl font-bold text-neutral-100 leading-tight mb-4 animate-fade-in-up">
+                <span class="bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">Divina Barbearia</span>
+                <br>Onde o Estilo Encontra a Tradição
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto animate-fade-in-up delay-200">
+                Experiência única em cortes masculinos, barba e tratamentos exclusivos na Varjota, Fortaleza-Ce.
+            </p>
+            <a href="https://wa.me/5585989280802?text=Olá, gostaria de mais informações." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-8 rounded-full text-lg transition duration-300 shadow-lg hover:shadow-xl animate-fade-in-up delay-400">
+                <i class="fab fa-whatsapp mr-3"></i> Agende seu Horário
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                    Mais que um Corte, <span class="text-amber-500">Uma Experiência</span>.
+                </h2>
+                <p class="text-neutral-300 text-lg leading-relaxed mb-6">
+                    Na Divina Barbearia, combinamos a arte clássica da barbearia com as tendências modernas para oferecer um serviço impecável. Nosso ambiente é pensado para o conforto e relaxamento, onde cada detalhe reflete o luxo e a atenção que você merece.
+                </p>
+                <p class="text-neutral-400 leading-relaxed mb-6">
+                    Localizada na charmosa Varjota, Fortaleza-Ce, nossa equipe de barbeiros especializados está pronta para transformar seu visual e garantir um momento de cuidado pessoal inesquecível.
+                </p>
+                <a href="https://wa.me/5585989280802?text=Olá, gostaria de mais informações sobre seus serviços." target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold transition duration-300">
+                    Conheça Nossos Barbeiros <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                <img src="https://images.unsplash.com/photo-1560066984-13809579883d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando em cliente" class="w-full h-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">Nossos <span class="text-amber-500">Serviços Especializados</span></h2>
+            <p class="text-neutral-400 text-lg mb-12 max-w-2xl mx-auto">
+                Oferecemos uma gama completa de serviços para o homem moderno, combinando técnicas clássicas e inovadoras.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-cut text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte de Cabelo Premium</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Do clássico ao moderno, nossos barbeiros dominam todas as técnicas para um corte perfeito e personalizado.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A partir de R$ 60</span>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-beard text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Modelada e Terapia</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Modelagem de barba com navalha, toalhas quentes e produtos de alta qualidade para um acabamento impecável.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A partir de R$ 50</span>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-scissors text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Combo Divina Barbearia</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Corte de cabelo e barba completa, com massagem relaxante e hidratação facial. A experiência completa.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A partir de R$ 100</span>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-spa text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Tratamentos Capilares</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Rejuvenescimento capilar, hidratação profunda e tratamento para queda de cabelo. Cuide da saúde dos seus fios.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A partir de R$ 70</span>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-brush text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Pezinho e Sobrancelha</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Detalhes que fazem a diferença. Acabamento impecável no pezinho e design de sobrancelha masculino.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">A partir de R$ 30</span>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg hover:shadow-amber-500/20 transition duration-300 group">
+                    <i class="fas fa-hand-sparkles text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Dia do Noivo/Padrinho</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacotes especiais para o dia mais importante da sua vida, com relaxamento e estilo garantidos.
+                    </p>
+                    <span class="text-amber-500 font-bold text-xl">Sob Consulta</span>
+                </div>
+            </div>
+
+            <div class="mt-12">
+                <a href="https://wa.me/5585989280802?text=Olá, gostaria de agendar um serviço." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-7 rounded-full text-lg transition duration-300 shadow-lg">
+                    <i class="fab fa-whatsapp mr-3"></i> Agendar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">Nossa <span class="text-amber-500">Galeria</span></h2>
+            <p class="text-neutral-400 text-lg mb-12 max-w-2xl mx-auto">
+                Inspire-se com alguns dos trabalhos e o ambiente exclusivo da Divina Barbearia.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1599395279619-331f24d10113?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo masculino moderno" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Corte Moderno</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1550113941-863116892693?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Homem com barba bem cuidada" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Barba Impecável</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1549725807-6a4a5893d9a1?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da barbearia com detalhes de luxo" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Ambiente Premium</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1620050809287-c34346747530?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro com ferramentas de corte" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Detalhes</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1557657920-5612ac0f2a7b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Navalha de barbeiro" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Clássico</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1558501198-d12330a6c6d0?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente sendo atendido por barbeiro" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Atendimento</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1531777086057-7977a419c8f2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos de barbearia" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Produtos</span>
+                    </div>
+                </div>
+                <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                    <img src="https://images.unsplash.com/photo-1567894340316-550ea06e3100?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente com corte de cabelo elegante" class="w-full h-72 object-cover transition-transform duration-500 group-hover:scale-105">
+                    <div class="absolute inset-0 bg-neutral-950/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <span class="text-neutral-100 text-xl font-semibold">Estilo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-4xl font-bold text-neutral-100 text-center mb-4">Entre em <span class="text-amber-500">Contato</span></h2>
+            <p class="text-neutral-400 text-lg text-center mb-12 max-w-2xl mx-auto">
+                Estamos ansiosos para recebê-lo. Fale conosco ou visite nossa barbearia.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Info -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Informações de Contato</h3>
+                    <div class="space-y-6">
+                        <p class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-xl"></i>
+                            R. Castro Monte, 165 - Varjota, Fortaleza - CE, 60175-230, Brasil
+                        </p>
+                        <p class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-phone-alt text-amber-500 mr-4 text-xl"></i>
+                            <a href="tel:+5585989280802" class="hover:text-amber-500 transition duration-300">(85) 98928-0802</a>
+                        </p>
+                        <p class="flex items-center text-neutral-300 text-lg">
+                            <i class="fas fa-clock text-amber-500 mr-4 text-xl"></i>
+                            Horário: Entre em contato para verificar nossa disponibilidade.
+                        </p>
+                        <a href="https://wa.me/5585989280802?text=Olá, gostaria de saber o horário de funcionamento." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300 shadow-md">
+                            <i class="fab fa-whatsapp mr-3"></i> Fale Conosco
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 outline-none transition duration-300" placeholder="Seu nome completo" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 outline-none transition duration-300" placeholder="Olá, gostaria de agendar um corte..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 rounded-full transition duration-300 shadow-md flex items-center justify-center">
+                            <i class="fab fa-whatsapp mr-2"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-semibold text-neutral-100 text-center mb-6">Nossa Localização</h3>
+                <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-lg">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Castro%20Monte%2C%20165%20-%20Varjota%2C%20Fortaleza%20-%20CE%2C%2060175-230%2C%20Brasil%2C%20Fortaleza&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#" class="text-2xl font-bold text-amber-500 tracking-wide mb-4 md:mb-0">Divina Barbearia</a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5585989280802?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+            <p class="mb-4">&copy; 2023 Divina Barbearia Varjota. Todos os direitos reservados.</p>
+            <p class="text-sm">Desenvolvido com <i class="fas fa-heart text-red-500 mx-1"></i> para o seu estilo.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Contact Form Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5585989280802?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
