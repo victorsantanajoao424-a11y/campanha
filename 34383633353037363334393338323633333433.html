@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vulcan | Barbearia Lapa - Plano Mensal</title>
+    <meta name="description" content="Barbearia premium na Lapa, São Paulo. Cortes, barba e planos mensais exclusivos. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        heading: ['"Oswald"', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b; 
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center gap-2">
+                        <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                        <span class="font-heading font-bold text-2xl tracking-wider text-white uppercase">Vulcan</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide uppercase">Início</a>
+                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide uppercase">Sobre</a>
+                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium tracking-wide uppercase">Serviços</a>
+                        <a href="#plano" class="text-amber-500 hover:text-amber-400 transition-colors px-3 py-2 rounded-md text-sm font-bold tracking-wide uppercase border border-amber-500/30 bg-amber-500/10">Plano Mensal</a>
+                        <a href="#contato" class="bg-white text-neutral-950 hover:bg-amber-500 hover:text-white px-5 py-2 rounded-full text-sm font-bold transition-all duration-300 uppercase">Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fa-solid fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="#plano" class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Plano Mensal</a>
+                <a href="https://wa.me/5511979850718?text=Olá, gostaria de agendar um horário." class="bg-amber-600 text-white block px-3 py-3 mt-4 rounded-md text-center font-bold">AGENDAR AGORA</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Barbearia Luxury" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <span class="inline-block py-1 px-3 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-500 text-sm font-bold tracking-widest uppercase mb-6 backdrop-blur-sm">
+                Barbearia na Lapa • São Paulo
+            </span>
+            <h1 class="font-heading text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight uppercase">
+                Estilo é <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Poder</span>
+            </h1>
+            <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Experiência premium de barbearia. Cortes clássicos, modernos e o exclusivo Clube de Assinatura para quem exige estar sempre impecável.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511979850718?text=Olá, gostaria de saber mais sobre o Plano Mensal." class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-900/20 uppercase tracking-wide">
+                    Conhecer Plano Mensal
+                </a>
+                <a href="https://wa.me/5511979850718?text=Olá, gostaria de agendar um horário." class="bg-transparent border border-neutral-600 hover:border-white text-white hover:bg-white hover:text-neutral-950 font-bold py-4 px-8 rounded-xl transition-all duration-300 uppercase tracking-wide backdrop-blur-sm">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Vibe Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl opacity-20 blur-lg"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Interior Barbearia" class="relative rounded-2xl shadow-2xl border border-neutral-800 w-full object-cover h-[500px]">
+                    
+                    <!-- Floating Badge -->
+                    <div class="absolute -bottom-6 -right-6 bg-neutral-900 p-6 rounded-xl border border-neutral-800 shadow-xl max-w-xs hidden md:block">
+                        <div class="flex items-center gap-4">
+                            <div class="bg-amber-500/20 p-3 rounded-full text-amber-500">
+                                <i class="fa-solid fa-star text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-bold text-lg">Qualidade Premium</p>
+                                <p class="text-neutral-400 text-sm">Produtos e técnicas de elite</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h2 class="font-heading text-amber-500 text-xl font-bold tracking-widest uppercase mb-2">Sobre a Vulcan</h2>
+                    <h3 class="font-heading text-4xl md:text-5xl font-bold text-white mb-6 uppercase">Mais que um corte,<br>um ritual.</h3>
+                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                        Localizada no coração da Lapa, a <strong>Vulcan</strong> redefine o conceito de barbearia masculina. Não vendemos apenas cortes de cabelo; entregamos confiança e autoestima em um ambiente sofisticado e acolhedor.
+                    </p>
+                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
+                        Nossos profissionais são mestres na arte da barbearia clássica e moderna. Com o nosso exclusivo <strong>Plano Mensal</strong>, você garante visual alinhado o mês inteiro por um preço fixo, sem surpresas.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500"></i> Ambiente Climatizado e Bar
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center gap-3 text-neutral-300">
+                            <i class="fa-solid fa-check text-amber-500"></i> Localização Privilegiada na Lapa
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5511979850718?text=Olá, quero conhecer a barbearia." class="inline-flex items-center gap-2 text-amber-500 font-bold hover:text-amber-400 transition-colors uppercase tracking-wide border-b border-amber-500 pb-1">
+                        Fale Conosco <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-heading text-amber-500 text-lg font-bold tracking-widest uppercase mb-2">Nossos Serviços</h2>
+                <h3 class="font-heading text-4xl md:text-5xl font-bold text-white uppercase">Especialidades Vulcan</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-white font-bold uppercase mb-4">Corte Premium</h4>
+                    <p class="text-neutral-400 mb-6">Consultoria de visagismo, lavagem especial, corte preciso e finalização com produtos de alta performance.</p>
+                    <a href="https://wa.me/5511979850718?text=Gostaria de agendar um Corte." class="text-sm font-bold text-white uppercase tracking-wider group-hover:text-amber-500 transition-colors">Agendar <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+
+                <!-- Service 2 (Featured) -->
+                <div class="relative group bg-neutral-800/50 p-8 rounded-2xl border border-amber-600/50 hover:border-amber-500 transition-all duration-300 hover:-translate-y-2 transform md:-mt-4 shadow-2xl shadow-black/50">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg rounded-tr-lg uppercase tracking-wider">Mais Popular</div>
+                    <div class="w-14 h-14 bg-amber-600 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa-solid fa-crown text-2xl text-white"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-white font-bold uppercase mb-2">Vulcan Club</h4>
+                    <p class="text-amber-500 font-bold text-sm uppercase tracking-widest mb-4">Plano Mensal</p>
+                    <p class="text-neutral-300 mb-6">Acesso ilimitado ou pacotes especiais de cortes e barba. Mantenha o visual sempre em dia pagando um valor fixo mensal.</p>
+                    <a href="https://wa.me/5511979850718?text=Tenho interesse no Plano Mensal." class="block w-full text-center bg-amber-600 hover:bg-amber-500 text-white py-3 rounded-lg font-bold uppercase text-sm transition-colors">
+                        Saber Valores
+                    </a>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="group bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-heading text-2xl text-white font-bold uppercase mb-4">Barba & Terapia</h4>
+                    <p class="text-neutral-400 mb-6">Barboterapia com toalha quente, óleos essenciais, alinhamento dos fios e hidratação profunda da pele.</p>
+                    <a href="https://wa.me/5511979850718?text=Gostaria de agendar uma Barba." class="text-sm font-bold text-white uppercase tracking-wider group-hover:text-amber-500 transition-colors">Agendar <i class="fa-solid fa-chevron-right text-xs ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing / CTA Section -->
+    <section id="plano" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Barber Tools" class="w-full h-full object-cover opacity-20 grayscale">
+            <div class="absolute inset-0 bg-neutral-950/90"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
+            <h2 class="font-heading text-4xl md:text-6xl font-bold text-white mb-6 uppercase">Economize com Estilo</h2>
+            <p class="text-neutral-300 text-lg mb-10">
+                Pare de pagar por corte avulso. Entre para o clube <strong>Vulcan</strong> e tenha prioridade na agenda, descontos exclusivos e visual impecável 365 dias por ano.
+            </p>
+            <div class="bg-neutral-900/80 backdrop-blur border border-neutral-800 p-8 rounded-2xl inline-block w-full md:w-auto">
+                <p class="text-neutral-400 text-sm uppercase tracking-widest mb-2">Planos a partir de</p>
+                <div class="flex items-center justify-center gap-1 mb-6">
+                    <span class="text-amber-500 text-5xl font-bold font-heading">Consulte</span>
+                </div>
+                <ul class="text-left space-y-3 mb-8 max-w-xs mx-auto text-neutral-300">
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Cortes Ilimitados*</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Preferência de Agenda</li>
+                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-amber-500"></i> Descontos em Produtos</li>
+                </ul>
+                <a href="https://wa.me/5511979850718?text=Quero saber os valores dos Planos Mensais." class="block w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-xl transition-all uppercase tracking-wide">
+                    Assinar Agora
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Info & Map -->
+                <div>
+                    <h2 class="font-heading text-amber-500 text-lg font-bold tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="font-heading text-4xl font-bold text-white mb-8 uppercase">Onde Estamos</h3>
+                    
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-start gap-4">
+                            <div class="bg-neutral-900 p-3 rounded-lg text-amber-500">
+                                <i class="fa-solid fa-location-dot text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">Endereço</h4>
+                                <p class="text-neutral-400">R. Coriolano, 1578 - Vila Romana<br>São Paulo - SP, 05047-000</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="bg-neutral-900 p-3 rounded-lg text-amber-500">
+                                <i class="fa-brands fa-whatsapp text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">WhatsApp</h4>
+                                <p class="text-neutral-400"><a href="https://wa.me/5511979850718" class="hover:text-amber-500 transition-colors">(11) 97985-0718</a></p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="bg-neutral-900 p-3 rounded-lg text-amber-500">
+                                <i class="fa-solid fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">Horário</h4>
+                                <p class="text-neutral-400">Atendimento com hora marcada.<br>Consulte disponibilidade.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Maps Iframe -->
+                    <div class="rounded-2xl overflow-hidden shadow-lg border border-neutral-800">
+                        <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Coriolano%2C%201578%20-%20Vila%20Romana%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005047-000%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%);"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-2xl border border-neutral-800">
+                    <h3 class="font-heading text-3xl font-bold text-white mb-2 uppercase">Agendamento Rápido</h3>
+                    <p class="text-neutral-400 mb-8">Preencha os dados abaixo e entraremos em contato via WhatsApp imediatamente.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Nome Completo</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Seu nome">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Plano Mensal">Plano Mensal (Assinatura)</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2 uppercase tracking-wide">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Dia/Horário de preferência..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-lg transition-all duration-300 shadow-lg uppercase tracking-wide flex items-center justify-center gap-2">
+                            <i class="fa-brands fa-whatsapp text-xl"></i> Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                <span class="font-heading font-bold text-2xl tracking-wider text-white uppercase">Vulcan</span>
+            </div>
+            <p class="text-neutral-500 text-sm mb-8">
+                &copy; 2023 Vulcan Barbearia. Todos os direitos reservados.
+            </p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5511979850718?text=Olá, gostaria de mais informações." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-lg shadow-green-900/30 transition-all duration-300 hover:scale-110 flex items-center justify-center">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Form Handling Logic
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct the message
+            var fullMessage = "Olá, me chamo *" + name + "*.";
+            fullMessage += " Tenho interesse em: *" + service + "*.";
+            if(msg) {
+                fullMessage += " Obs: " + msg;
+            }
+            
+            // Redirect to WhatsApp
+            var url = "https://wa.me/5511979850718?text=" + encodeURIComponent(fullMessage);
+            window.open(url, '_blank');
+        });
+
+        // Navbar Scroll Effect
+        window.addEventListener('scroll', function() {
+            var nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('shadow-lg');
+                nav.classList.add('bg-neutral-950/95');
+            } else {
+                nav.classList.remove('shadow-lg');
+                nav.classList.remove('bg-neutral-950/95');
+            }
+        });
+    </script>
+</body>
+</html>
