@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M3 STUDIO | Barbearia Premium Rio de Janeiro</title>
+    <meta name="description" content="Salão de Beleza e Barbearia M3 STUDIO. Cortes modernos, barba e serviços especializados no Rio de Janeiro. Agende seu horário.">
+    
+    <!-- Google Fonts: Outfit for a modern, masculine look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a', 
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Dark Theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        .text-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="text-2xl font-bold tracking-wider text-white">
+                        M3 <span class="text-amber-500">STUDIO</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Início</a>
+                        <a href="#about" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Sobre</a>
+                        <a href="#services" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium">Serviços</a>
+                        <a href="#contact" class="bg-amber-600 hover:bg-amber-500 text-white px-5 py-2.5 rounded-full text-sm font-bold transition-all shadow-lg shadow-amber-900/20">
+                            Agendar Agora
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <a href="https://wa.me/5521991310197?text=Olá, gostaria de agendar um horário." class="text-amber-500 hover:text-white p-2">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia M3 Studio" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1.5 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-400 text-xs font-bold tracking-widest uppercase">Rio de Janeiro • RJ</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                Estilo é a nossa <br>
+                <span class="text-gradient">Assinatura.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-400 max-w-2xl mx-auto mb-10 font-light">
+                Mais do que um corte, uma experiência de alto padrão. No M3 STUDIO, cuidamos da sua imagem com precisão e produtos de elite.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5521991310197?text=Olá, gostaria de agendar um horário." class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all transform hover:scale-105 shadow-lg shadow-amber-600/20 flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#services" class="bg-neutral-900/50 hover:bg-neutral-800 backdrop-blur-md border border-neutral-700 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all flex items-center justify-center">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About / Features -->
+    <section id="about" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Ambiente Barbearia" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-500">
+                </div>
+                <div>
+                    <h2 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl font-bold text-white mb-6">A Excelência que você merece.</h3>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        Localizado no coração do Rio de Janeiro, o M3 STUDIO redefine o conceito de barbearia. Combinamos técnicas clássicas com tendências modernas para entregar um visual único.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i>
+                            <span class="text-neutral-300">Profissionais altamente qualificados e atualizados.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i>
+                            <span class="text-neutral-300">Ambiente climatizado, moderno e confortável.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check text-amber-500 mt-1 mr-3"></i>
+                            <span class="text-neutral-300">Produtos premium para cuidados com cabelo e barba.</span>
+                        </li>
+                    </ul>
+                    <a href="https://wa.me/5521991310197?text=Olá, gostaria de saber mais sobre a barbearia." class="text-amber-500 font-bold hover:text-amber-400 inline-flex items-center gap-2 border-b border-amber-500 pb-1">
+                        Fale Conosco <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-4">Nossos Serviços</h2>
+                <p class="text-neutral-400 max-w-xl mx-auto">Especialistas em elevar sua autoestima. Confira nosso menu de serviços exclusivos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-scissors text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Corte Premium</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Corte personalizado, lavagem especial e finalização com produtos de alta fixação.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-neutral-500 text-sm">45 min</span>
+                        <a href="https://wa.me/5521991310197?text=Gostaria de agendar um Corte." class="text-amber-500 font-bold text-sm hover:underline">Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-face-smile text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Barboterapia</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Ritual completo com toalha quente, esfoliação e hidratação profunda da pele.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <a href="https://wa.me/5521991310197?text=Gostaria de agendar uma Barba." class="text-amber-500 font-bold text-sm hover:underline">Agendar</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 hover:border-amber-500/50 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fa-solid fa-spray-can text-8xl text-white"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-gem"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Combo M3</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">A experiência completa: Corte + Barba + Sobrancelha. Saia renovado.</p>
+                    <div class="flex items-center justify-between mt-auto">
+                        <span class="text-neutral-500 text-sm">60 min</span>
+                        <a href="https://wa.me/5521991310197?text=Gostaria de agendar o Combo M3." class="text-amber-500 font-bold text-sm hover:underline">Agendar</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="https://wa.me/5521991310197?text=Olá, gostaria de consultar a tabela de preços completa." class="inline-block border border-neutral-700 hover:border-amber-500 text-neutral-300 hover:text-white px-8 py-3 rounded-full transition-all">
+                    Consultar Tabela Completa
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-24 bg-neutral-950 relative overflow-hidden">
+        <!-- Decorative bg blur -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-96 bg-amber-600/10 blur-[100px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Info -->
+                <div>
+                    <h2 class="text-4xl font-bold text-white mb-6">Entre em Contato</h2>
+                    <p class="text-neutral-400 mb-8">
+                        Pronto para mudar o visual? Agende seu horário ou venha nos visitar.
+                    </p>
+
+                    <div class="space-y-6 mb-10">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Telefone / WhatsApp</p>
+                                <p class="text-lg font-bold text-white">(21) 99131-0197</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Localização</p>
+                                <p class="text-lg font-bold text-white">Rio de Janeiro, RJ</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 border border-neutral-800">
+                                <i class="fa-solid fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm text-neutral-500">Horário de Funcionamento</p>
+                                <p class="text-lg font-bold text-white">Consulte disponibilidade</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Map -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Padre%20Manso%2C%2089%20-%20Madureira%2C%20Rio%20de%20Janeiro%20-%20RJ%2C%2021310-260%2C%20Brasil%2C%20Rio%20de%20Janeiro&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Booking Form -->
+                <div class="bg-neutral-900 p-8 md:p-10 rounded-3xl border border-neutral-800 shadow-xl h-fit">
+                    <h3 class="text-2xl font-bold text-white mb-6">Solicitar Agendamento</h3>
+                    <form id="contactForm" class="space-y-5">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Seu Nome</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Como podemos te chamar?">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                <option value="Barba">Barba</option>
+                                <option value="Cabelo e Barba">Cabelo e Barba</option>
+                                <option value="Outros">Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Alguma preferência de horário?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-xl shadow-lg transform transition hover:-translate-y-1">
+                            Enviar via WhatsApp <i class="fa-brands fa-whatsapp ml-2"></i>
+                        </button>
+                        <p class="text-xs text-neutral-500 text-center mt-4">
+                            Ao clicar, você será redirecionado para o WhatsApp do M3 Studio.
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-12">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-2xl font-bold tracking-wider text-white">
+                M3 <span class="text-amber-500">STUDIO</span>
+            </div>
+            <div class="text-neutral-500 text-sm text-center md:text-right">
+                &copy; 2023 M3 STUDIO. Todos os direitos reservados.<br>
+                Design by Elite Studio.
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Logic Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Capture values
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msgInput = document.getElementById('message').value;
+            
+            // Construct message
+            var finalMsg = "Olá, me chamo " + name + ". Tenho interesse em: " + service + ".";
+            if(msgInput) {
+                finalMsg += " " + msgInput;
+            }
+            
+            // Redirect
+            var url = "https://wa.me/5521991310197?text=" + encodeURIComponent(finalMsg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
