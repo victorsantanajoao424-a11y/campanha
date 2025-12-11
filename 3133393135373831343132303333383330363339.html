@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Barber Shop - Luxo e Estilo em Porto Alegre</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom Tailwind Config for Colors -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa', 100: '#f5f5f5', 200: '#e5e5e5', 300: '#d4d4d4', 400: '#a3a3a3',
+                            500: '#737373', 600: '#525252', 700: '#404040', 800: '#262626', 900: '#171717', 950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb', 100: '#fef3c7', 200: '#fde68a', 300: '#fcd34d', 400: '#fbbf24',
+                            500: '#f59e0b', 600: '#d97706', 700: '#b45309', 800: '#92400e', 900: '#78350f', 950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0Xp5vdhXg9o+FNlQ2SLJz1mJ+S/c+vSAXp+y3h1e2R7h2+sB3z2x5+2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* neutral-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #404040; /* neutral-700 */
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #525252; /* neutral-600 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased min-h-screen">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold tracking-tight">
+                <span class="text-amber-500">Call</span> Barber Shop
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+                <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-2 px-6 rounded-full transition-colors duration-300 shadow-lg">
+                    Agendar Horário
+                </a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1599370773663-8a3d53820250?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da Call Barber Shop" class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
+            <div class="relative z-20 p-6 max-w-4xl mx-auto">
+                <h1 class="text-6xl md:text-8xl font-extrabold leading-tight mb-4 bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">
+                    <span class="text-amber-500">Call</span> Barber Shop
+                </h1>
+                <p class="text-xl md:text-3xl text-neutral-100 mb-8 font-light tracking-wide">
+                    Onde a tradição encontra o estilo moderno em Porto Alegre.
+                </p>
+                <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar um horário na Call Barber Shop." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-10 rounded-full text-xl transition-colors duration-300 shadow-xl transform hover:scale-105">
+                    Agendar Agora <i class="fab fa-whatsapp ml-2"></i>
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div class="order-2 md:order-1">
+                    <h2 class="text-5xl font-extrabold mb-6 text-neutral-100 leading-tight">
+                        <span class="text-amber-500">Mais</span> que um corte, uma experiência.
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-6 leading-relaxed">
+                        Na <span class="text-amber-500 font-semibold">Call Barber Shop</span>, localizada no coração de Porto Alegre, combinamos a arte clássica da barbearia com as tendências mais modernas do estilo masculino. Nosso ambiente é pensado para oferecer relaxamento e sofisticação, com atendimento personalizado que valoriza cada detalhe do seu visual.
+                    </p>
+                    <p class="text-lg text-neutral-400 mb-8 leading-relaxed">
+                        Nossos barbeiros são especialistas em cortes, barba e tratamentos capilares, utilizando apenas produtos de alta qualidade para garantir resultados impecáveis. Venha descobrir por que somos a escolha de quem busca excelência e um toque de luxo.
+                    </p>
+                    <a href="https://wa.me/5551993677019?text=Olá, gostaria de saber mais sobre a Call Barber Shop." target="_blank" class="bg-neutral-800 hover:bg-amber-600 text-neutral-100 hover:text-white font-semibold py-3 px-8 rounded-full transition-all duration-300 border border-neutral-700 hover:border-amber-600">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
+                <div class="order-1 md:order-2">
+                    <img src="https://images.unsplash.com/photo-1603598501235-92765691d575?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando em cliente" class="rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition-transform duration-500 ease-in-out">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 bg-neutral-950 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-5xl font-extrabold mb-12 text-neutral-100">
+                    Nossos <span class="text-amber-500">Serviços</span> Especializados
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Corte Masculino Premium</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Corte personalizado, lavagem especial, finalização com produtos de alta qualidade e massagem capilar.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 80</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar um Corte Masculino Premium." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Barba Tradicional</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Modelagem e aparo da barba, toalha quente, espuma cremosa e pós-barba hidratante.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 60</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar uma Barba Tradicional." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-scissors text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Pacote Completo</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Corte Masculino Premium + Barba Tradicional. A experiência completa para um visual impecável.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 130</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar o Pacote Completo (Corte + Barba)." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-head-side-mask text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Tratamento Capilar</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Hidratação profunda, nutrição e fortalecimento dos fios, com produtos específicos para sua necessidade.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 70</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar um Tratamento Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-magic text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Pigmentação Capilar</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Realce e correção de falhas na barba e cabelo para um visual mais denso e definido.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 90</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar uma Pigmentação Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-child-reaching text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-4">Corte Infantil</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Corte com estilo e diversão para os pequenos, em um ambiente acolhedor e seguro.
+                        </p>
+                        <span class="text-amber-500 text-4xl font-bold block mb-6">R$ 50</span>
+                        <a href="https://wa.me/5551993677019?text=Olá, gostaria de agendar um Corte Infantil." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full transition-colors duration-300 shadow-md">
+                            Reservar <i class="fas fa-chevron-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-5xl font-extrabold mb-12 text-neutral-100">
+                    Nossa <span class="text-amber-500">Galeria</span>
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <img src="https://images.unsplash.com/photo-1596467389140-520556f082e0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo moderno" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1621607502390-3487224259b3?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro aparando barba" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1574697960307-e8371360156d?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Detalhe de ferramentas de barbearia" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1558230559-009c959c1181?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ambiente da barbearia" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1616223788755-be282f6e9b44?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente com corte de cabelo estiloso" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1616223788755-be282f6e9b44?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente com corte de cabelo estiloso" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1596467389140-520556f082e0?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo moderno" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.unsplash.com/photo-1621607502390-3487224259b3?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro aparando barba" class="rounded-xl shadow-lg border border-neutral-800 aspect-square object-cover transform hover:scale-105 transition-transform duration-300">
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="py-24 bg-neutral-950 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-5xl font-extrabold mb-12 text-neutral-100">
+                    O que nossos <span class="text-amber-500">Clientes</span> Dizem
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Testimonial Card 1 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                        <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                        <p class="text-neutral-400 text-lg italic mb-6">
+                            "Melhor barbearia de Porto Alegre! Atendimento impecável e o corte ficou exatamente como eu queria. O ambiente é super agradável e luxuoso."
+                        </p>
+                        <div class="font-semibold text-neutral-100">- João Silva</div>
+                        <div class="text-sm text-neutral-500">Cliente Satisfeito</div>
+                    </div>
+                    <!-- Testimonial Card 2 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                        <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                        <p class="text-neutral-400 text-lg italic mb-6">
+                            "Experiência de barba tradicional fantástica. A toalha quente e os produtos de primeira fazem toda a diferença. Saí renovado!"
+                        </p>
+                        <div class="font-semibold text-neutral-100">- Pedro Mendes</div>
+                        <div class="text-sm text-neutral-500">Cliente Fiel</div>
+                    </div>
+                    <!-- Testimonial Card 3 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                        <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                        <p class="text-neutral-400 text-lg italic mb-6">
+                            "Profissionalismo e atenção aos detalhes em cada serviço. A Call Barber Shop realmente eleva o padrão de barbearias na cidade. Recomendo!"
+                        </p>
+                        <div class="font-semibold text-neutral-100">- Carlos Alberto</div>
+                        <div class="text-sm text-neutral-500">Novo Cliente</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-5xl font-extrabold mb-12 text-center text-neutral-100">
+                    Entre em <span class="text-amber-500">Contato</span>
+                </h2>
+                <div class="grid md:grid-cols-2 gap-12">
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-neutral-300 text-lg font-semibold mb-2">Seu Nome</label>
+                                <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-neutral-100 placeholder-neutral-500 transition-all duration-300" placeholder="Seu nome completo" required>
+                            </div>
+                            <div>
+                                <label for="message" class="block text-neutral-300 text-lg font-semibold mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="6" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-neutral-100 placeholder-neutral-500 resize-y transition-all duration-300" placeholder="Digite sua mensagem aqui..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-full text-lg transition-colors duration-300 shadow-xl transform hover:scale-105">
+                                Enviar Mensagem via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info & Map -->
+                    <div class="space-y-8">
+                        <div class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
+                            <h3 class="text-3xl font-bold text-neutral-100 mb-6">Informações de Contato</h3>
+                            <ul class="space-y-4 text-lg text-neutral-400">
+                                <li class="flex items-center">
+                                    <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-2xl"></i>
+                                    R. Dr. Sebastião Leão, 138 - Azenha, Porto Alegre - RS, 90050-090
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-phone-alt text-amber-500 mr-4 text-2xl"></i>
+                                    <a href="tel:+5551993677019" class="hover:text-amber-500 transition-colors duration-300">(51) 99367-7019</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fab fa-whatsapp text-amber-500 mr-4 text-2xl"></i>
+                                    <a href="https://wa.me/5551993677019?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition-colors duration-300">(51) 99367-7019</a>
+                                </li>
+                                <li class="flex items-center">
+                                    <i class="fas fa-clock text-amber-500 mr-4 text-2xl"></i>
+                                    Seg-Sex: 9h-19h | Sáb: 9h-17h
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- Google Maps Iframe -->
+                        <div class="rounded-2xl overflow-hidden shadow-lg border border-neutral-800">
+                            <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Dr.%20Sebasti%C3%A3o%20Le%C3%A3o%2C%20138%20-%20Azenha%2C%20Porto%20Alegre%20-%20RS%2C%2090050-090%2C%20Brasil%2C%20Porto%20Alegre&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="mb-8">
+                <a href="#" class="text-4xl font-bold tracking-tight">
+                    <span class="text-amber-500">Call</span> Barber Shop
+                </a>
+            </div>
+            <p class="text-neutral-400 mb-8">
+                Excelência e estilo para o homem moderno em Porto Alegre.
+            </p>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="https://wa.me/5551993677019" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+            <p class="text-neutral-500 text-sm">
+                &copy; 2023 Call Barber Shop. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form WhatsApp Redirect -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5551993677019?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
