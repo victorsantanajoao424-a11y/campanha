@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antonio Barbearia - Luxo e Estilo em Brasília</title>
+    <link rel="icon" href="https://via.placeholder.com/32x32/171717/d97706?text=AB" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* bg-neutral-950 */
+            color: #f5f5f5; /* text-neutral-100 */
+        }
+        /* Custom Tailwind classes for strict adherence */
+        .bg-neutral-950 { background-color: #0a0a0a; }
+        .bg-neutral-900 { background-color: #171717; }
+        .border-neutral-800 { border-color: #262626; }
+        .text-neutral-100 { color: #f5f5f5; }
+        .text-neutral-400 { color: #a3a3a3; }
+        .text-amber-500 { color: #f59e0b; }
+        .bg-amber-600 { background-color: #d97706; }
+        .hover\:bg-amber-500:hover { background-color: #f59e0b; }
+        .bg-neutral-950\/80 { background-color: rgba(10, 10, 10, 0.8); }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+
+    <!-- Header/Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-neutral-100 hover:text-amber-500 transition duration-300">Antonio <span class="text-amber-500">Barbearia</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#about" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#services" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações." target="_blank" class="hidden md:block bg-amber-600 hover:bg-amber-500 text-neutral-100 font-semibold py-2 px-6 rounded-lg transition duration-300">
+                Agendar Horário
+            </a>
+            <!-- Mobile Menu Button -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-neutral-100 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center">
+                <a href="#hero" class="block text-neutral-100 hover:text-amber-500 py-2 transition duration-300">Início</a>
+                <a href="#about" class="block text-neutral-100 hover:text-amber-500 py-2 transition duration-300">Sobre</a>
+                <a href="#services" class="block text-neutral-100 hover:text-amber-500 py-2 transition duration-300">Serviços</a>
+                <a href="#gallery" class="block text-neutral-100 hover:text-amber-500 py-2 transition duration-300">Galeria</a>
+                <a href="#contact" class="block text-neutral-100 hover:text-amber-500 py-2 transition duration-300">Contato</a>
+                <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações." target="_blank" class="block bg-amber-600 hover:bg-amber-500 text-neutral-100 font-semibold py-2 px-6 rounded-lg mt-4 transition duration-300">
+                    Agendar Horário
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-cover bg-center h-screen flex items-center justify-center text-center pt-24" style="background-image: url('https://images.unsplash.com/photo-1594242661609-fa3a0c0ec401?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        <div class="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-neutral-100 mb-6 drop-shadow-lg">
+                Antonio <span class="text-amber-500">Barbearia</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-neutral-200 mb-10 font-light">
+                Onde a tradição encontra a modernidade. Estilo e sofisticação para o homem de Brasília.
+            </p>
+            <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 font-bold py-4 px-10 rounded-xl text-lg transition duration-300 shadow-lg">
+                Agende Seu Corte Premium
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-neutral-900 py-24 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img src="https://images.unsplash.com/photo-1521590832167-7ee920154346?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+                </div>
+                <div>
+                    <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                        Bem-vindo à <span class="text-amber-500">Antonio Barbearia</span>
+                    </h2>
+                    <p class="text-lg text-neutral-400 mb-6">
+                        Localizada no coração de Brasília, a Antonio Barbearia é mais do que um local para cortar cabelo; é um santuário de estilo e cuidado masculino. Com anos de experiência, nossa equipe de barbeiros especializados está pronta para transformar seu visual e proporcionar uma experiência inigualável.
+                    </p>
+                    <p class="text-lg text-neutral-400 mb-8">
+                        Combinamos técnicas clássicas com as últimas tendências, utilizando produtos de alta qualidade para garantir um acabamento impecável. Venha desfrutar de um ambiente sofisticado, atendimento personalizado e sair com a confiança renovada.
+                    </p>
+                    <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 font-semibold py-3 px-8 rounded-lg transition duration-300 shadow-md">
+                        Conheça Nossos Barbeiros
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-neutral-950 py-24 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">Nossos <span class="text-amber-500">Serviços Especializados</span></h2>
+            <p class="text-lg text-neutral-400 mb-16 max-w-2xl mx-auto">
+                Descubra a arte do cuidado masculino com nossos serviços premium, projetados para realçar sua melhor versão.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Masculino Clássico</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Técnicas tradicionais para um visual atemporal e elegante, feito com precisão e atenção aos detalhes.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 70</span>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-razor text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Terapêutica</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Experiência completa com toalhas quentes, esfoliação e hidratação para uma barba impecável.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 60</span>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-head-side-mask text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte + Barba Premium</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Combo exclusivo para um visual harmonioso e sofisticado, combinando corte e barba.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 120</span>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-paint-brush text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Pigmentação de Barba</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Realce o contorno e preencha falhas para uma barba mais volumosa e definida.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 50</span>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote especial para o noivo e padrinhos, com serviços completos e ambiente exclusivo.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">Sob Consulta</span>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300 transform hover:-translate-y-1">
+                    <i class="fas fa-child text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Infantil</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Cortes modernos e divertidos para os pequenos, com atenção e carinho especial.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold">R$ 50</span>
+                </div>
+            </div>
+
+            <div class="mt-16">
+                <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações sobre os serviços." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 font-bold py-4 px-10 rounded-xl text-lg transition duration-300 shadow-lg">
+                    Ver Todos os Serviços e Preços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="bg-neutral-900 py-24 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">Nossa <span class="text-amber-500">Galeria</span></h2>
+            <p class="text-lg text-neutral-400 mb-16 max-w-2xl mx-auto">
+                Inspire-se com alguns dos nossos trabalhos e o ambiente exclusivo da Antonio Barbearia.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1555518047-97d819927429?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Corte Moderno</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1596700813726-1e6498522718?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barba bem cuidada" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Barba Estilizada</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1621607502422-96c21a4f009e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ambiente da barbearia" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Ambiente</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1603504958066-1c645b08579d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos premium" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Produtos</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1560066986-e3776e27b61f?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente satisfeito" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Cliente Feliz</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1574632007670-070868f77341?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Detalhe do corte" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Detalhes</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1582736183353-2007823521d8?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ferramentas de barbeiro" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Ferramentas</p>
+                    </div>
+                </div>
+                <div class="relative rounded-xl overflow-hidden group shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1547466144-839074d28362?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ambiente de espera" class="w-full h-72 object-cover group-hover:scale-105 transition-transform duration-300">
+                    <div class="absolute inset-0 bg-neutral-950/50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <p class="text-neutral-100 text-lg font-semibold">Conforto</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-neutral-950 py-24 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">O Que Dizem Nossos <span class="text-amber-500">Clientes</span></h2>
+            <p class="text-lg text-neutral-400 mb-16 max-w-2xl mx-auto">
+                A satisfação dos nossos clientes é a nossa maior recompensa. Veja alguns depoimentos.
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-400 text-lg mb-6">
+                        "Atendimento impecável e corte perfeito! A Antonio Barbearia superou minhas expectativas. Me sinto renovado a cada visita."
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 1" class="w-12 h-12 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">Carlos Eduardo</p>
+                            <p class="text-neutral-400 text-sm">Empresário</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-400 text-lg mb-6">
+                        "O melhor lugar para cuidar da barba em Brasília. Ambiente sofisticado e barbeiros com muito talento. Recomendo demais!"
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://randomuser.me/api/portraits/men/34.jpg" alt="Cliente 2" class="w-12 h-12 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">Fernando Almeida</p>
+                            <p class="text-neutral-400 text-sm">Advogado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-400 text-lg mb-6">
+                        "Profissionalismo e atenção aos detalhes em cada serviço. Antonio Barbearia é sinônimo de excelência e bom gosto."
+                    </p>
+                    <div class="flex items-center justify-center">
+                        <img src="https://randomuser.me/api/portraits/men/36.jpg" alt="Cliente 3" class="w-12 h-12 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">Rafael Costa</p>
+                            <p class="text-neutral-400 text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-neutral-900 py-24 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-4">Entre em <span class="text-amber-500">Contato</span></h2>
+            <p class="text-lg text-neutral-400 mb-16 max-w-2xl mx-auto">
+                Estamos ansiosos para recebê-lo. Agende seu horário ou tire suas dúvidas.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <!-- Contact Info & Map -->
+                <div class="text-left bg-neutral-950 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6 flex items-center"><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> Onde Estamos</h3>
+                    <p class="text-neutral-400 mb-4 text-lg">
+                        SHCS CLS 313 Barba Estilizada, BL C Loja 3 - Asa Sul, Brasília - DF, 70382-530, Brasil
+                    </p>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mt-8 mb-6 flex items-center"><i class="fas fa-phone-alt text-amber-500 mr-3"></i> Fale Conosco</h3>
+                    <p class="text-neutral-400 mb-4 text-lg">
+                        Telefone: <a href="tel:+5561998781714" class="text-amber-500 hover:underline">(61) 99878-1714</a>
+                    </p>
+                    <p class="text-neutral-400 mb-4 text-lg">
+                        WhatsApp: <a href="https://wa.me/5561998781714?text=Olá, gostaria de mais informações." target="_blank" class="text-amber-500 hover:underline">(61) 99878-1714</a>
+                    </p>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mt-8 mb-6 flex items-center"><i class="fas fa-clock text-amber-500 mr-3"></i> Horário de Atendimento</h3>
+                    <p class="text-neutral-400 text-lg">
+                        Segunda a Sábado: 09:00 - 19:00 <br>
+                        Domingo: Fechado
+                    </p>
+                    <div class="mt-10 rounded-2xl overflow-hidden border border-neutral-800 shadow-xl">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SHCS%20CLS%20313%20Barba%20Estilizada%2C%20BL%20C%20Loja%203%20-%20Asa%20Sul%2C%20Bras%C3%ADlia%20-%20DF%2C%2070382-530%2C%20Brasil%2C%20Bras%C3%ADlia&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-950 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-100 text-sm font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-neutral-100 text-sm font-medium mb-2">Seu E-mail (Opcional)</label>
+                            <input type="email" id="email" name="email" class="w-full p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-100 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-neutral-900 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300 placeholder-neutral-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-100 font-bold py-3 px-6 rounded-lg text-lg transition duration-300 shadow-md">
+                            Enviar Mensagem via WhatsApp
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#hero" class="text-2xl font-bold text-neutral-100 hover:text-amber-500 transition duration-300 mb-4 md:mb-0">Antonio <span class="text-amber-500">Barbearia</span></a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://facebook.com/antoniobarbearia" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/antoniobarbearia" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5561998781714" target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <p class="text-neutral-400 text-sm mt-4">
+                &copy; 2023 Antonio Barbearia. Todos os direitos reservados.
+            </p>
+            <p class="text-neutral-400 text-sm mt-2">
+                Desenvolvido por Estúdio Elite de Design Web.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu and WhatsApp Form -->
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            var mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // WhatsApp Contact Form
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value; // Optional field
+            var msg = document.getElementById('message').value;
+
+            var whatsappMessage = "Olá, me chamo " + name + ". ";
+            if (email) {
+                whatsappMessage += "Meu e-mail é " + email + ". ";
+            }
+            whatsappMessage += msg;
+
+            var url = "https://wa.me/5561998781714?text=" + encodeURIComponent(whatsappMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
