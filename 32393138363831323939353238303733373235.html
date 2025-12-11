@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retrô 22 | Barbearia em São Paulo</title>
+    <meta name="description" content="Barbearia Retrô 22 em São Paulo. Cortes modernos, barba terapia e estilo clássico. Agende seu horário.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .text-gradient {
+            background: linear-gradient(to right, #fbbf24, #d97706);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .glass-nav {
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -10px rgba(217, 119, 6, 0.15);
+            border-color: rgba(217, 119, 6, 0.3);
+        }
+    </style>
+</head>
+<body class="antialiased bg-neutral-950 selection:bg-amber-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="font-display text-2xl font-bold text-white tracking-wider">
+                        RETRÔ <span class="text-amber-500">22</span>
+                    </a>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="text-neutral-300 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Início</a>
+                        <a href="#sobre" class="text-neutral-300 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Sobre</a>
+                        <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Serviços</a>
+                        <a href="#contato" class="text-neutral-300 hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Contato</a>
+                    </div>
+                </div>
+
+                <!-- CTA Button -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5511951933863?text=Ol%C3%A1%2C%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es." target="_blank" class="bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-bold py-2.5 px-6 rounded-full transition-all duration-300 shadow-lg shadow-amber-900/20 transform hover:-translate-y-0.5">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
+                <a href="https://wa.me/5511951933863?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-amber-500 font-bold block px-3 py-2 rounded-md text-base">Agendar Agora</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
+            <div class="inline-block mb-4 px-4 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 backdrop-blur-sm">
+                <span class="text-amber-400 text-sm font-semibold tracking-widest uppercase">São Paulo • Lapa</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight">
+                ESTILO CLÁSSICO <br>
+                <span class="text-gradient">CORTE MODERNO</span>
+            </h1>
+            <p class="text-neutral-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                A Retrô 22 não é apenas uma barbearia, é o refúgio do homem moderno. 
+                Experiência premium, toalha quente e cortes de precisão.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5511951933863?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-10 rounded-full transition-all shadow-[0_0_20px_rgba(217,119,6,0.3)] hover:shadow-[0_0_30px_rgba(217,119,6,0.5)] text-lg uppercase tracking-wide">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-transparent border border-neutral-600 hover:border-white text-white font-semibold py-4 px-10 rounded-full transition-all hover:bg-white/5 text-lg uppercase tracking-wide">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative group">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+                    <div class="relative rounded-2xl overflow-hidden border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1503951914205-98c4323b0f1e?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="w-full object-cover transform transition duration-700 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent"></div>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-amber-500 font-bold uppercase tracking-widest mb-2 text-sm">Quem Somos</h4>
+                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">TRADIÇÃO E <span class="text-neutral-500">EXCELÊNCIA</span></h2>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-6">
+                        Localizada na Lapa, São Paulo, a **Retrô 22** resgata a essência das barbearias clássicas, unindo técnicas tradicionais com as tendências mais atuais do visagismo masculino.
+                    </p>
+                    <p class="text-neutral-400 text-lg leading-relaxed mb-8">
+                        Nosso ambiente foi projetado para que você desconecte da rotina. Aqui, o serviço vai além do corte: é um momento de relaxamento, uma conversa boa e uma cerveja gelada.
+                    </p>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Profissionais Especializados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Ambiente Climatizado e Retrô
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Produtos de Alta Performance
+                        </li>
+                    </ul>
+
+                    <a href="https://wa.me/5511951933863?text=Ol%C3%A1%2C%20gostaria%20de%20conhecer%20o%20espa%C3%A7o." target="_blank" class="inline-flex items-center text-amber-500 font-bold hover:text-amber-400 transition-colors group">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2 transform group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h4 class="text-amber-500 font-bold uppercase tracking-widest mb-2 text-sm">Nossos Serviços</h4>
+                <h2 class="text-4xl md:text-5xl font-display font-bold text-white">MENU DE <span class="text-neutral-500">ESTILO</span></h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-cut text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6">Do clássico social ao fade moderno. Consultoria de visagismo inclusa para encontrar o melhor estilo para seu rosto.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">45 min</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20um%20Corte%20de%20Cabelo." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-user-tie text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">Ritual completo com toalha quente, óleos essenciais e navalha afiada. Hidratação e alinhamento perfeito.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20uma%20Barba." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-gem text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Combo Retrô</h3>
+                    <p class="text-neutral-400 mb-6">A experiência completa: Corte + Barba + Sobrancelha. Saia renovado e pronto para qualquer ocasião.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">60 min</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20o%20Combo%20Retr%C3%B4." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-paint-brush text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Pigmentação</h3>
+                    <p class="text-neutral-400 mb-6">Correção de falhas na barba ou cabelo com tintura específica para um visual natural e preenchido.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">40 min</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20uma%20Pigmenta%C3%A7%C3%A3o." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-child text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Corte Infantil</h3>
+                    <p class="text-neutral-400 mb-6">Atendimento especial para os pequenos, com paciência e habilidade para deixá-los no estilo.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">40 min</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20um%20Corte%20Infantil." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 card-hover transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 group-hover:bg-amber-500 group-hover:text-neutral-950 transition-colors">
+                        <i class="fas fa-spray-can text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-display font-bold text-white mb-3">Selagem</h3>
+                    <p class="text-neutral-400 mb-6">Tratamento para redução de volume e hidratação profunda dos fios. Cabelo alinhado e saudável.</p>
+                    <div class="flex justify-between items-center pt-4 border-t border-neutral-800">
+                        <span class="text-neutral-500 text-sm">Var.</span>
+                        <a href="https://wa.me/5511951933863?text=Gostaria%20de%20agendar%20uma%20Selagem." class="text-amber-500 font-bold hover:text-white transition-colors">Reservar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Break -->
+    <section class="py-20 bg-neutral-950 border-y border-neutral-800 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-display font-bold text-white mb-8">
+                PRONTO PARA MUDAR O VISUAL?
+            </h2>
+            <a href="https://wa.me/5511951933863?text=Ol%C3%A1%2C%20quero%20agendar%20agora!" target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-12 rounded-full shadow-lg shadow-amber-900/40 transition-transform transform hover:-translate-y-1 text-lg">
+                <i class="fab fa-whatsapp text-xl mr-2"></i> AGENDAR PELO WHATSAPP
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800">
+                    <h3 class="text-3xl font-display font-bold text-white mb-2">FALE CONOSCO</h3>
+                    <p class="text-neutral-400 mb-8">Preencha o formulário e entraremos em contato via WhatsApp.</p>
+                    
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Nome Completo</label>
+                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Seu nome">
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
+                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                <option>Corte de Cabelo</option>
+                                <option>Barba</option>
+                                <option>Combo (Corte + Barba)</option>
+                                <option>Outros</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
+                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Gostaria de agendar para sexta-feira..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-neutral-950 font-bold py-4 rounded-lg transition-all shadow-lg hover:shadow-amber-500/20">
+                            ENVIAR MENSAGEM
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Info & Map -->
+                <div class="flex flex-col justify-between">
+                    <div class="mb-8">
+                        <h3 class="text-3xl font-display font-bold text-white mb-6">ONDE ESTAMOS</h3>
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 mt-1">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-white font-bold">Endereço</h4>
+                                    <p class="text-neutral-400">R. João Pereira, 190 - Lapa<br>São Paulo - SP, 05074-070</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 mt-1">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="ml-4">
+                                    <h4 class="text-white font-bold">Telefone / WhatsApp</h4>
+                                    <p class="text-neutral-400">(11) 95193-3863</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Map Iframe -->
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Jo%C3%A3o%20Pereira%2C%20190%20-%20Lapa%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005074-070%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <div class="mb-6 md:mb-0">
+                    <span class="font-display text-2xl font-bold text-white tracking-wider">
+                        RETRÔ <span class="text-amber-500">22</span>
+                    </span>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-facebook"></i></a>
+                    <a href="https://wa.me/5511951933863" class="text-neutral-500 hover:text-amber-500 transition-colors text-xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="text-center md:text-left text-neutral-600 text-sm border-t border-neutral-900 pt-8">
+                <p>&copy; 2023 Retrô 22 Barbearia. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Redirect Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var name = document.getElementById('name').value;
+            var service = document.getElementById('service').value;
+            var msg = document.getElementById('message').value;
+            
+            // Construct the message
+            var fullMessage = "Olá, me chamo " + name + ". Tenho interesse em: " + service + ". " + msg;
+            
+            // Encode for URL
+            var url = "https://wa.me/5511951933863?text=" + encodeURIComponent(fullMessage);
+            
+            // Redirect
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
