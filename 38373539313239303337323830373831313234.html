@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bronx - Barbearia Porto Alegre</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0pRe3rY/w9mjoXf/eQc/x7eKqXbLz8x2wXj0+J6F+1+2+3+4+5+6+7+8+9+0+A+B+C+D+E+F+G+H+I+J+K+L+M+N+O+P+Q+R+S+T+U+V+W+X+Y+Z=" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom styles for gradients or specific elements not easily done with Tailwind classes */
+        .text-gradient-amber {
+            background: linear-gradient(to right, #fbbf24, #d97706); /* Amber-400 to Amber-600 */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent; /* Fallback for browsers that don't support text-fill-color */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header (Fixed & Glassmorphism) -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gradient-amber">The Bronx</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#about" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#services" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#gallery" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#testimonials" class="text-neutral-100 hover:text-amber-500 transition duration-300">Depoimentos</a>
+                <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/555132370077?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 font-semibold py-2 px-6 rounded-lg transition duration-300 hidden md:block">
+                Agendar Horário
+            </a>
+            <div class="md:hidden">
+                <button class="text-neutral-100 focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative bg-cover bg-center min-h-screen flex items-center" style="background-image: url('https://images.unsplash.com/photo-1596434300655-e45187e0b57e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center py-20">
+            <h1 class="text-6xl md:text-7xl font-extrabold text-gradient-amber mb-4 leading-tight">
+                Estilo. Precisão. Tradição.
+            </h1>
+            <p class="text-neutral-300 text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+                A experiência de barbearia premium que você merece em Porto Alegre.
+            </p>
+            <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar um horário para [Serviço Desejado]." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 font-bold py-4 px-10 rounded-lg text-lg transition duration-300 shadow-lg hover:shadow-xl">
+                Agende Seu Horário Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="text-4xl font-bold text-gradient-amber mb-6">Sobre The Bronx</h2>
+                <p class="text-neutral-300 text-lg leading-relaxed mb-4">
+                    Na The Bronx, combinamos a arte clássica da barbearia com as tendências modernas para oferecer um serviço impecável. Localizada no coração de Porto Alegre, nossa barbearia é um refúgio para homens que buscam excelência em cortes, barba e cuidados masculinos.
+                </p>
+                <p class="text-neutral-400 leading-relaxed">
+                    Nossa equipe de barbeiros experientes utiliza apenas os melhores produtos e técnicas, garantindo que cada visita seja uma experiência relaxante e rejuvenescedora. Venha descobrir por que somos a escolha preferida para quem valoriza estilo e sofisticação.
+                </p>
+                <a href="https://wa.me/555132370077?text=Olá, gostaria de saber mais sobre a The Bronx Barbearia." target="_blank" class="mt-8 inline-block bg-amber-600 hover:bg-amber-500 text-neutral-100 font-semibold py-3 px-8 rounded-lg transition duration-300">
+                    Converse Conosco
+                </a>
+            </div>
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1585232002347-667794711894?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro cortando cabelo" class="rounded-2xl shadow-xl border border-neutral-800">
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gradient-amber mb-16">Nossos Serviços Especializados</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-cut text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Clássico</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Corte de cabelo masculino com técnicas tradicionais, finalização e lavagem.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">R$ 60,00</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar um Corte Clássico." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-beard text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Completa</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Modelagem de barba, toalha quente, pós-barba e hidratação.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">R$ 50,00</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar uma Barba Completa." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-scissors text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Combo Corte + Barba</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote completo de corte de cabelo e barba com desconto especial.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">R$ 100,00</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar um Combo Corte + Barba." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-head-side-mask text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Tratamento Capilar</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Hidratação profunda e tratamento para saúde e brilho dos fios.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">R$ 45,00</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar um Tratamento Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-face-shave text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Design de Sobrancelha</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Modelagem e limpeza para realçar o olhar masculino.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">R$ 30,00</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de agendar um Design de Sobrancelha." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg hover:shadow-xl transition duration-300">
+                    <i class="fas fa-spray-can text-amber-500 text-4xl mb-4"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-4">
+                        Pacote exclusivo para noivos com cuidados completos e relaxamento.
+                    </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-amber-500 text-xl font-bold">Consulte</span>
+                        <a href="https://wa.me/555132370077?text=Olá, gostaria de informações sobre o pacote Dia do Noivo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-100 text-sm py-2 px-5 rounded-lg transition duration-300">
+                            Saiba Mais
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gradient-amber mb-16">Nossa Galeria</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <img src="https://images.unsplash.com/photo-1596434300655-e45187e0b57e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da barbearia com cadeira" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+                <img src="https://images.unsplash.com/photo-1549419076-02e0b5033c4a?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ferramentas de barbeiro" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+                <img src="https://images.unsplash.com/photo-1547372605-0e12396342e4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro em ação" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+                <img src="https://images.unsplash.com/photo-1555714081-3006f1516f0f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior elegante da barbearia" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+                <img src="https://images.unsplash.com/photo-1560066984-1380958786a5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos para barbear" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+                <img src="https://images.unsplash.com/photo-1620601332906-8968962d3a33?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Espelho de barbearia com reflexo" class="rounded-2xl shadow-lg border border-neutral-800 object-cover h-full w-full">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-24 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gradient-amber mb-16">O Que Nossos Clientes Dizem</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 1" class="w-16 h-16 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">João Silva</p>
+                            <p class="text-neutral-400 text-sm">Empresário</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-300 leading-relaxed">
+                        "Atendimento impecável e corte de cabelo que superou minhas expectativas. A The Bronx é, sem dúvida, a melhor barbearia de Porto Alegre!"
+                    </p>
+                </div>
+
+                <!-- Testimonial Card 2 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/44.jpg" alt="Cliente 2" class="w-16 h-16 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">Carlos Eduardo</p>
+                            <p class="text-neutral-400 text-sm">Designer Gráfico</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-300 leading-relaxed">
+                        "Ambiente sofisticado e profissionais de alto nível. Minha barba nunca esteve tão bem cuidada. Recomendo a todos!"
+                    </p>
+                </div>
+
+                <!-- Testimonial Card 3 -->
+                <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://randomuser.me/api/portraits/men/68.jpg" alt="Cliente 3" class="w-16 h-16 rounded-full mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-semibold text-neutral-100">Fernando Lima</p>
+                            <p class="text-neutral-400 text-sm">Advogado</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-300 leading-relaxed">
+                        "Cada visita é uma experiência relaxante. O cuidado com os detalhes e a atenção do barbeiro são excepcionais. Parabéns!"
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-4xl font-bold text-center text-gradient-amber mb-16">Fale Conosco</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-neutral-950 rounded-2xl p-8 border border-neutral-800 shadow-lg">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" required class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-amber-500 focus:border-amber-500 text-neutral-100 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-amber-500 focus:border-amber-500 text-neutral-100 placeholder-neutral-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-100 font-bold py-3 px-6 rounded-lg transition duration-300">
+                            Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info & Map -->
+                <div>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Nossos Detalhes</h3>
+                    <div class="space-y-4 mb-8 text-neutral-300">
+                        <p><i class="fas fa-phone-alt text-amber-500 mr-3"></i> Telefone: <a href="tel:+555132370077" class="hover:text-amber-500">(51) 3237-0077</a></p>
+                        <p><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> Endereço: Av. Assis Brasil, 545 - Passo d'Areia, Porto Alegre - RS</p>
+                        <p><i class="fas fa-clock text-amber-500 mr-3"></i> Horário de Atendimento: Entre em contato para agendar seu horário.</p>
+                    </div>
+
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Onde Estamos</h3>
+                    <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-lg">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Assis%20Brasil%2C%20545%20-%20Passo%20d'Areia%2C%20Porto%20Alegre%20-%20RS%2C%2091010-004%2C%20Brasil%2C%20Porto%20Alegre&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="https://wa.me/555132370077?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition duration-300">
+                    <i class="fab fa-instagram text-2xl"></i>
+                </a>
+                <a href="#" class="text-neutral-400 hover:text-amber-500 transition duration-300">
+                    <i class="fab fa-facebook-f text-2xl"></i>
+                </a>
+            </div>
+            <p class="text-neutral-400 text-sm">&copy; 2023 The Bronx - Barbearia Porto Alegre. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Contact Form Script -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/555132370077?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
