@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbero Club Shopping da Bahia - Barbearia Premium em Salvador</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>💈</text></svg>" type="image/svg+xml">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .text-gradient-amber {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #262626; /* neutral-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* neutral-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* neutral-500 */
+        }
+    </style>
+    <!-- Google Fonts - Inter for body, Playfair Display for headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-50 w-full backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#hero" class="text-2xl font-bold tracking-tight text-amber-500 hover:text-amber-400 transition duration-300 font-playfair-display">
+                Barbero Club
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/5571992696064?text=Olá, gostaria de mais informações." target="_blank" class="px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 shadow-lg flex items-center gap-2">
+                <i class="fab fa-whatsapp"></i> Agendar Agora
+            </a>
+            <!-- Mobile Menu Button - Placeholder -->
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596431362615-5602446700c2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <!-- Dark Overlay Gradient -->
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-8xl font-extrabold leading-tight mb-6 font-playfair-display text-neutral-100">
+                <span class="text-gradient-amber from-amber-400 to-amber-600">Estilo</span> & <span class="text-gradient-amber from-amber-400 to-amber-600">Tradição</span>
+            </h1>
+            <p class="text-xl md:text-2xl text-neutral-300 mb-10 max-w-2xl mx-auto">
+                Experimente a excelência em cuidados masculinos no Barbero Club Shopping da Bahia.
+            </p>
+            <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar um horário para [Serviço Desejado]." target="_blank" class="inline-flex items-center px-10 py-5 bg-amber-600 text-neutral-100 text-xl rounded-lg font-bold hover:bg-amber-500 transition duration-300 shadow-2xl transform hover:scale-105 gap-3">
+                <i class="fab fa-whatsapp"></i> Agende Seu Horário Premium
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="relative rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                <img src="https://images.unsplash.com/photo-1621607504734-d309003887c2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da Barbearia Barbero Club" class="w-full h-96 object-cover object-center">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            </div>
+            <div>
+                <h2 class="text-5xl font-bold font-playfair-display text-neutral-100 mb-6 leading-tight">
+                    Mais que um corte, uma <span class="text-amber-500">Experiência</span>.
+                </h2>
+                <p class="text-neutral-300 text-lg mb-6">
+                    No Barbero Club Shopping da Bahia, combinamos a arte clássica da barbearia com as tendências modernas para oferecer um serviço incomparável. Localizada no coração de Salvador, nossa barbearia é um refúgio de estilo e sofisticação.
+                </p>
+                <p class="text-neutral-400 text-base mb-8">
+                    Nossos profissionais são especializados em cortes precisos, barba modelada, tratamentos faciais e capilares, utilizando apenas produtos de alta qualidade para garantir sua satisfação. Venha relaxar e renovar seu visual em um ambiente exclusivo.
+                </p>
+                <a href="https://wa.me/5571992696064?text=Olá, gostaria de saber mais sobre o Barbero Club." target="_blank" class="inline-flex items-center px-8 py-4 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 shadow-lg transform hover:scale-105 gap-2">
+                    <i class="fab fa-whatsapp"></i> Conheça Nossos Profissionais
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold font-playfair-display text-neutral-100 mb-4">
+                Nossos <span class="text-amber-500">Serviços</span>
+            </h2>
+            <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
+                Oferecemos uma gama completa de serviços especializados para o homem moderno que busca excelência e cuidado.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Corte de Cabelo Clássico</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Cortes precisos e personalizados, do clássico ao moderno, com consultoria de estilo.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar um Corte de Cabelo Clássico." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-face-beard text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Barba Modelada e Terapia</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Modelagem de barba com toalha quente, esfoliação e hidratação para uma pele saudável.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar uma Barba Modelada e Terapia." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-scissors text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Dia do Noivo Premium</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Pacote completo para o noivo, incluindo cabelo, barba, massagem e relaxamento.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de saber mais sobre o Dia do Noivo Premium." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Tratamentos Capilares</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Hidratação profunda, reconstrução e tratamentos especializados para a saúde dos seus fios.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar um Tratamento Capilar." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-face-shave text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Limpeza de Pele Facial</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Cuidado completo para a pele do rosto, eliminando impurezas e promovendo hidratação.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar uma Limpeza de Pele Facial." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition duration-300">
+                    <i class="fas fa-hand-sparkles text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4 font-playfair-display">Manicure e Pedicure</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Cuidados essenciais para mãos e pés, com hidratação e corte profissional.
+                    </p>
+                    <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar Manicure e Pedicure." target="_blank" class="inline-flex items-center px-6 py-3 bg-amber-600 text-neutral-100 rounded-lg font-semibold hover:bg-amber-500 transition duration-300 gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Serviço
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section (before Contact) -->
+    <section class="py-20 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-4xl md:text-5xl font-bold font-playfair-display text-neutral-100 mb-6 leading-tight">
+                Pronto para Elevar Seu <span class="text-amber-500">Estilo</span>?
+            </h2>
+            <p class="text-xl text-neutral-400 mb-10">
+                Não espere mais para desfrutar da experiência Barbero Club. Agende seu horário hoje mesmo!
+            </p>
+            <a href="https://wa.me/5571992696064?text=Olá, gostaria de agendar um horário para [Serviço Desejado]." target="_blank" class="inline-flex items-center px-10 py-5 bg-amber-600 text-neutral-100 text-xl rounded-lg font-bold hover:bg-amber-500 transition duration-300 shadow-xl transform hover:scale-105 gap-3">
+                <i class="fab fa-whatsapp"></i> Agendar Agora
+            </a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-bold font-playfair-display text-neutral-100 text-center mb-16">
+                Fale Conosco & <span class="text-amber-500">Localização</span>
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-16">
+                <!-- Contact Info & Form -->
+                <div>
+                    <h3 class="text-3xl font-semibold font-playfair-display text-neutral-100 mb-8">
+                        Entre em Contato
+                    </h3>
+                    <div class="space-y-6 mb-12 text-neutral-300 text-lg">
+                        <p><i class="fas fa-map-marker-alt text-amber-500 w-6 mr-3"></i> 2º Piso Shopping da Bahia - Av. Tancredo Neves, 148 - loja Q 37 - Caminho das Árvores, Salvador - BA, 41820-908, Brasil</p>
+                        <p><i class="fas fa-phone-alt text-amber-500 w-6 mr-3"></i> <a href="tel:+5571992696064" class="hover:text-amber-500 transition duration-300">(71) 99269-6064</a></p>
+                        <p><i class="fab fa-whatsapp text-amber-500 w-6 mr-3"></i> <a href="https://wa.me/5571992696064?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition duration-300">(71) 99269-6064</a></p>
+                        <p><i class="fas fa-clock text-amber-500 w-6 mr-3"></i> Horário: <span class="text-neutral-400">Não informado. Por favor, entre em contato.</span></p>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <form id="contactForm" class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                        <h4 class="text-2xl font-semibold text-neutral-100 mb-6 font-playfair-display">Envie sua Mensagem via WhatsApp</h4>
+                        <div class="mb-6">
+                            <label for="name" class="block text-neutral-300 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-600" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-neutral-300 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-600" placeholder="Descreva sua dúvida ou solicitação" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-neutral-100 rounded-lg font-bold hover:bg-amber-500 transition duration-300 shadow-lg transform hover:scale-105 gap-3">
+                            <i class="fab fa-whatsapp"></i> Enviar Mensagem via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=2%C2%B0%20Piso%20Shopping%20da%20Bahia%20-%20Av.%20Tancredo%20Neves%2C%20148%20-%20loja%20Q%2037%20-%20Caminho%20das%20%C3%81rvores%2C%20Salvador%20-%20BA%2C%2041820-908%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row items-center justify-between mb-8">
+                <a href="#hero" class="text-2xl font-bold tracking-tight text-amber-500 hover:text-amber-400 transition duration-300 mb-4 md:mb-0 font-playfair-display">
+                    Barbero Club
+                </a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://facebook.com/barberoclub" target="_blank" class="hover:text-amber-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com/barberoclub" target="_blank" class="hover:text-amber-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/5571992696064" target="_blank" class="hover:text-amber-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <p class="text-sm">
+                &copy; 2023 Barbero Club Shopping da Bahia. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5571992696064?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
