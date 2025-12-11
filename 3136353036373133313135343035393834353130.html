@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BARBEARIA GALLO MAN | Shopping Conjunto Nacional - Brasília</title>
+    <meta name="description" content="Barbearia Gallo Man: Serviços especializados de barbearia no Shopping Conjunto Nacional, Brasília. Agende seu horário e experimente o luxo e a tradição.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* neutral-950 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #404040; /* neutral-700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #525252; /* neutral-600 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased">
+
+    <!-- Header / Navigation -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 py-4 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold tracking-tight">
+                BARBEARIA <span class="text-amber-500">GALLO MAN</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/5565999036690?text=Olá, gostaria de mais informações." target="_blank" class="hidden md:block bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/30">
+                Agendar Horário
+            </a>
+            <!-- Mobile Menu Toggle -->
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative h-screen bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596430338902-1845bb08a68b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center px-6">
+            <h1 class="text-6xl sm:text-7xl font-bold leading-tight mb-4 text-neutral-100">
+                BARBEARIA <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">GALLO MAN</span>
+            </h1>
+            <p class="text-xl sm:text-2xl text-neutral-300 max-w-3xl mb-8">
+                Experiência única em cuidados masculinos no Shopping Conjunto Nacional, Brasília.
+                Tradição e modernidade em cada corte e barbear.
+            </p>
+            <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar um horário." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 px-10 rounded-lg text-lg transition-all duration-300 shadow-xl hover:shadow-amber-500/40 transform hover:scale-105">
+                Agendar Horário <i class="fab fa-whatsapp ml-3"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="md:order-2">
+                <img src="https://images.unsplash.com/photo-1621607590215-992a6a117b38?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro trabalhando" class="rounded-2xl shadow-xl border border-neutral-800 object-cover w-full h-[450px]">
+            </div>
+            <div class="md:order-1 text-center md:text-left">
+                <h2 class="text-5xl font-bold text-neutral-100 mb-6">
+                    Sobre a <span class="text-amber-500">Gallo Man</span>
+                </h2>
+                <p class="text-lg text-neutral-400 leading-relaxed mb-6">
+                    Na BARBEARIA GALLO MAN, combinamos a arte clássica da barbearia com as tendências modernas para oferecer um serviço impecável.
+                    Localizada no coração do Shopping Conjunto Nacional em Brasília, somos o seu refúgio para cuidar da sua aparência com estilo e sofisticação.
+                </p>
+                <p class="text-lg text-neutral-400 leading-relaxed">
+                    Nossa equipe de profissionais altamente qualificados está pronta para proporcionar uma experiência de luxo, desde um corte de cabelo preciso até um barbear relaxante e tratamentos de barba personalizados. Venha nos visitar e descubra a diferença Gallo Man.
+                </p>
+                <a href="https://wa.me/5565999036690?text=Olá, gostaria de saber mais sobre a barbearia." target="_blank" class="mt-8 inline-block bg-neutral-800 hover:bg-neutral-700 text-neutral-100 font-medium py-3 px-8 rounded-lg transition-all duration-300 border border-neutral-700">
+                    Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-16">
+                Nossos <span class="text-amber-500">Serviços</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Corte Clássico</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Um corte de cabelo atemporal, perfeito para quem busca elegância e precisão. Inclui lavagem e finalização.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 60</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar um Corte Clássico." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-razor text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Barba Tradicional</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Um ritual relaxante com toalhas quentes, espuma cremosa e navalha afiada para um barbear perfeito.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 50</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar uma Barba Tradicional." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Combo Gallo Man</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        O pacote completo: corte de cabelo e barbear tradicional para um visual impecável da cabeça aos pés.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 100</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar o Combo Gallo Man." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-spray-can text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Tratamento de Barba</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Hidratação profunda, modelagem e produtos premium para uma barba saudável e estilosa.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 45</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar um Tratamento de Barba." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-eye-dropper text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Coloração Capilar</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Realce ou mude a cor do seu cabelo com produtos de alta qualidade e técnicas profissionais.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 90</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar uma Coloração Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-spa text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Dia do Noivo</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Um pacote exclusivo para o grande dia, incluindo corte, barba, hidratação e um momento de relaxamento.
+                    </p>
+                    <p class="text-amber-500 text-2xl font-bold mb-6">R$ 250</p>
+                    <a href="https://wa.me/5565999036690?text=Olá, gostaria de informações sobre o Dia do Noivo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-medium py-3 px-8 rounded-lg transition-all duration-300 w-full">
+                        Agendar <i class="fas fa-chevron-right ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-16">
+                Nossa <span class="text-amber-500">Galeria</span>
+            </h2>
+            <div class="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <img src="https://images.unsplash.com/photo-1596430338902-1845bb08a68b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Interior da barbearia" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1534011883125-97e3350275a5?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo detalhe" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1595475207798-b80c51d655f4?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Produtos de barbearia" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1521578330164-6f019777926b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbearia vintage" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1503951458535-fcb7e1ce15c0?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Corte de cabelo masculino" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1549429444-245ed73d1f40?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Ferramentas de barbeiro" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1596430338902-1845bb08a68b?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cadeira de barbeiro" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+                <img src="https://images.unsplash.com/photo-1621607590215-992a6a117b38?q=80&w=600&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Barbeiro com cliente" class="rounded-xl object-cover w-full h-64 shadow-lg border border-neutral-800 hover:scale-105 transition-transform duration-300">
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="depoimentos" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-16">
+                O que dizem <span class="text-amber-500">nossos clientes</span>
+            </h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 italic text-lg mb-6 leading-relaxed flex-grow">
+                        "A Gallo Man é, sem dúvida, a melhor barbearia de Brasília. O atendimento é impecável e o corte de cabelo sempre sai perfeito. Recomendo a todos!"
+                    </p>
+                    <p class="text-neutral-100 font-semibold text-xl">- Pedro S.</p>
+                </div>
+                <!-- Testimonial Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 italic text-lg mb-6 leading-relaxed flex-grow">
+                        "Ambiente super agradável e profissionais de primeira. Fui fazer a barba e saí renovado. A experiência de luxo é real!"
+                    </p>
+                    <p class="text-neutral-100 font-semibold text-xl">- Rafael M.</p>
+                </div>
+                <!-- Testimonial Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-amber-500/10 transition-shadow duration-300 flex flex-col items-center">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 italic text-lg mb-6 leading-relaxed flex-grow">
+                        "Serviços especializados de verdade! O Combo Gallo Man é a pedida certa para quem quer sair com o visual impecável. Parabéns à equipe!"
+                    </p>
+                    <p class="text-neutral-100 font-semibold text-xl">- Lucas F.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-bold text-neutral-100 mb-16">
+                Entre em <span class="text-amber-500">Contato</span>
+            </h2>
+            <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
+                <!-- Contact Info -->
+                <div class="text-left bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl">
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Informações</h3>
+                    <div class="space-y-6 text-lg">
+                        <p class="text-neutral-300"><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>SDN - Plano Piloto, Brasília - DF, 70655-775 (Shopping Conjunto Nacional)</p>
+                        <p class="text-neutral-300"><i class="fas fa-phone-alt text-amber-500 mr-3"></i>Telefone: <a href="tel:+5565999036690" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">(65) 99903-6690</a></p>
+                        <p class="text-neutral-300"><i class="fas fa-clock text-amber-500 mr-3"></i>Horário: Consulte-nos para agendamento.</p>
+                        <div class="flex space-x-6 mt-8 justify-center md:justify-start">
+                            <a href="https://wa.me/5565999036690?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-neutral-300 hover:text-amber-500 transition-colors duration-300 text-3xl">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl">
+                    <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6 text-left">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-sm font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300" placeholder="Seu nome completo" required>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-sm font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300" placeholder="Olá, gostaria de agendar um corte..." required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-white font-semibold py-4 px-8 rounded-lg text-lg transition-all duration-300 shadow-md hover:shadow-amber-500/30">
+                            Enviar Mensagem <i class="fab fa-whatsapp ml-3"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Google Maps -->
+            <div class="w-full mt-16">
+                <h3 class="text-3xl font-semibold text-neutral-100 mb-6">Onde nos Encontrar</h3>
+                <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SDN%20-%20Plano%20Piloto%2C%20Bras%C3%ADlia%20-%20DF%2C%2070655-775%2C%20Brasil%2C%20Bras%C3%ADlia&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 bg-neutral-950 border-t border-neutral-800 text-center text-neutral-400">
+        <div class="max-w-7xl mx-auto px-6">
+            <p class="mb-4 text-lg">&copy; 2023 BARBEARIA GALLO MAN. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6 text-2xl">
+                <a href="https://wa.me/5565999036690?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+            </div>
+            <p class="mt-4 text-sm">Desenvolvido com <i class="fas fa-heart text-red-500"></i> por Estúdio Elite Web.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5565999036690?text=Olá, gostaria de agendar um horário." target="_blank" class="fixed bottom-8 right-8 bg-amber-600 hover:bg-amber-500 text-white p-5 rounded-full shadow-lg text-3xl transition-all duration-300 transform hover:scale-110 z-40">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5565999036690?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
