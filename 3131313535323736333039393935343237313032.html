@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sagrada Barber Shop - Barbearia de Luxo em Belo Horizonte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKx3R1T+5prhxmR+t2lXQ== " crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom scrollbar for a touch of luxury */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* bg-neutral-950 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #fbbf24; /* amber-400 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b; /* amber-500 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans leading-relaxed">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-3xl font-bold text-amber-500 tracking-wide">
+                Sagrada<span class="text-neutral-100">Barber</span>
+            </a>
+            <div class="hidden md:flex space-x-8 items-center">
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
+                <a href="https://wa.me/553130184311?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-2 px-6 rounded-full transition duration-300 shadow-lg">
+                    Agendar Horário
+                </a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger - Placeholder for functionality) -->
+            <button class="md:hidden text-neutral-100 text-2xl focus:outline-none" aria-label="Abrir Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596434300655-e7f12acb775f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw3fHxiYXJiZXJzaG9wJTIwZHJhbWF0aWN8ZW58MHx8fHwxNzAzNTI2ODQxfDA&ixlib=rb-4.0.3&q=80&w=1080');">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-6xl md:text-7xl font-extrabold text-neutral-100 leading-tight mb-6 animate-fade-in-up">
+                Sagrada Barber Shop: <span class="bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">A Arte da Barbearia</span>
+            </h1>
+            <p class="text-neutral-300 text-xl md:text-2xl mb-10">
+                Onde a tradição encontra a modernidade em Belo Horizonte. Estilo e excelência em cada corte.
+            </p>
+            <a href="https://wa.me/553130184311?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-xl transform hover:scale-105">
+                Reserve seu Horário Agora <i class="fab fa-whatsapp ml-2"></i>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+            <div class="flex flex-col justify-center">
+                <h2 class="text-5xl font-extrabold text-neutral-100 mb-6 leading-tight">
+                    Mais que um Corte, <span class="text-amber-500">Uma Experiência Sagrada.</span>
+                </h2>
+                <p class="text-neutral-400 text-lg mb-6">
+                    Na Sagrada Barber Shop, cada visita é um ritual. Combinamos técnicas clássicas de barbearia com as tendências mais modernas, garantindo um serviço impecável e um ambiente que exala masculinidade e sofisticação. Nossos mestres barbeiros são artistas dedicados à sua imagem.
+                </p>
+                <p class="text-neutral-400 text-lg mb-8">
+                    Localizada no coração de Belo Horizonte, somos o refúgio perfeito para o homem que busca excelência, cuidado e um momento de relaxamento. Venha descobrir o que nos torna a barbearia mais prestigiada da cidade.
+                </p>
+                <a href="https://wa.me/553130184311?text=Olá, gostaria de mais informações sobre seus serviços." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-8 rounded-full self-start transition duration-300 shadow-md">
+                    Conheça Nossos Serviços <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                <img src="https://images.unsplash.com/photo-1621607512214-de1574974f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwzfHxiYXJiZXJzaG9wJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzAzNTI2OTc2fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Interior da Sagrada Barber Shop" class="w-full h-full object-cover transform hover:scale-105 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/20 to-transparent"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-extrabold text-neutral-100 mb-4">
+                Nossos <span class="text-amber-500">Serviços Especializados</span>
+            </h2>
+            <p class="text-neutral-400 text-xl mb-16 max-w-3xl mx-auto">
+                Oferecemos uma gama completa de serviços para o homem moderno, combinando técnicas clássicas e inovadoras para um resultado impecável.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Corte Clássico e Moderno</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        Do fade perfeito ao corte social, nossos barbeiros são mestres em todas as técnicas, personalizando o estilo para você.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">R$ 60</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de agendar um Corte Clássico e Moderno." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Agendar <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Barba Terapêutica</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        Toalhas quentes, óleos essenciais e navalha afiada para um barbear preciso e relaxante.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">R$ 50</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de agendar uma Barba Terapêutica." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Agendar <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-scissors text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Combo Cabelo e Barba</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        O pacote completo para uma transformação total. Economize e saia com o visual impecável.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">R$ 100</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de agendar o Combo Cabelo e Barba." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Agendar <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 4 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-magic text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Tratamento Capilar</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        Hidratação profunda, revitalização e cuidados específicos para a saúde e brilho dos seus cabelos.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">R$ 70</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de agendar um Tratamento Capilar." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Agendar <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 5 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-palette text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Coloração e Pigmentação</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        Realce sua cor natural ou ouse com um novo visual, com produtos de alta qualidade e técnicas seguras.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">R$ 120</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de agendar uma Coloração e Pigmentação." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Agendar <i class="fas fa-calendar-alt ml-2"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 6 -->
+                <div class="bg-neutral-950 p-8 rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 flex flex-col items-center text-center">
+                    <i class="fas fa-spa text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-3">Dia do Noivo</h3>
+                    <p class="text-neutral-400 text-lg mb-6 flex-grow">
+                        Um tratamento completo para o grande dia, com relaxamento, corte, barba e cuidados especiais.
+                    </p>
+                    <span class="text-amber-500 text-3xl font-bold mb-4">A Consultar</span>
+                    <a href="https://wa.me/553130184311?text=Olá, gostaria de informações sobre o Dia do Noivo." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-white font-semibold py-3 px-6 rounded-full w-full">
+                        Consultar <i class="fas fa-phone-alt ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section (Simple Grid) -->
+    <section class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-extrabold text-neutral-100 mb-4">
+                O que Nossos Clientes <span class="text-amber-500">Dizem</span>
+            </h2>
+            <p class="text-neutral-400 text-xl mb-16 max-w-3xl mx-auto">
+                A satisfação dos nossos clientes é a nossa maior recompensa. Veja alguns depoimentos.
+            </p>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Testimonial 1 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg italic mb-6">
+                        "Ambiente impecável, atendimento de primeira e um corte que superou minhas expectativas. A Sagrada Barber Shop é, sem dúvida, a melhor de BH!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1507003211169-e69fe1c5a3bb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwxfHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzAzNTI3MjAxfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Cliente 1" class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-bold text-neutral-100">Marcelo Santos</p>
+                            <p class="text-neutral-400 text-sm">Empresário</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg italic mb-6">
+                        "Profissionais extremamente qualificados e um cuidado com os detalhes que faz toda a diferença. Recomendo de olhos fechados!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1547425260-76bc4fa0efc0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwzfHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzAzNTI3MjAxfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Cliente 2" class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-bold text-neutral-100">Fernando Costa</p>
+                            <p class="text-neutral-400 text-sm">Advogado</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                    <i class="fas fa-quote-left text-amber-500 text-3xl mb-4"></i>
+                    <p class="text-neutral-300 text-lg italic mb-6">
+                        "Sempre saio renovado daqui. A barba feita com navalha é uma experiência única. O melhor lugar para cuidar do visual!"
+                    </p>
+                    <div class="flex items-center">
+                        <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw1fHxtYWxlJTIwcG9ydHJhaXR8ZW58MHx8fHwxNzAzNTI3MjAxfDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Cliente 3" class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-amber-500">
+                        <div>
+                            <p class="font-bold text-neutral-100">Gustavo Lima</p>
+                            <p class="text-neutral-400 text-sm">Designer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-extrabold text-neutral-100 mb-4">
+                Nossa <span class="text-amber-500">Galeria</span> de Estilo
+            </h2>
+            <p class="text-neutral-400 text-xl mb-16 max-w-3xl mx-auto">
+                Inspire-se com alguns dos trabalhos realizados em nossa barbearia e veja a qualidade dos nossos serviços.
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1621607512214-de1574974f1b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwzfHxiYXJiZXJzaG9wJTIwY3V0fGVufDB8fHx8MTcwMzUyNzg4Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Corte de Cabelo Moderno" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1599371720230-05e836b2809f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw4fHxiYXJiZXJzaG9wJTIwY3V0fGVufDB8fHx8MTcwMzUyNzg4Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Barbeiro trabalhando" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1560066984-138dadb4c035?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw3fHxiYXJiZXJzaG9wJTIwYmVhcmQlMjB0cmltfGVufDB8fHx8MTcwMzUyNzg4Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Detalhe da Barba" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1585801700466-f4086d4993a4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwxfHxiYXJiZXJzaG9wJTIwdG9vbHN8ZW58MHx8fHwxNzAzNTI3ODg2fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Ferramentas de Barbeiro" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1620022425660-31631e500c49?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw1fHxiYXJiZXJzaG9wJTIwaW50ZXJpb3J8ZW58MHx8fHwxNzAzNTI2OTc2fDA&ixlib=rb-4.0.3&q=80&w=1080" alt="Interior da Barbearia" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1503951458535-fc19728374d7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw2fHxiYXJiZXJzaG9wJTIwY3V0fGVufDB8fHx8MTcwMzUyNzg4Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Homem com Corte Estiloso" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1558230283-36655c7b309b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHw5fHxiYXJiZXJzaG9wJTIwY3V0fGVufDB8fHx8MTcwMzUyNzg4Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Navalha e Espuma" class="w-full h-72 object-cover">
+                </div>
+                <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800 transform hover:scale-105 transition duration-300">
+                    <img src="https://images.unsplash.com/photo-1502019904229-a7157837d953?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTIyMjh8MHwxfHNlYXJjaHwxNXx8YmFyYmVyc2hvcCUyMGludGVyaW9yfGVufDB8fHx8MTcwMzUyNjk3Nnww&ixlib=rb-4.0.3&q=80&w=1080" alt="Cadeira de Barbeiro" class="w-full h-72 object-cover">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="text-5xl font-extrabold text-neutral-100 mb-4">
+                Fale Conosco e <span class="text-amber-500">Agende seu Horário</span>
+            </h2>
+            <p class="text-neutral-400 text-xl mb-16 max-w-3xl mx-auto">
+                Estamos prontos para atendê-lo. Entre em contato ou venha nos visitar.
+            </p>
+
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <!-- Contact Info & Map -->
+                <div class="text-left bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800">
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-6">Informações de Contato</h3>
+                    <div class="space-y-6 mb-10">
+                        <p class="text-neutral-300 text-lg flex items-center">
+                            <i class="fas fa-phone-alt text-amber-500 mr-4 text-xl"></i>
+                            Telefone: <a href="tel:+553130184311" class="ml-2 hover:text-amber-500 transition duration-300">(31) 3018-4311</a>
+                        </p>
+                        <p class="text-neutral-300 text-lg flex items-center">
+                            <i class="fab fa-whatsapp text-amber-500 mr-4 text-xl"></i>
+                            WhatsApp: <a href="https://wa.me/553130184311?text=Olá, gostaria de mais informações." target="_blank" class="ml-2 hover:text-amber-500 transition duration-300">(31) 3018-4311</a>
+                        </p>
+                        <p class="text-neutral-300 text-lg flex items-start">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-xl mt-1"></i>
+                            Endereço: R. Alegrete, 334 - Sagrada Família, Belo Horizonte - MG, 31035-380
+                        </p>
+                        <p class="text-neutral-300 text-lg flex items-center">
+                            <i class="fas fa-clock text-amber-500 mr-4 text-xl"></i>
+                            Horário de Funcionamento: <span class="ml-2 text-neutral-400">Entre em contato para verificar</span>
+                        </p>
+                    </div>
+
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-6">Nossa Localização</h3>
+                    <div class="rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Alegrete%2C%20334%20-%20Sagrada%20Fam%C3%ADlia%2C%20Belo%20Horizonte%20-%20MG%2C%2031035-380%2C%20Brasil%2C%20Belo%20Horizonte&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                    <h3 class="text-3xl font-bold text-neutral-100 mb-6">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-neutral-300 text-lg font-medium mb-2">Seu Nome</label>
+                            <input type="text" id="name" name="name" required class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-neutral-100 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-neutral-300 text-lg font-medium mb-2">Seu Email (Opcional)</label>
+                            <input type="email" id="email" name="email" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-neutral-100 placeholder-neutral-500">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-neutral-300 text-lg font-medium mb-2">Sua Mensagem</label>
+                            <textarea id="message" name="message" rows="6" required class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-transparent text-neutral-100 placeholder-neutral-500"></textarea>
+                        </div>
+                        <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white font-bold py-4 px-8 rounded-full w-full transition duration-300 shadow-lg transform hover:scale-105">
+                            Enviar Mensagem via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#" class="text-3xl font-bold text-amber-500 tracking-wide mb-4 md:mb-0">
+                    Sagrada<span class="text-neutral-100">Barber</span>
+                </a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://facebook.com/sagradabarbershop" target="_blank" class="hover:text-amber-500 transition duration-300" aria-label="Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://instagram.com/sagradabarbershop" target="_blank" class="hover:text-amber-500 transition duration-300" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/553130184311" target="_blank" class="hover:text-amber-500 transition duration-300" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <p>&copy; 2023 Sagrada Barber Shop. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Desenvolvido com <i class="fas fa-heart text-red-500 mx-1"></i> por [Seu Estúdio de Design]</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            // var email = document.getElementById('email').value; // 'email' field is optional and not included in the WhatsApp message per prompt example.
+
+            var whatsappMessage = "Olá, me chamo " + name + ". ";
+            if (msg) {
+                whatsappMessage += msg;
+            } else {
+                whatsappMessage += "Gostaria de mais informações.";
+            }
+
+            var url = "https://wa.me/553130184311?text=" + encodeURIComponent(whatsappMessage);
+            window.open(url, '_blank');
+        });
+
+        // Optional: Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
