@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foguinho Barbearia - Barbearia de Elite em Brasília</title>
+    <link rel="icon" href="https://via.placeholder.com/32x32/171717/F59E0B?text=F" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fff3cd',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* bg-neutral-950 */
+            color: #f5f5f5; /* text-neutral-100 */
+        }
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* neutral-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #404040; /* neutral-700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #525252; /* neutral-600 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100">
+
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-neutral-950/80 backdrop-blur-md border-b border-neutral-800">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-amber-500 tracking-wide">Foguinho Barbearia</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </div>
+            <a href="https://wa.me/556135367900?text=Olá, gostaria de mais informações." target="_blank" class="hidden md:block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/30">
+                Agendar Horário
+            </a>
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1621607512214-de006763a763?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmVyc2hvcCxkYXJrLG1hbiwgc2hhdmV8fHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=1920" alt="Barbearia Foguinho - Ambiente Sofisticado" class="absolute inset-0 w-full h-full object-cover brightness-75">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            <div class="relative z-10 max-w-4xl px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold text-neutral-100 leading-tight mb-6 tracking-tight drop-shadow-lg">
+                    Onde o Estilo Encontra a Tradição
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-300 mb-10 drop-shadow-md">
+                    Viva a experiência Foguinho Barbearia: excelência em cortes e barbas, com o toque de luxo que você merece em Brasília.
+                </p>
+                <a href="https://wa.me/556135367900?text=Olá, gostaria de agendar um horário na Foguinho Barbearia." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 shadow-xl hover:shadow-amber-500/40 transform hover:scale-105">
+                    Agende Seu Horário Agora
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-amber-500 mb-6 leading-tight">
+                        A Arte da Barbearia Elevada
+                    </h2>
+                    <p class="text-lg text-neutral-300 mb-6">
+                        Na Foguinho Barbearia, em Brasília, cada corte e cada barba são uma obra de arte. Combinamos técnicas clássicas com as últimas tendências para garantir um visual impecável e uma experiência relaxante e rejuvenescedora. Nosso ambiente é projetado para o homem moderno que valoriza qualidade, conforto e um serviço exclusivo.
+                    </p>
+                    <p class="text-lg text-neutral-300 mb-8">
+                        Nossa equipe de barbeiros é altamente qualificada e apaixonada pela profissão, dedicando atenção total aos detalhes para superar suas expectativas. Venha descobrir a diferença de um serviço verdadeiramente especializado.
+                    </p>
+                    <a href="https://wa.me/556135367900?text=Olá, gostaria de saber mais sobre a Foguinho Barbearia." target="_blank" class="inline-block bg-neutral-800 hover:bg-neutral-700 text-neutral-100 font-semibold py-3 px-8 rounded-lg transition-all duration-300 border border-neutral-700">
+                        <i class="fab fa-whatsapp mr-2"></i> Converse Conosco
+                    </a>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1596701072971-6c4c05565d21?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmVyLHNob3AsY3V0LG1hbiwgc3R5bGV8fHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=1280" alt="Barbeiro trabalhando em corte masculino" class="w-full h-[500px] object-cover">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/40 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 bg-neutral-950 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Nossos <span class="text-amber-500">Serviços Exclusivos</span></h2>
+                <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
+                    Transforme seu visual com nossos serviços especializados, pensados para a sua imagem e bem-estar.
+                </p>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Corte Masculino Premium</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Um corte personalizado que se adapta ao seu estilo e formato de rosto, com acabamento impecável.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">A partir de R$ 80</span>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-beard"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Barba Terapêutica</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Modelagem e tratamento com toalhas quentes, óleos essenciais e massagem facial para relaxamento total.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">A partir de R$ 70</span>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-scissors-beard"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Combo Corte & Barba</h3>
+                        <p class="text-neutral-400 mb-6">
+                            O pacote completo para um visual renovado e impecável, combinando corte e barba com desconto especial.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">A partir de R$ 130</span>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Tratamento Capilar</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Revitalize seus cabelos com tratamentos específicos para hidratação, fortalecimento e brilho.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">A partir de R$ 60</span>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Design de Sobrancelhas</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Realce seu olhar com um design de sobrancelhas que harmoniza com seu rosto.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">A partir de R$ 40</span>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                        <div class="text-amber-500 text-5xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <i class="fas fa-head-side-mask"></i>
+                        </div>
+                        <h3 class="text-3xl font-bold text-neutral-100 mb-3">Dia do Noivo</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Pacote especial para o noivo e padrinhos, com serviços completos e ambiente exclusivo.
+                        </p>
+                        <span class="text-amber-500 text-2xl font-bold">Consulte-nos</span>
+                    </div>
+                </div>
+
+                <div class="mt-16">
+                    <a href="https://wa.me/556135367900?text=Olá, gostaria de saber mais sobre os serviços da Foguinho Barbearia." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl text-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/30 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> Agende Seus Serviços
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="py-24 bg-neutral-900 border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Nossa <span class="text-amber-500">Galeria</span></h2>
+                <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
+                    Inspire-se com alguns dos trabalhos realizados e o ambiente sofisticado da Foguinho Barbearia.
+                </p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1542137604-3b6b150c7653?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmVyc2hvcCxpbnRlcmlvcixkYXJrLGx1eHVyeXwxfHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Interior da Barbearia Foguinho" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1560066984-138db622687a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuLGhhcmN1dCxzdHlsZWR8fHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Cliente com corte de cabelo moderno" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1608930939527-3168a3068e83?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmEsYmFyYmVyLHNoYXZlfHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Barbeiro fazendo a barba" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1558227653-06659c2b4d91?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmVyc2hvcCx0b29scyx2aW50YWdlfHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Ferramentas de barbearia vintage" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1582772186591-64d60a5e840d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuLGhhY2VjdXQsYmFyYmVyc2hvcHwwfHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Corte de cabelo detalhado" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="rounded-2xl overflow-hidden shadow-xl border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1552093551-78977112b326?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8YmFyYmEsdHJpbW1pbmcsbWFuLHByb2ZpbGV8fHx8fHwxNzAzNDQzMjAw&ixlib=rb-4.0.3&q=80&w=800" alt="Acabamento da barba" class="w-full h-80 object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-24 bg-neutral-950">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold text-neutral-100 mb-4">Entre em <span class="text-amber-500">Contato</span></h2>
+                <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
+                    Estamos prontos para atendê-lo. Fale conosco ou visite nossa barbearia em Brasília.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-16 items-start mb-16">
+                    <!-- Contact Info -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                        <h3 class="text-3xl font-bold text-amber-500 mb-6">Informações de Contato</h3>
+                        <div class="space-y-6 text-lg">
+                            <p class="text-neutral-300"><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> SHCN CLN 310 LOJA 07 - Asa Norte, Brasília - DF</p>
+                            <p class="text-neutral-300"><i class="fas fa-phone-alt text-amber-500 mr-3"></i> (61) 3536-7900</p>
+                            <p class="text-neutral-300"><i class="fab fa-whatsapp text-amber-500 mr-3"></i> <a href="https://wa.me/556135367900?text=Olá, gostaria de entrar em contato com a Foguinho Barbearia." target="_blank" class="hover:text-amber-500 transition-colors duration-300">(61) 3536-7900</a></p>
+                            <p class="text-neutral-300"><i class="fas fa-clock text-amber-500 mr-3"></i> Horário de Funcionamento: Consulte-nos via WhatsApp</p>
+                        </div>
+                        <div class="mt-8">
+                            <a href="https://wa.me/556135367900?text=Olá, gostaria de agendar um horário na Foguinho Barbearia." target="_blank" class="inline-block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-amber-500/30">
+                                <i class="fab fa-whatsapp mr-2"></i> Agendar por WhatsApp
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-xl border border-neutral-800 text-left">
+                        <h3 class="text-3xl font-bold text-amber-500 mb-6">Envie-nos uma Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-neutral-300 text-sm font-semibold mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-600" placeholder="Seu nome" required>
+                            </div>
+                            <div>
+                                <label for="email" class="block text-neutral-300 text-sm font-semibold mb-2">Seu E-mail (Opcional)</label>
+                                <input type="email" id="email" name="email" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-600" placeholder="seu.email@exemplo.com">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-neutral-300 text-sm font-semibold mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="5" class="w-full p-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:outline-none focus:ring-2 focus:ring-amber-600" placeholder="Gostaria de agendar um corte..." required></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-amber-500/30 transform hover:scale-105">
+                                Enviar Mensagem via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="max-w-7xl mx-auto rounded-2xl overflow-hidden shadow-2xl border border-neutral-800">
+                    <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SHCN%20CLN%20310%20LOJA%2007%20-%20Asa%20Norte%2C%20Bras%C3%ADlia%20-%20DF%2C%2070756-540%2C%20Brasil%2C%20Bras%C3%ADlia&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#hero" class="text-3xl font-bold text-amber-500 mb-4 md:mb-0">Foguinho Barbearia</a>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="https://www.instagram.com/foguinhobarbeiro/" target="_blank" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/foguinhobarbeiro/" target="_blank" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/556135367900" target="_blank" class="hover:text-amber-500 transition-colors duration-300"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <p>&copy; 2023 Foguinho Barbearia. Todos os direitos reservados.</p>
+            <p class="text-sm mt-2">Desenvolvido com paixão e estilo em Brasília.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Contact Form -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value; // Optional, might not be used in WhatsApp message
+            var msg = document.getElementById('message').value;
+
+            var whatsappMessage = "Olá, me chamo " + name + ". ";
+            if (email) {
+                whatsappMessage += "Meu e-mail é " + email + ". ";
+            }
+            whatsappMessage += msg;
+
+            var url = "https://wa.me/556135367900?text=" + encodeURIComponent(whatsappMessage);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
