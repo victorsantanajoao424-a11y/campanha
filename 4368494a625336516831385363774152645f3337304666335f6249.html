@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Dom Barbudo Barber Club - Salvador</title>
+    <link rel="icon" type="image/x-icon" href="https://dombarbudo.com.br/wp-content/uploads/2021/05/cropped-favicon-dom-barbudo-32x32.png">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            100: '#F5F5F5',
+                            400: '#A3A3A3',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0A0A0A',
+                        },
+                        amber: {
+                            400: '#FBBF24',
+                            500: '#F59E0B',
+                            600: '#D97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom scrollbar for a sleek look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* bg-neutral-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D97706; /* bg-amber-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #F59E0B; /* bg-amber-500 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans">
+
+    <!-- Header (Fixed, Glassmorphism) -->
+    <header class="fixed top-0 left-0 w-full z-50 py-4 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-amber-500 hover:text-amber-400 transition-colors duration-300">
+                Dom Barbudo <span class="text-neutral-100">Barber Club</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Início</a>
+                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                <a href="#galeria" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Galeria</a>
+                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition-colors duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um horário." target="_blank" class="hidden md:inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300 shadow-lg">
+                <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+            </a>
+            <!-- Mobile Menu Toggle (for later if needed, keeping it simple for now) -->
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1596464879204-585806e22f25?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Barbearia Dom Barbudo" class="absolute inset-0 w-full h-full object-cover z-0">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
+            <div class="relative z-20 max-w-4xl mx-auto px-6">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-4 text-neutral-100">
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">Dom Barbudo</span> Barber Club
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-400 mb-8">
+                    A arte da barbearia clássica reinventada em Salvador. Estilo, tradição e excelência.
+                </p>
+                <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um horário." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-xl transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3"></i> Agende Seu Horário Premium
+                </a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="sobre" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                        Nossa <span class="text-amber-500">Tradição</span> e <span class="text-amber-500">Paixão</span>
+                    </h2>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-6">
+                        No Dom Barbudo Barber Club, cada corte e cada barba são uma obra de arte. Combinamos técnicas clássicas com as tendências modernas para oferecer uma experiência de cuidado masculino incomparável em Salvador.
+                    </p>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-6">
+                        Nosso ambiente é pensado para o homem contemporâneo que valoriza um momento de relaxamento e um serviço de alta qualidade. Venha desfrutar de um atendimento personalizado, onde seu estilo é a nossa prioridade.
+                    </p>
+                    <a href="https://wa.me/5571982617468?text=Olá, gostaria de saber mais sobre a Barbearia Dom Barbudo." target="_blank" class="inline-flex items-center text-amber-500 hover:text-amber-400 font-semibold transition-colors duration-300">
+                        <i class="fas fa-arrow-right mr-2"></i> Saiba Mais
+                    </a>
+                </div>
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1560066984-1380959cdcd3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior da Barbearia" class="rounded-2xl shadow-xl border border-neutral-800">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/30 to-transparent rounded-2xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="servicos" class="py-24 bg-neutral-950">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-12">
+                    Nossos <span class="text-amber-500">Serviços</span> Especializados
+                </h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Corte Clássico</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Um corte preciso e atemporal, feito com técnicas tradicionais para um visual impecável.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 80</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um Corte Clássico." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Barba Modelada</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Design e modelagem de barba, incluindo toalha quente, espuma e finalização com produtos premium.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 70</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar uma Barba Modelada." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-scissors text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Corte + Barba</h3>
+                        <p class="text-neutral-400 mb-4">
+                            O pacote completo para um visual renovado: corte de cabelo e barba, com todo o cuidado e atenção.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 140</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um pacote de Corte e Barba." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-spa text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Tratamento Capilar Premium</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Hidratação profunda e tratamento para a saúde e brilho dos seus cabelos.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 120</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um Tratamento Capilar Premium." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-ring text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Dia do Noivo (Pacote)</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Prepare-se para o grande dia com um pacote exclusivo de relaxamento e estilo.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 450</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de informações sobre o Pacote Dia do Noivo." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:border-amber-500 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-brush text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-bold text-neutral-100 mb-3">Pezinho e Lavagem</h3>
+                        <p class="text-neutral-400 mb-4">
+                            Mantenha o corte em dia com um pezinho caprichado e uma lavagem relaxante.
+                        </p>
+                        <span class="text-amber-500 text-3xl font-bold mb-4 block">R$ 50</span>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um Pezinho e Lavagem." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-6 rounded-full transition duration-300">
+                            Agendar
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Section -->
+        <section id="galeria" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-12">
+                    Nossa <span class="text-amber-500">Galeria</span> de Estilos
+                </h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1557657279-99a387ee09e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Corte Moderno" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Corte Moderno</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1603200782787-88d3e23630f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Barba Estilizada" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Barba Estilizada</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1599839930867-27083042129c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Detalhe do Corte" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Detalhe do Corte</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1581446712399-5f21287950c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Shave Experience" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Shave Experience</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1557657279-99a387ee09e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Corte Moderno" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Corte Moderno</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1603200782787-88d3e23630f5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Barba Estilizada" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Barba Estilizada</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1599839930867-27083042129c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Detalhe do Corte" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Detalhe do Corte</p>
+                        </div>
+                    </div>
+                    <div class="relative group rounded-xl overflow-hidden shadow-lg border border-neutral-800">
+                        <img src="https://images.unsplash.com/photo-1581446712399-5f21287950c4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Shave Experience" class="w-full h-72 object-cover transition-transform duration-300 group-hover:scale-105">
+                        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                            <p class="text-neutral-100 font-semibold text-lg">Shave Experience</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-20 bg-neutral-950 text-center">
+            <div class="max-w-4xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                    Pronto para uma experiência <span class="text-amber-500">Dom Barbudo</span>?
+                </h2>
+                <p class="text-xl text-neutral-400 mb-10">
+                    Agende seu horário e descubra o que nos torna a barbearia de elite em Salvador.
+                </p>
+                <a href="https://wa.me/5571982617468?text=Olá, gostaria de agendar um horário." target="_blank" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-full text-lg transition duration-300 shadow-xl transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3"></i> Agendar Agora
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contato" class="py-24 bg-neutral-900">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12">
+                <!-- Contact Info & Form -->
+                <div>
+                    <h2 class="text-4xl font-bold text-neutral-100 mb-8">
+                        Entre em <span class="text-amber-500">Contato</span>
+                    </h2>
+
+                    <!-- Contact Details -->
+                    <div class="mb-8 p-6 bg-neutral-950 rounded-2xl border border-neutral-800">
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Dom Barbudo Barber Club</h3>
+                        <p class="text-neutral-400 flex items-center mb-3">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i>
+                            Av. Tancredo Neves, 2227 - Prime, Térreo - Caminho das Árvores, Salvador - BA, 41820-021
+                        </p>
+                        <p class="text-neutral-400 flex items-center mb-3">
+                            <i class="fas fa-phone-alt text-amber-500 mr-3"></i>
+                            (71) 98261-7468
+                        </p>
+                        <p class="text-neutral-400 flex items-center mb-3">
+                            <i class="fas fa-clock text-amber-500 mr-3"></i>
+                            Horário: Não informado. Verifique nosso Instagram ou entre em contato.
+                        </p>
+                        <a href="https://wa.me/5571982617468?text=Olá, gostaria de saber mais sobre os horários de funcionamento." target="_blank" class="text-amber-500 hover:text-amber-400 transition-colors duration-300 flex items-center">
+                            <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                        </a>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Envie uma Mensagem</h3>
+                    <form id="contactForm" class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
+                        <div class="mb-6">
+                            <label for="name" class="block text-neutral-100 text-sm font-bold mb-2">Nome</label>
+                            <input type="text" id="name" name="name" class="shadow appearance-none border border-neutral-800 rounded-lg w-full py-3 px-4 text-neutral-100 leading-tight focus:outline-none focus:ring-2 focus:ring-amber-500 bg-neutral-800" placeholder="Seu nome completo" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="message" class="block text-neutral-100 text-sm font-bold mb-2">Mensagem</label>
+                            <textarea id="message" name="message" rows="5" class="shadow appearance-none border border-neutral-800 rounded-lg w-full py-3 px-4 text-neutral-100 leading-tight focus:outline-none focus:ring-2 focus:ring-amber-500 bg-neutral-800" placeholder="Sua mensagem ou pergunta..." required></textarea>
+                        </div>
+                        <button type="submit" class="inline-flex items-center bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full transition duration-300 shadow-md">
+                            <i class="fab fa-whatsapp mr-2"></i> Enviar via WhatsApp
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Google Maps -->
+                <div class="relative">
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Nossa Localização</h3>
+                    <div class="rounded-2xl overflow-hidden shadow-lg border border-neutral-800">
+                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Ed.%20Salvador%20-%20Av.%20Tancredo%20Neves%2C%202227%20-%20Prime%2C%20T%C3%A9rreo%20-%20Caminho%20das%C3%81rvores%2C%20Salvador%20-%20BA%2C%2041820-021%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8">
+                <a href="#" class="text-2xl font-bold text-amber-500 hover:text-amber-400 transition-colors duration-300 mb-4 md:mb-0">
+                    Dom Barbudo <span class="text-neutral-100">Barber Club</span>
+                </a>
+                <div class="flex space-x-6 mb-4 md:mb-0">
+                    <a href="https://www.instagram.com/dombarbudo/" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/dombarbudo/" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://wa.me/5571982617468" target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl"><i class="fab fa-whatsapp"></i></a>
+                </div>
+                <nav class="flex space-x-6">
+                    <a href="#sobre" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Sobre</a>
+                    <a href="#servicos" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Serviços</a>
+                    <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Contato</a>
+                </nav>
+            </div>
+            <p class="text-sm">
+                &copy; 2023 Dom Barbudo Barber Club. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Contact Form JavaScript -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/5571982617468?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
