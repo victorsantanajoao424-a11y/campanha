@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confraria da Barba Bonfim - Barbearia de Luxo em Salvador</title>
+    <link rel="icon" href="https://via.placeholder.com/32/A3E635/000000?text=B" type="image/x-icon">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            50: '#fafafa',
+                            100: '#f5f5f5',
+                            200: '#e5e5e5',
+                            300: '#d4d4d4',
+                            400: '#a3a3a3',
+                            500: '#737373',
+                            600: '#525252',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            50: '#fffbeb',
+                            100: '#fff3c7',
+                            200: '#ffe08a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* bg-neutral-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #404040; /* bg-neutral-700 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #525252; /* bg-neutral-600 */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 shadow-lg border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto flex justify-between items-center py-4 px-6 lg:px-8">
+            <a href="#" class="text-2xl font-bold text-neutral-100 tracking-wide">
+                <span class="text-amber-500">Confraria</span> da Barba
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#hero" class="text-neutral-400 hover:text-amber-500 transition duration-300">Início</a>
+                <a href="#about" class="text-neutral-400 hover:text-amber-500 transition duration-300">Sobre</a>
+                <a href="#services" class="text-neutral-400 hover:text-amber-500 transition duration-300">Serviços</a>
+                <a href="#contact" class="text-neutral-400 hover:text-amber-500 transition duration-300">Contato</a>
+            </nav>
+            <a href="https://wa.me/557131878168?text=Olá, gostaria de mais informações." target="_blank" class="hidden md:inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full shadow-sm text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+            </a>
+            <button id="mobileMenuButton" class="md:hidden text-neutral-100 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobileMenu" class="fixed inset-0 bg-neutral-950/95 backdrop-blur-sm z-40 hidden md:hidden flex flex-col items-center justify-center space-y-8 text-2xl">
+            <button id="closeMobileMenuButton" class="absolute top-6 right-6 text-neutral-100 text-3xl focus:outline-none">
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobileMenu').classList.add('hidden');">Início</a>
+            <a href="#about" class="text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobileMenu').classList.add('hidden');">Sobre</a>
+            <a href="#services" class="text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobileMenu').classList.add('hidden');">Serviços</a>
+            <a href="#contact" class="text-neutral-100 hover:text-amber-500 transition duration-300" onclick="document.getElementById('mobileMenu').classList.add('hidden');">Contato</a>
+            <a href="https://wa.me/557131878168?text=Olá, gostaria de mais informações." target="_blank" class="inline-flex items-center px-8 py-4 border border-transparent text-lg font-medium rounded-full shadow-sm text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105 mt-8">
+                <i class="fab fa-whatsapp mr-2"></i> Agendar Agora
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-cover bg-center h-screen flex items-center justify-center text-center" style="background-image: url('https://images.unsplash.com/photo-1503791223945-316279f045c7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+            <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 sm:py-32 lg:py-48">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight text-neutral-100 mb-6 drop-shadow-lg">
+                    Experiência <span class="text-amber-500 bg-clip-text text-transparent bg-gradient-to-r from-amber-400 to-amber-600">Premium</span> em Cada Corte
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-300 mb-10 drop-shadow-md">
+                    A Confraria da Barba Bonfim é o seu destino para estilo, sofisticação e cuidado masculino em Salvador.
+                </p>
+                <a href="https://wa.me/557131878168?text=Olá, gostaria de agendar um horário na Confraria da Barba Bonfim." target="_blank" class="inline-flex items-center px-10 py-5 border border-transparent text-lg font-semibold rounded-full shadow-xl text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i> Agende seu Horário
+                </a>
+            </div>
+        </section>
+
+        <!-- About Us Section -->
+        <section id="about" class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                        A <span class="text-amber-500">Essência</span> da Confraria
+                    </h2>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-6">
+                        Na Confraria da Barba Bonfim, não oferecemos apenas cortes de cabelo e barba, mas uma experiência completa de cuidado e bem-estar masculino. Combinamos técnicas tradicionais com as últimas tendências, utilizando produtos de alta qualidade em um ambiente que exala elegância e conforto.
+                    </p>
+                    <p class="text-lg text-neutral-400 leading-relaxed mb-8">
+                        Cada detalhe é pensado para proporcionar um momento de relaxamento e transformação, onde o cliente é o centro da nossa atenção. Venha descobrir o padrão Confraria.
+                    </p>
+                    <a href="https://wa.me/557131878168?text=Olá, gostaria de mais informações sobre a Confraria da Barba Bonfim." target="_blank" class="inline-flex items-center px-8 py-4 border border-transparent text-base font-medium rounded-full shadow-md text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-2"></i> Saiba Mais
+                    </a>
+                </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1549487935-716499645532?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Interior da Barbearia Confraria da Barba Bonfim" class="w-full h-96 object-cover object-center transform hover:scale-105 transition duration-500 ease-in-out">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/50 to-transparent"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-24 bg-neutral-950">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-neutral-100 mb-16">
+                    Nossos <span class="text-amber-500">Serviços</span> Especializados
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Service Card 1 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-cut"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Corte de Cabelo Premium</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Um corte personalizado que se alinha ao seu estilo e formato de rosto, com finalização impecável.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">R$ 80</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-beard"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Barba Desenhada e Terapêutica</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Modelagem precisa da barba com toalhas quentes, esfoliação e hidratação para uma pele macia.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">R$ 70</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-spa"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Dia do Cavalheiro (Pacote)</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Corte de cabelo, barba completa, hidratação facial e massagem relaxante. Uma experiência de luxo.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">R$ 180</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-brush"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Coloração e Camuflagem</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Serviços de coloração e camuflagem de fios brancos, com produtos de alta performance.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">A partir de R$ 90</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-hand-sparkles"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Tratamento Capilar</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Tratamentos específicos para saúde e vitalidade do cabelo e couro cabeludo.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">A partir de R$ 60</span>
+                        </div>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-2">
+                        <div class="text-amber-500 text-5xl mb-6 text-center">
+                            <i class="fas fa-mug-hot"></i>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4 text-center">Experiência Completa</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6 text-center">
+                            Desfrute de um café especial, cerveja artesanal ou whisky enquanto cuida do seu visual.
+                        </p>
+                        <div class="text-center">
+                            <span class="text-amber-500 text-3xl font-bold">Cortesia</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-16">
+                    <a href="https://wa.me/557131878168?text=Olá, gostaria de agendar um serviço na Confraria da Barba Bonfim." target="_blank" class="inline-flex items-center px-10 py-5 border border-transparent text-lg font-semibold rounded-full shadow-xl text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                        <i class="fab fa-whatsapp mr-3 text-xl"></i> Agende seu Serviço
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="py-24 bg-neutral-900 border-t border-b border-neutral-800">
+            <div class="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">
+                    Transforme seu <span class="text-amber-500">Visual</span> Hoje
+                </h2>
+                <p class="text-xl text-neutral-400 leading-relaxed mb-10">
+                    Não espere mais para experimentar o melhor em cuidado masculino. Agende seu horário e descubra a diferença.
+                </p>
+                <a href="https://wa.me/557131878168?text=Olá, gostaria de agendar um horário na Confraria da Barba Bonfim." target="_blank" class="inline-flex items-center px-10 py-5 border border-transparent text-lg font-semibold rounded-full shadow-xl text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp mr-3 text-xl"></i> Fale Conosco
+                </a>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 bg-neutral-950">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <h2 class="text-4xl font-bold text-center text-neutral-100 mb-16">
+                    Entre em <span class="text-amber-500">Contato</span>
+                </h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Contact Info & Map -->
+                    <div>
+                        <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl mb-10">
+                            <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Onde Estamos</h3>
+                            <div class="space-y-4 text-neutral-400 text-lg">
+                                <p><i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> Av. Caminho de Areia, 135 - Bonfim, Salvador - BA, 40440-360</p>
+                                <p><i class="fas fa-phone-alt text-amber-500 mr-3"></i> (71) 3187-8168</p>
+                                <p><i class="fab fa-whatsapp text-amber-500 mr-3"></i> <a href="https://wa.me/557131878168?text=Olá, gostaria de mais informações." target="_blank" class="hover:text-amber-500 transition duration-300">(71) 3187-8168</a></p>
+                                <p><i class="fas fa-clock text-amber-500 mr-3"></i> Horário de Atendimento: Agende seu horário via WhatsApp.</p>
+                            </div>
+                        </div>
+                        <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-xl">
+                            <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Caminho%20de%20Areia%2C%20135%20-%20Bonfim%2C%20Salvador%20-%20BA%2C%2040440-360%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="bg-neutral-900 rounded-2xl p-8 border border-neutral-800 shadow-xl">
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-6">Envie sua Mensagem</h3>
+                        <form id="contactForm" class="space-y-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-neutral-300 mb-2">Nome Completo</label>
+                                <input type="text" id="name" name="name" required class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-neutral-300 mb-2">Email (Opcional)</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-sm font-medium text-neutral-300 mb-2">Sua Mensagem</label>
+                                <textarea id="message" name="message" rows="5" required class="w-full px-4 py-3 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-amber-500 focus:border-amber-500 transition duration-300"></textarea>
+                            </div>
+                            <button type="submit" class="w-full inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-semibold rounded-full shadow-xl text-neutral-950 bg-amber-600 hover:bg-amber-500 transition duration-300 transform hover:scale-105">
+                                <i class="fab fa-whatsapp mr-3 text-xl"></i> Enviar via WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 text-center text-neutral-400">
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 space-y-4 md:space-y-0">
+                <div class="text-2xl font-bold text-neutral-100 tracking-wide">
+                    <span class="text-amber-500">Confraria</span> da Barba
+                </div>
+                <div class="flex space-x-6 text-2xl">
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition duration-300"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="text-neutral-500 hover:text-amber-500 transition duration-300"><i class="fab fa-instagram"></i></a>
+                    <a href="https://wa.me/557131878168?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-500 hover:text-amber-500 transition duration-300"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <p class="text-sm">&copy; 2023 Confraria da Barba Bonfim. Todos os direitos reservados.</p>
+            <p class="text-xs mt-2">Desenvolvido com <span class="text-red-500"><i class="fas fa-heart"></i></span> por [Seu Estúdio de Design]</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu -->
+    <script>
+        document.getElementById('mobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.remove('hidden');
+        });
+
+        document.getElementById('closeMobileMenuButton').addEventListener('click', function() {
+            document.getElementById('mobileMenu').classList.add('hidden');
+        });
+    </script>
+
+    <!-- JavaScript for Contact Form WhatsApp Integration -->
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            var name = document.getElementById('name').value;
+            var msg = document.getElementById('message').value;
+            var url = "https://wa.me/557131878168?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
+            window.open(url, '_blank');
+        });
+    </script>
+</body>
+</html>
