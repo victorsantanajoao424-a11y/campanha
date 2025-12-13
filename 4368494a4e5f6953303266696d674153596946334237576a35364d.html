@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Maestros Barbearia | Uberlândia</title>
+    <title>Maestros Barbearia | Unidade 1 - Uberlândia</title>
+    <meta name="description" content="A melhor barbearia de Uberlândia. Estilo, tradição e excelência na Maestros Barbearia Unidade 1.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -14,28 +15,25 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind Config for Custom Colors/Fonts -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
                         amber: {
                             500: '#f59e0b',
                             600: '#d97706',
-                            700: '#b45309',
-                        },
-                        neutral: {
-                            850: '#1f1f1f',
-                            900: '#171717',
-                            950: '#0a0a0a',
                         }
                     },
                     fontFamily: {
+                        serif: ['Cinzel', 'serif'],
                         sans: ['Inter', 'sans-serif'],
-                        display: ['Oswald', 'sans-serif'],
                     }
                 }
             }
@@ -43,439 +41,431 @@
     </script>
 
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
         }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d97706;
-            border-radius: 4px;
-        }
-        
-        /* Chatbot Animations */
-        @keyframes slideIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .chat-anim {
-            animation: slideIn 0.3s ease-out forwards;
-        }
-        
-        /* Input Date Dark Mode Fix */
-        input[type="datetime-local"]::-webkit-calendar-picker-indicator {
-            filter: invert(1);
-            cursor: pointer;
+        .luxury-gradient {
+            background: linear-gradient(180deg, rgba(10,10,10,0) 0%, #0a0a0a 100%);
         }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans antialiased overflow-x-hidden selection:bg-amber-600 selection:text-white">
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
 
-    <!-- HEADER -->
-    <header class="fixed w-full top-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
-                <span class="font-display text-2xl font-bold tracking-widest text-white">MAESTROS</span>
-            </div>
+            <a href="#" class="text-2xl font-serif font-bold text-white tracking-widest hover:text-amber-500 transition-colors">
+                MAESTROS <span class="text-amber-500 text-sm block font-sans tracking-normal font-normal">BARBEARIA</span>
+            </a>
             
-            <nav class="hidden md:flex gap-8">
-                <a href="#home" class="text-sm uppercase tracking-wider hover:text-amber-500 transition-colors">Início</a>
-                <a href="#services" class="text-sm uppercase tracking-wider hover:text-amber-500 transition-colors">Serviços</a>
-                <a href="#about" class="text-sm uppercase tracking-wider hover:text-amber-500 transition-colors">Sobre</a>
-                <a href="#gallery" class="text-sm uppercase tracking-wider hover:text-amber-500 transition-colors">Galeria</a>
-                <a href="#contact" class="text-sm uppercase tracking-wider hover:text-amber-500 transition-colors">Contato</a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wider">Início</a>
+                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wider">Serviços</a>
+                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wider">Sobre</a>
+                <a href="#galeria" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wider">Galeria</a>
+                <a href="#contato" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wider">Contato</a>
             </nav>
 
-            <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="md:hidden text-2xl text-amber-500">
-                <i class="fa-solid fa-bars"></i>
+            <a href="https://wa.me/553425892478" target="_blank" class="hidden md:inline-block bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-sm font-medium transition-all duration-300 text-sm uppercase tracking-wide">
+                Agendar Agora
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-neutral-100 text-2xl">
+                <i class="fas fa-bars"></i>
             </button>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden bg-neutral-900 border-b border-neutral-800 p-4 md:hidden">
-            <a href="#home" class="block py-2 text-center hover:text-amber-500">Início</a>
-            <a href="#services" class="block py-2 text-center hover:text-amber-500">Serviços</a>
-            <a href="#about" class="block py-2 text-center hover:text-amber-500">Sobre</a>
-            <a href="#contact" class="block py-2 text-center hover:text-amber-500">Contato</a>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section id="home" class="relative h-screen flex items-center justify-center">
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
         <!-- Background Image -->
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Dark" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
         </div>
 
-        <div class="container mx-auto px-6 relative z-10 text-center">
-            <h2 class="text-amber-500 font-display tracking-[0.2em] text-lg mb-4 uppercase">Uberlândia - Unidade 1</h2>
-            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 uppercase leading-tight">
-                Estilo que define <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Personalidade</span>
+        <div class="container mx-auto px-6 z-10 text-center">
+            <p class="text-amber-500 font-medium tracking-[0.2em] mb-4 uppercase animate-fade-in-up">Uberlândia • Unidade 1</p>
+            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-6 leading-tight">
+                A Arte de ser <br> <span class="text-amber-500">Cavalheiro</span>
             </h1>
-            <p class="text-neutral-400 max-w-2xl mx-auto mb-10 text-lg">
-                A Maestros Barbearia oferece uma experiência premium de cuidado masculino. Cortes clássicos, barboterapia e um ambiente exclusivo.
+            <p class="text-neutral-400 max-w-2xl mx-auto mb-10 text-lg font-light">
+                Cortes clássicos, barbas impecáveis e um ambiente exclusivo para quem valoriza estilo e tradição.
             </p>
-            <button onclick="toggleChat()" class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 px-10 rounded-sm uppercase tracking-widest transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
-                Agendar Horário
-            </button>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/553425892478" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-all duration-300 border border-amber-600">
+                    Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-transparent hover:bg-neutral-800 text-white px-8 py-3 rounded-sm font-bold uppercase tracking-wider transition-all duration-300 border border-neutral-600">
+                    Ver Preços
+                </a>
+            </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="services" class="py-20 bg-neutral-950">
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-neutral-950">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-amber-500 font-display tracking-widest uppercase">O que oferecemos</span>
-                <h2 class="text-4xl font-display font-bold mt-2">Nossos Serviços</h2>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Nossos Serviços</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
                 <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                        <i class="fa-solid fa-scissors text-2xl text-white"></i>
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-cut"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold mb-2">Corte Maestros</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">Corte personalizado, lavagem especial e finalização com produtos premium.</p>
-                    <div class="text-amber-500 font-bold text-xl">R$ 60,00</div>
+                    <h3 class="text-xl font-bold text-white mb-2 font-serif">Corte Maestros</h3>
+                    <p class="text-neutral-400 text-sm mb-6">Corte personalizado, lavagem especial e finalização com produtos premium.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">45 min</span>
+                        <span class="text-amber-500 font-bold text-xl">R$ 50,00</span>
+                    </div>
                 </div>
 
                 <!-- Card 2 -->
-                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                        <i class="fa-solid fa-face-smile text-2xl text-white"></i>
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 uppercase">Popular</div>
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-crown"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold mb-2">Barboterapia</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">Toalha quente, navalha afiada, hidratação e massagem facial relaxante.</p>
-                    <div class="text-amber-500 font-bold text-xl">R$ 50,00</div>
+                    <h3 class="text-xl font-bold text-white mb-2 font-serif">Combo Premium</h3>
+                    <p class="text-neutral-400 text-sm mb-6">A experiência completa: Corte de cabelo + Barba com toalha quente.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">1h 15min</span>
+                        <span class="text-amber-500 font-bold text-xl">R$ 85,00</span>
+                    </div>
                 </div>
 
                 <!-- Card 3 -->
-                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 group relative overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-amber-600 text-xs font-bold px-3 py-1 uppercase">Popular</div>
-                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
-                        <i class="fa-solid fa-crown text-2xl text-white"></i>
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold mb-2">Combo Completo</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">A experiência total. Corte de cabelo + Barboterapia + Bebida cortesia.</p>
-                    <div class="text-amber-500 font-bold text-xl">R$ 95,00</div>
+                    <h3 class="text-xl font-bold text-white mb-2 font-serif">Barba Terapia</h3>
+                    <p class="text-neutral-400 text-sm mb-6">Modelagem, toalha quente, esfoliação e hidratação profunda.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <span class="text-amber-500 font-bold text-xl">R$ 40,00</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ABOUT SECTION -->
-    <section id="about" class="py-20 bg-neutral-900">
-        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-            <div class="w-full md:w-1/2">
-                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="rounded-sm shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
-            </div>
-            <div class="w-full md:w-1/2">
-                <span class="text-amber-500 font-display tracking-widest uppercase">Sobre a Maestros</span>
-                <h2 class="text-4xl font-display font-bold mt-2 mb-6">Tradição e Modernidade em Uberlândia</h2>
-                <p class="text-neutral-400 mb-6 leading-relaxed">
-                    Localizada no coração de Uberlândia, a Maestros Barbearia não é apenas um lugar para cortar o cabelo, é um refúgio para o homem moderno. Combinamos técnicas tradicionais de barbearia com as tendências mais atuais de visagismo.
-                </p>
-                <p class="text-neutral-400 mb-8 leading-relaxed">
-                    Nossa equipe de especialistas está pronta para elevar sua autoestima em um ambiente sofisticado, com música boa, cerveja gelada e atendimento impecável.
-                </p>
-                <ul class="space-y-4 mb-8">
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check text-amber-500"></i>
-                        <span>Profissionais com mais de 10 anos de experiência</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check text-amber-500"></i>
-                        <span>Produtos importados de alta qualidade</span>
-                    </li>
-                    <li class="flex items-center gap-3">
-                        <i class="fa-solid fa-check text-amber-500"></i>
-                        <span>Ambiente climatizado e estacionamento</span>
-                    </li>
-                </ul>
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="w-full md:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-600 z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative z-10 w-full rounded shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-600 z-0"></div>
+                    </div>
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h4 class="text-amber-500 font-bold tracking-wider uppercase mb-2">Sobre Nós</h4>
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-6">Tradição e Excelência em Uberlândia</h2>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        A Maestros Barbearia (Unidade 1) não é apenas um lugar para cortar o cabelo, é um refúgio para o homem moderno. Localizada no coração de Uberlândia, combinamos técnicas clássicas de barbearia com as tendências mais atuais.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Nossa equipe de mestres barbeiros é treinada para oferecer um atendimento impecável, em um ambiente climatizado, com boa música e aquela cerveja gelada de cortesia. Venha viver a experiência Maestros.
+                    </p>
+                    <ul class="space-y-3 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Profissionais especializados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Produtos de alta qualidade
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Ambiente premium
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- GALLERY SECTION -->
-    <section id="gallery" class="py-20 bg-neutral-950">
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-neutral-950">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-amber-500 font-display tracking-widest uppercase">Nosso Ambiente</span>
-                <h2 class="text-4xl font-display font-bold mt-2">Galeria</h2>
+                <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-4">Galeria</h2>
+                <p class="text-neutral-400">Um pouco do nosso ambiente e trabalho.</p>
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="h-64 overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Gallery 1">
+                <div class="overflow-hidden rounded h-64">
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=2070&auto=format&fit=crop" alt="Ambiente" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 grayscale hover:grayscale-0">
                 </div>
-                <div class="h-64 overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1599351431202-6e0c06e7d25a?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Gallery 2">
+                <div class="overflow-hidden rounded h-64">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" alt="Corte" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 grayscale hover:grayscale-0">
                 </div>
-                <div class="h-64 overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Gallery 3">
+                <div class="overflow-hidden rounded h-64">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1976&auto=format&fit=crop" alt="Navalha" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 grayscale hover:grayscale-0">
                 </div>
-                <div class="h-64 overflow-hidden rounded-sm">
-                    <img src="https://images.unsplash.com/photo-1532710093739-9470acff878f?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Gallery 4">
+                <div class="overflow-hidden rounded h-64">
+                    <img src="https://images.unsplash.com/photo-1634480496821-5580648e9088?q=80&w=2078&auto=format&fit=crop" alt="Produtos" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500 grayscale hover:grayscale-0">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CONTACT SECTION -->
-    <section id="contact" class="py-20 bg-neutral-900">
+    <!-- Contact Section -->
+    <section id="contato" class="py-20 bg-neutral-900 border-t border-neutral-800">
         <div class="container mx-auto px-6">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                
                 <!-- Info -->
-                <div>
-                    <span class="text-amber-500 font-display tracking-widest uppercase">Fale Conosco</span>
-                    <h2 class="text-4xl font-display font-bold mt-2 mb-8">Onde Estamos</h2>
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-3xl md:text-4xl font-serif font-bold text-white mb-8">Entre em Contato</h2>
                     
-                    <div class="space-y-8">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center flex-shrink-0 text-amber-500">
-                                <i class="fa-solid fa-location-dot text-xl"></i>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Endereço</h4>
+                                <h3 class="text-white font-bold text-lg">Localização</h3>
                                 <p class="text-neutral-400">Av. Segismundo Pereira, 423<br>Santa Mônica, Uberlândia - MG</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center flex-shrink-0 text-amber-500">
-                                <i class="fa-solid fa-phone text-xl"></i>
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Telefone</h4>
+                                <h3 class="text-white font-bold text-lg">Telefone / WhatsApp</h3>
                                 <p class="text-neutral-400">(34) 2589-2478</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-neutral-800 rounded-full flex items-center justify-center flex-shrink-0 text-amber-500">
-                                <i class="fa-solid fa-clock text-xl"></i>
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-clock text-xl"></i>
                             </div>
                             <div>
-                                <h4 class="font-bold text-lg text-white">Horário</h4>
-                                <p class="text-neutral-400">Seg - Sex: 09:00 - 20:00<br>Sáb: 09:00 - 18:00</p>
+                                <h3 class="text-white font-bold text-lg">Horário de Funcionamento</h3>
+                                <p class="text-neutral-400">Seg - Sex: 09:00 - 20:00</p>
+                                <p class="text-neutral-400">Sáb: 09:00 - 18:00</p>
                             </div>
                         </div>
+                    </div>
+
+                    <div class="mt-8 flex space-x-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-amber-600 transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-amber-600 transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-white hover:bg-amber-600 transition-colors"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Map -->
-                <div class="h-[400px] w-full rounded-sm overflow-hidden border border-neutral-800">
+                <div class="h-[400px] w-full rounded-lg overflow-hidden border border-neutral-800 shadow-2xl">
                     <iframe 
                         src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Segismundo%20Pereira%2C%20423%20-%20Santa%20M%C3%B4nica%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038408-170%2C%20Brasil%2C%20Uberl%C3%A2ndia&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
                         width="100%" 
                         height="100%" 
                         style="border:0;" 
                         allowfullscreen="" 
-                        loading="lazy"
-                        class="grayscale hover:grayscale-0 transition-all duration-500">
+                        loading="lazy">
                     </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- Footer -->
     <footer class="bg-neutral-950 py-8 border-t border-neutral-900">
         <div class="container mx-auto px-6 text-center">
             <p class="text-neutral-500 text-sm">
-                &copy; 2023 Maestros Barbearia. Todos os direitos reservados.
+                &copy; 2023 Maestros Barbearia Unidade 1. Todos os direitos reservados.
             </p>
+            <p class="text-neutral-600 text-xs mt-2">Uberlândia - MG</p>
         </div>
     </footer>
 
-    <!-- CHATBOT SCRIPT -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Create Chatbot Elements
-            const chatContainer = document.createElement('div');
-            chatContainer.id = 'maestros-chatbot';
-            chatContainer.className = 'fixed bottom-6 right-6 z-50 flex flex-col items-end font-sans';
-            
-            // Chat Window (Hidden by default)
-            const chatWindow = document.createElement('div');
-            chatWindow.id = 'chat-window';
-            chatWindow.className = 'hidden w-80 sm:w-96 bg-neutral-900 border border-amber-600/50 rounded-lg shadow-2xl overflow-hidden mb-4 flex flex-col transition-all duration-300';
-            chatWindow.style.maxHeight = '500px';
-            
-            // Header
-            chatWindow.innerHTML = `
-                <div class="bg-gradient-to-r from-neutral-900 to-neutral-800 p-4 border-b border-neutral-800 flex justify-between items-center">
-                    <div class="flex items-center gap-2">
-                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-                        <span class="font-bold text-white">Agendamento Maestros</span>
-                    </div>
-                    <button onclick="toggleChat()" class="text-neutral-400 hover:text-white"><i class="fa-solid fa-times"></i></button>
-                </div>
-                <div id="chat-messages" class="flex-1 p-4 overflow-y-auto space-y-4 bg-neutral-950/50 min-h-[250px] max-h-[350px]">
-                    <!-- Messages will appear here -->
-                </div>
-                <div id="chat-input-area" class="p-4 bg-neutral-900 border-t border-neutral-800">
-                    <!-- Dynamic Inputs -->
-                </div>
-            `;
+    <!-- Chatbot Script -->
+<script>
+    (function() {
+    const config = {
+        whatsappNumber: "553425892478",
+        businessName: "Maestros Barbearia unidade 1",
+        services: ["Orçamento","Dúvidas","Agendamento"],
+        color: "#f59e0b"
+    };
 
-            // Floating Button
-            const floatBtn = document.createElement('button');
-            floatBtn.onclick = toggleChat;
-            floatBtn.className = 'bg-amber-600 hover:bg-amber-700 text-white w-14 h-14 rounded-full shadow-lg shadow-amber-600/30 flex items-center justify-center text-2xl transition-transform hover:scale-110';
-            floatBtn.innerHTML = '<i class="fa-brands fa-whatsapp"></i>';
+    const widget = document.createElement('div');
+    widget.id = 'ai-chat-widget';
+    widget.style.cssText = "position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: ui-sans-serif, system-ui, sans-serif;";
+    document.body.appendChild(widget);
 
-            // Append to body
-            chatContainer.appendChild(chatWindow);
-            chatContainer.appendChild(floatBtn);
-            document.body.appendChild(chatContainer);
+    widget.innerHTML = `
+        <div id="chat-window" class="hidden transition-all duration-300 transform origin-bottom-right scale-95 opacity-0 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl overflow-hidden w-80 sm:w-96 mb-4 border border-gray-200 dark:border-gray-700">
+        <div class="text-white p-4 flex justify-between items-center" style="background-color: ${config.color}">
+            <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <h3 class="font-bold text-sm">Agendamento Online</h3>
+            </div>
+            <button id="close-chat" class="text-white hover:text-gray-200 focus:outline-none text-xl font-bold">&times;</button>
+        </div>
+        <div id="chat-messages" class="p-4 h-64 overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-900"></div>
+        <div id="chat-input-area" class="p-3 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hidden">
+            <div class="flex space-x-2">
+            <input type="text" id="user-input" class="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-opacity-50" placeholder="Digite..." style="--tw-ring-color: ${config.color}">
+            <button id="send-btn" class="text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: ${config.color}">
+                Enviar
+            </button>
+            </div>
+        </div>
+        </div>
+        <button id="toggle-chat" class="w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-transform hover:scale-110 focus:outline-none" style="background-color: ${config.color}">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        </button>
+    `;
 
-            // Logic Variables
-            let currentStep = 0;
-            let bookingData = {
-                service: '',
-                time: '',
-                name: ''
-            };
+    const chatWindow = document.getElementById('chat-window');
+    const toggleBtn = document.getElementById('toggle-chat');
+    const closeBtn = document.getElementById('close-chat');
+    const messagesContainer = document.getElementById('chat-messages');
+    const inputArea = document.getElementById('chat-input-area');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
 
-            // Global functions for inline HTML calls
-            window.toggleChat = function() {
-                const win = document.getElementById('chat-window');
-                if (win.classList.contains('hidden')) {
-                    win.classList.remove('hidden');
-                    win.classList.add('chat-anim');
-                    if(document.getElementById('chat-messages').children.length === 0) {
-                        renderStep();
-                    }
-                } else {
-                    win.classList.add('hidden');
-                }
-            };
+    let step = 0;
+    let data = { service: '', time: '', name: '' };
 
-            window.selectService = function(service) {
-                bookingData.service = service;
-                addMessage(service, 'user');
-                currentStep++;
-                setTimeout(renderStep, 500);
-            };
+    const toggleChat = () => {
+        chatWindow.classList.toggle('hidden');
+        setTimeout(() => {
+        chatWindow.classList.toggle('scale-95');
+        chatWindow.classList.toggle('opacity-0');
+        }, 10);
+        if (!chatWindow.classList.contains('hidden') && messagesContainer.children.length === 0) {
+        startFlow();
+        }
+    };
 
-            window.submitTime = function() {
-                const input = document.getElementById('time-input');
-                if(!input.value) return alert('Por favor, selecione um horário.');
-                
-                // Format date for display
-                const dateObj = new Date(input.value);
-                const formatted = dateObj.toLocaleString('pt-BR');
-                
-                bookingData.time = formatted;
-                addMessage(formatted, 'user');
-                currentStep++;
-                setTimeout(renderStep, 500);
-            };
+    toggleBtn.addEventListener('click', toggleChat);
+    closeBtn.addEventListener('click', toggleChat);
 
-            window.submitName = function() {
-                const input = document.getElementById('name-input');
-                if(!input.value.trim()) return alert('Por favor, digite seu nome.');
-                
-                bookingData.name = input.value;
-                addMessage(input.value, 'user');
-                currentStep++;
-                setTimeout(renderStep, 500);
-            };
+    const addMessage = (text, sender = 'bot', html = false) => {
+        const div = document.createElement('div');
+        div.className = sender === 'bot' ? 'flex justify-start' : 'flex justify-end';
+        
+        const bubble = document.createElement('div');
+        bubble.className = `max-w-[85%] rounded-lg px-4 py-2 text-sm ${sender === 'bot' ? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-sm' : 'text-white shadow-sm'}`;
+        if (sender === 'user') bubble.style.backgroundColor = config.color;
+        
+        if (html) bubble.innerHTML = text; else bubble.textContent = text;
+        div.appendChild(bubble);
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
 
-            window.startBooking = function() {
-                addMessage('Sim, claro', 'user');
-                currentStep++;
-                setTimeout(renderStep, 500);
-            };
-
-            window.finalizeBooking = function() {
-                const phone = '553425892478';
-                const text = `Olá, sou ${bookingData.name}. Gostaria de agendar ${bookingData.service} para ${bookingData.time}`;
-                const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
-                window.open(url, '_blank');
-                
-                // Reset chat optional
-                addMessage('Redirecionando para o WhatsApp...', 'bot');
-            };
-
-            // Helper to add messages
-            function addMessage(text, sender) {
-                const msgDiv = document.createElement('div');
-                const isBot = sender === 'bot';
-                msgDiv.className = `flex ${isBot ? 'justify-start' : 'justify-end'} chat-anim`;
-                
-                const bubble = document.createElement('div');
-                bubble.className = isBot 
-                    ? 'bg-neutral-800 text-neutral-200 p-3 rounded-lg rounded-tl-none max-w-[85%] text-sm'
-                    : 'bg-amber-600 text-white p-3 rounded-lg rounded-tr-none max-w-[85%] text-sm';
-                bubble.textContent = text;
-                
-                msgDiv.appendChild(bubble);
-                const container = document.getElementById('chat-messages');
-                container.appendChild(msgDiv);
-                container.scrollTop = container.scrollHeight;
-            }
-
-            // Render Logic
-            function renderStep() {
-                const inputArea = document.getElementById('chat-input-area');
-                inputArea.innerHTML = ''; // Clear previous inputs
-
-                switch(currentStep) {
-                    case 0:
-                        addMessage('Olá! Gostaria de agendar um horário na Maestros?', 'bot');
-                        inputArea.innerHTML = `
-                            <button onclick="startBooking()" class="w-full bg-amber-600 hover:bg-amber-700 text-white py-2 rounded font-semibold text-sm">Sim, claro</button>
-                        `;
-                        break;
-                    
-                    case 1:
-                        addMessage('Ótimo! Qual serviço você procura?', 'bot');
-                        inputArea.innerHTML = `
-                            <div class="grid grid-cols-3 gap-2">
-                                <button onclick="selectService('Corte')" class="bg-neutral-800 hover:bg-neutral-700 text-white py-2 rounded text-xs border border-neutral-700">Corte</button>
-                                <button onclick="selectService('Barba')" class="bg-neutral-800 hover:bg-neutral-700 text-white py-2 rounded text-xs border border-neutral-700">Barba</button>
-                                <button onclick="selectService('Completo')" class="bg-neutral-800 hover:bg-neutral-700 text-white py-2 rounded text-xs border border-neutral-700">Completo</button>
-                            </div>
-                        `;
-                        break;
-
-                    case 2:
-                        addMessage('Qual dia e horário fica bom para você?', 'bot');
-                        inputArea.innerHTML = `
-                            <div class="flex gap-2">
-                                <input type="datetime-local" id="time-input" class="w-full bg-neutral-800 text-white p-2 rounded text-sm border border-neutral-700 focus:border-amber-500 outline-none">
-                                <button onclick="submitTime()" class="bg-amber-600 hover:bg-amber-700 text-white px-4 rounded"><i class="fa-solid fa-paper-plane"></i></button>
-                            </div>
-                        `;
-                        break;
-
-                    case 3:
-                        addMessage('Perfeito. Qual seu nome para a reserva?', 'bot');
-                        inputArea.innerHTML = `
-                            <div class="flex gap-2">
-                                <input type="text" id="name-input" placeholder="Seu nome..." class="w-full bg-neutral-800 text-white p-2 rounded text-sm border border-neutral-700 focus:border-amber-500 outline-none">
-                                <button onclick="submitName()" class="bg-amber-600 hover:bg-amber-700 text-white px-4 rounded"><i class="fa-solid fa-paper-plane"></i></button>
-                            </div>
-                        `;
-                        break;
-
-                    case 4:
-                        addMessage(`Confirma o agendamento?\n\nServiço: ${bookingData.service}\nData: ${bookingData.time}\nNome: ${bookingData.name}`, 'bot');
-                        inputArea.innerHTML = `
-                            <button onclick="finalizeBooking()" class="w-full bg-green-600 hover:bg-green-700 text-white py-2 rounded font-semibold text-sm flex items-center justify-center gap-2">
-                                <i class="fa-brands fa-whatsapp"></i> Confirmar no WhatsApp
-                            </button>
-                        `;
-                        break;
-                }
-            }
+    const addOptions = (options, callback) => {
+        const div = document.createElement('div');
+        div.className = 'flex flex-wrap gap-2 mt-2 ml-1';
+        options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full text-xs font-medium text-gray-800 dark:text-gray-200 transition-colors border border-gray-300 dark:border-gray-600';
+        btn.textContent = opt;
+        btn.onclick = () => {
+            // Remove options after click to prevent re-clicking
+            div.remove(); 
+            callback(opt);
+        };
+        div.appendChild(btn);
         });
-    </script>
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const startFlow = async () => {
+        await new Promise(r => setTimeout(r, 500));
+        addMessage(`Olá! Bem-vindo à ${config.businessName}. Gostaria de agendar um horário?`);
+        addOptions(['Sim, agendar', 'Falar no WhatsApp'], (choice) => {
+        addMessage(choice, 'user');
+        if (choice.includes('WhatsApp')) {
+            window.open(`https://wa.me/${config.whatsappNumber}`, '_blank');
+            return;
+        }
+        step1();
+        });
+    };
+
+    const step1 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Qual serviço você gostaria?");
+        addOptions(config.services, (service) => {
+        data.service = service;
+        addMessage(service, 'user');
+        step2();
+        });
+    };
+
+    const step2 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Para qual dia e horário (ex: Amanhã às 14h)?");
+        inputArea.classList.remove('hidden');
+        userInput.focus();
+        
+        const handleTime = () => {
+        const time = userInput.value.trim();
+        if (!time) return;
+        data.time = time;
+        addMessage(time, 'user');
+        userInput.value = '';
+        step3();
+        };
+
+        sendBtn.onclick = handleTime;
+        userInput.onkeydown = (e) => e.key === 'Enter' ? handleTime() : null;
+    };
+
+    const step3 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        sendBtn.onclick = null;
+        userInput.onkeydown = null;
+        addMessage("Perfeito. Qual seu nome?");
+        
+        const handleName = () => {
+        const name = userInput.value.trim();
+        if (!name) return;
+        data.name = name;
+        addMessage(name, 'user');
+        userInput.value = '';
+        inputArea.classList.add('hidden');
+        finish();
+        };
+
+        sendBtn.onclick = handleName;
+        userInput.onkeydown = (e) => e.key === 'Enter' ? handleName() : null;
+    };
+
+    const finish = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Tudo pronto! Clique abaixo para confirmar no WhatsApp.");
+        const msg = `Olá, sou ${data.name}. Gostaria de agendar ${data.service} para ${data.time}.`;
+        const link = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+        
+        const div = document.createElement('div');
+        div.className = 'mt-4 flex justify-center pb-2';
+        div.innerHTML = `<a href="${link}" target="_blank" class="px-4 py-2 rounded-lg text-white font-bold shadow-lg flex items-center animate-bounce hover:opacity-90 transition-opacity" style="background-color: #25D366"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Confirmar no WhatsApp</a>`;
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    })();
+</script>
 </body>
 </html>
