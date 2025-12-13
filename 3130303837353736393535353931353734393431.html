@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Braz Barbearia - Rondonópolis</title>
+    <meta name="description" content="A melhor barbearia de Rondonópolis. Cortes modernos, barba na navalha e ambiente exclusivo.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #f5f5f5;
+        }
+        .text-gold {
+            color: #f59e0b;
+        }
+        .bg-gold {
+            background-color: #f59e0b;
+        }
+        .hover-bg-gold:hover {
+            background-color: #d97706;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b; 
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="font-display text-2xl font-bold tracking-wider uppercase text-white">
+                Braz <span class="text-amber-500">Barbearia</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8 items-center">
+                <a href="#home" class="text-sm font-semibold uppercase tracking-widest hover:text-amber-500 transition-colors">Início</a>
+                <a href="#services" class="text-sm font-semibold uppercase tracking-widest hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#about" class="text-sm font-semibold uppercase tracking-widest hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#contact" class="px-5 py-2 bg-amber-600 hover:bg-amber-700 text-white font-bold rounded transition-all uppercase text-xs tracking-widest">
+                    Agendar
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-amber-500 focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" alt="Barbearia Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <p class="text-amber-500 font-display font-bold tracking-[0.2em] uppercase mb-4 animate-pulse">Rondonópolis - MT</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 uppercase leading-tight">
+                Estilo & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Tradição</span>
+            </h1>
+            <p class="text-gray-400 text-lg md:text-xl max-w-2xl mx-auto mb-10 font-light">
+                Mais que um corte, uma experiência. O cuidado que o homem moderno merece em um ambiente exclusivo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#contact" class="px-8 py-4 bg-amber-600 hover:bg-amber-700 text-white font-display font-bold text-lg uppercase tracking-wider rounded transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                    Agendar Horário
+                </a>
+                <a href="https://wa.me/5566996892848" target="_blank" class="px-8 py-4 border border-neutral-700 hover:border-amber-500 hover:text-amber-500 text-white font-display font-bold text-lg uppercase tracking-wider rounded transition-all">
+                    <i class="fab fa-whatsapp mr-2"></i> WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-neutral-950 relative">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-amber-500 font-display font-bold tracking-widest uppercase text-sm mb-2">O que fazemos</h2>
+                <h3 class="text-4xl md:text-5xl font-display font-bold text-white uppercase">Nossos Serviços</h3>
+                <div class="w-24 h-1 bg-amber-600 mx-auto mt-4"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-neutral-900 p-8 rounded-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-white uppercase mb-2">Corte Moderno</h4>
+                    <p class="text-gray-400 text-sm mb-4">Degradê, social, militar ou tesoura. Acabamento impecável.</p>
+                    <span class="text-amber-500 font-bold text-lg">R$ 50,00</span>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-900 p-8 rounded-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-white uppercase mb-2">Barba Terapia</h4>
+                    <p class="text-gray-400 text-sm mb-4">Toalha quente, navalha afiada e hidratação completa.</p>
+                    <span class="text-amber-500 font-bold text-lg">R$ 40,00</span>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-900 p-8 rounded-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-crown text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-white uppercase mb-2">Combo Premium</h4>
+                    <p class="text-gray-400 text-sm mb-4">Corte + Barba + Sobrancelha. A experiência completa.</p>
+                    <span class="text-amber-500 font-bold text-lg">R$ 80,00</span>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="bg-neutral-900 p-8 rounded-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-spray-can text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="text-xl font-display font-bold text-white uppercase mb-2">Pigmentação</h4>
+                    <p class="text-gray-400 text-sm mb-4">Correção de falhas e realce do perfil da barba e cabelo.</p>
+                    <span class="text-amber-500 font-bold text-lg">R$ 30,00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 relative">
+                    <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-600"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Interior Barbearia" class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-500">
+                    <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-600"></div>
+                </div>
+                <div class="lg:w-1/2">
+                    <h2 class="text-amber-500 font-display font-bold tracking-widest uppercase text-sm mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl font-display font-bold text-white uppercase mb-6">A Referência em Rondonópolis</h3>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        A <strong>Braz Barbearia</strong> nasceu com o propósito de resgatar a essência da barbearia clássica, unindo tradição e modernidade em um único espaço. Localizados no coração de Rondonópolis, oferecemos não apenas um corte de cabelo, mas um momento de pausa na correria do dia a dia.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        Nossos profissionais são altamente qualificados e estão sempre atualizados com as últimas tendências mundiais. Aqui, você encontra cerveja gelada, boa conversa e um serviço de excelência.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Profissionais experientes
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Produtos de alta qualidade
+                        </li>
+                        <li class="flex items-center text-gray-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Ambiente climatizado e exclusivo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="py-24 bg-neutral-950">
+        <div class="container mx-auto px-6 mb-12 text-center">
+            <h3 class="text-4xl font-display font-bold text-white uppercase">Galeria</h3>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 px-4">
+            <div class="overflow-hidden rounded-lg h-80 group">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corte" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="overflow-hidden rounded-lg h-80 group">
+                <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Navalha" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+            <div class="overflow-hidden rounded-lg h-80 group">
+                <img src="https://images.unsplash.com/photo-1512690459411-b9245aed8ad5?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Ambiente" class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="bg-neutral-900 border-t border-neutral-800">
+        <div class="grid grid-cols-1 lg:grid-cols-2">
+            <!-- Contact Info -->
+            <div class="p-12 lg:p-24 flex flex-col justify-center">
+                <h2 class="text-amber-500 font-display font-bold tracking-widest uppercase text-sm mb-2">Localização</h2>
+                <h3 class="text-4xl font-display font-bold text-white uppercase mb-8">Venha nos visitar</h3>
+                
+                <div class="space-y-8">
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-neutral-800 rounded flex items-center justify-center shrink-0 mr-6 text-amber-500">
+                            <i class="fas fa-map-marker-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase mb-1">Endereço</h4>
+                            <p class="text-gray-400">Av. Rotary Internacional, 1252<br>Núcleo Hab. Participação, Rondonópolis - MT</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-neutral-800 rounded flex items-center justify-center shrink-0 mr-6 text-amber-500">
+                            <i class="fas fa-phone-alt text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase mb-1">Telefone / WhatsApp</h4>
+                            <p class="text-gray-400">(66) 99689-2848</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="w-12 h-12 bg-neutral-800 rounded flex items-center justify-center shrink-0 mr-6 text-amber-500">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="text-white font-bold uppercase mb-1">Horário</h4>
+                            <p class="text-gray-400">Seg - Sex: 09:00 - 20:00<br>Sáb: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/5566996892848" class="mt-10 inline-block bg-amber-600 text-white font-bold py-4 px-8 rounded uppercase tracking-wider hover:bg-amber-700 transition-colors text-center">
+                    Agendar pelo WhatsApp
+                </a>
+            </div>
+
+            <!-- Map -->
+            <div class="h-96 lg:h-auto min-h-[400px] w-full bg-neutral-800">
+                <iframe 
+                    src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Rotary%20Internacional%2C%201252%20-%20N%C3%BAcleo%20Hab.%20Participa%C3%A7%C3%A3o%2C%20Rondon%C3%B3polis%20-%20MT%2C%2078730-234%2C%20Brasil%2C%20Rondon%C3%B3polis&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
+                    width="100%" 
+                    height="100%" 
+                    style="border:0; filter: grayscale(100%) invert(92%) contrast(83%);" 
+                    allowfullscreen="" 
+                    loading="lazy">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-8 border-t border-neutral-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="font-display text-2xl font-bold tracking-wider uppercase text-white mb-4">
+                Braz <span class="text-amber-500">Barbearia</span>
+            </h2>
+            <div class="flex justify-center space-x-6 mb-6">
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-amber-500 transition-colors"><i class="fab fa-whatsapp text-xl"></i></a>
+            </div>
+            <p class="text-gray-600 text-sm">
+                &copy; 2023 Braz Barbearia. Todos os direitos reservados. Rondonópolis - MT.
+            </p>
+        </div>
+    </footer>
+
+<!-- CHATBOT SCRIPT -->
+<script>
+    (function() {
+    const config = {
+        whatsappNumber: "5566996892848",
+        businessName: "Braz Barbearia",
+        services: ["Orçamento","Dúvidas","Agendamento"],
+        color: "#f59e0b"
+    };
+
+    const widget = document.createElement('div');
+    widget.id = 'ai-chat-widget';
+    widget.style.cssText = "position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: ui-sans-serif, system-ui, sans-serif;";
+    document.body.appendChild(widget);
+
+    widget.innerHTML = `
+        <div id="chat-window" class="hidden transition-all duration-300 transform origin-bottom-right scale-95 opacity-0 bg-white dark:bg-gray-800 shadow-2xl rounded-2xl overflow-hidden w-80 sm:w-96 mb-4 border border-gray-200 dark:border-gray-700">
+        <div class="text-white p-4 flex justify-between items-center" style="background-color: ${config.color}">
+            <div class="flex items-center space-x-2">
+            <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+            <h3 class="font-bold text-sm">Agendamento Online</h3>
+            </div>
+            <button id="close-chat" class="text-white hover:text-gray-200 focus:outline-none text-xl font-bold">&times;</button>
+        </div>
+        <div id="chat-messages" class="p-4 h-64 overflow-y-auto space-y-3 bg-gray-50 dark:bg-gray-900"></div>
+        <div id="chat-input-area" class="p-3 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 hidden">
+            <div class="flex space-x-2">
+            <input type="text" id="user-input" class="flex-1 border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-opacity-50" placeholder="Digite..." style="--tw-ring-color: ${config.color}">
+            <button id="send-btn" class="text-white px-3 py-2 rounded-lg text-sm font-medium transition-colors" style="background-color: ${config.color}">
+                Enviar
+            </button>
+            </div>
+        </div>
+        </div>
+        <button id="toggle-chat" class="w-14 h-14 rounded-full shadow-lg flex items-center justify-center text-white transition-transform hover:scale-110 focus:outline-none" style="background-color: ${config.color}">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+        </svg>
+        </button>
+    `;
+
+    const chatWindow = document.getElementById('chat-window');
+    const toggleBtn = document.getElementById('toggle-chat');
+    const closeBtn = document.getElementById('close-chat');
+    const messagesContainer = document.getElementById('chat-messages');
+    const inputArea = document.getElementById('chat-input-area');
+    const userInput = document.getElementById('user-input');
+    const sendBtn = document.getElementById('send-btn');
+
+    let step = 0;
+    let data = { service: '', time: '', name: '' };
+
+    const toggleChat = () => {
+        chatWindow.classList.toggle('hidden');
+        setTimeout(() => {
+        chatWindow.classList.toggle('scale-95');
+        chatWindow.classList.toggle('opacity-0');
+        }, 10);
+        if (!chatWindow.classList.contains('hidden') && messagesContainer.children.length === 0) {
+        startFlow();
+        }
+    };
+
+    toggleBtn.addEventListener('click', toggleChat);
+    closeBtn.addEventListener('click', toggleChat);
+
+    const addMessage = (text, sender = 'bot', html = false) => {
+        const div = document.createElement('div');
+        div.className = sender === 'bot' ? 'flex justify-start' : 'flex justify-end';
+        
+        const bubble = document.createElement('div');
+        bubble.className = `max-w-[85%] rounded-lg px-4 py-2 text-sm ${sender === 'bot' ? 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700 shadow-sm' : 'text-white shadow-sm'}`;
+        if (sender === 'user') bubble.style.backgroundColor = config.color;
+        
+        if (html) bubble.innerHTML = text; else bubble.textContent = text;
+        div.appendChild(bubble);
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const addOptions = (options, callback) => {
+        const div = document.createElement('div');
+        div.className = 'flex flex-wrap gap-2 mt-2 ml-1';
+        options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'px-3 py-1 bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 rounded-full text-xs font-medium text-gray-800 dark:text-gray-200 transition-colors border border-gray-300 dark:border-gray-600';
+        btn.textContent = opt;
+        btn.onclick = () => {
+            // Remove options after click to prevent re-clicking
+            div.remove(); 
+            callback(opt);
+        };
+        div.appendChild(btn);
+        });
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    const startFlow = async () => {
+        await new Promise(r => setTimeout(r, 500));
+        addMessage(`Olá! Bem-vindo à ${config.businessName}. Gostaria de agendar um horário?`);
+        addOptions(['Sim, agendar', 'Falar no WhatsApp'], (choice) => {
+        addMessage(choice, 'user');
+        if (choice.includes('WhatsApp')) {
+            window.open(`https://wa.me/${config.whatsappNumber}`, '_blank');
+            return;
+        }
+        step1();
+        });
+    };
+
+    const step1 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Qual serviço você gostaria?");
+        addOptions(config.services, (service) => {
+        data.service = service;
+        addMessage(service, 'user');
+        step2();
+        });
+    };
+
+    const step2 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Para qual dia e horário (ex: Amanhã às 14h)?");
+        inputArea.classList.remove('hidden');
+        userInput.focus();
+        
+        const handleTime = () => {
+        const time = userInput.value.trim();
+        if (!time) return;
+        data.time = time;
+        addMessage(time, 'user');
+        userInput.value = '';
+        step3();
+        };
+
+        sendBtn.onclick = handleTime;
+        userInput.onkeydown = (e) => e.key === 'Enter' ? handleTime() : null;
+    };
+
+    const step3 = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        sendBtn.onclick = null;
+        userInput.onkeydown = null;
+        addMessage("Perfeito. Qual seu nome?");
+        
+        const handleName = () => {
+        const name = userInput.value.trim();
+        if (!name) return;
+        data.name = name;
+        addMessage(name, 'user');
+        userInput.value = '';
+        inputArea.classList.add('hidden');
+        finish();
+        };
+
+        sendBtn.onclick = handleName;
+        userInput.onkeydown = (e) => e.key === 'Enter' ? handleName() : null;
+    };
+
+    const finish = async () => {
+        await new Promise(r => setTimeout(r, 600));
+        addMessage("Tudo pronto! Clique abaixo para confirmar no WhatsApp.");
+        const msg = `Olá, sou ${data.name}. Gostaria de agendar ${data.service} para ${data.time}.`;
+        const link = `https://wa.me/${config.whatsappNumber}?text=${encodeURIComponent(msg)}`;
+        
+        const div = document.createElement('div');
+        div.className = 'mt-4 flex justify-center pb-2';
+        div.innerHTML = `<a href="${link}" target="_blank" class="px-4 py-2 rounded-lg text-white font-bold shadow-lg flex items-center animate-bounce hover:opacity-90 transition-opacity" style="background-color: #25D366"><svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg> Confirmar no WhatsApp</a>`;
+        messagesContainer.appendChild(div);
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    };
+
+    })();
+</script>
+</body>
+</html>
