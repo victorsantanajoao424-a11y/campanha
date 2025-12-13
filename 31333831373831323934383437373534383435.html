@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Custom | Londrina</title>
+    <meta name="description" content="A melhor barbearia de Londrina. Estilo, tradição e excelência.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Manrope:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Manrope', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #f59e0b;
+        }
+
+        /* Chatbot Animations */
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .chat-anim {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                <h1 class="font-serif text-2xl font-bold tracking-widest text-white">CUSTOM</h1>
+            </div>
+            <nav class="hidden md:flex gap-8 text-sm font-semibold tracking-wide uppercase">
+                <a href="#home" class="hover:text-amber-500 transition-colors">Início</a>
+                <a href="#servicos" class="hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#sobre" class="hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#galeria" class="hover:text-amber-500 transition-colors">Galeria</a>
+                <a href="#contato" class="hover:text-amber-500 transition-colors">Contato</a>
+            </nav>
+            <a href="https://wa.me/554330671610" class="md:hidden text-amber-500 text-xl">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <p class="text-amber-500 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base animate-pulse">Londrina • PR</p>
+            <h2 class="font-serif text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight">
+                Estilo & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Tradição</span>
+            </h2>
+            <p class="text-neutral-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto font-light">
+                A Barbearia Custom redefine o conceito de cuidado masculino. Cortes clássicos, barbas impecáveis e um ambiente exclusivo.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="toggleChat()" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-sm font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                    Agendar Horário
+                </button>
+                <a href="#servicos" class="border border-neutral-700 hover:border-amber-500 text-neutral-300 hover:text-white px-8 py-4 rounded-sm font-bold uppercase tracking-wider transition-all">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-20 bg-neutral-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-white mb-2">Nossos Serviços</h3>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all group">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-2">Corte Custom</h4>
+                    <p class="text-neutral-400 text-sm mb-4">Corte de cabelo personalizado, lavagem especial e finalização com produtos premium.</p>
+                    <p class="text-amber-500 font-bold text-lg">R$ 50,00</p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-xs font-bold px-3 py-1 text-white">POPULAR</div>
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-face-grin-wide text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-2">Barba Terapia</h4>
+                    <p class="text-neutral-400 text-sm mb-4">Toalha quente, navalha afiada, esfoliação e hidratação profunda para sua barba.</p>
+                    <p class="text-amber-500 font-bold text-lg">R$ 40,00</p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all group">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fa-solid fa-crown text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-serif text-xl font-bold mb-2">Combo Completo</h4>
+                    <p class="text-neutral-400 text-sm mb-4">A experiência definitiva. Corte + Barba + Sobrancelha + Bebida cortesia.</p>
+                    <p class="text-amber-500 font-bold text-lg">R$ 80,00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-20 bg-neutral-900 relative">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="rounded-sm shadow-2xl shadow-black grayscale hover:grayscale-0 transition-all duration-500">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-white mb-6">Sobre a <span class="text-amber-500">Barbearia Custom</span></h3>
+                <p class="text-neutral-300 mb-6 leading-relaxed">
+                    Localizada no coração do Jardim Igapó em Londrina, a Barbearia Custom não é apenas um lugar para cortar o cabelo, é um refúgio para o homem moderno. Combinamos técnicas tradicionais de barbearia com as tendências mais atuais de visagismo.
+                </p>
+                <p class="text-neutral-300 mb-8 leading-relaxed">
+                    Nosso ambiente foi projetado para oferecer conforto e privacidade, com iluminação ambiente, música de qualidade e aquela cerveja gelada enquanto você aguarda. Aqui, cada cliente é tratado como um velho amigo.
+                </p>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-center gap-3 text-neutral-300"><i class="fa-solid fa-check text-amber-500"></i> Profissionais especializados</li>
+                    <li class="flex items-center gap-3 text-neutral-300"><i class="fa-solid fa-check text-amber-500"></i> Produtos de alta qualidade</li>
+                    <li class="flex items-center gap-3 text-neutral-300"><i class="fa-solid fa-check text-amber-500"></i> Ambiente climatizado</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-20 bg-neutral-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-serif text-3xl md:text-4xl font-bold text-white mb-2">Galeria</h3>
+                <p class="text-neutral-400">Um pouco do nosso trabalho e ambiente</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1503951914875-befbb6491842?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Corte">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1976&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Navalha">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Produtos">
+                </div>
+                <div class="aspect-square overflow-hidden rounded-sm">
+                    <img src="https://images.unsplash.com/photo-1634302086887-13b56dd9d3d3?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Ambiente">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Map -->
+    <section id="contato" class="py-0 bg-neutral-900">
+        <div class="flex flex-col md:flex-row">
+            <!-- Info -->
+            <div class="w-full md:w-1/3 p-12 bg-neutral-900 flex flex-col justify-center">
+                <h3 class="font-serif text-3xl font-bold text-white mb-8">Contato</h3>
+                
+                <div class="space-y-6">
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center flex-shrink-0 text-amber-500">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Endereço</h5>
+                            <p class="text-neutral-400 text-sm">R. Bélgica, 1345 - loja 07<br>Jd. Igapo, Londrina - PR</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center flex-shrink-0 text-amber-500">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Telefone</h5>
+                            <p class="text-neutral-400 text-sm">(43) 3067-1610</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-4">
+                        <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center flex-shrink-0 text-amber-500">
+                            <i class="fa-regular fa-clock"></i>
+                        </div>
+                        <div>
+                            <h5 class="text-white font-bold">Horários</h5>
+                            <p class="text-neutral-400 text-sm">Seg - Sex: 09:00 - 20:00<br>Sáb: 09:00 - 18:00</p>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="https://wa.me/554330671610" target="_blank" class="mt-8 bg-green-600 hover:bg-green-700 text-white py-3 px-6 rounded-sm text-center font-bold uppercase tracking-wider transition-colors flex items-center justify-center gap-2">
+                    <i class="fa-brands fa-whatsapp"></i> Chamar no Zap
+                </a>
+            </div>
+
+            <!-- Map -->
+            <div class="w-full md:w-2/3 h-[400px] md:h-auto bg-neutral-800">
+                <iframe src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20B%C3%A9lgica%2C%201345%20-%20loja%2007%20-%20Jd.%20Igapo%2C%20Londrina%20-%20PR%2C%2086046-280%2C%20Brasil%2C%20Londrina&t=&z=15&ie=UTF8&iwloc=B&output=embed" width="100%" height="100%" style="border:0; filter: grayscale(1) contrast(1.2) invert(0.9);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-8 border-t border-neutral-900">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-neutral-500 text-sm">&copy; 2023 Barbearia Custom. Todos os direitos reservados.</p>
+            <div class="flex gap-4">
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT STRUCTURE -->
+    <!-- Chat Container -->
+    <div id="chat-container" class="fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-800 rounded-lg shadow-2xl z-50 hidden flex-col overflow-hidden">
+        <!-- Chat Header -->
+        <div class="bg-neutral-800 p-4 flex justify-between items-center border-b border-neutral-700">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div>
+                    <h4 class="font-bold text-white text-sm">Atendente Virtual</h4>
+                    <p class="text-xs text-green-500 flex items-center gap-1"><span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span> Online</p>
+                </div>
+            </div>
+            <button onclick="toggleChat()" class="text-neutral-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+
+        <!-- Chat Body -->
+        <div id="chat-body" class="p-4 h-80 overflow-y-auto bg-neutral-900 flex flex-col gap-3">
+            <!-- Messages will be injected here via JS -->
+        </div>
+    </div>
+
+    <!-- Floating Button -->
+    <button onclick="toggleChat()" class="fixed bottom-6 right-6 w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg shadow-amber-900/50 flex items-center justify-center z-50 transition-transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-2xl"></i>
+    </button>
+
+    <!-- CHATBOT SCRIPT -->
+    <script>
+        // State Management
+        let chatOpen = false;
+        let currentStep = 0;
+        let bookingData = {
+            service: '',
+            datetime: '',
+            name: ''
+        };
+
+        const chatContainer = document.getElementById('chat-container');
+        const chatBody = document.getElementById('chat-body');
+
+        // Toggle Chat Visibility
+        function toggleChat() {
+            chatOpen = !chatOpen;
+            if (chatOpen) {
+                chatContainer.classList.remove('hidden');
+                chatContainer.classList.add('flex');
+                if (chatBody.children.length === 0) {
+                    renderStep(0);
+                }
+            } else {
+                chatContainer.classList.add('hidden');
+                chatContainer.classList.remove('flex');
+            }
+        }
+
+        // Helper to create message bubble
+        function addMessage(text, isUser = false) {
+            const div = document.createElement('div');
+            div.className = `max-w-[80%] p-3 rounded-lg text-sm chat-anim ${isUser ? 'bg-amber-600 text-white self-end ml-auto rounded-br-none' : 'bg-neutral-800 text-neutral-200 self-start mr-auto rounded-bl-none'}`;
+            div.innerText = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Helper to create options/inputs
+        function addOptions(htmlContent) {
+            const div = document.createElement('div');
+            div.className = "self-start w-full chat-anim mt-1";
+            div.innerHTML = htmlContent;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        // Render Steps
+        function renderStep(step) {
+            currentStep = step;
+
+            switch(step) {
+                case 0:
+                    addMessage("Olá! Bem-vindo à Barbearia Custom. Gostaria de agendar um horário?");
+                    setTimeout(() => {
+                        addOptions(`<button onclick="handleResponse('sim')" class="bg-neutral-700 hover:bg-neutral-600 text-white text-sm py-2 px-4 rounded-full border border-neutral-600 w-full mb-2">Sim, claro</button>`);
+                    }, 500);
+                    break;
+
+                case 1:
+                    addMessage("Ótimo! Qual serviço você procura?");
+                    setTimeout(() => {
+                        addOptions(`
+                            <div class="flex flex-col gap-2">
+                                <button onclick="handleResponse('Corte')" class="bg-neutral-700 hover:bg-amber-600/50 text-white text-sm py-2 px-4 rounded-md border border-neutral-600 text-left transition-colors">✂️ Corte</button>
+                                <button onclick="handleResponse('Barba')" class="bg-neutral-700 hover:bg-amber-600/50 text-white text-sm py-2 px-4 rounded-md border border-neutral-600 text-left transition-colors">🪒 Barba</button>
+                                <button onclick="handleResponse('Completo')" class="bg-neutral-700 hover:bg-amber-600/50 text-white text-sm py-2 px-4 rounded-md border border-neutral-600 text-left transition-colors">👑 Completo</button>
+                            </div>
+                        `);
+                    }, 500);
+                    break;
+
+                case 2:
+                    addMessage(`Entendido (${bookingData.service}). Qual dia e horário fica bom para você?`);
+                    setTimeout(() => {
+                        addOptions(`
+                            <div class="flex gap-2">
+                                <input type="datetime-local" id="dateInput" class="bg-neutral-800 border border-neutral-600 text-white text-sm rounded-md p-2 w-full focus:border-amber-500 outline-none color-scheme-dark">
+                                <button onclick="handleDateInput()" class="bg-amber-600 text-white px-3 rounded-md"><i class="fa-solid fa-arrow-right"></i></button>
+                            </div>
+                        `);
+                    }, 500);
+                    break;
+
+                case 3:
+                    addMessage("Perfeito. Para finalizar, qual seu nome para a reserva?");
+                    setTimeout(() => {
+                        addOptions(`
+                            <div class="flex gap-2">
+                                <input type="text" id="nameInput" placeholder="Seu nome..." class="bg-neutral-800 border border-neutral-600 text-white text-sm rounded-md p-2 w-full focus:border-amber-500 outline-none">
+                                <button onclick="handleNameInput()" class="bg-amber-600 text-white px-3 rounded-md"><i class="fa-solid fa-check"></i></button>
+                            </div>
+                        `);
+                    }, 500);
+                    break;
+
+                case 4:
+                    addMessage(`Tudo certo, ${bookingData.name}! Clique abaixo para confirmar no WhatsApp.`);
+                    setTimeout(() => {
+                        addOptions(`
+                            <button onclick="finalizeBooking()" class="bg-green-600 hover:bg-green-700 text-white font-bold text-sm py-3 px-4 rounded-md w-full flex items-center justify-center gap-2 shadow-lg animate-pulse">
+                                <i class="fa-brands fa-whatsapp"></i> Confirmar Agendamento
+                            </button>
+                        `);
+                    }, 500);
+                    break;
+            }
+        }
+
+        // Handle Interactions
+        function handleResponse(response) {
+            // Remove previous options visually (optional, keeps chat clean)
+            const lastOption = chatBody.lastElementChild;
+            if(lastOption.querySelector('button')) lastOption.style.display = 'none';
+
+            addMessage(response, true); // User bubble
+
+            if (currentStep === 0) {
+                renderStep(1);
+            } else if (currentStep === 1) {
+                bookingData.service = response;
+                renderStep(2);
+            }
+        }
+
+        function handleDateInput() {
+            const input = document.getElementById('dateInput');
+            if(!input.value) return alert('Por favor, selecione um horário.');
+            
+            // Format date nicely
+            const dateObj = new Date(input.value);
+            const formattedDate = dateObj.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+            
+            bookingData.datetime = formattedDate;
+            
+            // Hide input container
+            const lastOption = chatBody.lastElementChild;
+            lastOption.style.display = 'none';
+
+            addMessage(formattedDate, true);
+            renderStep(3);
+        }
+
+        function handleNameInput() {
+            const input = document.getElementById('nameInput');
+            if(!input.value.trim()) return alert('Por favor, digite seu nome.');
+            
+            bookingData.name = input.value.trim();
+
+            // Hide input container
+            const lastOption = chatBody.lastElementChild;
+            lastOption.style.display = 'none';
+
+            addMessage(bookingData.name, true);
+            renderStep(4);
+        }
+
+        function finalizeBooking() {
+            const phone = "554330671610";
+            const text = `Olá, sou ${bookingData.name}. Gostaria de agendar ${bookingData.service} para ${bookingData.datetime}.`;
+            const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+            
+            window.open(url, '_blank');
+            
+            // Reset chat after a delay
+            setTimeout(() => {
+                addMessage("Encaminhando para o WhatsApp...", false);
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
