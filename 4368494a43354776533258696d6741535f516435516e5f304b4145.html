@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rafacho Barbearia | Uberlândia</title>
+    <meta name="description" content="Barbearia premium em Uberlândia. Cortes clássicos e modernos, barba e bigode. Agende seu horário.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'sans-serif'],
+                        heading: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Chat Animation */
+        .chat-enter {
+            animation: slideUp 0.3s ease-out forwards;
+        }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-heading font-bold tracking-wider text-white uppercase">
+                Rafacho <span class="text-amber-500">Barbearia</span>
+            </a>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-sm uppercase tracking-widest hover:text-amber-500 transition-colors">Início</a>
+                <a href="#servicos" class="text-sm uppercase tracking-widest hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#sobre" class="text-sm uppercase tracking-widest hover:text-amber-500 transition-colors">Sobre</a>
+                <a href="#galeria" class="text-sm uppercase tracking-widest hover:text-amber-500 transition-colors">Galeria</a>
+                <a href="#contato" class="text-sm uppercase tracking-widest hover:text-amber-500 transition-colors">Contato</a>
+            </nav>
+
+            <a href="https://wa.me/5534992150486" target="_blank" class="hidden md:inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white px-5 py-2 rounded-sm font-bold uppercase text-xs tracking-widest transition-all">
+                <i class="fab fa-whatsapp"></i> Agendar
+            </a>
+
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-2xl text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 border-t border-neutral-800 absolute w-full">
+            <div class="flex flex-col p-6 space-y-4">
+                <a href="#home" class="text-white hover:text-amber-500">Início</a>
+                <a href="#servicos" class="text-white hover:text-amber-500">Serviços</a>
+                <a href="#sobre" class="text-white hover:text-amber-500">Sobre</a>
+                <a href="#galeria" class="text-white hover:text-amber-500">Galeria</a>
+                <a href="#contato" class="text-white hover:text-amber-500">Contato</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center hero-bg">
+        <div class="absolute inset-0 bg-black/70"></div> <!-- Overlay -->
+        <div class="container mx-auto px-6 relative z-10 text-center">
+            <p class="text-amber-500 font-bold tracking-[0.3em] uppercase mb-4 text-sm md:text-base animate-pulse">Estilo & Tradição em Uberlândia</p>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-heading font-bold text-white mb-6 uppercase leading-tight">
+                Corte Clássico <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Visual Moderno</span>
+            </h1>
+            <p class="text-neutral-300 max-w-2xl mx-auto mb-10 text-lg font-light">
+                Localizada na Av. Mato Grosso, a Rafacho Barbearia oferece uma experiência premium de cuidado masculino. Onde a navalha afiada encontra o ambiente perfeito.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <button onclick="toggleChat()" class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-4 rounded-sm font-heading font-bold uppercase tracking-widest transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-900/20">
+                    Agendar Agora
+                </button>
+                <a href="#servicos" class="border border-neutral-500 hover:border-white text-white px-8 py-4 rounded-sm font-heading font-bold uppercase tracking-widest transition-all hover:bg-white/5">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-neutral-950">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-heading font-bold text-white uppercase mb-4">Nossos <span class="text-amber-500">Serviços</span></h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-white mb-2 uppercase">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Degradê, social, militar ou tesoura. Consultoria de visagismo inclusa.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">30 - 45 min</span>
+                        <span class="text-xl font-bold text-white">R$ 50,00</span>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 uppercase tracking-wider">Popular</div>
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-white mb-2 uppercase">Cabelo & Barba</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">O combo completo. Corte detalhado e barba com toalha quente e navalha.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">60 min</span>
+                        <span class="text-xl font-bold text-white">R$ 80,00</span>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-900 p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 group hover:-translate-y-2">
+                    <div class="text-amber-500 text-4xl mb-6 group-hover:scale-110 transition-transform duration-300">
+                        <i class="fas fa-user-ninja"></i>
+                    </div>
+                    <h3 class="text-2xl font-heading font-bold text-white mb-2 uppercase">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Modelagem, hidratação profunda, toalha quente e massagem facial.</p>
+                    <div class="flex justify-between items-center border-t border-neutral-800 pt-4">
+                        <span class="text-neutral-500 text-sm">30 min</span>
+                        <span class="text-xl font-bold text-white">R$ 40,00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="w-full lg:w-1/2">
+                    <div class="relative">
+                        <div class="absolute -top-4 -left-4 w-24 h-24 border-t-4 border-l-4 border-amber-600 z-0"></div>
+                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Interior Barbearia" class="relative z-10 w-full h-[500px] object-cover grayscale hover:grayscale-0 transition-all duration-500 shadow-2xl">
+                        <div class="absolute -bottom-4 -right-4 w-24 h-24 border-b-4 border-r-4 border-amber-600 z-0"></div>
+                    </div>
+                </div>
+                <div class="w-full lg:w-1/2">
+                    <h4 class="text-amber-500 font-bold uppercase tracking-widest mb-2">Sobre Nós</h4>
+                    <h2 class="text-4xl font-heading font-bold text-white mb-6 uppercase">A Referência em <br>Nossa Sra. Aparecida</h2>
+                    <p class="text-neutral-400 mb-6 leading-relaxed">
+                        A Rafacho Barbearia não é apenas um lugar para cortar o cabelo; é um refúgio para o homem moderno em Uberlândia. Localizados estrategicamente na Av. Mato Grosso, combinamos técnicas tradicionais de barbearia com um ambiente sofisticado e acolhedor.
+                    </p>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Nossa equipe de barbeiros experientes entende que cada cliente é único. Seja para manter um estilo clássico ou ousar em uma nova tendência, garantimos um serviço de excelência com produtos de alta qualidade, cerveja gelada e uma boa conversa.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Profissionais qualificados
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Ambiente climatizado e confortável
+                        </li>
+                        <li class="flex items-center text-neutral-300">
+                            <i class="fas fa-check text-amber-500 mr-3"></i> Produtos premium para barba e cabelo
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeria" class="py-24 bg-neutral-950">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-4xl font-heading font-bold text-white uppercase mb-12">Galeria</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f30a?q=80&w=2070&auto=format&fit=crop" alt="Corte" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" alt="Barba" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1976&auto=format&fit=crop" alt="Produtos" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                </div>
+                <div class="overflow-hidden group h-64">
+                    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?q=80&w=2070&auto=format&fit=crop" alt="Ambiente" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 opacity-80 group-hover:opacity-100">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contato" class="py-24 bg-neutral-900">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-heading font-bold text-white uppercase mb-6">Contato & <br><span class="text-amber-500">Localização</span></h2>
+                    <p class="text-neutral-400 mb-8">Venha nos fazer uma visita. Estamos prontos para te atender.</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-map-marker-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">Endereço</h4>
+                                <p class="text-neutral-400">Av. Mato Grosso, 1432</p>
+                                <p class="text-neutral-400">Nossa Sra. Aparecida, Uberlândia - MG</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-phone-alt text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">Telefone / WhatsApp</h4>
+                                <p class="text-neutral-400">(34) 99215-0486</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-neutral-800 p-3 rounded text-amber-500 mr-4">
+                                <i class="fas fa-clock text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold uppercase">Horário</h4>
+                                <p class="text-neutral-400">Seg - Sex: 09:00 - 20:00</p>
+                                <p class="text-neutral-400">Sáb: 09:00 - 18:00</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="h-[400px] w-full bg-neutral-800 rounded-sm overflow-hidden border border-neutral-700">
+                    <iframe src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Mato%20Grosso%2C%201432%20-%20Nossa%20Sra.%20Aparecida%2C%20Uberl%C3%A2ndia%20-%20MG%2C%2038400-724%2C%20Brasil%2C%20Uberl%C3%A2ndia&t=&z=15&ie=UTF8&iwloc=B&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-neutral-500 text-sm">
+                &copy; 2023 Rafacho Barbearia. Todos os direitos reservados.
+            </p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fab fa-instagram text-xl"></i></a>
+                <a href="#" class="text-neutral-500 hover:text-amber-500 transition-colors"><i class="fab fa-facebook text-xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT SCRIPT & HTML INJECTION -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create Floating Button
+            const floatBtn = document.createElement('button');
+            floatBtn.className = 'fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white p-4 rounded-full shadow-lg z-50 transition-transform hover:scale-110 flex items-center justify-center';
+            floatBtn.style.width = '60px';
+            floatBtn.style.height = '60px';
+            floatBtn.innerHTML = '<i class="fab fa-whatsapp text-3xl"></i>';
+            floatBtn.onclick = toggleChat;
+            document.body.appendChild(floatBtn);
+
+            // Create Chat Container
+            const chatContainer = document.createElement('div');
+            chatContainer.id = 'rafacho-chat';
+            chatContainer.className = 'fixed bottom-24 right-6 w-80 md:w-96 bg-neutral-900 border border-neutral-700 rounded-lg shadow-2xl z-50 hidden flex flex-col overflow-hidden';
+            chatContainer.style.maxHeight = '500px';
+            
+            // Chat Header
+            const chatHeader = document.createElement('div');
+            chatHeader.className = 'bg-neutral-800 p-4 border-b border-neutral-700 flex justify-between items-center';
+            chatHeader.innerHTML = `
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="font-bold text-white">Agendamento Rafacho</span>
+                </div>
+                <button onclick="toggleChat()" class="text-neutral-400 hover:text-white"><i class="fas fa-times"></i></button>
+            `;
+            chatContainer.appendChild(chatHeader);
+
+            // Chat Body
+            const chatBody = document.createElement('div');
+            chatBody.id = 'chat-body';
+            chatBody.className = 'p-4 flex-1 overflow-y-auto bg-neutral-900 flex flex-col gap-3';
+            chatContainer.appendChild(chatBody);
+
+            document.body.appendChild(chatContainer);
+        });
+
+        // Chat State
+        let chatState = {
+            isOpen: false,
+            step: 0,
+            data: {
+                service: '',
+                datetime: '',
+                name: ''
+            }
+        };
+
+        function toggleChat() {
+            const container = document.getElementById('rafacho-chat');
+            chatState.isOpen = !chatState.isOpen;
+            
+            if (chatState.isOpen) {
+                container.classList.remove('hidden');
+                container.classList.add('chat-enter');
+                if (chatState.step === 0) renderStep0();
+            } else {
+                container.classList.add('hidden');
+            }
+        }
+
+        function addBotMessage(text) {
+            const body = document.getElementById('chat-body');
+            const msg = document.createElement('div');
+            msg.className = 'bg-neutral-800 text-neutral-200 p-3 rounded-lg rounded-tl-none self-start max-w-[85%] text-sm border border-neutral-700';
+            msg.innerHTML = text;
+            body.appendChild(msg);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        function addUserMessage(text) {
+            const body = document.getElementById('chat-body');
+            const msg = document.createElement('div');
+            msg.className = 'bg-amber-600 text-white p-3 rounded-lg rounded-tr-none self-end max-w-[85%] text-sm font-medium';
+            msg.innerHTML = text;
+            body.appendChild(msg);
+            body.scrollTop = body.scrollHeight;
+        }
+
+        // STEP 0: Greeting
+        function renderStep0() {
+            const body = document.getElementById('chat-body');
+            body.innerHTML = ''; // Clear previous
+            addBotMessage("Olá! Bem-vindo à Rafacho Barbearia. Gostaria de agendar um horário?");
+            
+            const btnContainer = document.createElement('div');
+            btnContainer.className = 'flex justify-end mt-2';
+            const btn = document.createElement('button');
+            btn.className = 'bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded text-sm transition-colors';
+            btn.innerText = "Sim, claro";
+            btn.onclick = () => {
+                btn.remove();
+                addUserMessage("Sim, claro");
+                setTimeout(renderStep1, 500);
+            };
+            btnContainer.appendChild(btn);
+            body.appendChild(btnContainer);
+        }
+
+        // STEP 1: Service Selection
+        function renderStep1() {
+            chatState.step = 1;
+            addBotMessage("Ótimo! Qual serviço você procura?");
+            
+            const options = ['Corte', 'Barba', 'Completo'];
+            const btnContainer = document.createElement('div');
+            btnContainer.className = 'flex flex-wrap gap-2 mt-2';
+            
+            options.forEach(opt => {
+                const btn = document.createElement('button');
+                btn.className = 'bg-neutral-700 hover:bg-amber-600 border border-neutral-600 text-white px-3 py-2 rounded text-sm flex-1 transition-colors';
+                btn.innerText = opt;
+                btn.onclick = () => {
+                    chatState.data.service = opt;
+                    btnContainer.remove();
+                    addUserMessage(opt);
+                    setTimeout(renderStep2, 500);
+                };
+                btnContainer.appendChild(btn);
+            });
+            document.getElementById('chat-body').appendChild(btnContainer);
+        }
+
+        // STEP 2: Date/Time
+        function renderStep2() {
+            chatState.step = 2;
+            addBotMessage("Qual dia e horário fica bom para você?");
+            
+            const container = document.createElement('div');
+            container.className = 'mt-2 flex flex-col gap-2';
+            
+            const input = document.createElement('input');
+            input.type = 'datetime-local';
+            input.className = 'w-full bg-neutral-800 border border-neutral-600 text-white rounded p-2 text-sm focus:border-amber-500 outline-none';
+            
+            // Set min datetime to now
+            const now = new Date();
+            now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
+            input.min = now.toISOString().slice(0,16);
+
+            const btn = document.createElement('button');
+            btn.className = 'bg-amber-600 text-white w-full py-2 rounded text-sm hover:bg-amber-700';
+            btn.innerText = 'Enviar Horário';
+            
+            btn.onclick = () => {
+                if(!input.value) return;
+                const dateObj = new Date(input.value);
+                const formattedDate = dateObj.toLocaleString('pt-BR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+                
+                chatState.data.datetime = formattedDate;
+                container.remove();
+                addUserMessage(formattedDate);
+                setTimeout(renderStep3, 500);
+            };
+
+            container.appendChild(input);
+            container.appendChild(btn);
+            document.getElementById('chat-body').appendChild(container);
+        }
+
+        // STEP 3: Name
+        function renderStep3() {
+            chatState.step = 3;
+            addBotMessage("Perfeito. Qual seu nome para a reserva?");
+            
+            const container = document.createElement('div');
+            container.className = 'mt-2 flex gap-2';
+            
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.placeholder = 'Seu nome...';
+            input.className = 'flex-1 bg-neutral-800 border border-neutral-600 text-white rounded p-2 text-sm focus:border-amber-500 outline-none';
+            
+            const btn = document.createElement('button');
+            btn.className = 'bg-amber-600 text-white px-4 py-2 rounded text-sm hover:bg-amber-700';
+            btn.innerHTML = '<i class="fas fa-paper-plane"></i>';
+            
+            const submitName = () => {
+                if(!input.value.trim()) return;
+                chatState.data.name = input.value.trim();
+                container.remove();
+                addUserMessage(chatState.data.name);
+                setTimeout(renderStep4, 500);
+            };
+
+            btn.onclick = submitName;
+            input.onkeypress = (e) => { if(e.key === 'Enter') submitName(); };
+
+            container.appendChild(input);
+            container.appendChild(btn);
+            document.getElementById('chat-body').appendChild(container);
+            setTimeout(() => input.focus(), 100);
+        }
+
+        // STEP 4: Confirmation
+        function renderStep4() {
+            chatState.step = 4;
+            addBotMessage(`Resumo:<br><b>${chatState.data.service}</b><br>Data: ${chatState.data.datetime}<br>Nome: ${chatState.data.name}`);
+            
+            const btn = document.createElement('button');
+            btn.className = 'mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded flex items-center justify-center gap-2 transition-all animate-bounce';
+            btn.innerHTML = '<i class="fab fa-whatsapp"></i> Confirmar no WhatsApp';
+            
+            btn.onclick = () => {
+                const phone = '5534992150486';
+                const text = `Olá, sou ${chatState.data.name}. Gostaria de agendar ${chatState.data.service} para ${chatState.data.datetime}`;
+                const url = `https://wa.me/${phone}?text=${encodeURIComponent(text)}`;
+                window.open(url, '_blank');
+                addBotMessage("Redirecionando para o WhatsApp...");
+            };
+            
+            document.getElementById('chat-body').appendChild(btn);
+        }
+    </script>
+</body>
+</html>
