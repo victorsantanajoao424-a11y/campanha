@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - A (BAR)BEARIA Rio Vermelho</title>
+    <meta name="description" content="Agende seu corte ou barba na A (BAR)BEARIA em Rio Vermelho, Salvador. Estilo, tradição e os melhores profissionais.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar for Dark Theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        /* Map Filter */
+        .map-container iframe {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+        }
+
+        /* Pulse Animation for CTAs */
+        @keyframes subtle-pulse {
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
+        }
+        .cta-pulse {
+            animation: subtle-pulse 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3">
+                    <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                    <span class="font-display font-bold text-xl text-neutral-100 tracking-wider">A (BAR)BEARIA</span>
+                </div>
+                <div class="hidden md:block">
+                    <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="bg-transparent border border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white px-4 py-2 rounded font-medium transition duration-300">
+                        <i class="fa-brands fa-whatsapp mr-2"></i> (71) 3017-7259
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center">
+            <span class="inline-block py-1 px-3 rounded bg-neutral-800 border border-neutral-700 text-amber-500 text-sm font-bold tracking-widest mb-4 uppercase">
+                Rio Vermelho • Salvador
+            </span>
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-neutral-100 mb-6 leading-tight">
+                SEU ESTILO MERECE <br><span class="text-amber-500">RESPEITO E TRADIÇÃO</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
+                Especialistas em cortes clássicos e modernos, barba terapia e tratamentos exclusivos. Garanta seu horário sem espera.
+            </p>
+            
+            <!-- CTA 1 -->
+            <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="cta-pulse inline-flex items-center justify-center px-8 py-4 border border-transparent text-lg font-bold rounded shadow-sm text-white bg-amber-600 hover:bg-amber-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-amber-500 transition-all transform hover:-translate-y-1">
+                <i class="fa-regular fa-calendar-check mr-3"></i> AGENDAR AGORA
+            </a>
+            <p class="mt-4 text-sm text-neutral-500"><i class="fa-solid fa-check text-green-500 mr-1"></i> Resposta imediata via WhatsApp</p>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="py-20 bg-neutral-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-3xl md:text-4xl font-bold text-neutral-100 mb-4">NOSSOS SERVIÇOS</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1 -->
+                <div class="bg-neutral-900 rounded-xl p-8 border border-neutral-800 hover:border-amber-600/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition duration-300">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-neutral-100 mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6">Do clássico ao degradê moderno. Inclui lavagem e finalização com produtos premium.</p>
+                    <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-amber-500 font-bold hover:text-amber-400 flex items-center">
+                        Agendar Corte <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2 -->
+                <div class="bg-neutral-900 rounded-xl p-8 border border-neutral-800 hover:border-amber-600/50 transition duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition duration-300">
+                        <i class="fa-solid fa-face-smile text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-neutral-100 mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6">Barboterapia com toalha quente, alinhamento com navalha e hidratação dos fios.</p>
+                    <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-amber-500 font-bold hover:text-amber-400 flex items-center">
+                        Agendar Barba <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3 -->
+                <div class="bg-neutral-900 rounded-xl p-8 border border-neutral-800 hover:border-amber-600/50 transition duration-300 group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition duration-300">
+                        <i class="fa-solid fa-pump-soap text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="font-display text-2xl text-neutral-100 mb-3">Tratamentos</h3>
+                    <p class="text-neutral-400 mb-6">Hidratação profunda, camuflagem de brancos, sobrancelha e limpeza de pele.</p>
+                    <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-amber-500 font-bold hover:text-amber-400 flex items-center">
+                        Ver Tratamentos <i class="fa-solid fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- CTA 2 -->
+            <div class="mt-16 text-center">
+                <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="inline-flex items-center justify-center px-8 py-3 border border-amber-600 text-base font-medium rounded text-amber-500 hover:bg-amber-600 hover:text-white transition duration-300">
+                    VERIFICAR DISPONIBILIDADE
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="py-20 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12 items-center">
+            
+            <div class="w-full md:w-1/2">
+                <h2 class="font-display text-3xl font-bold text-neutral-100 mb-6">ONDE ESTAMOS</h2>
+                <div class="space-y-6">
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-location-dot text-amber-500 mt-1 mr-4 text-xl"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">A (BAR)BEARIA</h4>
+                            <p class="text-neutral-400">R. Conselheiro Pedro Luiz, 301<br>Rio Vermelho, Salvador - BA</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-phone text-amber-500 mt-1 mr-4 text-xl"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Contato</h4>
+                            <p class="text-neutral-400">(71) 3017-7259</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <i class="fa-solid fa-clock text-amber-500 mt-1 mr-4 text-xl"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Horários</h4>
+                            <p class="text-neutral-400">Entre em contato para confirmar os horários de funcionamento.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-full md:w-1/2 map-container rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Conselheiro%20Pedro%20Luiz%2C%20301%20-%20Rio%20Vermelho%2C%20Salvador%20-%20BA%2C%2040140-770%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 py-12 border-t border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="font-display text-2xl font-bold text-white mb-6">A (BAR)BEARIA</h2>
+            
+            <!-- CTA 3 -->
+            <div class="mb-8">
+                <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="inline-block bg-neutral-800 hover:bg-neutral-700 text-white font-medium py-3 px-6 rounded-lg transition duration-300 border border-neutral-700">
+                    <i class="fa-brands fa-whatsapp text-green-500 mr-2"></i> Agendar via WhatsApp
+                </a>
+            </div>
+
+            <p class="text-neutral-500 text-sm">
+                &copy; 2023 A (BAR)BEARIA - Rio Vermelho. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET START -->
+    
+    <!-- Chat Window -->
+    <div id="chatbot-window" class="fixed bottom-24 right-6 w-80 bg-neutral-900 rounded-2xl shadow-2xl border border-neutral-700 hidden z-50 overflow-hidden flex flex-col transform transition-all duration-300 origin-bottom-right">
+        <!-- Header -->
+        <div class="bg-neutral-800 p-4 border-b border-neutral-700 flex items-center gap-3">
+            <div class="relative">
+                <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white font-bold">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-neutral-800"></div>
+            </div>
+            <div>
+                <h4 class="text-white font-bold text-sm">A (BAR)BEARIA</h4>
+                <p class="text-xs text-green-500">Online agora</p>
+            </div>
+            <button onclick="document.getElementById('chatbot-window').classList.add('hidden')" class="ml-auto text-neutral-400 hover:text-white">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        
+        <!-- Body -->
+        <div class="p-4 bg-neutral-900 h-64 overflow-y-auto flex flex-col gap-4">
+            <!-- Message Received -->
+            <div class="flex gap-2">
+                <div class="bg-neutral-800 text-neutral-200 p-3 rounded-2xl rounded-tl-none text-sm shadow-sm border border-neutral-700 max-w-[85%]">
+                    Olá! 👋 Sou o assistente virtual da A (BAR)BEARIA - Rio Vermelho.
+                </div>
+            </div>
+            <div class="flex gap-2">
+                <div class="bg-neutral-800 text-neutral-200 p-3 rounded-2xl rounded-tl-none text-sm shadow-sm border border-neutral-700 max-w-[85%]">
+                    Quer ver os horários disponíveis para hoje?
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer / CTA -->
+        <div class="p-4 bg-neutral-800 border-t border-neutral-700">
+            <a href="https://wa.me/557130177259?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="block w-full bg-green-600 hover:bg-green-700 text-white text-center font-bold py-3 rounded-lg transition duration-300 shadow-lg">
+                Sim, ver horários <i class="fa-solid fa-paper-plane ml-2"></i>
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (Trigger) -->
+    <button id="chatbot-trigger" class="fixed bottom-6 right-6 h-16 w-16 bg-green-500 hover:bg-green-600 rounded-full shadow-2xl z-50 flex items-center justify-center text-white text-3xl transition-transform hover:scale-110 focus:outline-none ring-4 ring-green-500/30">
+        <i class="fa-brands fa-whatsapp"></i>
+        <!-- Notification Dot -->
+        <span class="absolute top-0 right-0 flex h-4 w-4">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-4 w-4 bg-red-500"></span>
+        </span>
+    </button>
+    
+    <!-- CHATBOT WIDGET END -->
+
+    <!-- JAVASCRIPT -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const trigger = document.getElementById('chatbot-trigger');
+            const windowChat = document.getElementById('chatbot-window');
+            
+            // Toggle Chat Window
+            trigger.addEventListener('click', function() {
+                windowChat.classList.toggle('hidden');
+            });
+
+            // Optional: Auto-open chat after 5 seconds to increase conversion
+            setTimeout(() => {
+                if(windowChat.classList.contains('hidden')) {
+                    windowChat.classList.remove('hidden');
+                }
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
