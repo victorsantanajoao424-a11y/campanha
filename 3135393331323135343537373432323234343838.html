@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Ancorador | Agendamento Online</title>
+    <meta name="description" content="Agende seu corte ou barba na Barbearia Ancorador em Florianópolis. Estilo, tradição e os melhores profissionais.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <!-- Configuração de Cores e Fontes -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            gold: '#d97706', // Amber 600
+                            goldHover: '#f59e0b', // Amber 500
+                            dark: '#0a0a0a', // Neutral 950
+                            card: '#171717', // Neutral 900
+                            text: '#f5f5f5', // Neutral 100
+                            muted: '#a3a3a3', // Neutral 400
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Ajustes finos para o mapa e animações */
+        .map-container iframe {
+            width: 100%;
+            height: 400px;
+            border-radius: 1rem;
+            border: 1px solid #333;
+        }
+        
+        /* Animação do Chatbot */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.9) translateY(20px); }
+            100% { opacity: 1; transform: scale(1) translateY(0); }
+        }
+        .chat-animate {
+            animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+    </style>
+</head>
+<body class="bg-brand-dark text-brand-muted font-sans antialiased selection:bg-brand-gold selection:text-white">
+
+    <!-- HEADER / NAV -->
+    <header class="fixed w-full z-40 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <i class="fa-solid fa-anchor text-brand-gold text-2xl"></i>
+                <h1 class="font-display text-2xl text-brand-text font-bold tracking-wide uppercase">Ancorador</h1>
+            </div>
+            <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+               target="_blank"
+               class="hidden md:inline-flex items-center gap-2 bg-brand-gold hover:bg-brand-goldHover text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-900/20">
+                <i class="fa-brands fa-whatsapp"></i>
+                Agendar Agora
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Barbearia Interior" 
+                 class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="container mx-auto px-6 z-10 text-center mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-white/10 border border-white/20 text-brand-gold text-sm font-semibold mb-6 tracking-wider uppercase">
+                Florianópolis - SC
+            </span>
+            <h2 class="font-display text-5xl md:text-7xl text-brand-text font-bold mb-6 leading-tight">
+                Seu Estilo, <br/> <span class="text-brand-gold">Nossa Tradição.</span>
+            </h2>
+            <p class="text-lg md:text-xl text-brand-muted max-w-2xl mx-auto mb-10">
+                Mais do que um corte, uma experiência. Agende seu horário na Barbearia Ancorador e renove sua confiança hoje mesmo.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   target="_blank"
+                   class="group bg-brand-gold hover:bg-brand-goldHover text-white text-lg font-bold py-4 px-10 rounded-lg transition-all duration-300 shadow-[0_0_20px_rgba(217,119,6,0.3)] flex items-center justify-center gap-3">
+                    <span>VER HORÁRIOS DISPONÍVEIS</span>
+                    <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="mt-12 flex items-center justify-center gap-8 text-brand-muted text-sm">
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-check text-brand-gold"></i> Profissionais Experientes
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fa-solid fa-check text-brand-gold"></i> Ambiente Climatizado
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="py-20 bg-brand-dark" id="servicos">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h3 class="font-display text-4xl text-brand-text font-bold mb-4">Nossos Serviços</h3>
+                <div class="w-20 h-1 bg-brand-gold mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Corte -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-full flex items-center justify-center mb-6 text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-scissors"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-brand-text font-bold mb-3">Corte de Cabelo</h4>
+                    <p class="text-brand-muted mb-6">Do clássico ao moderno, nossos barbeiros dominam todas as técnicas para o visual perfeito.</p>
+                    <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block text-center w-full py-3 rounded border border-brand-gold text-brand-gold font-bold hover:bg-brand-gold hover:text-white transition-all">
+                        Agendar Corte
+                    </a>
+                </div>
+
+                <!-- Card 2: Barba -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-full flex items-center justify-center mb-6 text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-face-grin-wide"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-brand-text font-bold mb-3">Barba & Bigode</h4>
+                    <p class="text-brand-muted mb-6">Barboterapia com toalha quente, alinhamento dos fios e hidratação completa.</p>
+                    <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block text-center w-full py-3 rounded border border-brand-gold text-brand-gold font-bold hover:bg-brand-gold hover:text-white transition-all">
+                        Agendar Barba
+                    </a>
+                </div>
+
+                <!-- Card 3: Tratamentos -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-white/5 hover:border-brand-gold/30 transition-all duration-300 group">
+                    <div class="w-14 h-14 bg-brand-dark rounded-full flex items-center justify-center mb-6 text-brand-gold text-2xl group-hover:bg-brand-gold group-hover:text-white transition-colors">
+                        <i class="fa-solid fa-pump-soap"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-brand-text font-bold mb-3">Tratamentos</h4>
+                    <p class="text-brand-muted mb-6">Hidratação, pigmentação e cuidados especiais para a saúde do seu couro cabeludo.</p>
+                    <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block text-center w-full py-3 rounded border border-brand-gold text-brand-gold font-bold hover:bg-brand-gold hover:text-white transition-all">
+                        Agendar Tratamento
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="py-20 bg-brand-card border-t border-white/5">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                <div class="lg:w-1/2">
+                    <h3 class="font-display text-4xl text-brand-text font-bold mb-6">Onde Estamos</h3>
+                    <p class="text-brand-muted mb-8 text-lg">
+                        Localizada no coração da Lagoa da Conceição, a Barbearia Ancorador oferece estacionamento fácil e um ambiente descontraído para você relaxar.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-brand-text font-bold text-lg">Endereço</h5>
+                                <p class="text-brand-muted">Av. Afonso Delambert Neto, 540<br>Lagoa da Conceição, Florianópolis - SC</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center text-brand-gold flex-shrink-0">
+                                <i class="fa-brands fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h5 class="text-brand-text font-bold text-lg">Contato</h5>
+                                <p class="text-brand-muted">(48) 98839-7456</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                           target="_blank"
+                           class="inline-block bg-brand-gold hover:bg-brand-goldHover text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-all">
+                            Agendar Visita
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/2 w-full map-container">
+                    <!-- Google Maps Iframe -->
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Afonso%20Delambert%20Neto%2C%20540%20-%20Lagoa%20da%20Concei%C3%A7%C3%A3o%2C%20Florian%C3%B3polis%20-%20SC%2C%2088062-000%2C%20Brasil%2C%20Florian%C3%B3polis&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-10 border-t border-white/10">
+        <div class="container mx-auto px-6 text-center">
+            <div class="flex items-center justify-center gap-2 mb-6">
+                <i class="fa-solid fa-anchor text-brand-gold text-xl"></i>
+                <span class="font-display text-xl text-brand-text font-bold uppercase">Ancorador</span>
+            </div>
+            <p class="text-neutral-500 text-sm mb-6">
+                &copy; 2023 Barbearia Ancorador. Todos os direitos reservados.
+            </p>
+            <div class="flex justify-center gap-6">
+                <a href="#" class="text-neutral-500 hover:text-brand-gold transition-colors"><i class="fa-brands fa-instagram text-2xl"></i></a>
+                <a href="#" class="text-neutral-500 hover:text-brand-gold transition-colors"><i class="fa-brands fa-facebook text-2xl"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CHATBOT WIDGET -->
+    
+    <!-- Chat Window -->
+    <div id="chatbot-window" class="hidden fixed bottom-24 right-6 w-80 bg-white rounded-2xl shadow-2xl z-50 overflow-hidden border border-gray-200">
+        <!-- Header -->
+        <div class="bg-neutral-900 p-4 flex items-center gap-3">
+            <div class="relative">
+                <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80" alt="Avatar" class="w-10 h-10 rounded-full object-cover border-2 border-green-500">
+                <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border border-neutral-900"></div>
+            </div>
+            <div>
+                <p class="text-white font-bold text-sm">Barbearia Ancorador</p>
+                <p class="text-green-400 text-xs">Online agora</p>
+            </div>
+        </div>
+        
+        <!-- Body -->
+        <div class="p-4 bg-gray-50 h-64 flex flex-col gap-3 overflow-y-auto">
+            <div class="bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm border border-gray-100 text-sm text-gray-700 max-w-[90%]">
+                Olá! 👋 Sou o assistente virtual da Barbearia Ancorador.
+            </div>
+            <div class="bg-white p-3 rounded-tr-xl rounded-bl-xl rounded-br-xl shadow-sm border border-gray-100 text-sm text-gray-700 max-w-[90%]">
+                Quer ver os horários disponíveis para hoje?
+            </div>
+        </div>
+        
+        <!-- Footer -->
+        <div class="p-4 bg-white border-t border-gray-100">
+            <a href="https://wa.me/5548988397456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+               target="_blank"
+               class="flex items-center justify-center gap-2 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-green-500/30">
+                <i class="fa-brands fa-whatsapp text-lg"></i>
+                Sim, ver horários
+            </a>
+        </div>
+    </div>
+
+    <!-- Floating Action Button (Trigger) -->
+    <button id="chatbot-trigger" class="fixed bottom-6 right-6 w-14 h-14 bg-brand-gold hover:bg-brand-goldHover rounded-full shadow-2xl z-50 flex items-center justify-center text-white text-2xl transition-transform hover:scale-110">
+        <i class="fa-solid fa-comment-dots"></i>
+        <!-- Notification Badge -->
+        <span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-brand-dark"></span>
+    </button>
+
+    <!-- SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const trigger = document.getElementById('chatbot-trigger');
+            const window = document.getElementById('chatbot-window');
+            
+            trigger.addEventListener('click', function() {
+                // Toggle visibility
+                if (window.classList.contains('hidden')) {
+                    window.classList.remove('hidden');
+                    window.classList.add('chat-animate');
+                    // Change icon to close
+                    trigger.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+                } else {
+                    window.classList.add('hidden');
+                    window.classList.remove('chat-animate');
+                    // Change icon back to chat
+                    trigger.innerHTML = '<i class="fa-solid fa-comment-dots"></i><span class="absolute top-0 right-0 w-4 h-4 bg-red-500 rounded-full border-2 border-brand-dark"></span>';
+                }
+            });
+
+            // Auto-open chat after 5 seconds (Optional CRO Tactic)
+            setTimeout(() => {
+                if(window.classList.contains('hidden')) {
+                    // Uncomment line below to enable auto-open
+                    // trigger.click(); 
+                }
+            }, 5000);
+        });
+    </script>
+</body>
+</html>
