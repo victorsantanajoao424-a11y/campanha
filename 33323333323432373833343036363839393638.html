@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Barbearia o Calixto Pinheiros</title>
+    <meta name="description" content="Agende seu horário na Barbearia o Calixto - Pinheiros. Cortes, barba e tratamentos com os melhores profissionais.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706; 
+        }
+        
+        /* Map Filter */
+        .map-filter {
+            filter: grayscale(100%) invert(92%) contrast(83%);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes pulse-gold {
+            0% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(217, 119, 6, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(217, 119, 6, 0); }
+        }
+        .btn-pulse {
+            animation: pulse-gold 2s infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- HEADER -->
+    <header class="fixed w-full z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
+                <h1 class="font-display text-xl md:text-2xl text-neutral-100 font-bold uppercase tracking-wider">
+                    O Calixto <span class="text-amber-500 text-sm block md:inline md:text-lg font-normal normal-case opacity-80">- Pinheiros</span>
+                </h1>
+            </div>
+            <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+               target="_blank"
+               class="hidden md:inline-block bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-900/20">
+               <i class="fa-brands fa-whatsapp mr-2"></i> Agendar Agora
+            </a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80" 
+                 alt="Interior Barbearia" 
+                 class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+        </div>
+
+        <!-- Content -->
+        <div class="relative z-10 container mx-auto px-4 text-center mt-16">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800 border border-neutral-700 text-amber-500 text-sm font-bold tracking-widest mb-6 uppercase">
+                Estilo & Tradição em Pinheiros
+            </span>
+            <h2 class="font-display text-5xl md:text-7xl lg:text-8xl text-neutral-100 font-bold mb-6 leading-tight">
+                AGENDE SEU <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">VISUAL AGORA</span>
+            </h2>
+            <p class="text-lg md:text-xl text-neutral-300 max-w-2xl mx-auto mb-10">
+                Não perca tempo na fila. Garanta seu horário com nossos especialistas em corte, barba e tratamentos exclusivos.
+            </p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   target="_blank"
+                   class="btn-pulse bg-amber-600 hover:bg-amber-700 text-white text-lg font-bold py-4 px-10 rounded-full transition-all duration-300 transform hover:-translate-y-1 w-full md:w-auto shadow-xl shadow-amber-600/20">
+                   <i class="fa-regular fa-calendar-check mr-2"></i> AGENDAR HORÁRIO
+                </a>
+                <a href="#servicos" class="text-neutral-400 hover:text-white underline decoration-amber-600 underline-offset-4 transition-colors">
+                    Ver Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-20 bg-neutral-950">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h3 class="font-display text-3xl md:text-4xl text-neutral-100 font-bold mb-4">NOSSOS SERVIÇOS</h3>
+                <div class="w-20 h-1 bg-amber-600 mx-auto rounded-full"></div>
+                <p class="mt-4 text-neutral-400">Escolha o serviço ideal para você</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-scissors text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-neutral-100 font-bold mb-2">Corte de Cabelo</h4>
+                    <p class="text-neutral-400 mb-6 text-sm">Degradê, social, tesoura ou máquina. Acabamento perfeito e lavagem inclusa.</p>
+                    <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block w-full text-center border border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white font-bold py-3 rounded-lg transition-all uppercase tracking-wide">
+                        Reservar
+                    </a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-neutral-100 font-bold mb-2">Barba Completa</h4>
+                    <p class="text-neutral-400 mb-6 text-sm">Barboterapia com toalha quente, modelagem e hidratação dos fios.</p>
+                    <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block w-full text-center border border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white font-bold py-3 rounded-lg transition-all uppercase tracking-wide">
+                        Reservar
+                    </a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors duration-300">
+                        <i class="fa-solid fa-pump-soap text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h4 class="font-display text-2xl text-neutral-100 font-bold mb-2">Tratamentos</h4>
+                    <p class="text-neutral-400 mb-6 text-sm">Hidratação profunda, pigmentação, sobrancelha e limpeza de pele.</p>
+                    <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="block w-full text-center border border-amber-600 text-amber-500 hover:bg-amber-600 hover:text-white font-bold py-3 rounded-lg transition-all uppercase tracking-wide">
+                        Reservar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SCHEDULING FORM SECTION -->
+    <section class="py-20 bg-neutral-900">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col lg:flex-row gap-12 items-center">
+                
+                <!-- Text Side -->
+                <div class="lg:w-1/2">
+                    <h3 class="font-display text-3xl md:text-5xl text-neutral-100 font-bold mb-6">
+                        PRONTO PARA O <br> <span class="text-amber-500">PRÓXIMO NÍVEL?</span>
+                    </h3>
+                    <p class="text-neutral-400 text-lg mb-8">
+                        Preencha seus dados ao lado e nós te encaminharemos diretamente para a confirmação no WhatsApp. É rápido, prático e sem burocracia.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-amber-500"></i>
+                            <span>Profissionais experientes</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-amber-500"></i>
+                            <span>Ambiente climatizado e cerveja gelada</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fa-solid fa-check text-amber-500"></i>
+                            <span>Estacionamento conveniado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Form Side -->
+                <div class="lg:w-1/2 w-full">
+                    <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-2xl">
+                        <form id="scheduleForm" class="space-y-6">
+                            <div>
+                                <label for="clientName" class="block text-sm font-medium text-neutral-300 mb-2">Seu Nome</label>
+                                <input type="text" id="clientName" required placeholder="Ex: João Silva" 
+                                       class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                            </div>
+                            
+                            <div>
+                                <label for="serviceType" class="block text-sm font-medium text-neutral-300 mb-2">Serviço Desejado</label>
+                                <select id="serviceType" required
+                                        class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                                    <option value="Corte de Cabelo">Corte de Cabelo</option>
+                                    <option value="Barba">Barba</option>
+                                    <option value="Corte + Barba">Combo (Corte + Barba)</option>
+                                    <option value="Tratamento">Tratamento</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="preferredDate" class="block text-sm font-medium text-neutral-300 mb-2">Data/Hora Preferida</label>
+                                <input type="text" id="preferredDate" required placeholder="Ex: Amanhã às 14h" 
+                                       class="w-full bg-neutral-900 border border-neutral-700 rounded-lg px-4 py-3 text-neutral-100 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
+                            </div>
+
+                            <button type="submit" 
+                                    class="w-full bg-amber-600 hover:bg-amber-700 text-white font-bold py-4 rounded-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg">
+                                CONFIRMAR AGENDAMENTO <i class="fa-brands fa-whatsapp ml-2"></i>
+                            </button>
+                            <p class="text-xs text-center text-neutral-500">Ao clicar, você será redirecionado para o WhatsApp.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section class="py-20 bg-neutral-950">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h3 class="font-display text-3xl text-neutral-100 font-bold mb-2">ONDE ESTAMOS</h3>
+                <p class="text-neutral-400">R. Teodoro Sampaio, 1130 - Pinheiros, São Paulo</p>
+            </div>
+            
+            <div class="rounded-2xl overflow-hidden border border-neutral-800 shadow-2xl h-[400px]">
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+                        src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Teodoro%20Sampaio%2C%201130%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005406-050%2C%20Brasil%2C%20S%C3%A3o%20Paulo&t=&z=15&ie=UTF8&iwloc=B&output=embed" 
+                        class="map-filter">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-900 border-t border-neutral-800 pt-16 pb-8">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-6">
+                <i class="fa-solid fa-scissors text-amber-500 text-xl"></i>
+                <h2 class="font-display text-2xl text-neutral-100 font-bold uppercase">O Calixto</h2>
+            </div>
+            
+            <p class="text-neutral-500 mb-8 max-w-md mx-auto">
+                Especialistas em elevar sua autoestima e estilo. O melhor ambiente de Pinheiros.
+            </p>
+
+            <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+               target="_blank"
+               class="inline-block bg-neutral-800 hover:bg-neutral-700 text-amber-500 font-bold py-3 px-8 rounded-full border border-neutral-700 transition-colors mb-12">
+               Agendar via WhatsApp
+            </a>
+
+            <div class="border-t border-neutral-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-neutral-600">
+                <p>&copy; 2023 Barbearia o Calixto. Todos os direitos reservados.</p>
+                <div class="flex gap-4 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-instagram text-xl"></i></a>
+                    <a href="#" class="hover:text-amber-500 transition-colors"><i class="fa-brands fa-facebook text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET CHATBOT -->
+    <div class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+        
+        <!-- Chat Window (Hidden by default) -->
+        <div id="chatWidget" class="hidden mb-4 w-72 bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 origin-bottom-right border border-neutral-200">
+            <!-- Header -->
+            <div class="bg-neutral-900 p-4 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-amber-600 flex items-center justify-center text-white">
+                    <i class="fa-solid fa-user-astronaut"></i>
+                </div>
+                <div>
+                    <p class="text-white font-bold text-sm">O Calixto Bot</p>
+                    <p class="text-green-400 text-xs flex items-center gap-1"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span> Online</p>
+                </div>
+                <button onclick="toggleChat()" class="ml-auto text-neutral-400 hover:text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            
+            <!-- Body -->
+            <div class="p-4 bg-neutral-50 h-64 flex flex-col gap-3 overflow-y-auto">
+                <div class="bg-white p-3 rounded-tl-xl rounded-tr-xl rounded-br-xl shadow-sm border border-gray-100 text-sm text-gray-700">
+                    Olá! Bem-vindo à Barbearia o Calixto - Pinheiros. 💈
+                </div>
+                <div class="bg-white p-3 rounded-tl-xl rounded-tr-xl rounded-br-xl shadow-sm border border-gray-100 text-sm text-gray-700">
+                    Gostaria de ver os horários disponíveis para hoje?
+                </div>
+            </div>
+
+            <!-- Footer Action -->
+            <div class="p-3 bg-white border-t border-gray-100">
+                <a href="https://wa.me/551145623450?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   target="_blank"
+                   class="block w-full bg-green-500 hover:bg-green-600 text-white text-center font-bold py-2 rounded-lg text-sm transition-colors">
+                    Sim, quero agendar
+                </a>
+            </div>
+        </div>
+
+        <!-- Floating Button -->
+        <button onclick="toggleChat()" class="w-14 h-14 bg-amber-600 hover:bg-amber-700 text-white rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110 animate-float">
+            <i class="fa-solid fa-calendar-days text-xl"></i>
+        </button>
+    </div>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Chatbot Toggle Logic
+        function toggleChat() {
+            const widget = document.getElementById('chatWidget');
+            if (widget.classList.contains('hidden')) {
+                widget.classList.remove('hidden');
+                widget.classList.add('flex');
+            } else {
+                widget.classList.add('hidden');
+                widget.classList.remove('flex');
+            }
+        }
+
+        // Form Logic
+        document.getElementById('scheduleForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('clientName').value;
+            const service = document.getElementById('serviceType').value;
+            const date = document.getElementById('preferredDate').value;
+            
+            // Construct WhatsApp Message
+            const text = `Olá, sou ${name}. Quero agendar ${service} para ${date}.`;
+            const encodedText = encodeURIComponent(text);
+            const waUrl = `https://wa.me/551145623450?text=${encodedText}`;
+            
+            // Open in new tab
+            window.open(waUrl, '_blank');
+        });
+
+        // Auto-open chat after 5 seconds (CRO Tactic)
+        setTimeout(() => {
+            const widget = document.getElementById('chatWidget');
+            if(widget.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
