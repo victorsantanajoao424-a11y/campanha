@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Zia Barber Shop 💈✂️ - Agendamento Online em Aracaju - SE. Corte, Barba e Tratamentos Premium. Agende seu horário agora via WhatsApp!">
+    <meta name="keywords" content="barbearia, agendamento online, corte de cabelo, barba, tratamentos masculinos, Aracaju, SE, Zia Barber Shop">
+    <meta name="author" content="Zia Barber Shop">
+    <title>Zia Barber Shop 💈✂️ | Agende Seu Horário em Aracaju - SE</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            950: '#0a0a0a', // Main Background
+                            900: '#171717', // Cards/Sections Background
+                            100: '#f5f5f5', // Headings
+                            400: '#a3a3a3', // Body Text
+                        },
+                        amber: {
+                            600: '#d97706', // Primary Action Background
+                            500: '#f59e0b', // Primary Action Text/Highlight
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'], // Added Poppins for a modern feel and readability
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* Custom scrollbar for dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #171717; /* bg-neutral-900 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4a4a4a; /* A darker gray for thumb */
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #5e5e5e;
+        }
+
+        /* Custom animations for CRO elements */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+
+        @keyframes fadeInFromTop {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in-up {
+            animation: fadeInFromTop 0.8s ease-out forwards;
+        }
+        .delay-200 { animation-delay: 0.2s; } /* Custom delay for sequential animations */
+
+        @keyframes bounceOnce {
+            0%, 100% { transform: translateY(0); }
+            20% { transform: translateY(-8px); }
+            40% { transform: translateY(0); }
+            60% { transform: translateY(-4px); }
+            80% { transform: translateY(0); }
+        }
+        .animate-bounce-once {
+            animation: bounceOnce 1.5s ease-in-out; /* Play once on load for hero CTA */
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-neutral-950 text-neutral-400 leading-relaxed overflow-x-hidden">
+
+    <!-- Header / Hero Section -->
+    <header class="relative flex items-center justify-center min-h-screen bg-cover bg-center text-center p-6"
+            style="background-image: url('https://images.unsplash.com/photo-1503951458535-fcb9f55e1c9d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTI2MjJ8MHwxfHNlYXJjaHw1fHNiYXJiZXJzaG9wJTIwZGFyayUyMGludGVyaW9yfGVufDB8fHx8MTcwMDQxNzU2NXww&ixlib=rb-4.0.3&q=80&w=1080');">
+        <div class="absolute inset-0 bg-black opacity-80"></div> <!-- Dark overlay for text readability -->
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-bold text-neutral-100 mb-6 drop-shadow-lg animate-fade-in-up">
+                Zia Barber Shop 💈✂️
+            </h1>
+            <p class="text-lg md:text-2xl text-neutral-100 mb-8 drop-shadow animate-fade-in-up delay-200">
+                Seu estilo impecável começa aqui. Agende sua transformação em Aracaju - SE.
+            </p>
+            <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                    class="bg-amber-600 hover:bg-amber-700 text-neutral-100 font-bold py-4 px-8 rounded-full text-xl uppercase tracking-wide transition duration-300 ease-in-out transform hover:scale-105 shadow-lg active:scale-95 focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50 animate-bounce-once">
+                <i class="fab fa-whatsapp mr-3"></i> Agende Seu Horário Agora!
+            </button>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-16">
+
+        <!-- Services Section -->
+        <section id="services" class="mb-20 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-12">Nossos Serviços Premium</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Corte -->
+                <div class="bg-neutral-900 rounded-xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Corte Clássico e Moderno</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Do corte tradicional ao mais moderno, nossos barbeiros são especialistas em criar o estilo perfeito para você.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Corte.', '_blank')"
+                            class="text-amber-500 hover:text-amber-400 font-bold flex items-center justify-center group">
+                        Agendar Corte <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 2: Barba -->
+                <div class="bg-neutral-900 rounded-xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <i class="fas fa-beard text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Barba Modelada e Terapia</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Cuidamos da sua barba com técnicas precisas, toalhas quentes e produtos de alta qualidade para um relaxamento total.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20Barba.', '_blank')"
+                            class="text-amber-500 hover:text-amber-400 font-bold flex items-center justify-center group">
+                        Agendar Barba <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+
+                <!-- Service Card 3: Tratamentos -->
+                <div class="bg-neutral-900 rounded-xl p-8 shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300 ease-in-out">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Tratamentos Capilares e Faciais</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Revitalize seus cabelos e pele com nossos tratamentos exclusivos, pensados para o bem-estar masculino.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Tratamento.', '_blank')"
+                            class="text-amber-500 hover:text-amber-400 font-bold flex items-center justify-center group">
+                        Agendar Tratamento <i class="fas fa-arrow-right ml-2 group-hover:translate-x-1 transition-transform"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-12">
+                <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                        class="bg-amber-600 hover:bg-amber-700 text-neutral-100 font-bold py-3 px-6 rounded-full text-lg uppercase tracking-wide transition duration-300 ease-in-out transform hover:scale-105 shadow-lg active:scale-95 focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50">
+                    <i class="fab fa-whatsapp mr-3"></i> Ver Todos os Horários
+                </button>
+            </div>
+        </section>
+
+        <!-- Why Choose Us Section -->
+        <section id="why-us" class="mb-20 bg-neutral-900 rounded-xl p-10 md:p-16 shadow-xl border border-neutral-800">
+            <h2 class="text-4xl font-bold text-neutral-100 text-center mb-12">Por Que Escolher a Zia Barber Shop?</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <div class="text-center">
+                    <i class="fas fa-award text-6xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barbeiros Especialistas</h3>
+                    <p class="text-neutral-400">
+                        Nossa equipe é formada por profissionais experientes e apaixonados pela arte da barbearia.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-chair text-6xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Ambiente Exclusivo</h3>
+                    <p class="text-neutral-400">
+                        Um espaço pensado para seu conforto e relaxamento, com atmosfera masculina e acolhedora.
+                    </p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-calendar-alt text-6xl text-amber-500 mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Agendamento Facilitado</h3>
+                    <p class="text-neutral-400">
+                        Seu tempo é valioso. Agende seu horário de forma rápida e descomplicada pelo WhatsApp.
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-16">
+                <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                        class="bg-amber-600 hover:bg-amber-700 text-neutral-100 font-bold py-4 px-8 rounded-full text-xl uppercase tracking-wide transition duration-300 ease-in-out transform hover:scale-105 shadow-lg active:scale-95 focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50">
+                    <i class="fab fa-whatsapp mr-3"></i> Quero Agendar Meu Horário!
+                </button>
+            </div>
+        </section>
+
+        <!-- Location Section -->
+        <section id="location" class="mb-20 text-center">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-12">Onde Estamos</h2>
+            <p class="text-lg text-neutral-100 mb-6">
+                Visite-nos em Aracaju - SE para uma experiência única.
+            </p>
+            <address class="not-italic text-lg text-neutral-400 mb-8">
+                Rua Deputado Clóvis Rollemberg, 734 - Atalaia<br>
+                Aracaju - SE, 49037-120, Brasil
+            </address>
+            <div class="relative w-full h-96 rounded-xl overflow-hidden shadow-2xl mb-8 border border-neutral-800">
+                <!-- Google Maps Embed -->
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Rua%20Deputado%20Cl%C3%B3vis%20Rollemberg%2C%20734%20-%20Atalaia%2C%20Aracaju%20-%20SE%2C%2049037-120%2C%20Brasil%2C%20Aracaju%20-%20SE&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+            </div>
+            <p class="text-lg text-neutral-100 mb-6">
+                Horário de Atendimento: Agende seu horário e confira nossa disponibilidade.
+            </p>
+            <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20o%20hor%C3%A1rio%20de%20funcionamento%20da%20barbearia%20e%20agendar%20um%20atendimento.', '_blank')"
+                    class="text-amber-500 hover:text-amber-400 font-bold flex items-center justify-center mx-auto group">
+                Falar com a Zia para agendar <i class="fab fa-whatsapp ml-2 group-hover:translate-x-1 transition-transform"></i>
+            </button>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section class="text-center bg-neutral-900 rounded-xl p-10 md:p-16 shadow-xl border border-neutral-800">
+            <h2 class="text-4xl font-bold text-neutral-100 mb-8">Não Perca Mais Tempo!</h2>
+            <p class="text-xl text-neutral-100 mb-10">
+                Transforme seu visual e eleve sua confiança. Agende seu atendimento exclusivo na Zia Barber Shop hoje mesmo!
+            </p>
+            <button onclick="window.open('https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                    class="bg-amber-600 hover:bg-amber-700 text-neutral-100 font-bold py-5 px-10 rounded-full text-2xl uppercase tracking-wide transition duration-300 ease-in-out transform hover:scale-105 shadow-lg active:scale-95 focus:outline-none focus:ring-4 focus:ring-amber-500 focus:ring-opacity-50 animate-pulse">
+                <i class="fab fa-whatsapp mr-3"></i> Agendamento Rápido via WhatsApp!
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 text-neutral-400 py-10 mt-20 text-center border-t border-neutral-800">
+        <div class="container mx-auto px-6">
+            <p class="mb-4">&copy; 2023 Zia Barber Shop 💈✂️. Todos os direitos reservados.</p>
+            <p class="mb-2">
+                <i class="fas fa-map-marker-alt text-amber-500 mr-2"></i>
+                Rua Deputado Clóvis Rollemberg, 734 - Atalaia, Aracaju - SE
+            </p>
+            <p class="mb-4">
+                <i class="fas fa-phone-alt text-amber-500 mr-2"></i>
+                Telefone: (79) 99135-7225
+            </p>
+            <a href="https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank"
+               class="inline-flex items-center text-amber-500 hover:text-amber-400 transition-colors duration-300">
+                <i class="fab fa-whatsapp text-lg mr-2"></i> Fale Conosco no WhatsApp
+            </a>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO - INCLUSÃO OBRIGATÓRIA -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Zia Barber Shop 💈✂️</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <script>
+        const cleanPhone = "5579991357225"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5579991357225?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000); // Opens chat window after 5 seconds if not already open
+    </script>
+    
+</body>
+</html>
