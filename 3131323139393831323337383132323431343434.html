@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Talentu's | Agendamento Online</title>
+    <meta name="description" content="Agende seu corte na Barbearia Talentu's em Natal. Cortes modernos, barba e tratamentos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- Configuração de Cores Personalizadas -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a; /* neutral-950 */
+            color: #a3a3a3; /* neutral-400 */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #f5f5f5; /* neutral-100 */
+            font-family: 'Oswald', sans-serif;
+        }
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(217, 119, 6, 0.3);
+        }
+        .gold-text-shadow {
+            text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+        }
+    </style>
+</head>
+<body class="antialiased relative">
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="text-2xl font-bold text-white tracking-wider uppercase">
+                        Talentu<span class="text-amber-500">'s</span>
+                    </span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wide">Serviços</a>
+                    <a href="#localizacao" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm uppercase tracking-wide">Localização</a>
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2 rounded-md font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-lg cursor-pointer">
+                        Agendar Agora
+                    </button>
+                </div>
+
+                <!-- Mobile Menu Button (Visual only for this demo, actions lead to CTA) -->
+                <div class="md:hidden">
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 text-2xl">
+                        <i class="fas fa-calendar-check"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-b from-neutral-950/80 via-neutral-950/50 to-neutral-950"></div>
+        </div>
+
+        <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+            <span class="block text-amber-500 font-bold tracking-[0.2em] uppercase mb-4 animate-pulse">Natal - RN</span>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight gold-text-shadow">
+                ESTILO E TRADIÇÃO <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">EM CADA DETALHE</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                Não é apenas um corte, é uma experiência. Na Barbearia Talentu's, cuidamos do seu visual com precisão e excelência.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                        class="bg-amber-600 hover:bg-amber-700 text-white text-lg px-10 py-4 rounded-lg font-bold uppercase tracking-wider transition-all transform hover:-translate-y-1 shadow-xl gold-glow flex items-center justify-center gap-3 cursor-pointer">
+                    <i class="fab fa-whatsapp text-2xl"></i> Agendar Horário
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold mb-4">NOSSOS SERVIÇOS</h2>
+                <div class="w-24 h-1 bg-amber-600 mx-auto"></div>
+                <p class="mt-4 text-neutral-400">Qualidade premium para o homem moderno.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-amber-600/50 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-cut text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-500 mb-6">Do clássico ao degradê moderno. Nossos barbeiros são especialistas em visagismo para encontrar o melhor estilo para você.</p>
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold uppercase text-sm tracking-wider hover:text-amber-400 cursor-pointer">
+                        Agendar Corte <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-amber-600/50 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-user-tie text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-500 mb-6">Barboterapia com toalha quente, alinhamento perfeito e hidratação. O cuidado que sua barba merece.</p>
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold uppercase text-sm tracking-wider hover:text-amber-400 cursor-pointer">
+                        Agendar Barba <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-900 border border-neutral-800 rounded-xl p-8 hover:border-amber-600/50 transition-all duration-300 group">
+                    <div class="w-16 h-16 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-pump-soap text-2xl text-white"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-3">Tratamentos</h3>
+                    <p class="text-neutral-500 mb-6">Selagem, hidratação profunda, limpeza de pele e pigmentação. Renove seu visual completo.</p>
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold uppercase text-sm tracking-wider hover:text-amber-400 cursor-pointer">
+                        Ver Tratamentos <i class="fas fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY CHOOSE US -->
+    <section class="py-20 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="w-full md:w-1/2">
+                <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="rounded-lg shadow-2xl grayscale hover:grayscale-0 transition-all duration-500 border border-neutral-700">
+            </div>
+            <div class="w-full md:w-1/2">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">POR QUE A TALENTU'S?</h2>
+                <ul class="space-y-6">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-amber-500 mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Profissionais Experientes</h4>
+                            <p class="text-neutral-500 text-sm">Nossa equipe está sempre atualizada com as últimas tendências.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-beer text-amber-500 mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Ambiente Agradável</h4>
+                            <p class="text-neutral-500 text-sm">Espaço climatizado, música boa e aquela resenha de qualidade.</p>
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-clock text-amber-500 mt-1 mr-4"></i>
+                        <div>
+                            <h4 class="text-white font-bold text-lg">Pontualidade</h4>
+                            <p class="text-neutral-500 text-sm">Respeitamos seu tempo. Agendou, sentou, cortou.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="mt-10">
+                    <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-md font-bold uppercase tracking-wider transition-all shadow-lg cursor-pointer">
+                        Garantir Meu Horário
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & CONTACT -->
+    <section id="localizacao" class="py-24 bg-neutral-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold mb-4">ONDE ESTAMOS</h2>
+                <p class="text-neutral-400">Venha nos fazer uma visita em Ponta Negra.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                <!-- Info -->
+                <div class="bg-neutral-900 p-8 rounded-xl border border-neutral-800 h-full flex flex-col justify-center">
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold text-white mb-2">Barbearia Talentu's</h3>
+                        <p class="text-amber-500 font-medium">Natal - RN</p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-neutral-800 rounded-full flex items-center justify-center mr-4 text-amber-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <p class="text-neutral-300">R. Praia Jardim de Alá, 8847 - Ponta Negra</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-neutral-800 rounded-full flex items-center justify-center mr-4 text-amber-500">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <p class="text-neutral-300">(84) 99601-5456</p>
+                        </div>
+                    </div>
+
+                    <div class="mt-10 pt-8 border-t border-neutral-800">
+                        <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                                class="w-full bg-white text-neutral-900 hover:bg-neutral-200 font-bold py-3 rounded-lg transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                            <i class="fab fa-whatsapp text-green-600 text-xl"></i> Falar no WhatsApp
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-[400px] w-full rounded-xl overflow-hidden shadow-2xl border border-neutral-800">
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Praia%20Jardim%20de%20Al%C3%A1%2C%208847%20-%20Ponta%20Negra%2C%20Natal%20-%20RN%2C%2059094-340%2C%20Brasil%2C%20Natal&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-neutral-600 text-sm">
+                &copy; 2024 Barbearia Talentu's. Todos os direitos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <!-- MOBILE STICKY CTA (Visible only on small screens) -->
+    <div class="fixed bottom-0 left-0 w-full bg-neutral-900 border-t border-neutral-800 p-4 md:hidden z-40 flex justify-between items-center shadow-2xl">
+        <div class="text-white">
+            <p class="text-xs text-neutral-400">Agende seu horário</p>
+            <p class="font-bold text-amber-500">Rápido e Fácil</p>
+        </div>
+        <button onclick="window.open('https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                class="bg-amber-600 text-white px-6 py-2 rounded-full font-bold shadow-lg active:scale-95 transition-transform cursor-pointer">
+            AGENDAR
+        </button>
+    </div>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-20 md:bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Barbearia Talentu's</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5584996015456"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5584996015456?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
