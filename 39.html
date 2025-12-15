@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agendamento - Odin's Barbershop | Campina Grande</title>
+    <meta name="description" content="Agende seu horário na Odin's Barbershop em Campina Grande. Corte, barba e tratamentos com estilo e tradição.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Oswald', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #0a0a0a; /* neutral-950 */
+            color: #a3a3a3; /* neutral-400 */
+        }
+        h1, h2, h3, h4, .font-display {
+            font-family: 'Oswald', sans-serif;
+            color: #f5f5f5; /* neutral-100 */
+        }
+        .btn-gold {
+            background-color: #d97706; /* amber-600 */
+            color: #ffffff;
+            transition: all 0.3s ease;
+        }
+        .btn-gold:hover {
+            background-color: #b45309;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3);
+        }
+        .glass-card {
+            background-color: #171717; /* neutral-900 */
+            border: 1px solid #262626;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-amber-600 selection:text-white pb-12">
+
+    <!-- HEADER / NAV -->
+    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fas fa-cut text-amber-500 text-2xl"></i>
+                    <span class="font-display font-bold text-2xl tracking-wider text-white">ODIN'S</span>
+                </div>
+                <div class="hidden md:block">
+                    <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-gold px-6 py-2 rounded font-bold uppercase tracking-wide text-sm cursor-pointer">
+                        Agendar Agora
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Clássica" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-4xl mx-auto px-4 text-center mt-16">
+            <div class="inline-block px-3 py-1 mb-4 border border-amber-600/50 rounded-full bg-amber-600/10 backdrop-blur-sm">
+                <span class="text-amber-500 text-xs font-bold tracking-widest uppercase">Campina Grande - PB</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                SEU ESTILO MERECE <br> <span class="text-amber-500">RESPEITO</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-8 max-w-2xl mx-auto">
+                Na Odin's Barbershop, unimos tradição e técnica moderna para entregar o corte perfeito. Agende seu horário sem complicação.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-gold px-8 py-4 rounded text-lg font-bold uppercase tracking-wide flex items-center justify-center gap-2 cursor-pointer shadow-lg shadow-amber-600/20">
+                    <i class="fab fa-whatsapp text-xl"></i> Agendar Horário
+                </button>
+            </div>
+            <p class="mt-4 text-sm text-neutral-500">
+                <i class="fas fa-check-circle text-amber-600 mr-1"></i> Resposta imediata no WhatsApp
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="py-20 bg-neutral-950">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">NOSSOS SERVIÇOS</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="glass-card p-8 rounded-xl hover:border-amber-600/50 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-cut text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6">Do clássico ao moderno, nossos barbeiros dominam todas as técnicas para valorizar seu rosto.</p>
+                    <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 cursor-pointer">
+                        Agendar Corte <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="glass-card p-8 rounded-xl hover:border-amber-600/50 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-user-tie text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6">Barba feita na toalha quente, alinhamento perfeito e hidratação com produtos premium.</p>
+                    <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 cursor-pointer">
+                        Agendar Barba <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="glass-card p-8 rounded-xl hover:border-amber-600/50 transition-colors group">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-full flex items-center justify-center mb-6 group-hover:bg-amber-600 transition-colors">
+                        <i class="fas fa-pump-soap text-2xl text-amber-500 group-hover:text-white"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Tratamentos</h3>
+                    <p class="text-neutral-400 mb-6">Selagem, pigmentação, limpeza de pele e hidratação para completar o visual.</p>
+                    <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 cursor-pointer">
+                        Ver Opções <i class="fas fa-arrow-right ml-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION & MAP -->
+    <section class="py-20 bg-neutral-900 border-y border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                
+                <!-- Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">ONDE ESTAMOS</h2>
+                    <p class="text-neutral-400 mb-8 text-lg">
+                        Localizados no coração do Catolé, oferecemos um ambiente climatizado, cerveja gelada e o melhor atendimento de Campina Grande.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center shrink-0 text-amber-500">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Endereço</h4>
+                                <p class="text-neutral-400">R. Pref. Francisco Camilo, 464 - Catolé</p>
+                                <p class="text-neutral-400">Campina Grande - PB, 58410-127</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded bg-neutral-800 flex items-center justify-center shrink-0 text-amber-500">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-bold text-lg">Contato</h4>
+                                <p class="text-neutral-400">(83) 99185-8195</p>
+                                <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 text-sm font-bold mt-1 hover:underline cursor-pointer">
+                                    Chamar no WhatsApp
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Map Embed -->
+                <div class="rounded-xl overflow-hidden shadow-2xl border border-neutral-700 h-[400px]">
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Pref.%20Francisco%20Camilo%2C%20464%20-%20Catol%C3%A9%2C%20Campina%20Grande%20-%20PB%2C%2058410-127%2C%20Brasil%2C%20Campina%20Grande%20-%20PB&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10"></div>
+        <div class="max-w-4xl mx-auto px-4 text-center relative z-10">
+            <h2 class="text-3xl md:text-5xl font-bold mb-6">PRONTO PARA MUDAR O VISUAL?</h2>
+            <p class="text-neutral-400 mb-8 text-lg">Não perca tempo em filas de espera. Garanta seu horário agora mesmo pelo nosso sistema automatizado.</p>
+            <button onclick="window.open('https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-gold px-10 py-5 rounded-lg text-xl font-bold uppercase tracking-wide inline-flex items-center gap-3 cursor-pointer">
+                <i class="fab fa-whatsapp text-2xl"></i> Reservar Meu Horário
+            </button>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 py-8 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <p class="font-display font-bold text-xl text-white mb-2">ODIN'S BARBERSHOP</p>
+            <p class="text-neutral-600 text-sm">
+                &copy; 2024 Odin's Barbershop. Todos os direitos reservados.<br>
+                Campina Grande - Paraíba
+            </p>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Odin's Barbershop/ Barbearia (em Campina Grande)</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5583991858195"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5583991858195?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
