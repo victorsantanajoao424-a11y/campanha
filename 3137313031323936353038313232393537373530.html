@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agendamento - Barbearia Lagoa da Conceição</title>
-    <meta name="description" content="Agende seu horário na melhor barbearia da Lagoa da Conceição. Corte, barba e tratamentos exclusivos.">
+    <title>Barbearia Lagoa da Conceição | Agendamento Online</title>
+    <meta name="description" content="Agende seu corte ou barba na melhor barbearia da Lagoa da Conceição. Profissionais experientes e ambiente exclusivo.">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -13,26 +13,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Oswald:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
-    <!-- Configuração de Cores e Fontes -->
     <script>
         tailwind.config = {
             theme: {
                 extend: {
-                    colors: {
-                        neutral: {
-                            900: '#171717',
-                            950: '#0a0a0a',
-                        },
-                        amber: {
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
-                    },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
                         display: ['Oswald', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            gold: '#d97706', // Amber-600
+                            goldHover: '#b45309', // Amber-700
+                            dark: '#0a0a0a', // Neutral-950
+                            card: '#171717', // Neutral-900
+                        }
                     }
                 }
             }
@@ -40,302 +37,289 @@
     </script>
 
     <style>
-        /* Animação suave para o botão flutuante */
-        @keyframes gentle-pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(217, 119, 6, 0.7); }
-            50% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(217, 119, 6, 0); }
+        /* Custom Styles for Dark Mode Polish */
+        body {
+            background-color: #0a0a0a;
+            color: #a3a3a3;
         }
-        .animate-gentle-pulse {
-            animation: gentle-pulse 2s infinite;
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(10,10,10,0.7), rgba(10,10,10,1)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
-        
-        /* Ajuste fino para o mapa grayscale */
-        .map-container iframe {
-            filter: grayscale(100%) invert(92%) contrast(83%);
-        }
+        .text-gold { color: #f59e0b; }
+        .border-gold { border-color: #d97706; }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-400 font-sans antialiased selection:bg-amber-600 selection:text-white">
+<body class="antialiased selection:bg-amber-600 selection:text-white">
 
-    <!-- Link do WhatsApp Padrão -->
-    <!-- Usado em variáveis JS para consistência -->
-    <script>
-        const whatsappLink = "https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.";
-    </script>
-
-    <!-- Header / Navbar -->
-    <header class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2">
-                <i class="fa-solid fa-scissors text-amber-500 text-2xl"></i>
-                <h1 class="text-xl font-display font-bold text-neutral-100 uppercase tracking-wider">
-                    Barbearia <span class="text-amber-500">Lagoa</span>
-                </h1>
-            </div>
-            <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-               class="hidden md:inline-flex items-center gap-2 bg-amber-600 hover:bg-amber-700 text-white font-bold py-2 px-6 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg shadow-amber-900/20">
-                <i class="fa-brands fa-whatsapp"></i> Agendar Agora
+    <!-- HEADER / NAV -->
+    <nav class="fixed w-full z-50 top-0 start-0 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+            <a href="#" class="flex items-center space-x-3 rtl:space-x-reverse">
+                <i class="fas fa-cut text-amber-500 text-2xl"></i>
+                <span class="self-center text-xl font-display font-bold whitespace-nowrap text-white tracking-wide uppercase">Barbearia <span class="text-amber-500">Lagoa</span></span>
             </a>
-        </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Overlay -->
-        <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" 
-                 alt="Interior Barbearia" 
-                 class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
-        </div>
-
-        <div class="relative z-10 container mx-auto px-4 text-center mt-16">
-            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800 border border-neutral-700 text-amber-500 text-sm font-semibold mb-6 animate-fade-in-up">
-                <i class="fa-solid fa-location-dot mr-1"></i> Florianópolis - SC
-            </span>
-            <h2 class="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-neutral-100 mb-6 leading-tight">
-                O Estilo que Você Respeita<br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Na Lagoa da Conceição</span>
-            </h2>
-            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto">
-                Especialistas em cortes clássicos e modernos. O ambiente perfeito para cuidar do seu visual com cerveja gelada e boa conversa.
-            </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
+            <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                 <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                   class="inline-flex justify-center items-center gap-3 bg-amber-600 hover:bg-amber-700 text-white text-lg font-bold py-4 px-8 rounded-lg transition-all shadow-xl shadow-amber-900/30 hover:-translate-y-1">
-                    <i class="fa-regular fa-calendar-check"></i>
-                    MARCAR HORÁRIO
+                   class="text-white bg-amber-600 hover:bg-amber-700 focus:ring-4 focus:outline-none focus:ring-amber-800 font-bold rounded-lg text-sm px-5 py-2.5 text-center transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(217,119,6,0.3)]">
+                   <i class="far fa-calendar-check mr-2"></i> AGENDAR AGORA
                 </a>
             </div>
         </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="hero-bg min-h-screen flex items-center justify-center pt-16">
+        <div class="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+            <div class="inline-flex items-center justify-center px-4 py-1.5 mb-7 text-sm text-amber-400 border border-amber-600/30 rounded-full bg-amber-900/10 backdrop-blur-sm">
+                <span class="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+                Aberto hoje em Florianópolis
+            </div>
+            <h1 class="mb-4 text-5xl font-display font-bold tracking-tight leading-none text-white md:text-7xl lg:text-8xl uppercase">
+                Estilo & <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">Tradição</span>
+            </h1>
+            <p class="mb-8 text-lg font-normal text-neutral-400 lg:text-xl sm:px-16 lg:px-48 max-w-3xl mx-auto">
+                A experiência definitiva de barbearia na Lagoa da Conceição. Cortes clássicos, barba na toalha quente e um ambiente exclusivo para você relaxar.
+            </p>
+            <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+                <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   class="inline-flex justify-center items-center py-4 px-8 text-base font-bold text-white rounded-lg bg-amber-600 hover:bg-amber-700 focus:ring-4 focus:ring-amber-900 transition-all shadow-lg hover:shadow-amber-600/40 uppercase tracking-wider">
+                    Agendar Horário
+                    <svg class="w-3.5 h-3.5 ms-2 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                    </svg>
+                </a>
+            </div>
+            
+            <!-- Social Proof -->
+            <div class="mt-12 flex items-center justify-center gap-4 text-neutral-400 text-sm">
+                <div class="flex text-amber-500">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <span>+1.000 clientes satisfeitos</span>
+            </div>
+        </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="py-20 bg-neutral-950" id="servicos">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-16">
-                <h3 class="text-amber-500 font-bold tracking-widest uppercase text-sm mb-2">Nossos Serviços</h3>
-                <h2 class="text-3xl md:text-4xl font-display font-bold text-neutral-100">Experiência Completa</h2>
+    <!-- SERVICES SECTION -->
+    <section class="bg-neutral-950 py-20 border-t border-neutral-900">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16">
+            <div class="mx-auto max-w-screen-sm text-center mb-12">
+                <h2 class="mb-4 text-4xl tracking-tight font-display font-bold text-white uppercase">Nossos Serviços</h2>
+                <p class="font-light text-neutral-400 lg:mb-16 sm:text-xl">Cuidado premium para o homem moderno.</p>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1: Corte -->
-                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-600/50 transition-colors duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=800&auto=format&fit=crop" 
-                             alt="Corte de Cabelo" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+            <div class="grid gap-8 mb-6 lg:mb-16 md:grid-cols-3">
+                
+                <!-- Card 1 -->
+                <div class="items-center bg-neutral-900 rounded-2xl shadow border border-neutral-800 hover:border-amber-600/50 transition-colors duration-300 p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all">
+                        <i class="fas fa-cut"></i>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-neutral-100">Corte de Cabelo</h4>
-                            <i class="fa-solid fa-scissors text-amber-600"></i>
-                        </div>
-                        <p class="text-sm text-neutral-400 mb-6">Degradê, social, militar ou tesoura. Nossos barbeiros dominam todas as técnicas.</p>
-                        <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                           class="block w-full text-center py-3 rounded-lg border border-amber-600 text-amber-500 font-bold hover:bg-amber-600 hover:text-white transition-all">
-                            Agendar Corte
-                        </a>
-                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-white font-display uppercase mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6">Do clássico ao degradê moderno. Inclui lavagem e finalização com produtos premium.</p>
+                    <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." class="text-amber-500 hover:text-white font-bold text-sm uppercase tracking-wide">Agendar Corte <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
 
-                <!-- Card 2: Barba -->
-                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-600/50 transition-colors duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=800&auto=format&fit=crop" 
-                             alt="Barba" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Card 2 -->
+                <div class="items-center bg-neutral-900 rounded-2xl shadow border border-neutral-800 hover:border-amber-600/50 transition-colors duration-300 p-8 text-center group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all">
+                        <i class="fas fa-user-tie"></i>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-neutral-100">Barba & Bigode</h4>
-                            <i class="fa-solid fa-face-smile text-amber-600"></i>
-                        </div>
-                        <p class="text-sm text-neutral-400 mb-6">Barboterapia com toalha quente, alinhamento dos fios e hidratação completa.</p>
-                        <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                           class="block w-full text-center py-3 rounded-lg border border-amber-600 text-amber-500 font-bold hover:bg-amber-600 hover:text-white transition-all">
-                            Agendar Barba
-                        </a>
-                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-white font-display uppercase mb-3">Barba Terapia</h3>
+                    <p class="text-neutral-400 mb-6">Ritual com toalha quente, navalha afiada e hidratação profunda para a pele.</p>
+                    <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." class="text-amber-500 hover:text-white font-bold text-sm uppercase tracking-wide">Agendar Barba <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
 
-                <!-- Card 3: Tratamentos -->
-                <div class="group bg-neutral-900 border border-neutral-800 rounded-2xl overflow-hidden hover:border-amber-600/50 transition-colors duration-300">
-                    <div class="h-48 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=800&auto=format&fit=crop" 
-                             alt="Tratamentos" 
-                             class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                <!-- Card 3 -->
+                <div class="items-center bg-neutral-900 rounded-2xl shadow border border-neutral-800 hover:border-amber-600/50 transition-colors duration-300 p-8 text-center group">
+                    <div class="w-16 h-16 mx-auto mb-6 bg-neutral-800 rounded-full flex items-center justify-center text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-all">
+                        <i class="fas fa-gem"></i>
                     </div>
-                    <div class="p-6">
-                        <div class="flex justify-between items-start mb-4">
-                            <h4 class="text-xl font-bold text-neutral-100">Combo Completo</h4>
-                            <i class="fa-solid fa-star text-amber-600"></i>
-                        </div>
-                        <p class="text-sm text-neutral-400 mb-6">Cabelo + Barba + Sobrancelha. O pacote completo para renovar seu visual.</p>
-                        <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                           class="block w-full text-center py-3 rounded-lg border border-amber-600 text-amber-500 font-bold hover:bg-amber-600 hover:text-white transition-all">
-                            Agendar Combo
-                        </a>
-                    </div>
+                    <h3 class="text-xl font-bold tracking-tight text-white font-display uppercase mb-3">Combo Completo</h3>
+                    <p class="text-neutral-400 mb-6">Cabelo + Barba + Sobrancelha. A renovação completa do seu visual.</p>
+                    <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." class="text-amber-500 hover:text-white font-bold text-sm uppercase tracking-wide">Agendar Combo <i class="fas fa-arrow-right ml-1"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Location Section -->
-    <section class="py-20 bg-neutral-900 border-t border-neutral-800">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col lg:flex-row gap-12 items-center">
+    <!-- LOCATION SECTION -->
+    <section class="bg-neutral-900 py-20 relative">
+        <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 grid md:grid-cols-2 gap-12 items-center">
+            
+            <!-- Text Content -->
+            <div>
+                <h2 class="mb-4 text-4xl tracking-tight font-display font-bold text-white uppercase">Onde Estamos</h2>
+                <p class="mb-6 font-light text-neutral-400 md:text-lg">
+                    Localizados no coração da Lagoa da Conceição, em Florianópolis. Um espaço pensado para o seu conforto, com cerveja gelada e boa conversa.
+                </p>
                 
-                <!-- Info -->
-                <div class="lg:w-1/3 space-y-8">
-                    <div>
-                        <h3 class="text-3xl font-display font-bold text-neutral-100 mb-4">Onde Estamos</h3>
-                        <p class="text-neutral-400">Localizado no coração da Lagoa, fácil acesso e ambiente climatizado.</p>
-                    </div>
-                    
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 shrink-0">
-                                <i class="fa-solid fa-map-pin"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-white font-bold">Endereço</h5>
-                                <p class="text-sm">Pracinha da Lagoa (Atrás da quadra de esportes)<br>Tv. Leopoldo João Santos, Sala 3<br>Lagoa da Conceição, Florianópolis - SC</p>
-                            </div>
+                <div class="space-y-4 mb-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center text-amber-500">
+                            <i class="fas fa-map-marker-alt"></i>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 shrink-0">
-                                <i class="fa-brands fa-whatsapp"></i>
-                            </div>
-                            <div>
-                                <h5 class="text-white font-bold">Contato</h5>
-                                <p class="text-sm">(48) 3232-1001</p>
-                            </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold">Endereço</h4>
+                            <p class="text-neutral-400 text-sm">Pracinha da Lagoa (Atrás da quadra de esportes)<br>Tv. Leopoldo João Santos, Sala 3 - Lagoa da Conceição</p>
                         </div>
                     </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-neutral-800 flex items-center justify-center text-amber-500">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="ml-4">
+                            <h4 class="text-white font-bold">Contato</h4>
+                            <p class="text-neutral-400 text-sm">(48) 3232-1001</p>
+                        </div>
+                    </div>
+                </div>
 
-                    <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                       class="inline-block w-full bg-amber-600 hover:bg-amber-700 text-white text-center font-bold py-4 rounded-lg transition-colors">
-                        ABRIR NO WHATSAPP
+                <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   class="w-full sm:w-auto inline-flex justify-center items-center py-3 px-6 text-base font-bold text-neutral-900 rounded-lg bg-white hover:bg-gray-100 focus:ring-4 focus:ring-gray-700 transition-all">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Falar no WhatsApp
+                </a>
+            </div>
+
+            <!-- Map -->
+            <div class="relative h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-neutral-700">
+                <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Pracinha%20da%20Lagoa%20(Atr%C3%A1s%20da%20quadra%20de%20esportes%20-%20Tv.%20Leopoldo%20Jo%C3%A3o%20Santos%2C%20Sala%203%20-%20Lagoa%20da%20Concei%C3%A7%C3%A3o%2C%20Florian%C3%B3polis%20-%20SC%2C%2088062-065%2C%20Brasil%2C%20Florian%C3%B3polis&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 border-t border-neutral-900">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="flex flex-col md:flex-row md:justify-between items-center">
+                <div class="mb-6 md:mb-0 text-center md:text-left">
+                    <a href="#" class="flex items-center justify-center md:justify-start space-x-3 rtl:space-x-reverse mb-2">
+                        <i class="fas fa-cut text-amber-500"></i>
+                        <span class="self-center text-xl font-display font-bold whitespace-nowrap text-white uppercase">Barbearia Lagoa</span>
+                    </a>
+                    <p class="text-sm text-neutral-500">Florianópolis - SC</p>
+                </div>
+                <div class="flex space-x-6 justify-center">
+                    <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." class="text-neutral-400 hover:text-white transition-colors">
+                        <i class="fab fa-whatsapp text-xl"></i>
+                        <span class="sr-only">WhatsApp</span>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                        <i class="fab fa-instagram text-xl"></i>
+                        <span class="sr-only">Instagram</span>
+                    </a>
+                    <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                        <i class="fab fa-facebook text-xl"></i>
+                        <span class="sr-only">Facebook</span>
                     </a>
                 </div>
-
-                <!-- Map -->
-                <div class="lg:w-2/3 w-full h-[400px] rounded-xl overflow-hidden border border-neutral-700 shadow-2xl map-container">
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Pracinha%20da%20Lagoa%20(Atr%C3%A1s%20da%20quadra%20de%20esportes%20-%20Tv.%20Leopoldo%20Jo%C3%A3o%20Santos%2C%20Sala%203%20-%20Lagoa%20da%20Concei%C3%A7%C3%A3o%2C%20Florian%C3%B3polis%20-%20SC%2C%2088062-065%2C%20Brasil%2C%20Florian%C3%B3polis&t=&z=15&ie=UTF8&iwloc=B&output=embed"></iframe>
-                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-neutral-950 py-8 border-t border-neutral-900">
-        <div class="container mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <i class="fa-solid fa-scissors text-amber-600"></i>
-                <span class="text-xl font-display font-bold text-neutral-100">BARBEARIA LAGOA</span>
+            <hr class="my-6 border-neutral-800 sm:mx-auto lg:my-8" />
+            <div class="sm:flex sm:items-center sm:justify-between">
+                <span class="text-sm text-neutral-500 sm:text-center">© 2023 <a href="#" class="hover:underline">Barbearia Lagoa da Conceição™</a>. Todos os direitos reservados.
+                </span>
             </div>
-            <p class="text-neutral-500 text-sm">
-                &copy; 2023 Barbearia Lagoa da Conceição. Todos os direitos reservados.
-            </p>
         </div>
     </footer>
 
-    <!-- WIDGET DE CHATBOT (AGENDAMENTO) -->
-    <div class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4">
+    <!-- WIDGET CHATBOT FIXO -->
+    <div id="chatbot-wrapper" class="fixed bottom-6 right-6 z-[99999] flex flex-col items-end gap-3 font-sans" style="isolation: isolate;">
         
-        <!-- Janela do Chat (Inicialmente Oculta) -->
-        <div id="chat-window" class="hidden w-80 bg-white rounded-2xl shadow-2xl overflow-hidden border border-neutral-200 transition-all duration-300 origin-bottom-right transform scale-95 opacity-0">
-            <!-- Header do Chat -->
-            <div class="bg-neutral-900 p-4 flex items-center gap-3 border-b border-amber-600/30">
-                <div class="relative">
-                    <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 border border-amber-600">
-                        <i class="fa-solid fa-user-tie"></i>
-                    </div>
-                    <div class="absolute bottom-0 right-0 w-3 h-3 bg-green-500 rounded-full border-2 border-neutral-900"></div>
+        <!-- Janela do Chat (Inicialmente oculta) -->
+        <div id="chat-window" class="hidden w-[90vw] max-w-[350px] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-green-600 to-green-500 p-4 text-white flex items-center justify-between shadow-md">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-3 h-3 bg-green-300 border-2 border-green-600 rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Agendamento Online</h3>
+                      <p class="text-[10px] text-green-100 opacity-90">Responde na hora</p>
+                   </div>
+               </div>
+               <button id="close-chat" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div class="p-4 bg-gray-50 h-64 overflow-y-auto flex flex-col space-y-3 scrollbar-thin">
+                <div class="text-center text-xs text-gray-400 my-2">Hoje</div>
+                
+                <div class="self-start bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-gray-700 border border-gray-100 max-w-[85%] animate-fade-in-up">
+                    Olá! 👋 Bem-vindo à <strong>Barbearia Lagoa da Conceição</strong>.
                 </div>
-                <div>
-                    <h5 class="text-white font-bold text-sm">Atendente Virtual</h5>
-                    <p class="text-neutral-400 text-xs">Online agora</p>
+                 <div class="self-start bg-white p-3 rounded-2xl rounded-tl-none shadow-sm text-sm text-gray-700 border border-gray-100 max-w-[85%] animate-fade-in-up" style="animation-delay: 0.5s">
+                    Sou o assistente virtual. Gostaria de ver os horários disponíveis para hoje?
                 </div>
-                <button id="close-chat" class="ml-auto text-neutral-400 hover:text-white">
-                    <i class="fa-solid fa-times"></i>
+            </div>
+
+            <!-- Footer (Action) -->
+            <div class="p-4 bg-white border-t border-gray-100">
+                <button onclick="window.open('https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="w-full bg-green-500 hover:bg-green-600 active:bg-green-700 text-white font-bold py-3.5 rounded-xl flex items-center justify-center transition-all shadow-lg hover:shadow-green-500/30 transform hover:-translate-y-0.5 cursor-pointer">
+                    <i class="fab fa-whatsapp mr-2 text-xl"></i> Sim, quero agendar
                 </button>
-            </div>
-
-            <!-- Body do Chat -->
-            <div class="p-4 bg-neutral-50 h-64 overflow-y-auto flex flex-col gap-3">
-                <div class="self-start bg-neutral-200 text-neutral-800 rounded-tl-xl rounded-tr-xl rounded-br-xl p-3 text-sm max-w-[90%] shadow-sm">
-                    Olá! Bem-vindo à Barbearia Lagoa. 💈
-                </div>
-                <div class="self-start bg-neutral-200 text-neutral-800 rounded-tl-xl rounded-tr-xl rounded-br-xl p-3 text-sm max-w-[90%] shadow-sm">
-                    Gostaria de ver os horários disponíveis para um corte ou barba?
-                </div>
-            </div>
-
-            <!-- Footer do Chat -->
-            <div class="p-4 bg-white border-t border-neutral-100">
-                <a href="https://wa.me/554832321001?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
-                   class="flex items-center justify-center gap-2 w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition-colors shadow-lg shadow-green-900/20">
-                    <i class="fa-brands fa-whatsapp"></i> Sim, quero agendar
-                </a>
             </div>
         </div>
 
-        <!-- Botão Flutuante (FAB) -->
-        <button id="chat-toggle" class="w-16 h-16 bg-amber-600 hover:bg-amber-500 text-white rounded-full shadow-2xl flex items-center justify-center text-2xl transition-all duration-300 animate-gentle-pulse hover:scale-110 focus:outline-none focus:ring-4 focus:ring-amber-500/50">
-            <i class="fa-regular fa-calendar-days" id="chat-icon"></i>
+        <!-- Botão Flutuante (Trigger) -->
+        <button id="chat-toggle" class="w-16 h-16 bg-green-500 hover:bg-green-600 rounded-full text-white shadow-[0_4px_14px_0_rgba(34,197,94,0.39)] flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-xs flex items-center justify-center font-bold border-2 border-white text-white">1</div>
         </button>
     </div>
 
-    <!-- Scripts de Funcionalidade -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const chatToggle = document.getElementById('chat-toggle');
-            const chatWindow = document.getElementById('chat-window');
-            const closeChat = document.getElementById('close-chat');
-            const chatIcon = document.getElementById('chat-icon');
+    <style>
+        .animate-fade-in-up { animation: fadeInUp 0.5s ease-out forwards; opacity: 0; transform: translateY(10px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        /* Custom scrollbar for chat */
+        .scrollbar-thin::-webkit-scrollbar { width: 6px; }
+        .scrollbar-thin::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 3px; }
+        .scrollbar-thin::-webkit-scrollbar-track { background-color: transparent; }
+    </style>
 
-            // Função para abrir/fechar o chat
+    <script>
+        (function() {
+            const toggleBtn = document.getElementById('chat-toggle');
+            const chatWindow = document.getElementById('chat-window');
+            const closeBtn = document.getElementById('close-chat');
+
             function toggleChat() {
                 const isHidden = chatWindow.classList.contains('hidden');
-                
                 if (isHidden) {
-                    // Abrir
                     chatWindow.classList.remove('hidden');
-                    // Pequeno delay para permitir a transição CSS
+                    // Pequeno delay para permitir renderização antes da animação
                     setTimeout(() => {
                         chatWindow.classList.remove('scale-95', 'opacity-0');
                         chatWindow.classList.add('scale-100', 'opacity-100');
                     }, 10);
-                    chatIcon.classList.remove('fa-calendar-days');
-                    chatIcon.classList.add('fa-times');
                 } else {
-                    // Fechar
                     chatWindow.classList.remove('scale-100', 'opacity-100');
                     chatWindow.classList.add('scale-95', 'opacity-0');
                     setTimeout(() => {
                         chatWindow.classList.add('hidden');
-                    }, 300); // Espera a animação terminar
-                    chatIcon.classList.remove('fa-times');
-                    chatIcon.classList.add('fa-calendar-days');
+                    }, 300);
                 }
             }
 
-            // Event Listeners
-            chatToggle.addEventListener('click', toggleChat);
-            closeChat.addEventListener('click', toggleChat);
-
-            // Auto-open chat after 5 seconds (CRO Tactic)
+            if(toggleBtn) toggleBtn.addEventListener('click', toggleChat);
+            if(closeBtn) closeBtn.addEventListener('click', toggleChat);
+            
+            // Auto open após 5 segundos para aumentar conversão
             setTimeout(() => {
                 if(chatWindow.classList.contains('hidden')) {
                     toggleChat();
                 }
             }, 5000);
-        });
+        })();
     </script>
 </body>
 </html>
