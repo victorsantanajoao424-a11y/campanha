@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Árabe - Asa Sul | Agendamento Online</title>
+    <meta name="description" content="Agende seu corte, barba ou tratamento na Barbearia Árabe - Asa Sul em Brasília-DF. Experiência premium e estilo autêntico.">
+    <link rel="canonical" href="https://barbeariaarabe-asasul.com.br"> <!-- Exemplo de URL canônica, substituir se houver uma URL real -->
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuração personalizada do Tailwind CSS para a paleta de cores
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            950: '#0a0a0a', // Main background
+                            900: '#171717', // Cards/Sections background
+                            100: '#f5f5f5', // Headings
+                            400: '#a3a3a3', // Body text
+                        },
+                        amber: {
+                            600: '#d97706', // Primary Action Background (Gold/Amber)
+                            500: '#f59e0b', // Primary Action Text/Highlight (Gold/Amber)
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN para ícones -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Favicon para melhor UX -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
+
+    <style>
+        /* Estilos personalizados para o gradiente da seção Hero e animações */
+        .hero-overlay {
+            background-image: linear-gradient(to bottom, rgba(0,0,0,0.6), rgba(0,0,0,0.8));
+        }
+        /* Habilita o scroll suave para âncoras internas */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Animações CSS personalizadas para CRO e engajamento */
+        @keyframes fadeInFromBottom {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes bounceOnce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-10px); }
+            60% { transform: translateY(-5px); }
+        }
+        @keyframes pulseSlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+
+        .animate-fade-in-up { animation: fadeInFromBottom 0.8s ease-out forwards; opacity: 0; }
+        .animate-bounce-once { animation: bounceOnce 1.5s ease-in-out 0.5s 1; }
+        .animate-pulse-slow { animation: pulseSlow 2s infinite ease-in-out; }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 font-sans antialiased">
+
+    <!-- Header Section - Navegação principal -->
+    <header class="bg-neutral-900 shadow-lg py-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-6 lg:px-8">
+            <a href="#" class="text-2xl font-bold text-neutral-100 flex items-center gap-2">
+                <i class="fas fa-cut text-amber-500"></i> Barbearia Árabe
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#servicos" class="text-neutral-400 hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#localizacao" class="text-neutral-400 hover:text-amber-500 transition-colors">Localização</a>
+                <a href="https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors">Contato</a>
+            </nav>
+            <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                    class="hidden md:block bg-amber-600 text-neutral-100 px-6 py-2 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95">
+                <i class="fas fa-calendar-alt mr-2"></i> Agendar Agora
+            </button>
+
+            <!-- Botão do menu mobile -->
+            <button id="mobile-menu-button" class="md:hidden text-neutral-100 text-2xl focus:outline-none">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+        <!-- Menu mobile (oculto por padrão) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-neutral-900 py-4 px-6 space-y-4 text-center">
+            <a href="#servicos" class="block text-neutral-100 hover:text-amber-500 transition-colors text-lg">Serviços</a>
+            <a href="#localizacao" class="block text-neutral-100 hover:text-amber-500 transition-colors text-lg">Localização</a>
+            <a href="https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="block text-neutral-100 hover:text-amber-500 transition-colors text-lg">Contato</a>
+            <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                    class="w-full bg-amber-600 text-neutral-100 px-6 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95 mt-4">
+                <i class="fas fa-calendar-alt mr-2"></i> Agendar Agora
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section - Primeira dobra com CTA forte -->
+        <section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden pt-16 lg:pt-0"
+                 style="background-image: url('https://images.unsplash.com/photo-1596431920700-1178c7512739?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjY0NTZ8MHwxfHNlYXJjaHwyMHx8YmFyYmVyc2hvcCUyMGFyYWJpYyUyMGludGVyaW9yfGVufDB8fHx8MTcwNzk2OTQzMHww&ixlib=rb-4.0.3&q=80&w=1080'); background-size: cover; background-position: center;">
+            <div class="absolute inset-0 bg-black opacity-70 hero-overlay"></div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h1 class="text-5xl lg:text-7xl font-extrabold text-neutral-100 leading-tight mb-6 animate-fade-in-up">
+                    Experiência Árabe, Estilo Impecável.
+                </h1>
+                <p class="text-xl lg:text-2xl text-neutral-400 mb-10 animate-fade-in-up" style="animation-delay: 0.3s;">
+                    Transforme seu visual com os melhores cortes, barbas e tratamentos em Brasília - Asa Sul.
+                </p>
+                <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                        class="bg-amber-600 text-neutral-100 px-10 py-4 rounded-full text-xl font-bold hover:bg-amber-700 transition-all shadow-xl animate-bounce-once active:scale-95">
+                    <i class="fas fa-calendar-check mr-3"></i> Agende Seu Horário Agora!
+                </button>
+            </div>
+        </section>
+
+        <!-- Seção "Por Que Escolher-nos" - Prova de valor -->
+        <section class="py-20 bg-neutral-900 text-center px-6 lg:px-8">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-12">Por Que Escolher a Barbearia Árabe?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-2xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-star text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Tradição e Qualidade</h3>
+                        <p class="text-neutral-400">Técnicas milenares e produtos de alta qualidade para um resultado impecável.</p>
+                    </div>
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-2xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-handshake text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Atendimento Personalizado</h3>
+                        <p class="text-neutral-400">Cada cliente é único. Cuidamos do seu estilo com atenção e dedicação.</p>
+                    </div>
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-2xl border border-neutral-800 transform hover:scale-105 transition-transform duration-300">
+                        <i class="fas fa-map-marker-alt text-amber-500 text-5xl mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Localização Privilegiada</h3>
+                        <p class="text-neutral-400">No coração da Asa Sul, fácil acesso e conforto para você.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section - Lista de serviços com CTAs individuais -->
+        <section id="servicos" class="py-20 bg-neutral-950 px-6 lg:px-8">
+            <div class="container mx-auto text-center">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-12">Nossos Serviços</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Cartão de Serviço: Corte -->
+                    <div class="bg-neutral-900 p-8 rounded-xl shadow-2xl border border-neutral-800 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1621607509123-bd989d980a3c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjY0NTZ8MHwxfHNlYXJjaHwzMHx8YmFyYmVyc2hvcCUyMGFyYWJpYyUyMGN1dCUyMGFuZCUyMHN0eWxlfGVufDB8fHx8MTcwNzk2OTQzMHww&ixlib=rb-4.0.3&q=80&w=400" alt="Corte de Cabelo" class="w-full h-48 object-cover rounded-lg mb-6 shadow-md">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Corte de Cabelo</h3>
+                        <p class="text-neutral-400 mb-6 flex-grow">Estilos modernos e clássicos, adaptados ao seu rosto e personalidade. Nossos barbeiros são especialistas em criar o visual perfeito para você.</p>
+                        <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Corte%20de%20Cabelo.', '_blank')"
+                                class="bg-amber-600 text-neutral-100 px-8 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95 w-full">
+                            Agendar Corte
+                        </button>
+                    </div>
+
+                    <!-- Cartão de Serviço: Barba -->
+                    <div class="bg-neutral-900 p-8 rounded-xl shadow-2xl border border-neutral-800 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1549491794-5211977e5d2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjY0NTZ8MHwxfHNlYXJjaHwyNnx8YmFyYmVyc2hvcCUyMGFyYWJpYyUyMGJlYXJkfGVufDB8fHx8MTcwNzk2OTQzMHww&ixlib=rb-4.0.3&q=80&w=400" alt="Barba Modelada" class="w-full h-48 object-cover rounded-lg mb-6 shadow-md">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Barba Modelada</h3>
+                        <p class="text-neutral-400 mb-6 flex-grow">O ritual da barba perfeita, com toalhas quentes, navalha e produtos exclusivos para sua pele e pelos.</p>
+                        <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20Barba%20Modelada.', '_blank')"
+                                class="bg-amber-600 text-neutral-100 px-8 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95 w-full">
+                            Agendar Barba
+                        </button>
+                    </div>
+
+                    <!-- Cartão de Serviço: Tratamentos -->
+                    <div class="bg-neutral-900 p-8 rounded-xl shadow-2xl border border-neutral-800 flex flex-col items-center transform hover:scale-105 transition-transform duration-300">
+                        <img src="https://images.unsplash.com/photo-1555547432-841f486d5e78?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w1NjY0NTZ8MHwxfHNlYXJjaHwzNHx8YmFyYmVyc2hvcCUyMHRyZWF0bWVudHN8ZW58MHx8fDE3MDc5Njk0MDB8MA&ixlib=rb-4.0.3&q=80&w=400" alt="Tratamentos Capilares" class="w-full h-48 object-cover rounded-lg mb-6 shadow-md">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Tratamentos</h3>
+                        <p class="text-neutral-400 mb-6 flex-grow">Hidratação, esfoliação e cuidados especiais para a saúde dos seus cabelos e pele. Sinta a diferença de um tratamento profissional.</p>
+                        <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Tratamento.', '_blank')"
+                                class="bg-amber-600 text-neutral-100 px-8 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95 w-full">
+                            Agendar Tratamento
+                        </button>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                            class="bg-amber-600 text-neutral-100 px-12 py-4 rounded-full text-xl font-bold hover:bg-amber-700 transition-colors shadow-xl active:scale-95 animate-pulse-slow">
+                        <i class="fas fa-whatsapp mr-3"></i> Fale Conosco e Agende!
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section - Mapa e informações de contato -->
+        <section id="localizacao" class="py-20 bg-neutral-900 px-6 lg:px-8">
+            <div class="container mx-auto">
+                <h2 class="text-4xl font-bold text-neutral-100 text-center mb-12">Onde Estamos</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                    <div class="text-center lg:text-left">
+                        <p class="text-neutral-100 text-2xl font-semibold mb-4 flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> Endereço:
+                        </p>
+                        <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
+                            SHCS CLS 412 loja 29 - Asa Sul,<br>
+                            Brasília - DF, 70278-510, Brasil
+                        </p>
+                        <p class="text-neutral-100 text-2xl font-semibold mb-4 flex items-center justify-center lg:justify-start">
+                            <i class="fas fa-phone-alt text-amber-500 mr-3"></i> Telefone:
+                        </p>
+                        <a href="tel:+5561993242440" class="text-amber-500 text-xl hover:underline mb-6 block">
+                            (61) 99324-2440
+                        </a>
+                        <button onclick="window.open('https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')"
+                                class="bg-amber-600 text-neutral-100 px-8 py-3 rounded-full font-semibold hover:bg-amber-700 transition-colors shadow-lg active:scale-95 mt-6">
+                            <i class="fab fa-whatsapp mr-2"></i> Agendar via WhatsApp
+                        </button>
+                    </div>
+                    <div>
+                        <!-- Google Maps Embutido (código fornecido) -->
+                        <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SHCS%20CLS%20412%20loja%2029%20-%20Asa%20Sul%2C%20Bras%C3%ADlia%20-%20DF%2C%2070278-510%2C%20Brasil%2C%20Bras%C3%ADlia%20-%20DF&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-neutral-950 py-10 text-center text-neutral-400 px-6 lg:px-8">
+        <div class="container mx-auto">
+            <p>&copy; 2023 Barbearia Árabe - Asa Sul. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm">Desenvolvido com paixão em Brasília, DF.</p>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO - INÍCIO (CÓDIGO FORNECIDO) -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Barbearia Árabe - Asa Sul</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5561993242440"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5561993242440?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        // Abrir o chatbot automaticamente após 5 segundos se não estiver aberto
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+
+        // Lógica para o menu mobile
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+        // Fechar o menu mobile ao clicar em um link ou botão dentro dele
+        document.querySelectorAll('#mobile-menu a, #mobile-menu button').forEach(item => {
+            item.addEventListener('click', () => {
+                document.getElementById('mobile-menu').classList.add('hidden');
+            });
+        });
+    </script>
+    <!-- WIDGET DE CHATBOT INTERATIVO - FIM -->
+
+</body>
+</html>
