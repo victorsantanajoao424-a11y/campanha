@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbados SSA - Agendamento Online</title>
+    <meta name="description" content="Agende seu horário na Barbados SSA. A melhor barbearia de Salvador. Corte, barba e tratamentos exclusivos.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <!-- Configuração Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        neutral: {
+                            850: '#1f1f1f',
+                            900: '#171717',
+                            950: '#0a0a0a',
+                        },
+                        amber: {
+                            500: '#f59e0b',
+                            600: '#d97706',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #d97706;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(10,10,10,0.3), rgba(10,10,10,1));
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 font-sans antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- WHATSAPP LINK CONSTANT -->
+    <!-- Link: https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento. -->
+
+    <!-- NAVBAR -->
+    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fas fa-cut text-amber-500 text-2xl"></i>
+                    <span class="font-black text-xl text-neutral-100 tracking-tighter uppercase">Barbados <span class="text-amber-500">SSA</span></span>
+                </div>
+                <!-- Desktop CTA -->
+                <div class="hidden md:block">
+                    <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                       target="_blank"
+                       class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(217,119,6,0.3)] flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Agora
+                    </a>
+                </div>
+                <!-- Mobile Menu Icon (Visual Only - Actions go to WA) -->
+                <div class="md:hidden">
+                    <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." class="text-neutral-100 text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/60"></div>
+        </div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neutral-900 border border-neutral-800 text-amber-500 text-sm font-semibold mb-6 animate-pulse">
+                <span class="w-2 h-2 rounded-full bg-green-500"></span> Aberto para agendamentos
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl font-black text-neutral-100 tracking-tight mb-6 leading-tight">
+                O Visual Que Você <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Merece Ter</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-xl text-neutral-400 mb-10">
+                Especialistas em cortes modernos, barbas desenhadas e tratamentos vip em Salvador. Agende seu horário sem complicações.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                   target="_blank"
+                   class="w-full sm:w-auto bg-amber-600 hover:bg-amber-500 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all transform hover:scale-105 shadow-[0_0_20px_rgba(217,119,6,0.4)] flex items-center justify-center gap-3">
+                    <i class="far fa-calendar-check"></i>
+                    Garantir Meu Horário
+                </a>
+                <a href="#location" 
+                   class="w-full sm:w-auto bg-neutral-800 hover:bg-neutral-700 text-neutral-200 text-lg px-8 py-4 rounded-xl font-semibold transition-all border border-neutral-700 flex items-center justify-center gap-2">
+                    <i class="fas fa-map-marker-alt"></i>
+                    Ver Localização
+                </a>
+            </div>
+            
+            <div class="mt-12 flex justify-center gap-8 text-neutral-500 text-sm font-medium">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-amber-600"></i> Profissionais Experts
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-amber-600"></i> Ambiente Premium
+                </div>
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-check text-amber-600"></i> Cerveja Gelada
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- SERVICES SECTION -->
+    <section class="py-20 bg-neutral-950 relative">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-100 mb-4">Nossos Serviços</h2>
+                <p class="text-neutral-400">Excelência em cada detalhe para o homem moderno.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1: Corte -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-neutral-100 mb-2">Corte de Cabelo</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Degradê, social, tesoura ou máquina. Nossos barbeiros dominam todas as técnicas para o seu estilo.</p>
+                    <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="block w-full py-3 text-center rounded-lg border border-neutral-700 text-neutral-300 font-semibold hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all">
+                        Agendar Corte
+                    </a>
+                </div>
+
+                <!-- Card 2: Barba -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-amber-600 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-neutral-100 mb-2">Barba & Bigode</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Barboterapia com toalha quente, alinhamento perfeito e hidratação com óleos essenciais.</p>
+                    <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="block w-full py-3 text-center rounded-lg bg-amber-600 text-white font-bold hover:bg-amber-500 transition-all shadow-lg">
+                        Agendar Barba
+                    </a>
+                </div>
+
+                <!-- Card 3: Tratamentos -->
+                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-pump-soap"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-neutral-100 mb-2">Tratamentos</h3>
+                    <p class="text-neutral-400 mb-6 text-sm">Limpeza de pele, sobrancelha, pigmentação e relaxamento capilar. O cuidado completo.</p>
+                    <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="block w-full py-3 text-center rounded-lg border border-neutral-700 text-neutral-300 font-semibold hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all">
+                        Consultar Serviços
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="location" class="py-20 bg-neutral-900 border-t border-neutral-800">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Text Info -->
+                <div>
+                    <h2 class="text-3xl font-bold text-neutral-100 mb-6">Onde Estamos</h2>
+                    <p class="text-neutral-400 mb-8">
+                        Localizados no coração do Rio Vermelho, Salvador. Um espaço pensado para o seu conforto, com estacionamento próximo e fácil acesso.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 flex-shrink-0">
+                                <i class="fas fa-map-pin"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Endereço</h4>
+                                <p class="text-sm text-neutral-400">R. Conselheiro Pedro Luiz, nº 534<br>Rio Vermelho, Salvador - BA</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 flex-shrink-0">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Contato</h4>
+                                <p class="text-sm text-neutral-400">(71) 99255-9825</p>
+                                <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-amber-500 text-sm hover:underline">Chamar no WhatsApp</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                        <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." 
+                           target="_blank"
+                           class="inline-block bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition-transform transform hover:-translate-y-1">
+                            Agendar Visita
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Google Map -->
+                <div class="bg-neutral-800 p-2 rounded-2xl shadow-2xl border border-neutral-700">
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Conselheiro%20Pedro%20Luiz%2C%20n%C2%BA%20534%20-%20Rio%20Vermelho%2C%20Salvador%20-%20BA%2C%2041950-610%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 py-10 border-t border-neutral-900">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <div class="flex justify-center items-center gap-2 mb-4">
+                <i class="fas fa-cut text-amber-600 text-xl"></i>
+                <span class="font-bold text-lg text-neutral-200 uppercase">Barbados SSA</span>
+            </div>
+            <p class="text-neutral-600 text-sm mb-6">&copy; 2023 Barbados SSA. Todos os direitos reservados.</p>
+            <div class="flex justify-center gap-6">
+                <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-neutral-500 hover:text-amber-500 transition-colors text-2xl">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-neutral-500 hover:text-amber-500 transition-colors text-2xl">
+                    <i class="fab fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT UNIVERSAL (FIXO) -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat (Inicialmente oculta) -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Atendimento Online</h3>
+                      <p class="text-[10px] text-white/90">Responde na hora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div class="p-4 bg-[#e5ddd5] h-64 overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative">
+                <!-- Wallpaper pattern simulated via CSS opacity -->
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Barbados SSA</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Como posso te ajudar hoje?
+                </div>
+            </div>
+
+            <!-- Footer (Input Fake) -->
+            <div class="p-3 bg-[#f0f2f5] border-t border-gray-200 flex flex-col gap-2">
+                 <button onclick="openWhatsApp()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm hover:shadow-md transform active:scale-95">
+                    <i class="fab fa-whatsapp mr-2 text-lg"></i> Quero Agendar Horário
+                </button>
+                <button onclick="openWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm">
+                    Tenho uma dúvida
+                </button>
+            </div>
+        </div>
+
+        <!-- Botão Flutuante (Trigger) -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        // Lógica do Chatbot Isolada e Garantida
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatToggle = document.getElementById('z-chat-toggle');
+        const whatsappUrl = "https://wa.me/5571992559825?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento."; // URL injetada pelo Backend
+
+        function toggleChat() {
+            if (chatWindow.classList.contains('hidden')) {
+                // Abrir
+                chatWindow.classList.remove('hidden');
+                setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                // Fechar
+                chatWindow.classList.remove('scale-100', 'opacity-100');
+                chatWindow.classList.add('scale-95', 'opacity-0');
+                setTimeout(() => {
+                    chatWindow.classList.add('hidden');
+                }, 300);
+            }
+        }
+
+        function openWhatsApp() {
+            window.open(whatsappUrl, '_blank');
+        }
+
+        // Auto-open após 5 segundos para conversão
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
