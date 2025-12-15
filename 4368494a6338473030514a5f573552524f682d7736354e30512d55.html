@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mr. John Barber Club 114 sul - Agende seu Horário em Brasília</title>
+    <meta name="description" content="Mr. John Barber Club 114 sul - Barbearia premium em Brasília-DF. Agende seu corte, barba ou tratamento online e transforme seu estilo.">
+    <meta name="keywords" content="barbearia, agendamento online, corte de cabelo, barba, tratamento, Brasília, Asa Sul, DF, Mr. John Barber">
+    <meta name="author" content="Mr. John Barber Club">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        neutral: {
+                            950: '#0a0a0a',
+                            900: '#171717',
+                            800: '#262626',
+                            100: '#fafafa',
+                            400: '#a3a3a3',
+                        },
+                        amber: {
+                            600: '#d97706',
+                            500: '#f59e0b',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Google Fonts - Poppins for modern sans-serif -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: theme('colors.neutral.950');
+            color: theme('colors.neutral.400');
+        }
+        h1, h2, h3, h4 {
+            color: theme('colors.neutral.100');
+        }
+        .text-gradient-amber {
+            background: linear-gradient(to right, theme('colors.amber.500'), theme('colors.amber.600'));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .btn-primary {
+            @apply inline-flex items-center justify-center px-8 py-4 bg-amber-600 text-neutral-950 font-bold rounded-full shadow-lg transition-all duration-300 hover:bg-amber-500 hover:scale-105 active:scale-95 text-lg;
+        }
+    </style>
+</head>
+<body class="antialiased leading-relaxed">
+
+    <!-- Header -->
+    <header class="bg-neutral-900 shadow-lg py-4 px-6 fixed w-full z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="#hero" class="text-2xl font-bold text-neutral-100 tracking-tight">
+                <span class="text-amber-500">Mr. John</span> Barber Club
+            </a>
+            <nav class="hidden md:flex space-x-6">
+                <a href="#services" class="text-neutral-400 hover:text-amber-500 transition-colors">Serviços</a>
+                <a href="#location" class="text-neutral-400 hover:text-amber-500 transition-colors">Localização</a>
+                <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-primary text-sm px-6 py-2 cursor-pointer">
+                    Agendar Agora
+                </a>
+            </nav>
+            <button class="md:hidden text-neutral-100 text-2xl" aria-label="Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="relative bg-neutral-950 text-neutral-100 flex items-center justify-center min-h-screen py-20 px-6 overflow-hidden">
+            <div class="absolute inset-0 bg-cover bg-center opacity-30" style="background-image: url('https://images.unsplash.com/photo-1560066984-138095700949?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');"></div>
+            <div class="relative z-10 text-center max-w-4xl mx-auto">
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 animate-fade-in-up">
+                    Transforme seu Estilo no <span class="text-gradient-amber">Mr. John Barber Club</span>
+                </h1>
+                <p class="text-xl md:text-2xl text-neutral-300 mb-10 animate-fade-in-up animation-delay-300">
+                    Onde a tradição encontra a modernidade, no coração de Brasília.
+                </p>
+                <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-primary animate-pulse cursor-pointer">
+                    <i class="fab fa-whatsapp mr-3"></i> Agende seu Horário Agora!
+                </a>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="bg-neutral-900 py-20 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12">Nossos <span class="text-amber-500">Serviços</span></h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Corte -->
+                    <div class="bg-neutral-800 p-8 rounded-xl shadow-xl border border-neutral-700 hover:border-amber-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-neutral-100">Corte Masculino</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6">
+                            Estilos clássicos ou modernos, com a precisão e o cuidado que você merece. Nossos barbeiros são especialistas.
+                        </p>
+                        <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20corte%20masculino.', '_blank')" class="text-amber-500 font-semibold hover:text-amber-400 transition-colors cursor-pointer">
+                            Agendar Corte <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 2: Barba -->
+                    <div class="bg-neutral-800 p-8 rounded-xl shadow-xl border border-neutral-700 hover:border-amber-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-beard text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-neutral-100">Barba Modelada</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6">
+                            Um ritual de relaxamento com toalha quente, espuma e navalha afiada para uma barba impecável.
+                        </p>
+                        <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20o%20servi%C3%A7o%20de%20barba.', '_blank')" class="text-amber-500 font-semibold hover:text-amber-400 transition-colors cursor-pointer">
+                            Agendar Barba <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 3: Tratamentos -->
+                    <div class="bg-neutral-800 p-8 rounded-xl shadow-xl border border-neutral-700 hover:border-amber-600 transition-all duration-300 transform hover:-translate-y-2">
+                        <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                        <h3 class="text-2xl font-semibold mb-4 text-neutral-100">Tratamentos Capilares</h3>
+                        <p class="text-neutral-400 leading-relaxed mb-6">
+                            Hidratação, esfoliação e cuidados especiais para a saúde dos seus cabelos e couro cabeludo.
+                        </p>
+                        <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20tratamento%20capilar.', '_blank')" class="text-amber-500 font-semibold hover:text-amber-400 transition-colors cursor-pointer">
+                            Agendar Tratamento <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16">
+                    <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20todos%20os%20servi%C3%A7os%20e%20pre%C3%A7os.', '_blank')" class="btn-primary cursor-pointer">
+                        <i class="fab fa-whatsapp mr-3"></i> Ver Todos os Serviços
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="bg-neutral-950 py-20 px-6 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">
+                    Pronto para uma <span class="text-amber-500">Experiência Única</span>?
+                </h2>
+                <p class="text-xl text-neutral-300 mb-10">
+                    Não perca tempo! Agende seu horário agora e desfrute do melhor serviço de barbearia em Brasília.
+                </p>
+                <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="btn-primary animate-pulse cursor-pointer">
+                    <i class="fas fa-calendar-alt mr-3"></i> Agendar Online Via WhatsApp
+                </a>
+            </div>
+        </section>
+
+        <!-- Testimonials Section (Placeholder) -->
+        <section class="bg-neutral-900 py-20 px-6">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl font-bold mb-12">O que nossos <span class="text-amber-500">Clientes Dizem</span></h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-neutral-800 p-8 rounded-xl shadow-xl border border-neutral-700">
+                        <p class="text-neutral-300 italic mb-6">
+                            "Melhor barbearia de Brasília! O atendimento é impecável e o corte sempre sai perfeito. Recomendo de olhos fechados!"
+                        </p>
+                        <p class="font-semibold text-neutral-100">- João P., Cliente Fiel</p>
+                    </div>
+                    <div class="bg-neutral-800 p-8 rounded-xl shadow-xl border border-neutral-700">
+                        <p class="text-neutral-300 italic mb-6">
+                            "Ambiente top, cerveja gelada e os barbeiros são uns artistas. Minha barba nunca esteve tão bem cuidada!"
+                        </p>
+                        <p class="font-semibold text-neutral-100">- Pedro S., Novo Visual</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="location" class="bg-neutral-950 py-20 px-6">
+            <div class="max-w-6xl mx-auto">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-12">Onde nos <span class="text-amber-500">Encontrar</span></h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <p class="text-xl text-neutral-300 mb-6">
+                            Estamos localizados no coração da Asa Sul, prontos para te receber em um ambiente moderno e acolhedor.
+                        </p>
+                        <div class="space-y-4 mb-8">
+                            <p class="flex items-center text-neutral-100 text-lg">
+                                <i class="fas fa-map-marker-alt text-amber-500 mr-3 text-xl"></i>
+                                SHCS CLS 114 loja 37 - Asa Sul, Brasília - DF, 70377-530
+                            </p>
+                            <a href="tel:+556135227468" class="flex items-center text-neutral-100 text-lg hover:text-amber-500 transition-colors">
+                                <i class="fas fa-phone-alt text-amber-500 mr-3 text-xl"></i>
+                                (61) 3522-7468
+                            </a>
+                            <p class="flex items-center text-neutral-100 text-lg">
+                                <i class="fas fa-clock text-amber-500 mr-3 text-xl"></i>
+                                Horário de Funcionamento: Verifique a disponibilidade no WhatsApp
+                            </p>
+                        </div>
+                        <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20os%20hor%C3%A1rios%20de%20funcionamento.', '_blank')" class="btn-primary text-sm px-6 py-3 cursor-pointer">
+                            <i class="fab fa-whatsapp mr-2"></i> Fale Conosco
+                        </a>
+                    </div>
+                    <div>
+                        <!-- Google Maps Embed -->
+                        <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SHCS%20CLS%20114%20loja%2037%20-%20Asa%20Sul%2C%20Bras%C3%ADlia%20-%20DF%2C%2070377-530%2C%20Brasil%2C%20Bras%C3%ADlia%20-%20DF&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-10 px-6 text-center text-neutral-400 text-sm">
+        <div class="max-w-6xl mx-auto">
+            <p>&copy; 2023 Mr. John Barber Club 114 sul. Todos os direitos reservados.</p>
+            <div class="mt-4 space-x-4">
+                <a href="#" class="hover:text-amber-500 transition-colors">Política de Privacidade</a>
+                <a href="#" class="hover:text-amber-500 transition-colors">Termos de Serviço</a>
+            </div>
+            <div class="mt-6 text-2xl space-x-6">
+                <a href="#" class="hover:text-amber-500 transition-colors" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a onclick="window.open('https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="hover:text-amber-500 transition-colors cursor-pointer" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Mr. John Barber Club 114 sul</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+        @keyframes fadeInDown { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in-up { animation: fadeInDown 0.8s ease-out forwards; }
+        .animation-delay-300 { animation-delay: 0.3s; }
+    </style>
+
+    <script>
+        const cleanPhone = "556135227468"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/556135227468?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
