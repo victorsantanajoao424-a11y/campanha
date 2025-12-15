@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edom Barbearia Express - Agende Seu Horário em Goiânia</title>
+    <meta name="description" content="Agende seu corte, barba ou tratamento na Edom Barbearia Express em Goiânia. Qualidade, rapidez e estilo no seu atendimento.">
+    <link rel="canonical" href="https://edombarbeariaexpress.com.br"> <!-- Substituir com URL real -->
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Google Fonts (Optional: Inter for body, Lora for headings) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a; /* bg-neutral-950 */
+            color: #d4d4d4; /* text-neutral-400 */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Lora', serif;
+            color: #fafafa; /* text-neutral-100 */
+        }
+        .bg-neutral-950 { background-color: #0a0a0a; }
+        .bg-neutral-900 { background-color: #171717; }
+        .bg-amber-600 { background-color: #d97706; }
+        .text-amber-500 { color: #f59e0b; }
+        .text-neutral-100 { color: #fafafa; }
+        .text-neutral-400 { color: #a3a3a3; }
+
+        /* Custom animation for chatbot messages */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+
+        /* Hero section background image with overlay */
+        .hero-background {
+            background-image: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.7)), url('https://images.unsplash.com/photo-1621607512214-de1573030361?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax effect */
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400">
+
+    <!-- Header / Hero Section -->
+    <header class="hero-background relative py-24 md:py-32 text-center text-neutral-100 flex flex-col items-center justify-center min-h-screen">
+        <div class="absolute inset-0 bg-black opacity-60"></div> <!-- Dark overlay for text readability -->
+        <div class="relative z-10 max-w-4xl mx-auto px-6">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight text-neutral-100">
+                Edom Barbearia Express
+            </h1>
+            <p class="text-lg md:text-2xl mb-10 text-neutral-300 max-w-2xl mx-auto">
+                Seu estilo, nossa paixão. Agende seu corte, barba ou tratamento com <strong class="text-amber-500">qualidade e agilidade</strong> em Goiânia.
+            </p>
+            <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" 
+               class="inline-flex items-center justify-center px-10 py-4 text-xl font-bold bg-amber-600 text-neutral-100 rounded-full shadow-lg 
+                      hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 active:scale-95 animate-bounce-slow">
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i> Agende Seu Horário Agora!
+            </a>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="sobre" class="bg-neutral-900 py-16 md:py-24 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-neutral-100">Sobre a Edom Barbearia Express</h2>
+            <p class="text-lg md:text-xl leading-relaxed mb-8 text-neutral-400 max-w-3xl mx-auto">
+                Na Edom Barbearia Express, combinamos a tradição da barbearia clássica com a <strong class="text-amber-500">agilidade e modernidade</strong> que você precisa. Nossos profissionais são especialistas em transformar seu visual, garantindo um serviço de excelência e um atendimento que valoriza o seu tempo.
+            </p>
+            <p class="text-lg md:text-xl leading-relaxed text-neutral-400 max-w-3xl mx-auto">
+                Localizada no coração de Goiânia, somos o seu destino ideal para um corte de cabelo impecável, uma barba bem feita ou tratamentos capilares que realçam sua melhor versão. Venha nos visitar e experimente a diferença Edom!
+            </p>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicos" class="bg-neutral-950 py-16 md:py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-100">Nossos Serviços</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Corte -->
+                <div class="bg-neutral-900 p-8 rounded-xl shadow-lg border border-neutral-800 text-center flex flex-col items-center">
+                    <i class="fas fa-cut text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-neutral-100">Corte Masculino</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Do clássico ao moderno, nossos barbeiros dominam as últimas tendências e técnicas para um corte que combine perfeitamente com seu estilo.
+                    </p>
+                    <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Corte%20Masculino.%20Poderia%20me%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F" target="_blank"
+                       class="inline-flex items-center px-8 py-3 bg-amber-600 text-neutral-100 font-semibold rounded-full hover:bg-amber-700 transition-colors active:scale-95">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Corte
+                    </a>
+                </div>
+
+                <!-- Service Card 2: Barba -->
+                <div class="bg-neutral-900 p-8 rounded-xl shadow-lg border border-neutral-800 text-center flex flex-col items-center">
+                    <i class="fas fa-beard text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-neutral-100">Barba Modelada</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Um ritual de relaxamento e estilo. Modelagem perfeita, toalha quente e produtos de alta qualidade para sua barba.
+                    </p>
+                    <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20uma%20Barba%20Modelada.%20Poderia%20me%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F" target="_blank"
+                       class="inline-flex items-center px-8 py-3 bg-amber-600 text-neutral-100 font-semibold rounded-full hover:bg-amber-700 transition-colors active:scale-95">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Barba
+                    </a>
+                </div>
+
+                <!-- Service Card 3: Tratamentos -->
+                <div class="bg-neutral-900 p-8 rounded-xl shadow-lg border border-neutral-800 text-center flex flex-col items-center">
+                    <i class="fas fa-spa text-5xl text-amber-500 mb-6"></i>
+                    <h3 class="text-3xl font-bold mb-4 text-neutral-100">Tratamentos Capilares</h3>
+                    <p class="text-neutral-400 mb-6 flex-grow">
+                        Revitalize seus cabelos e couro cabeludo com nossos tratamentos especiais, pensados para saúde e brilho.
+                    </p>
+                    <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20Tratamento%20Capilar.%20Poderia%20me%20informar%20os%20hor%C3%A1rios%20dispon%C3%ADveis%3F" target="_blank"
+                       class="inline-flex items-center px-8 py-3 bg-amber-600 text-neutral-100 font-semibold rounded-full hover:bg-amber-700 transition-colors active:scale-95">
+                        <i class="fab fa-whatsapp mr-2"></i> Agendar Tratamento
+                    </a>
+                </div>
+            </div>
+            <div class="text-center mt-16">
+                 <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" 
+                   class="inline-flex items-center justify-center px-10 py-4 text-xl font-bold bg-amber-600 text-neutral-100 rounded-full shadow-lg 
+                          hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 active:scale-95">
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> Ver Todos os Horários
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="bg-neutral-900 py-16 md:py-24 px-6">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-12 text-neutral-100">Onde Estamos</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-center md:text-left">
+                    <p class="text-lg md:text-xl mb-4 text-neutral-400">
+                        Venha nos visitar em Goiânia e desfrute de uma experiência premium.
+                    </p>
+                    <address class="text-2xl font-semibold not-italic mb-6 text-neutral-100">
+                        Rua 1136, 474 - St. Marista,<br>
+                        Goiânia - GO, 74180-150, Brasil
+                    </address>
+                    <p class="text-xl font-bold mb-8 text-amber-500">
+                        Telefone: (62) 99871-3815
+                    </p>
+                    <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank"
+                       class="inline-flex items-center px-8 py-3 bg-amber-600 text-neutral-100 font-semibold rounded-full hover:bg-amber-700 transition-colors active:scale-95">
+                        <i class="fas fa-map-marker-alt mr-2"></i> Abrir no WhatsApp
+                    </a>
+                </div>
+                <div>
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%201136%2C%20474%20-%20St.%20Marista%2C%20Goi%C3%A2nia%20-%20GO%2C%2074180-150%2C%20Brasil%2C%20Goi%C3%A2nia&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section (Final) -->
+    <section class="bg-neutral-950 py-16 md:py-24 text-center px-6">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-bold mb-8 text-neutral-100">Pronto para Renovar Seu Estilo?</h2>
+            <p class="text-lg md:text-xl mb-12 text-neutral-400 max-w-2xl mx-auto">
+                Não perca tempo! Agende seu horário na Edom Barbearia Express e garanta um visual impecável.
+            </p>
+            <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" 
+               class="inline-flex items-center justify-center px-10 py-4 text-xl font-bold bg-amber-600 text-neutral-100 rounded-full shadow-lg 
+                      hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 active:scale-95">
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i> Quero Agendar Meu Horário!
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-10 px-6 text-center text-neutral-400 text-sm">
+        <div class="max-w-6xl mx-auto">
+            <p class="mb-2">&copy; 2023 Edom Barbearia Express. Todos os direitos reservados.</p>
+            <p>Seu estilo, nossa prioridade. Goiânia - GO.</p>
+            <p class="mt-4">
+                <a href="https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" class="text-amber-500 hover:text-amber-400 transition-colors">
+                    <i class="fab fa-whatsapp mr-1"></i> (62) 99871-3815
+                </a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Edom Barbearia Express</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <script>
+        const cleanPhone = "5562998713815"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5562998713815?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+    
+</body>
+</html>
