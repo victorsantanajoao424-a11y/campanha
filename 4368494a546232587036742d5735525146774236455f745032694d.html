@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jorge Müller Barbearia | Agende Seu Corte e Barba em Brasília - DF</title>
+    <meta name="description" content="Jorge Müller Barbearia em Brasília - DF. Agende seu corte, barba e tratamentos com os melhores profissionais. Estilo e qualidade garantidos.">
+    <meta name="keywords" content="barbearia, jorge müller, brasília, df, corte de cabelo, barba, tratamentos capilares, agendamento online, estilo masculino">
+    <meta name="author" content="Jorge Müller Barbearia">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome CDN for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0V4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <style>
+        /* Custom styles for Dark Scheduler theme */
+        body {
+            font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            background-color: #030712; /* bg-neutral-950 */
+            color: #a3a3a3; /* text-neutral-400 */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #fafafa; /* text-neutral-100 */
+        }
+        .section-bg {
+            background-color: #0a0a0a; /* bg-neutral-900 */
+        }
+        .primary-action-btn {
+            background-color: #d97706; /* bg-amber-600 */
+            color: #fafafa; /* text-neutral-100 for button text */
+        }
+        .primary-action-text {
+            color: #fbbf24; /* text-amber-500 */
+        }
+        .whatsapp-link {
+            color: #25d366; /* WhatsApp green */
+        }
+        /* Custom animation for CTA buttons */
+        @keyframes pulse-slow {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.03); } /* Slightly larger pulse */
+        }
+        .animate-pulse-slow {
+            animation: pulse-slow 2.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 antialiased">
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center text-center px-4 overflow-hidden">
+        <!-- Background Image with Overlay -->
+        <div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1596431350730-80a91172a6b2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-center opacity-20"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-transparent"></div>
+        
+        <!-- Content -->
+        <div class="relative z-10 max-w-3xl mx-auto space-y-8">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-neutral-100 leading-tight">
+                Seu Estilo, Nossa Arte.
+                <span class="block primary-action-text">Jorge Müller Barbearia.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300">
+                Os melhores cortes, barbas e tratamentos em <strong class="primary-action-text">Brasília - DF</strong>.
+                Transforme seu visual e eleve sua confiança.
+            </p>
+            <button 
+                onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                class="primary-action-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105 animate-pulse-slow"
+            >
+                <i class="fab fa-whatsapp mr-3 text-2xl"></i> Agende Seu Horário Agora!
+            </button>
+        </div>
+    </section>
+
+    <main>
+        <!-- Services Section -->
+        <section id="servicos" class="py-20 section-bg px-4">
+            <div class="container mx-auto text-center max-w-5xl">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">Nossos Serviços</h2>
+                <p class="text-lg text-neutral-300 mb-12 max-w-2xl mx-auto">
+                    Na Jorge Müller Barbearia, oferecemos uma gama completa de serviços para cuidar do seu visual com excelência e precisão.
+                </p>
+                
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Service Card 1: Corte -->
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300">
+                        <i class="fas fa-cut text-5xl primary-action-text mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Corte Personalizado</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Desde o clássico ao moderno, nossos barbeiros são especialistas em criar o corte perfeito que combina com seu estilo.
+                        </p>
+                        <button 
+                            onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20corte%20personalizado.', '_blank')" 
+                            class="primary-action-btn inline-flex items-center px-6 py-3 text-md font-semibold rounded-full hover:brightness-110 transition duration-300"
+                        >
+                            Agendar Corte
+                        </button>
+                    </div>
+
+                    <!-- Service Card 2: Barba -->
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300">
+                        <i class="fas fa-beard text-5xl primary-action-text mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Barba Modelada</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Experimente o ritual da barba com toalha quente, navalha e produtos de alta qualidade para um acabamento impecável.
+                        </p>
+                        <button 
+                            onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20agendar%20um%20servi%C3%A7o%20de%20barba.', '_blank')" 
+                            class="primary-action-btn inline-flex items-center px-6 py-3 text-md font-semibold rounded-full hover:brightness-110 transition duration-300"
+                        >
+                            Agendar Barba
+                        </button>
+                    </div>
+
+                    <!-- Service Card 3: Tratamentos -->
+                    <div class="bg-neutral-950 p-8 rounded-xl shadow-xl border border-neutral-800 transform hover:scale-105 transition duration-300">
+                        <i class="fas fa-spa text-5xl primary-action-text mb-6"></i>
+                        <h3 class="text-2xl font-semibold text-neutral-100 mb-3">Tratamentos Capilares</h3>
+                        <p class="text-neutral-400 mb-6">
+                            Revitalize seus cabelos e couro cabeludo com nossos tratamentos especializados para saúde e brilho.
+                        </p>
+                        <button 
+                            onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20os%20tratamentos%20capilares.', '_blank')" 
+                            class="primary-action-btn inline-flex items-center px-6 py-3 text-md font-semibold rounded-full hover:brightness-110 transition duration-300"
+                        >
+                            Saber Mais
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="mt-16">
+                     <button 
+                        onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                        class="primary-action-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
+                    >
+                        <i class="fas fa-calendar-check mr-3 text-2xl"></i> Ver Todos os Horários
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section id="depoimentos" class="py-20 px-4">
+            <div class="container mx-auto text-center max-w-5xl">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">O Que Nossos Clientes Dizem</h2>
+                <p class="text-lg text-neutral-300 mb-12 max-w-2xl mx-auto">
+                    A satisfação dos nossos clientes é a nossa maior recompensa. Veja alguns depoimentos:
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Testimonial 1 -->
+                    <div class="bg-neutral-900 p-8 rounded-xl shadow-xl border border-neutral-800">
+                        <p class="text-neutral-300 text-lg italic mb-6">
+                            "Melhor barbearia de Brasília! O Jorge é um artista, sempre saio com o corte perfeito e a barba impecável. Atendimento de primeira!"
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1507003211169-e69fe1c5a3bb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente satisfeito" class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-amber-600">
+                            <div>
+                                <p class="font-semibold text-neutral-100">Lucas S.</p>
+                                <p class="text-sm text-neutral-500">Cliente Fiel</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="bg-neutral-900 p-8 rounded-xl shadow-xl border border-neutral-800">
+                        <p class="text-neutral-300 text-lg italic mb-6">
+                            "Ambiente super agradável e profissionais muito atenciosos. Fiz um tratamento capilar e meu cabelo nunca esteve tão bom. Recomendo demais!"
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?q=80&w=2952&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Cliente satisfeito" class="w-16 h-16 rounded-full object-cover mr-4 border-2 border-amber-600">
+                            <div>
+                                <p class="font-semibold text-neutral-100">Fernando M.</p>
+                                <p class="text-sm text-neutral-500">Novo Visual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section (before contact) -->
+        <section class="py-20 bg-neutral-900 px-4">
+            <div class="container mx-auto text-center max-w-3xl">
+                <h2 class="text-4xl font-bold text-neutral-100 mb-6">Pronto para Transformar Seu Visual?</h2>
+                <p class="text-lg text-neutral-300 mb-8">
+                    Não perca tempo! Agende seu horário na Jorge Müller Barbearia e experimente a diferença de um serviço premium.
+                </p>
+                <button 
+                    onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                    class="primary-action-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
+                >
+                    <i class="fab fa-whatsapp mr-3 text-2xl"></i> Fale Conosco e Agende!
+                </button>
+            </div>
+        </section>
+
+        <!-- Location & Contact Section -->
+        <section id="contato" class="py-20 px-4">
+            <div class="container mx-auto max-w-5xl">
+                <h2 class="text-4xl font-bold text-neutral-100 text-center mb-6">Onde Estamos</h2>
+                <p class="text-lg text-neutral-300 text-center mb-12 max-w-2xl mx-auto">
+                    Visite-nos em Brasília - DF e desfrute de um ambiente exclusivo e um atendimento de primeira.
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <!-- Contact Info -->
+                    <div class="text-center md:text-left space-y-6">
+                        <h3 class="text-3xl font-semibold text-neutral-100 mb-4">Jorge Müller Barbearia</h3>
+                        <p class="text-xl text-neutral-300 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-map-marker-alt primary-action-text mr-3"></i> 
+                            SHCS EQS 102/103 Centro Empresarial São Francisco Loja 115 - Asa Sul, Brasília - DF, 70330-400
+                        </p>
+                        <p class="text-xl text-neutral-300 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-phone-alt primary-action-text mr-3"></i> 
+                            <a href="tel:+5561991787146" class="hover:text-amber-500 transition-colors">(61) 99178-7146</a>
+                        </p>
+                        <p class="text-xl text-neutral-300 flex items-center justify-center md:justify-start">
+                            <i class="fas fa-clock primary-action-text mr-3"></i> 
+                            Horário de Funcionamento: <span class="text-neutral-500">Entre em contato para verificar a disponibilidade.</span>
+                        </p>
+                        <div class="mt-8">
+                            <button 
+                                onclick="window.open('https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                                class="primary-action-btn inline-flex items-center justify-center px-8 py-4 text-lg font-bold rounded-full shadow-lg hover:brightness-110 transition duration-300 transform hover:scale-105"
+                            >
+                                <i class="fab fa-whatsapp mr-3 text-2xl"></i> Falar com Atendente
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Google Map -->
+                    <div class="w-full h-96 rounded-xl overflow-hidden shadow-2xl border border-neutral-700">
+                        <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=SHCS%20EQS%20102%2F103%20Centro%20Empresarial%20S%C3%A3o%20Francisco%20Loja%20115%20-%20Asa%20Sul%2C%20Bras%C3%ADlia%20-%20DF%2C%2070330-400%2C%20Brasil%2C%20Bras%C3%ADlia%20-%20DF&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-900 py-10 text-center text-neutral-500 text-sm px-4">
+        <div class="container mx-auto">
+            <p>&copy; 2023 Jorge Müller Barbearia. Todos os direitos reservados.</p>
+            <p class="mt-2">Desenvolvido com paixão em Brasília, DF.</p>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO - INÍCIO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Jorge Müller Barbearia</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        /* This animation is specifically for the chatbot messages */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5561991787146"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5561991787146?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        // Automatically open chat window after 5 seconds if not already open
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+    <!-- WIDGET DE CHATBOT INTERATIVO - FIM -->
+
+</body>
+</html>
