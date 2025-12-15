@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dan Diego Barber - Agendamento Online em Aracaju, SE. Corte, Barba e Tratamentos masculinos. Agende seu horário agora!">
+    <meta name="keywords" content="barbearia, agendamento online, barbearia aracaju, dan diego barber, corte de cabelo, barba, tratamento capilar, aracaju, sergipe">
+    <meta name="author" content="Dan Diego Barber">
+    <title>Dan Diego Barber | Agendamento Online em Aracaju - SE</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Google Fonts (Optional, but enhances design) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 antialiased">
+
+    <!-- Header / Hero Section -->
+    <header class="relative h-screen flex items-center justify-center text-center overflow-hidden">
+        <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1596434300655-e41f1c7a726e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');">
+            <div class="absolute inset-0 bg-black opacity-70"></div>
+        </div>
+        <div class="relative z-10 p-6 max-w-4xl mx-auto">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold text-neutral-100 mb-4 leading-tight">
+                Dan Diego Barber
+            </h1>
+            <p class="text-lg sm:text-xl text-neutral-200 mb-8">
+                Seu estilo, nossa paixão. A melhor barbearia de Aracaju, SE, espera por você.
+            </p>
+            <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-600 text-neutral-100 font-bold py-4 px-8 rounded-full text-lg uppercase tracking-wide hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 shadow-lg active:scale-95">
+                <i class="fab fa-whatsapp mr-2"></i> Agende Seu Horário Agora!
+            </a>
+            <p class="mt-4 text-sm text-neutral-300">Atendimento de qualidade e ambiente exclusivo.</p>
+        </div>
+    </header>
+
+    <!-- Services Section -->
+    <section id="servicos" class="py-16 bg-neutral-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-100 mb-12">Nossos Serviços Exclusivos</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service Card 1: Corte -->
+                <div class="bg-neutral-950 p-8 rounded-xl shadow-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-cut text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Corte Clássico e Moderno</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Do corte tradicional ao estilo mais contemporâneo, nossos barbeiros são especialistas em realçar sua personalidade.
+                    </p>
+                    <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block text-amber-500 font-medium hover:text-amber-600 transition-colors">
+                        Agendar Corte <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 2: Barba -->
+                <div class="bg-neutral-950 p-8 rounded-xl shadow-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-beard text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Design e Tratamento de Barba</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Cuide da sua barba com quem entende. Modelagem precisa, toalha quente e produtos premium para uma barba impecável.
+                    </p>
+                    <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block text-amber-500 font-medium hover:text-amber-600 transition-colors">
+                        Agendar Barba <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+
+                <!-- Service Card 3: Tratamentos -->
+                <div class="bg-neutral-950 p-8 rounded-xl shadow-lg border border-neutral-800 hover:border-amber-600 transition-all duration-300">
+                    <i class="fas fa-spa text-amber-500 text-5xl mb-6"></i>
+                    <h3 class="text-2xl font-semibold text-neutral-100 mb-4">Tratamentos Capilares e Faciais</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Revitalize seu cabelo e pele com nossos tratamentos especiais. Hidratação, esfoliação e mais para seu bem-estar.
+                    </p>
+                    <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block text-amber-500 font-medium hover:text-amber-600 transition-colors">
+                        Agendar Tratamento <i class="fas fa-arrow-right ml-2 text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-12">
+                <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-600 text-neutral-100 font-bold py-4 px-8 rounded-full text-lg uppercase tracking-wide hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 shadow-lg active:scale-95">
+                    <i class="fab fa-whatsapp mr-2"></i> Ver Todos os Serviços e Agendar
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-neutral-950">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-100 mb-6">Pronto para Transformar Seu Visual?</h2>
+            <p class="text-lg text-neutral-300 mb-8 max-w-2xl mx-auto">
+                Na Dan Diego Barber, combinamos tradição e modernidade para oferecer uma experiência única em cuidados masculinos.
+            </p>
+            <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="inline-block bg-amber-600 text-neutral-100 font-bold py-4 px-8 rounded-full text-lg uppercase tracking-wide hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 shadow-lg active:scale-95">
+                <i class="fas fa-calendar-alt mr-2"></i> Agende Seu Horário Agora!
+            </a>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="localizacao" class="py-16 bg-neutral-900">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl sm:text-4xl font-bold text-neutral-100 mb-12">Onde Nos Encontrar</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-12">
+                <div class="md:w-1/2 text-left">
+                    <p class="text-lg text-neutral-300 mb-4">Venha nos visitar em nosso espaço moderno e acolhedor em Aracaju, SE.</p>
+                    <p class="text-xl text-neutral-100 font-semibold mb-2 flex items-center">
+                        <i class="fas fa-map-marker-alt text-amber-500 mr-3"></i> R. Luiz Chagas, 86 - Atalaia, Aracaju - SE, 49037-220
+                    </p>
+                    <p class="text-xl text-neutral-100 font-semibold mb-6 flex items-center">
+                        <i class="fas fa-phone-alt text-amber-500 mr-3"></i> (79) 99134-1728
+                    </p>
+                    <button onclick="window.open('https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="inline-block bg-amber-600 text-neutral-100 font-bold py-3 px-6 rounded-full text-md uppercase tracking-wide hover:bg-amber-700 transition-all duration-300 transform hover:scale-105 shadow-md active:scale-95">
+                        <i class="fab fa-whatsapp mr-2"></i> Fale Conosco no WhatsApp
+                    </button>
+                </div>
+                <div class="md:w-1/2 w-full">
+                    <!-- Google Maps Embutido -->
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Luiz%20Chagas%2C%2086%20-%20Atalaia%2C%20Aracaju%20-%20SE%2C%2049037-220%2C%20Brasil%2C%20Aracaju%20-%20SE&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-neutral-950 py-10 text-center text-neutral-500">
+        <div class="container mx-auto px-6">
+            <p class="mb-4">&copy; 2023 Dan Diego Barber. Todos os direitos reservados.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento." target="_blank" rel="noopener noreferrer" class="text-neutral-400 hover:text-amber-500 transition-colors">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                </a>
+                <!-- Optional: Add social media links if available -->
+                <!-- <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fab fa-instagram text-2xl"></i></a> -->
+                <!-- <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors"><i class="fab fa-facebook-f text-2xl"></i></a> -->
+            </div>
+            <p class="mt-6 text-sm">Desenvolvido com foco em alta conversão e experiência do cliente.</p>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Dan Diego Barber</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5579991341728"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5579991341728?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
