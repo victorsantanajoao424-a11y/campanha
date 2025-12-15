@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barbearia Nilson Costa - Ponta Negra | Agendamento Online</title>
+    <meta name="description" content="Agende seu horário na Barbearia Nilson Costa em Ponta Negra, Natal. Corte, barba e tratamentos com estilo e qualidade.">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-bg {
+            background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url('https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .glass-card {
+            background: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-neutral-950 text-neutral-400 antialiased selection:bg-amber-600 selection:text-white">
+
+    <!-- HEADER / NAV -->
+    <nav class="fixed w-full z-40 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex-shrink-0 flex items-center gap-2">
+                    <i class="fas fa-cut text-amber-500 text-2xl"></i>
+                    <div class="flex flex-col">
+                        <span class="font-bold text-neutral-100 text-lg leading-none tracking-tight">NILSON COSTA</span>
+                        <span class="text-xs text-amber-500 font-medium tracking-widest uppercase">Barbearia</span>
+                    </div>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm font-medium">Serviços</a>
+                    <a href="#localizacao" class="text-neutral-300 hover:text-amber-500 transition-colors text-sm font-medium">Localização</a>
+                    <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-full font-bold text-sm transition-all transform hover:scale-105 shadow-lg shadow-amber-600/20 flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Agendar Agora
+                    </button>
+                </div>
+
+                <!-- Mobile Button (Icon only) -->
+                <div class="md:hidden">
+                    <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 text-2xl p-2">
+                        <i class="fab fa-whatsapp"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <section class="relative h-screen min-h-[600px] flex items-center justify-center hero-bg px-4">
+        <div class="text-center max-w-4xl mx-auto z-10 animate-fade-in-up">
+            <span class="inline-block py-1 px-3 rounded-full bg-neutral-800/80 border border-neutral-700 text-amber-500 text-xs font-bold tracking-widest uppercase mb-6">
+                Ponta Negra • Natal/RN
+            </span>
+            <h1 class="text-5xl md:text-7xl font-black text-neutral-100 mb-6 tracking-tight leading-tight">
+                Seu Estilo, <br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 to-amber-700">Nossa Tradição.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-neutral-300 mb-10 max-w-2xl mx-auto font-light">
+                Experiência premium de barbearia. Cortes modernos, barba impecável e o ambiente que você merece.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                        class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white text-lg font-bold py-4 px-10 rounded-full transition-all transform hover:scale-105 shadow-xl shadow-amber-600/30 flex items-center justify-center gap-3">
+                    <i class="fas fa-calendar-check"></i>
+                    AGENDAR HORÁRIO
+                </button>
+                <a href="#localizacao" class="text-neutral-400 hover:text-white underline decoration-amber-600/50 hover:decoration-amber-500 underline-offset-4 transition-all text-sm font-medium">
+                    Ver localização
+                </a>
+            </div>
+        </div>
+        
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce text-neutral-500">
+            <i class="fas fa-chevron-down text-xl"></i>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section id="servicos" class="py-24 bg-neutral-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-neutral-100 mb-4">Nossos Serviços</h2>
+                <div class="w-20 h-1 bg-amber-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-cut text-8xl text-amber-600"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors shadow-lg">
+                        <i class="fas fa-cut"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Corte de Cabelo</h3>
+                    <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
+                        Do clássico ao moderno. Nossos profissionais dominam as técnicas de tesoura e máquina para o visual perfeito.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="w-full py-3 border border-neutral-700 rounded-lg text-neutral-300 font-semibold hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all">
+                        Agendar Corte
+                    </button>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-user-tie text-8xl text-amber-600"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors shadow-lg">
+                        <i class="fas fa-razor"></i> <!-- FontAwesome doesn't have razor always, using generic/fallback -->
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Barba & Bigode</h3>
+                    <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
+                        Toalha quente, navalha afiada e produtos de alta qualidade para alinhar e hidratar sua barba.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="w-full py-3 border border-neutral-700 rounded-lg text-neutral-300 font-semibold hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all">
+                        Agendar Barba
+                    </button>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-600/50 transition-all duration-300 group relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i class="fas fa-pump-soap text-8xl text-amber-600"></i>
+                    </div>
+                    <div class="w-14 h-14 bg-neutral-900 rounded-xl flex items-center justify-center mb-6 text-amber-500 text-2xl group-hover:bg-amber-600 group-hover:text-white transition-colors shadow-lg">
+                        <i class="fas fa-spray-can"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Tratamentos</h3>
+                    <p class="text-neutral-500 mb-6 text-sm leading-relaxed">
+                        Hidratação, pigmentação e cuidados especiais para manter a saúde do seu cabelo e couro cabeludo.
+                    </p>
+                    <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="w-full py-3 border border-neutral-700 rounded-lg text-neutral-300 font-semibold hover:bg-amber-600 hover:border-amber-600 hover:text-white transition-all">
+                        Agendar Tratamento
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Combo CTA -->
+            <div class="mt-12 text-center">
+                 <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                        class="inline-flex items-center gap-2 text-amber-500 font-bold hover:text-amber-400 transition-colors">
+                    <span>Verificar disponibilidade para hoje</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION SECTION -->
+    <section id="localizacao" class="py-24 bg-neutral-950 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <!-- Info -->
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold text-neutral-100 mb-6">Onde Estamos</h2>
+                    <p class="text-neutral-400 mb-8 leading-relaxed">
+                        Localizados no coração de Ponta Negra, oferecemos fácil acesso e estacionamento para sua comodidade. Venha nos visitar no Dunas Shopping.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0 border border-neutral-800">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Endereço</h4>
+                                <p class="text-sm text-neutral-500 mt-1">
+                                    Dunas Shopping - Av. Engenheiro Roberto Freire, 2632<br>
+                                    Capim Macio, Natal - RN
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-neutral-900 flex items-center justify-center text-amber-500 shrink-0 border border-neutral-800">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold">Contato</h4>
+                                <p class="text-sm text-neutral-500 mt-1">
+                                    (84) 99807-0189
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-10">
+                         <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
+                            class="bg-amber-600 hover:bg-amber-700 text-white px-8 py-3 rounded-lg font-bold transition-all shadow-lg shadow-amber-600/20">
+                            Agendar Visita
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Map -->
+                <div class="h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 relative group">
+                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Dunas%20Shopping%20-%20Av.%20Engenheiro%20Roberto%20Freire%2C%202632%20-%20Capim%20Macio%2C%20Natal%20-%20RN%2C%2059082-175%2C%20Brasil%2C%20Natal&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-neutral-950 border-t border-neutral-900 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-6 mb-8">
+                <div class="flex items-center gap-2">
+                    <i class="fas fa-cut text-amber-600 text-xl"></i>
+                    <span class="font-bold text-neutral-100 text-lg">NILSON COSTA</span>
+                </div>
+                <div class="text-neutral-500 text-sm text-center md:text-right">
+                    &copy; 2023 Barbearia Nilson Costa. Todos os direitos reservados.
+                </div>
+            </div>
+            <div class="text-center">
+                 <button onclick="window.open('https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-neutral-600 hover:text-amber-500 text-sm transition-colors">
+                    Desenvolvido para Alta Conversão
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WIDGET DE CHATBOT INTERATIVO -->
+    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
+        
+        <!-- Janela do Chat -->
+        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
+            <!-- Header -->
+            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
+               <div class="flex items-center gap-3">
+                   <div class="relative">
+                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
+                         <i class="fas fa-robot"></i>
+                       </div>
+                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
+                   </div>
+                   <div>
+                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
+                      <p class="text-[10px] text-white/90">Online agora</p>
+                   </div>
+               </div>
+               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
+                   <i class="fas fa-times"></i>
+               </button>
+            </div>
+            
+            <!-- Body -->
+            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
+                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
+                
+                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
+                
+                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
+                    Olá! 👋 Bem-vindo à <strong>Barbearia Nilson Costa -Ponta Negra</strong>.
+                </div>
+                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
+                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
+                 <!-- Initial Buttons -->
+                 <div id="z-initial-options" class="flex flex-col gap-2">
+                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
+                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
+                    </button>
+                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
+                        Tenho uma dúvida
+                    </button>
+                 </div>
+
+                 <!-- Input Form -->
+                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
+                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
+                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                 </form>
+            </div>
+        </div>
+
+        <!-- Toggle Button -->
+        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
+            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
+            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
+            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
+        </button>
+    </div>
+
+    <style>
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+    </style>
+
+    <script>
+        const cleanPhone = "5584998070189"; 
+        let step = 0;
+        let userData = { name: '', service: '', time: '' };
+        
+        const chatWindow = document.getElementById('z-chat-window');
+        const chatBody = document.getElementById('z-chat-body');
+        const initialOptions = document.getElementById('z-initial-options');
+        const inputForm = document.getElementById('z-input-form');
+        const userInput = document.getElementById('z-user-input');
+
+        function toggleChat() {
+            chatWindow.classList.toggle('hidden');
+            if(!chatWindow.classList.contains('hidden')) {
+                 setTimeout(() => {
+                    chatWindow.classList.remove('scale-95', 'opacity-0');
+                    chatWindow.classList.add('scale-100', 'opacity-100');
+                }, 10);
+            } else {
+                 chatWindow.classList.remove('scale-100', 'opacity-100');
+                 chatWindow.classList.add('scale-95', 'opacity-0');
+            }
+        }
+
+        function addMessage(text, sender = 'bot') {
+            const div = document.createElement('div');
+            const isBot = sender === 'bot';
+            div.className = isBot 
+                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
+                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
+            div.innerHTML = text;
+            chatBody.appendChild(div);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function startFlow() {
+            step = 1;
+            initialOptions.classList.add('hidden');
+            inputForm.classList.remove('hidden');
+            userInput.focus();
+            setTimeout(() => {
+                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
+            }, 500);
+        }
+
+        function handleUserSubmit(e) {
+            e.preventDefault();
+            const text = userInput.value.trim();
+            if (!text) return;
+            addMessage(text, 'user');
+            userInput.value = '';
+            setTimeout(() => processStep(text), 600);
+        }
+
+        function processStep(text) {
+            if (step === 1) {
+                userData.name = text;
+                step = 2;
+                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
+            } else if (step === 2) {
+                userData.service = text;
+                step = 3;
+                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
+            } else if (step === 3) {
+                userData.time = text;
+                step = 4;
+                finishFlow();
+            }
+        }
+
+        function finishFlow() {
+            inputForm.classList.add('hidden');
+            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
+            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
+            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
+            
+            const btnDiv = document.createElement('div');
+            btnDiv.className = 'z-10 self-center w-full mt-2';
+            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
+                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
+            </button>`;
+            chatBody.appendChild(btnDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
+
+        function directWhatsApp() {
+             window.open("https://wa.me/5584998070189?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
+        }
+
+        setTimeout(() => {
+            if (chatWindow.classList.contains('hidden')) {
+                toggleChat();
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
