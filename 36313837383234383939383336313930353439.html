@@ -1,304 +1,202 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia Visconde - Estilo e Tradição em Curitiba</title>
-    <link rel="icon" href="https://via.placeholder.com/32/amber-500/neutral-950?text=BV" type="image/x-icon">
-    <!-- Tailwind CSS CDN -->
+    <title>Barbearia Visconde | Curitiba - PR</title>
+    <meta name="description" content="Estilo e Tradição na Barbearia Visconde em Curitiba - PR">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- FontAwesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKx3nfrFqU9c4fEOhBI7OAI0w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 500: '#f59e0b', 600: '#d97706' },
+                        dark: { 900: '#171717', 950: '#0a0a0a' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Custom styles for gradients or specific overrides */
-        .text-gradient-amber {
-            background-image: linear-gradient(to right, var(--tw-gradient-from), var(--tw-gradient-to));
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-        }
-        /* Mobile menu specific styles for off-canvas effect */
-        #mobile-menu {
-            transition: transform 0.3s ease-in-out;
-            transform: translateX(100%); /* Start off-screen */
-        }
-        #mobile-menu.open {
-            transform: translateX(0); /* Slide in */
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
 
-    <!-- Header / Navbar -->
-    <header class="fixed top-0 left-0 w-full z-50 backdrop-blur-md bg-neutral-950/80 shadow-lg">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold tracking-tight text-gradient-amber from-amber-400 to-amber-600">Barbearia Visconde</a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#hero" class="text-neutral-100 hover:text-amber-500 transition duration-300">Home</a>
-                <a href="#servicos" class="text-neutral-100 hover:text-amber-500 transition duration-300">Serviços</a>
-                <a href="#sobre" class="text-neutral-100 hover:text-amber-500 transition duration-300">Sobre</a>
-                <a href="#contato" class="text-neutral-100 hover:text-amber-500 transition duration-300">Contato</a>
-            </nav>
-            <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="hidden md:block bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-5 rounded-full transition duration-300 shadow-lg">Agendar Horário</a>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button id="mobile-menu-button" class="md:hidden text-neutral-100 text-2xl" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-        </div>
-    </header>
-
-    <!-- Mobile Menu Overlay (Off-canvas) -->
-    <div id="mobile-menu" class="fixed top-0 right-0 h-full w-64 bg-neutral-900/95 backdrop-blur-lg z-40 p-8 pt-20 flex flex-col space-y-6 md:hidden shadow-xl">
-        <button id="close-mobile-menu" class="absolute top-4 right-4 text-neutral-100 text-3xl" aria-label="Close menu">
-            <i class="fas fa-times"></i>
-        </button>
-        <a href="#hero" class="text-neutral-100 hover:text-amber-500 text-xl font-medium transition duration-300" onclick="document.getElementById('mobile-menu').classList.remove('open')">Home</a>
-        <a href="#servicos" class="text-neutral-100 hover:text-amber-500 text-xl font-medium transition duration-300" onclick="document.getElementById('mobile-menu').classList.remove('open')">Serviços</a>
-        <a href="#sobre" class="text-neutral-100 hover:text-amber-500 text-xl font-medium transition duration-300" onclick="document.getElementById('mobile-menu').classList.remove('open')">Sobre</a>
-        <a href="#contato" class="text-neutral-100 hover:text-amber-500 text-xl font-medium transition duration-300" onclick="document.getElementById('mobile-menu').classList.remove('open')">Contato</a>
-        <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-3 px-6 rounded-full text-lg transition duration-300 shadow-lg mt-8" onclick="document.getElementById('mobile-menu').classList.remove('open')">Agendar Horário</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1596465495574-d079979b940e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzMzZ8MHwxfHNlYXJjaHw1OXx8YmFyYmVyc2hvcCUyMGludGVyaW9yfGVufDB8fHx8MTcwMTI0MzQ1Nnww&ixlib=rb-4.0.3&q=80&w=1920" alt="Interior da Barbearia Visconde" class="absolute inset-0 w-full h-full object-cover z-0 filter brightness-75">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent z-10"></div>
-        <div class="relative z-20 max-w-4xl mx-auto px-6">
-            <h1 class="text-6xl md:text-7xl font-extrabold leading-tight mb-6 text-neutral-100 drop-shadow-lg">
-                Barbearia <span class="text-gradient-amber from-amber-400 to-amber-600">Visconde</span>
-            </h1>
-            <p class="text-2xl md:text-3xl text-neutral-300 mb-10 font-light max-w-2xl mx-auto">
-                Onde a Tradição Encontra o Estilo Moderno em Curitiba.
-            </p>
-            <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-full text-xl shadow-xl transition duration-300 transform hover:scale-105">
-                Agende Seu Corte Agora
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Barbearia <span class="text-brand-500">Visconde</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Início</a>
+                <a href="#sobre" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Sobre</a>
+                <a href="#servicos" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Serviços</a>
+            </div>
+            <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-brand-500/20 text-sm uppercase tracking-wide">
+                Agendar Agora
             </a>
         </div>
-    </section>
+    </nav>
 
-    <!-- Services Section -->
-    <section id="servicos" class="py-20 bg-neutral-900">
-        <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-extrabold text-center mb-16 text-neutral-100">
-                Nossos <span class="text-gradient-amber from-amber-400 to-amber-600">Serviços Especializados</span>
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Service Card 1 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-cut"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Corte Masculino Clássico</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        Corte preciso com tesoura e máquina, finalizado com produtos de alta qualidade para um visual impecável.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">R$ 60</span>
-                    </div>
-                </div>
-                <!-- Service Card 2 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-beard"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Barba Clássica e Modelagem</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        Toalha quente, espuma rica e navalha afiada para uma barba perfeita, modelada ao seu estilo.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">R$ 50</span>
-                    </div>
-                </div>
-                <!-- Service Card 3 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-scissors"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Corte e Barba Combo</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        O pacote completo para um visual renovado. Corte de cabelo e barba com atendimento premium.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">R$ 100</span>
-                    </div>
-                </div>
-                <!-- Service Card 4 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-palette"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Pigmentação Capilar e Barba</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        Realce a cor natural ou experimente um novo tom com nossa pigmentação profissional.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">A partir de R$ 80</span>
-                    </div>
-                </div>
-                <!-- Service Card 5 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-spa"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Tratamento Capilar Premium</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        Hidratação profunda, fortalecimento e brilho para seus cabelos, com produtos exclusivos.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">R$ 70</span>
-                    </div>
-                </div>
-                <!-- Service Card 6 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl border border-neutral-800 shadow-xl hover:shadow-2xl transition duration-300 transform hover:-translate-y-1">
-                    <div class="text-amber-500 text-5xl mb-6 text-center"><i class="fas fa-ring"></i></div>
-                    <h3 class="text-3xl font-bold mb-4 text-center text-neutral-100">Dia do Noivo</h3>
-                    <p class="text-neutral-400 text-lg leading-relaxed mb-6 text-center">
-                        Prepare-se para o grande dia com um pacote completo de cuidados e relaxamento.
-                    </p>
-                    <div class="text-center">
-                        <span class="text-amber-500 text-3xl font-bold">Consulte-nos</span>
-                    </div>
-                </div>
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Curitiba - PR • Barbearia
+            </span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Estilo e Tradição na Barbearia Visconde
+            </h1>
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                O melhor corte de Curitiba espera por você. Agende seu horário e renove o visual.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
+                    Nossos Serviços
+                </a>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-24 bg-neutral-950">
+    <section id="sobre" class="py-24 bg-dark-950 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-extrabold text-center mb-16 text-neutral-100">
-                Nossa <span class="text-gradient-amber from-amber-400 to-amber-600">História e Paixão</span>
-            </h2>
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div class="lg:order-2">
-                    <img src="https://images.unsplash.com/photo-1599351006509-f8a0d4c8872b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NTQzMzZ8MHwxfHNlYXJjaHw0OXx8YmFyYmVyJTIwY3V0dGluZyUyMGhhaXJ8ZW58MHx8fHwxNzAxMjQzNDU2fDA&ixlib=rb-4.0.3&q=80&w=1000" alt="Barbeiro trabalhando" class="rounded-2xl shadow-2xl border border-neutral-800 w-full h-auto object-cover transform hover:scale-105 transition duration-500">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?q=80&w=2070&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
                 </div>
-                <div class="lg:order-1">
-                    <p class="text-neutral-300 text-lg leading-relaxed mb-6">
-                        Na Barbearia Visconde, combinamos a arte clássica da barbearia com as tendências modernas para oferecer uma experiência única. Localizada no coração de Curitiba, somos mais do que um local para cortar cabelo e fazer a barba; somos um refúgio para o homem que valoriza estilo, cuidado e um atendimento excepcional.
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Tradição em Curitiba</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Unimos técnicas clássicas e modernas para garantir um acabamento impecável em cada cliente. Nossa missão é oferecer uma experiência de cuidado premium com profissionais altamente qualificados.
                     </p>
-                    <p class="text-neutral-300 text-lg leading-relaxed mb-6">
-                        Desde o momento em que você entra, será recebido por uma atmosfera sofisticada e relaxante. Nossos barbeiros são mestres em seu ofício, dedicados a entender suas preferências e aprimorar sua imagem com precisão e paixão. Utilizamos apenas produtos premium para garantir que cada serviço não apenas atenda, mas supere suas expectativas.
-                    </p>
-                    <p class="text-neutral-300 text-lg leading-relaxed">
-                        Venha descobrir o que nos torna a escolha preferida para quem busca excelência em cuidados masculinos em Curitiba.
-                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Profissionais Especializados</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Ambiente Exclusivo</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Produtos de Alta Qualidade</li>
+                    </ul>
+                    <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-brand-500 font-bold hover:text-white transition-colors inline-flex items-center border-b-2 border-brand-500 pb-1">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="py-24 bg-neutral-900 text-center">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-5xl font-extrabold mb-8 text-neutral-100">
-                Pronto para Transformar Seu <span class="text-gradient-amber from-amber-400 to-amber-600">Estilo?</span>
-            </h2>
-            <p class="text-neutral-300 text-xl leading-relaxed mb-12">
-                Não espere mais. Garanta seu horário na Barbearia Visconde e experimente o melhor em cortes, barbas e cuidados masculinos.
-            </p>
-            <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-12 rounded-full text-2xl shadow-xl transition duration-300 transform hover:scale-105">
-                Agende Agora via WhatsApp <i class="fab fa-whatsapp ml-3"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="py-20 bg-neutral-950">
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-dark-900 border-y border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-5xl font-extrabold text-center mb-16 text-neutral-100">
-                Fale <span class="text-gradient-amber from-amber-400 to-amber-600">Conosco</span>
-            </h2>
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
-                <!-- Contact Info -->
-                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl">
-                    <h3 class="text-3xl font-bold mb-8 text-neutral-100">Informações de Contato</h3>
-                    <div class="space-y-6">
-                        <p class="text-neutral-300 text-lg flex items-center">
-                            <i class="fas fa-phone-alt text-amber-500 mr-4 text-2xl"></i>
-                            Telefone: <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="ml-2 text-neutral-100 hover:text-amber-500 transition duration-300">(41) 3057-9999</a>
-                        </p>
-                        <p class="text-neutral-300 text-lg flex items-start">
-                            <i class="fas fa-map-marker-alt text-amber-500 mr-4 text-2xl mt-1"></i>
-                            Endereço: Rua Visconde do Rio Branco, 1655 - Centro, Curitiba - PR, 80420-210
-                        </p>
-                        <p class="text-neutral-300 text-lg flex items-center">
-                            <i class="fas fa-clock text-amber-500 mr-4 text-2xl"></i>
-                            Horário de Atendimento: <span class="ml-2">Seg-Sex: 09h-19h, Sáb: 09h-17h (Consulte-nos para horários especiais)</span>
-                        </p>
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">O que oferecemos</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Nossos Serviços</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-star text-2xl"></i>
                     </div>
-                    <div class="mt-10 text-center">
-                        <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-full text-lg shadow-lg transition duration-300 transform hover:scale-105">
-                            Fale Conosco via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
-                        </a>
-                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte Moderno</h4>
+                    <p class="text-gray-400 mb-6">Estilos atuais personalizados para o seu formato de rosto e personalidade.</p>
+                    <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="bg-neutral-900 p-8 rounded-2xl border border-neutral-800 shadow-xl">
-                    <h3 class="text-3xl font-bold mb-8 text-neutral-100">Envie uma Mensagem</h3>
-                    <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-neutral-300 text-lg font-medium mb-2">Seu Nome</label>
-                            <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none" placeholder="Seu nome completo" required>
-                        </div>
-                        <div>
-                            <label for="email" class="block text-neutral-300 text-lg font-medium mb-2">Seu E-mail (Opcional)</label>
-                            <input type="email" id="email" name="email" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none" placeholder="seu.email@exemplo.com">
-                        </div>
-                        <div>
-                            <label for="message" class="block text-neutral-300 text-lg font-medium mb-2">Sua Mensagem</label>
-                            <textarea id="message" name="message" rows="5" class="w-full p-4 bg-neutral-950 border border-neutral-800 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-transparent outline-none resize-y" placeholder="Gostaria de agendar um horário para..." required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 rounded-full text-lg shadow-lg transition duration-300 transform hover:scale-105">
-                            Enviar Mensagem <i class="fas fa-paper-plane ml-2"></i>
-                        </button>
-                    </form>
+                <!-- Service 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba Terapia</h4>
+                    <p class="text-gray-400 mb-6">Relaxamento com toalha quente, óleos essenciais e o desenho perfeito da barba.</p>
+                    <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Combo Visconde</h4>
+                    <p class="text-gray-400 mb-6">A experiência completa unindo cabelo e barba com acabamento de alto padrão.</p>
+                    <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Google Maps -->
-            <div class="mt-16">
-                <h3 class="text-4xl font-bold text-center mb-8 text-neutral-100">Onde Estamos</h3>
-                <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Final%20da%20Rua%2024h%20-%20R.%20Visc.%20do%20Rio%20Branco%2C%201655%20-%20Centro%2C%20Curitiba%20-%20PR%2C%2080420-210%2C%20Brasil%2C%20Curitiba&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+    <!-- Location & Contact -->
+    <section id="contato" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-8">Venha nos Visitar</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fas fa-map-marker-alt text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Endereço</h4>
+                                <p class="text-gray-400">Curitiba - PR</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fab fa-whatsapp text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                                <p class="text-gray-400">(41) 3057-9999</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Curitiba%20-%20PR&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border-4 border-dark-950/20 rounded-2xl"></div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-10 bg-neutral-900 border-t border-neutral-800">
+    <footer class="bg-dark-900 border-t border-white/5 pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-neutral-400 mb-6">&copy; 2023 Barbearia Visconde. Todos os direitos reservados.</p>
-            <div class="flex justify-center space-x-6">
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition duration-300" aria-label="Facebook"><i class="fab fa-facebook-f text-2xl"></i></a>
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition duration-300" aria-label="Instagram"><i class="fab fa-instagram text-2xl"></i></a>
-                <a href="https://wa.me/554130579999?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 transition duration-300" aria-label="WhatsApp"><i class="fab fa-whatsapp text-2xl"></i></a>
+            <h2 class="font-display text-2xl font-bold text-white mb-6 uppercase">Barbearia Visconde</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-whatsapp"></i></a>
             </div>
+            <p class="text-gray-600 text-sm">&copy; 2024 Barbearia Visconde. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Contact Form and Mobile Menu -->
-    <script>
-        // Contact Form WhatsApp Handler
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = document.getElementById('name').value;
-            var email = document.getElementById('email').value; // Optional, can be included in message
-            var msg = document.getElementById('message').value;
-            
-            var whatsappMessage = "Olá, me chamo " + name + ". ";
-            if (email) {
-                whatsappMessage += "(Meu e-mail é " + email + "). ";
-            }
-            whatsappMessage += msg;
-
-            var url = "https://wa.me/554130579999?text=" + encodeURIComponent(whatsappMessage);
-            window.open(url, '_blank');
-        });
-
-        // Mobile Menu Toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const closeMobileMenuButton = document.getElementById('close-mobile-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.add('open');
-        });
-
-        closeMobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/554130579999?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/20 flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
 </body>
 </html>
