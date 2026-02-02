@@ -1,199 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pituba Barbershop | Barbearia Premium em Salvador</title>
-    <meta name="description" content="A melhor experiência de barbearia na Pituba, Salvador. Cortes modernos, barba terapia e ambiente exclusivo. Agende seu horário.">
-    
-    <!-- Tailwind CSS -->
+    <title>Pituba Barbershop | Salvador, BA</title>
+    <meta name="description" content="O Estilo que Salvador Respeita em Salvador, BA">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        neutral: {
-                            850: '#1f1f1f',
-                            900: '#171717',
-                            950: '#0a0a0a',
-                        },
-                        amber: {
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                        }
+                        brand: { 500: '#f59e0b', 600: '#d97706' },
+                        dark: { 900: '#171717', 950: '#0a0a0a' }
                     },
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Oswald', 'sans-serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 10px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0a0a;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 5px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d97706;
-        }
-        
-        .glass-nav {
-            backdrop-filter: blur(12px);
-            background-color: rgba(10, 10, 10, 0.85);
-        }
-        
-        .text-shadow {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans antialiased selection:bg-amber-500 selection:text-neutral-950">
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-nav border-b border-neutral-800 transition-all duration-300" id="navbar">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-center justify-between h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0">
-                    <a href="#" class="font-display text-2xl font-bold tracking-wider text-white">
-                        PITUBA <span class="text-amber-500">BARBERSHOP</span>
-                    </a>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="#home" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Início</a>
-                        <a href="#servicos" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">Serviços</a>
-                        <a href="#sobre" class="hover:text-amber-500 transition-colors px-3 py-2 rounded-md text-sm font-medium uppercase tracking-wide">A Barbearia</a>
-                        <a href="#contato" class="bg-amber-600 hover:bg-amber-500 text-white px-6 py-2 rounded-full text-sm font-bold uppercase tracking-wide transition-all shadow-lg shadow-amber-600/20">
-                            <i class="fab fa-whatsapp mr-2"></i> Agendar
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="-mr-2 flex md:hidden">
-                    <button type="button" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')" class="inline-flex items-center justify-center p-2 rounded-md text-neutral-400 hover:text-white hover:bg-neutral-800 focus:outline-none">
-                        <i class="fas fa-bars text-xl"></i>
-                    </button>
-                </div>
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Pituba <span class="text-brand-500">Barbershop</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Início</a>
+                <a href="#sobre" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Sobre</a>
+                <a href="#servicos" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Serviços</a>
             </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div class="hidden md:hidden bg-neutral-900 border-b border-neutral-800" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#home" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Início</a>
-                <a href="#servicos" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Serviços</a>
-                <a href="#sobre" class="text-neutral-300 hover:text-amber-500 block px-3 py-2 rounded-md text-base font-medium">Sobre</a>
-                <a href="https://wa.me/5571993630099?text=Olá, gostaria de agendar um horário." class="text-amber-500 block px-3 py-2 rounded-md text-base font-bold">Agendar Agora</a>
-            </div>
+            <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-brand-500/20 text-sm uppercase tracking-wide">
+                Agendar Agora
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
-        <!-- Background Image -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barbearia Interior" class="w-full h-full object-cover">
-            <!-- Dark Overlay Gradient -->
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/40"></div>
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
         </div>
-
-        <div class="relative z-10 max-w-7xl mx-auto px-6 text-center">
-            <span class="block text-amber-500 font-display font-bold tracking-[0.2em] uppercase mb-4 animate-fade-in-up">Salvador • Pituba</span>
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 text-shadow leading-tight">
-                ESTILO & <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-600">TRADIÇÃO</span>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Salvador, BA • Barbearia
+            </span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                O Estilo que Salvador Respeita
             </h1>
-            <p class="mt-4 max-w-2xl mx-auto text-lg md:text-xl text-neutral-300 mb-10 font-light">
-                Mais que um corte, uma experiência. O cuidado que o homem moderno merece no coração da Pituba.
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Transforme seu visual com especialistas no coração da Pituba e sinta a real diferença.
             </p>
-            <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="https://wa.me/5571993630099?text=Olá, gostaria de agendar um horário." class="bg-amber-600 hover:bg-amber-500 text-white px-8 py-4 rounded-full text-lg font-bold uppercase tracking-wide transition-all shadow-xl shadow-amber-600/20 transform hover:-translate-y-1">
-                    Agendar Horário
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Horário
                 </a>
-                <a href="#servicos" class="bg-transparent border border-neutral-600 hover:border-white text-white px-8 py-4 rounded-full text-lg font-medium uppercase tracking-wide transition-all hover:bg-white/5">
+                <a href="#servicos" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
                     Nossos Serviços
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Info Strip -->
-    <div class="bg-neutral-900 border-y border-neutral-800 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 py-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-neutral-800">
-                <div class="p-4">
-                    <i class="fas fa-map-marker-alt text-amber-500 text-2xl mb-3"></i>
-                    <h3 class="font-display text-lg font-bold text-white">Localização</h3>
-                    <p class="text-neutral-400 text-sm mt-1">Pituba, Salvador - BA</p>
-                </div>
-                <div class="p-4">
-                    <i class="fas fa-clock text-amber-500 text-2xl mb-3"></i>
-                    <h3 class="font-display text-lg font-bold text-white">Horário</h3>
-                    <p class="text-neutral-400 text-sm mt-1">Atendimento com Hora Marcada</p>
-                </div>
-                <div class="p-4">
-                    <i class="fas fa-phone-alt text-amber-500 text-2xl mb-3"></i>
-                    <h3 class="font-display text-lg font-bold text-white">Contato</h3>
-                    <p class="text-neutral-400 text-sm mt-1">(71) 99363-0099</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <!-- About Section -->
-    <section id="sobre" class="py-24 bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="sobre" class="py-24 bg-dark-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-amber-600/20 rounded-2xl blur-lg"></div>
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" alt="Barbeiro trabalhando" class="relative rounded-2xl shadow-2xl border border-neutral-800 grayscale hover:grayscale-0 transition-all duration-700">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?q=80&w=2070&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
                 </div>
                 <div>
-                    <h4 class="text-amber-500 font-bold uppercase tracking-widest mb-2">Sobre a Pituba Barbershop</h4>
-                    <h2 class="text-4xl md:text-5xl font-display font-bold text-white mb-6">A EXCELÊNCIA QUE VOCÊ PROCURA</h2>
-                    <p class="text-neutral-400 text-lg mb-6 leading-relaxed">
-                        Localizada em um dos bairros mais nobres de Salvador, a Pituba Barbershop combina a técnica da barbearia clássica com as tendências modernas de visagismo.
-                    </p>
-                    <p class="text-neutral-400 text-lg mb-8 leading-relaxed">
-                        Nosso ambiente foi projetado para oferecer relaxamento e conforto. Aqui, cada detalhe importa, desde a toalha quente até o acabamento perfeito do seu corte.
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Tradição e Modernidade na Pituba</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        A Pituba Barbershop une técnicas clássicas e tendências modernas para garantir um acabamento impecável. Nossa equipe é dedicada a oferecer uma experiência premium com foco total na sua satisfação.
                     </p>
                     <ul class="space-y-4 mb-8">
-                        <li class="flex items-center text-neutral-300">
-                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Profissionais Especializados
-                        </li>
-                        <li class="flex items-center text-neutral-300">
-                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Produtos Premium
-                        </li>
-                        <li class="flex items-center text-neutral-300">
-                            <i class="fas fa-check-circle text-amber-500 mr-3"></i> Ambiente Climatizado
-                        </li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Profissionais Especializados</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Ambiente Exclusivo</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Produtos de Alta Qualidade</li>
                     </ul>
-                    <a href="https://wa.me/5571993630099?text=Olá, gostaria de saber mais sobre a barbearia." class="text-amber-500 font-bold uppercase tracking-wide border-b-2 border-amber-500 pb-1 hover:text-white hover:border-white transition-all">
-                        Fale Conosco
+                    <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-brand-500 font-bold hover:text-white transition-colors inline-flex items-center border-b-2 border-brand-500 pb-1">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
                     </a>
                 </div>
             </div>
@@ -201,200 +106,97 @@
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="py-24 bg-neutral-900 relative">
-        <!-- Decorative bg element -->
-        <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-neutral-700 to-transparent"></div>
-        
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="servicos" class="py-24 bg-dark-900 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
-                <span class="text-amber-500 font-bold uppercase tracking-widest">Nossos Serviços</span>
-                <h2 class="text-4xl md:text-5xl font-display font-bold text-white mt-2">MENU EXCLUSIVO</h2>
+                <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">O que oferecemos</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Nossos Serviços</h3>
             </div>
-
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-cut text-6xl text-white"></i>
+                <!-- Service 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-star text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-white mb-2">Corte Premium</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">Corte de cabelo personalizado com lavagem especial e finalização com produtos de alta qualidade.</p>
-                    <div class="flex items-center justify-between mt-auto border-t border-neutral-800 pt-4">
-                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
-                        <a href="https://wa.me/5571993630099?text=Gostaria de agendar um Corte Premium." class="text-white bg-neutral-800 hover:bg-amber-600 px-4 py-2 rounded-lg text-sm transition-colors">Agendar</a>
-                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h4>
+                    <p class="text-gray-400 mb-6">Cortes modernos e clássicos personalizados para valorizar o seu estilo único.</p>
+                    <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
-
-                <!-- Service Card 2 -->
-                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-user-tie text-6xl text-white"></i>
+                <!-- Service 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-fire text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-white mb-2">Barba Terapia</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">Ritual completo com toalha quente, esfoliação, hidratação e modelagem perfeita da barba.</p>
-                    <div class="flex items-center justify-between mt-auto border-t border-neutral-800 pt-4">
-                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
-                        <a href="https://wa.me/5571993630099?text=Gostaria de agendar uma Barba Terapia." class="text-white bg-neutral-800 hover:bg-amber-600 px-4 py-2 rounded-lg text-sm transition-colors">Agendar</a>
-                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba de Respeito</h4>
+                    <p class="text-gray-400 mb-6">Design preciso com toalha quente e produtos de alta qualidade para sua pele.</p>
+                    <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
-
-                <!-- Service Card 3 -->
-                <div class="group bg-neutral-950 border border-neutral-800 rounded-2xl p-8 hover:border-amber-500/50 transition-all duration-300 hover:-translate-y-2 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i class="fas fa-star text-6xl text-white"></i>
+                <!-- Service 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate text-2xl"></i>
                     </div>
-                    <h3 class="text-2xl font-display font-bold text-white mb-2">Combo Pituba</h3>
-                    <p class="text-neutral-400 mb-6 text-sm">A experiência completa: Corte + Barba + Sobrancelha. Saia renovado e com estilo impecável.</p>
-                    <div class="flex items-center justify-between mt-auto border-t border-neutral-800 pt-4">
-                        <span class="text-amber-500 font-bold text-lg">Consultar</span>
-                        <a href="https://wa.me/5571993630099?text=Gostaria de agendar o Combo Pituba." class="text-white bg-neutral-800 hover:bg-amber-600 px-4 py-2 rounded-lg text-sm transition-colors">Agendar</a>
-                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Combo VIP</h4>
+                    <p class="text-gray-400 mb-6">Cabelo, barba e cuidados faciais completos para uma renovação total de visual.</p>
+                    <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Preview -->
-    <section class="py-24 bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-96 md:h-[500px]">
-                <div class="col-span-2 row-span-2 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f304?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ambiente">
-                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h4 class="text-white font-display text-xl font-bold">Ambiente Clássico</h4>
-                    </div>
-                </div>
-                <div class="relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Ferramentas">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
-                </div>
-                <div class="relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1976&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Corte">
-                    <div class="absolute inset-0 bg-black/40 group-hover:bg-transparent transition-colors"></div>
-                </div>
-                <div class="col-span-2 relative rounded-2xl overflow-hidden group">
-                    <img src="https://images.unsplash.com/photo-1512690459411-b9245aed614b?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" alt="Produtos">
-                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-950/90 via-transparent to-transparent"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <h4 class="text-white font-display text-xl font-bold">Produtos de Elite</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="py-24 bg-neutral-900 border-t border-neutral-800">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                <!-- Contact Form -->
+    <!-- Location & Contact -->
+    <section id="contato" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h2 class="text-4xl font-display font-bold text-white mb-2">ENTRE EM CONTATO</h2>
-                    <p class="text-neutral-400 mb-8">Preencha o formulário abaixo para agendar seu horário ou tirar dúvidas diretamente no nosso WhatsApp.</p>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-8">Venha nos Visitar</h3>
                     
-                    <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-sm font-medium text-neutral-400 mb-2">Nome Completo</label>
-                            <input type="text" id="name" required class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Seu nome">
+                    <div class="space-y-6">
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fas fa-map-marker-alt text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Endereço</h4>
+                                <p class="text-gray-400">Av. Octávio Mangabeira, 1945 - Pituba, Salvador - BA, 41830-050, Brasil, Salvador, BA</p>
+                            </div>
                         </div>
-                        <div>
-                            <label for="service" class="block text-sm font-medium text-neutral-400 mb-2">Serviço de Interesse</label>
-                            <select id="service" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors">
-                                <option value="Agendamento">Agendar Horário</option>
-                                <option value="Corte de Cabelo">Corte de Cabelo</option>
-                                <option value="Barba">Barba</option>
-                                <option value="Dúvidas">Outras Dúvidas</option>
-                            </select>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fab fa-whatsapp text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                                <p class="text-gray-400">(71) 99363-0099</p>
+                            </div>
                         </div>
-                        <div>
-                            <label for="message" class="block text-sm font-medium text-neutral-400 mb-2">Mensagem (Opcional)</label>
-                            <textarea id="message" rows="4" class="w-full bg-neutral-950 border border-neutral-800 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500 transition-colors" placeholder="Qual o melhor horário para você?"></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white font-bold py-4 rounded-lg uppercase tracking-wide transition-all transform hover:-translate-y-1 shadow-lg shadow-amber-600/20">
-                            Enviar via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
-                        </button>
-                    </form>
+                    </div>
                 </div>
-
-                <!-- Map & Info -->
-                <div class="flex flex-col h-full">
-                    <div class="bg-neutral-950 p-2 rounded-2xl border border-neutral-800 mb-6 flex-grow">
-                        <!-- Google Maps Iframe -->
-                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Oct%C3%A1vio%20Mangabeira%2C%201945%20-%20Pituba%2C%20Salvador%20-%20BA%2C%2041830-050%2C%20Brasil%2C%20Salvador&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333; width: 100%; height: 100%; min-height: 400px;"></iframe>
-                    </div>
-                    <div class="flex items-center space-x-4 text-neutral-400">
-                        <div class="bg-neutral-950 p-3 rounded-full border border-neutral-800">
-                            <i class="fas fa-map-pin text-amber-500"></i>
-                        </div>
-                        <div>
-                            <p class="text-white font-medium">Pituba Barbershop</p>
-                            <p class="text-sm">Av. Octávio Mangabeira, 1945 - Pituba, Salvador - BA</p>
-                        </div>
-                    </div>
+                
+                <!-- Map -->
+                <div class="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Oct%C3%A1vio%20Mangabeira%2C%201945%20-%20Pituba%2C%20Salvador%20-%20BA%2C%2041830-050%2C%20Brasil%2C%20Salvador%2C%20BA&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border-4 border-dark-950/20 rounded-2xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-neutral-950 border-t border-neutral-800 py-12">
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <h3 class="text-2xl font-display font-bold text-white tracking-wider">PITUBA <span class="text-amber-500">BARBERSHOP</span></h3>
-                <p class="text-neutral-500 text-sm mt-2">© 2023 Todos os direitos reservados.</p>
+    <footer class="bg-dark-900 border-t border-white/5 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-display text-2xl font-bold text-white mb-6 uppercase">Pituba Barbershop</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-whatsapp"></i></a>
             </div>
-            
-            <div class="flex space-x-6">
-                <a href="https://wa.me/5571993630099" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors text-xl">
-                    <i class="fab fa-facebook"></i>
-                </a>
-            </div>
+            <p class="text-gray-600 text-sm">&copy; 2024 Pituba Barbershop. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- WhatsApp Button Fixed -->
-    <a href="https://wa.me/5571993630099?text=Olá, gostaria de agendar um horário." class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white p-4 rounded-full shadow-2xl z-50 transition-all hover:scale-110 flex items-center justify-center w-14 h-14 border-2 border-green-600">
-        <i class="fab fa-whatsapp text-2xl"></i>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5571993630099?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/20 flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- JavaScript Logic -->
-    <script>
-        // Form Handling Logic
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            var name = document.getElementById('name').value;
-            var service = document.getElementById('service').value;
-            var msg = document.getElementById('message').value;
-            
-            // Construct the message
-            var fullMessage = "Olá, me chamo *" + name + "*.";
-            fullMessage += " Tenho interesse em: *" + service + "*.";
-            if(msg) {
-                fullMessage += " " + msg;
-            }
-            
-            // Redirect to WhatsApp
-            var url = "https://wa.me/5571993630099?text=" + encodeURIComponent(fullMessage);
-            window.open(url, '_blank');
-        });
-
-        // Navbar Scroll Effect
-        window.addEventListener('scroll', function() {
-            var navbar = document.getElementById('navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('shadow-lg');
-            } else {
-                navbar.classList.remove('shadow-lg');
-            }
-        });
-    </script>
 </body>
 </html>
