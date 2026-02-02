@@ -1,417 +1,202 @@
+
 <!DOCTYPE html>
 <html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia Recife | Dark Luxury Experience</title>
-    <meta name="description" content="A melhor experiência em barbearia de Recife. Estilo, luxo e tradição.">
-
-    <!-- Tailwind CSS -->
+    <title>Barbearia Recife | Recife</title>
+    <meta name="description" content="Estilo e Tradição no Recife em Recife">
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Configurações Tailwind Personalizadas -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'gold-500': '#d4af37',
-                        'gold-400': '#f3cf55',
-                        'dark-bg': '#050505',
-                        'dark-card': '#0a0a0a',
+                        brand: { 500: '#f59e0b', 600: '#d97706' },
+                        dark: { 900: '#171717', 950: '#0a0a0a' }
                     },
                     fontFamily: {
-                        'oswald': ['Oswald', 'sans-serif'],
-                        'playfair': ['Playfair Display', 'serif'],
-                        'inter': ['Inter', 'sans-serif'],
-                    },
-                    backgroundImage: {
-                        'noise': "url('https://grainy-gradients.vercel.app/noise.svg')",
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Oswald:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-    <!-- FontAwesome Icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <style>
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #050505;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #333;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #d4af37;
-        }
-
-        /* Map Dark Mode Filter */
-        .map-dark {
-            filter: grayscale(100%) invert(92%) contrast(83%);
-        }
-        
-        /* Noise Texture Overlay */
-        .bg-noise {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.05;
-            background-image: url('https://www.transparenttextures.com/patterns/stardust.png'); 
-        }
-
-        /* Text Outline for visual impact */
-        .text-outline {
-            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.1);
-            color: transparent;
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-dark-bg text-neutral-100 font-inter antialiased overflow-x-hidden selection:bg-gold-500 selection:text-black">
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
 
-    <!-- Noise Overlay for Texture -->
-    <div class="bg-noise"></div>
-
-    <!-- Header / Navbar -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 backdrop-blur-md border-b border-white/5 bg-dark-bg/80">
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="flex items-center gap-2" data-aos="fade-down">
-                <i class="fa-solid fa-scissors text-gold-500 text-2xl"></i>
-                <span class="font-oswald text-2xl tracking-widest font-bold text-white">BARBEARIA<span class="text-gold-500">RECIFE</span></span>
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Barbearia <span class="text-brand-500">Recife</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Início</a>
+                <a href="#sobre" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Sobre</a>
+                <a href="#servicos" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Serviços</a>
             </div>
-            <div class="hidden md:flex gap-8 items-center font-oswald tracking-wide text-sm uppercase text-gray-400">
-                <a href="#sobre" class="hover:text-gold-500 transition-colors">A Casa</a>
-                <a href="#servicos" class="hover:text-gold-500 transition-colors">Serviços</a>
-                <a href="#galeria" class="hover:text-gold-500 transition-colors">Galeria</a>
-                <a href="https://wa.me/558132047136?text=Olá, gostaria de agendar um horário." class="px-6 py-2 border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black transition-all duration-300 font-bold">
-                    Agendar Agora
-                </a>
-            </div>
+            <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-brand-500/20 text-sm uppercase tracking-wide">
+                Agendar Agora
+            </a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header class="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <!-- Background Image -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=2070&auto=format&fit=crop" 
-                 alt="Barber Shop Luxury" 
-                 class="w-full h-full object-cover object-center scale-110 animate-[pulse_10s_infinite]">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
         </div>
-        <!-- Overlay Gradient -->
-        <div class="absolute inset-0 bg-gradient-to-t from-dark-bg via-black/80 to-black/40 z-10"></div>
-
-        <!-- Content -->
-        <div class="relative z-20 text-center px-4 max-w-5xl mx-auto mt-16">
-            <p class="font-playfair italic text-gold-500 text-xl md:text-2xl mb-4" data-aos="fade-down" data-aos-delay="200">
-                Estilo. Tradição. Exclusividade.
-            </p>
-            <h1 class="font-oswald text-6xl md:text-8xl lg:text-9xl font-bold uppercase leading-none text-white mb-8 tracking-tight" data-aos="zoom-in" data-aos-duration="1200">
-                Corte <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold-500 to-amber-700">Premium</span><br>
-                <span class="text-outline">Recife</span>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Recife • Barbearia
+            </span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Estilo e Tradição no Recife
             </h1>
-            <p class="font-inter text-gray-400 max-w-2xl mx-auto mb-10 text-lg font-light" data-aos="fade-up" data-aos-delay="400">
-                Não é apenas um corte de cabelo. É o ritual que separa os homens dos meninos. Vivencie a verdadeira barbearia clássica no coração de Recife.
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Transforme seu visual com os melhores especialistas da capital pernambucana.
             </p>
-            
-            <div class="flex flex-col md:flex-row gap-4 justify-center items-center" data-aos="fade-up" data-aos-delay="600">
-                <a href="https://wa.me/558132047136?text=Olá, vim pelo site e quero agendar." 
-                   class="group relative px-10 py-4 bg-gold-500 text-black font-oswald font-bold uppercase tracking-wider overflow-hidden">
-                    <span class="relative z-10 group-hover:text-white transition-colors duration-300">Agendar Horário</span>
-                    <div class="absolute inset-0 bg-black transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300 ease-out"></div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Horário
                 </a>
-                <a href="#servicos" class="px-10 py-4 border border-white/20 text-white font-oswald uppercase tracking-wider hover:bg-white/10 transition-all">
-                    Ver Serviços
+                <a href="#servicos" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
+                    Nossos Serviços
                 </a>
-            </div>
-        </div>
-
-        <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <i class="fa-solid fa-arrow-down text-gold-500 text-xl"></i>
-        </div>
-    </header>
-
-    <!-- Social Proof Section -->
-    <section class="bg-dark-card border-y border-white/5 py-12 relative z-20">
-        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-white/10">
-            <div data-aos="fade-up" data-aos-delay="0">
-                <span class="block font-oswald text-4xl text-white font-bold mb-2">500+</span>
-                <span class="text-gray-400 uppercase text-sm tracking-widest">Clientes Satisfeitos</span>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="100">
-                <div class="flex justify-center gap-1 text-gold-500 mb-2 text-2xl">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <span class="text-gray-400 uppercase text-sm tracking-widest">Avaliação Máxima</span>
-            </div>
-            <div data-aos="fade-up" data-aos-delay="200">
-                <span class="block font-oswald text-4xl text-white font-bold mb-2">10+</span>
-                <span class="text-gray-400 uppercase text-sm tracking-widest">Anos de Tradição</span>
             </div>
         </div>
     </section>
 
-    <!-- About / Concept Section -->
-    <section id="sobre" class="py-24 bg-dark-bg relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-neutral-900/50 to-transparent pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-16">
-            <!-- Image Composition -->
-            <div class="w-full md:w-1/2 relative" data-aos="fade-right">
-                <div class="relative z-10 border border-gold-500/30 p-2">
-                    <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Barber Working" class="grayscale hover:grayscale-0 transition-all duration-700 w-full h-[500px] object-cover">
-                </div>
-                <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-gold-500 z-0 hidden md:block"></div>
-                <div class="absolute -top-6 -left-6 w-full h-full border border-white/10 z-0"></div>
-            </div>
-
-            <!-- Text Content -->
-            <div class="w-full md:w-1/2" data-aos="fade-left">
-                <h4 class="font-playfair text-gold-500 italic text-xl mb-2">Sobre Nós</h4>
-                <h2 class="font-oswald text-4xl md:text-6xl uppercase text-white mb-6 leading-tight">
-                    Mais que um corte,<br>um <span class="text-gold-500">legado.</span>
-                </h2>
-                <p class="text-gray-400 mb-6 leading-relaxed">
-                    Localizada em Recife, nossa barbearia resgata a essência do cavalheirismo clássico. Um ambiente onde o cheiro de madeira, couro e café fresco se mistura com a precisão das tesouras.
-                </p>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Aqui você não espera sua vez, você relaxa. Oferecemos cervejas artesanais, uísque importado e um ambiente climatizado para você se desconectar do mundo lá fora.
-                </p>
-                <ul class="space-y-3 mb-8 font-oswald text-gray-300 tracking-wide">
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-500"></i> Profissionais Premiados</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-500"></i> Ambiente Climatizado</li>
-                    <li class="flex items-center gap-3"><i class="fa-solid fa-check text-gold-500"></i> Bar Exclusivo</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services Bento Grid -->
-    <section id="servicos" class="py-24 bg-neutral-950">
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-dark-950 relative">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-oswald text-5xl text-white uppercase mb-4">Nossos <span class="text-gold-500">Serviços</span></h2>
-                <p class="font-playfair text-gray-400 italic">Excelência em cada detalhe</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?q=80&w=2070&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
+                </div>
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Excelência em Cada Corte</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        A Barbearia Recife une técnicas clássicas e tendências modernas para garantir um acabamento impecável. Utilizamos produtos premium para proporcionar o máximo de conforto e cuidado aos nossos clientes.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Profissionais Especializados</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Ambiente Exclusivo</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Produtos de Alta Qualidade</li>
+                    </ul>
+                    <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-brand-500 font-bold hover:text-white transition-colors inline-flex items-center border-b-2 border-brand-500 pb-1">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
+        </div>
+    </section>
 
-            <!-- BENTO GRID -->
-            <div class="grid grid-cols-1 md:grid-cols-4 grid-rows-3 gap-4 h-auto md:h-[800px]">
-                
-                <!-- Card 1: Main Haircut (Large) -->
-                <div class="md:col-span-2 md:row-span-2 relative group overflow-hidden border border-white/10 bg-dark-card" data-aos="zoom-in">
-                    <img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform" alt="Corte">
-                    <div class="absolute bottom-0 left-0 p-8 w-full bg-gradient-to-t from-black to-transparent">
-                        <div class="flex justify-between items-end">
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-dark-900 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">O que oferecemos</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Nossos Serviços</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h4>
+                    <p class="text-gray-400 mb-6">Cortes modernos e clássicos personalizados para o seu estilo.</p>
+                    <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba e Toalha Quente</h4>
+                    <p class="text-gray-400 mb-6">O ritual completo para uma barba alinhada e pele hidratada.</p>
+                    <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Tratamentos Capilares</h4>
+                    <p class="text-gray-400 mb-6">Cuidados específicos para manter a saúde e o brilho dos fios.</p>
+                    <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contato" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-8">Venha nos Visitar</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fas fa-map-marker-alt text-brand-500 text-xl mt-1 mr-4"></i>
                             <div>
-                                <h3 class="font-oswald text-3xl text-white uppercase mb-2">Corte Signature</h3>
-                                <p class="text-gray-300 text-sm">Lavagem, corte, finalização e massagem capilar.</p>
+                                <h4 class="font-bold text-white text-lg">Endereço</h4>
+                                <p class="text-gray-400">Recife</p>
                             </div>
-                            <span class="font-oswald text-gold-500 text-2xl">R$ 80</span>
+                        </div>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fab fa-whatsapp text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                                <p class="text-gray-400">(81) 3204-7136</p>
+                            </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Card 2: Beard (Tall) -->
-                <div class="md:col-span-1 md:row-span-2 relative group overflow-hidden border border-white/10 bg-dark-card" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1621605815971-fbc98d6d4e85?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-40 group-hover:opacity-60 transition-opacity duration-500 group-hover:scale-105 transform" alt="Barba">
-                    <div class="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black to-transparent">
-                        <h3 class="font-oswald text-2xl text-white uppercase mb-1">Barba Terapia</h3>
-                        <p class="text-gray-300 text-xs mb-2">Toalha quente e navalha.</p>
-                        <span class="font-oswald text-gold-500 text-xl">R$ 60</span>
-                    </div>
-                </div>
-
-                <!-- Card 3: Combo (Wide) -->
-                <div class="md:col-span-1 md:row-span-1 relative group overflow-hidden border border-white/10 bg-dark-card flex flex-col justify-center items-center p-6 hover:border-gold-500/50 transition-colors" data-aos="fade-left" data-aos-delay="200">
-                    <i class="fa-solid fa-crown text-4xl text-gold-500 mb-4"></i>
-                    <h3 class="font-oswald text-xl text-white uppercase">Combo Real</h3>
-                    <p class="text-gray-400 text-center text-xs mt-2">Corte + Barba + Bebida</p>
-                    <span class="font-oswald text-white mt-2">R$ 120</span>
-                </div>
-
-                <!-- Card 4: Pigmentation -->
-                <div class="md:col-span-1 md:row-span-1 relative group overflow-hidden border border-white/10 bg-dark-card p-6 flex flex-col justify-end" data-aos="fade-up" data-aos-delay="300">
-                    <div class="absolute top-4 right-4 text-gold-500"><i class="fa-solid fa-spray-can"></i></div>
-                    <h3 class="font-oswald text-xl text-white uppercase">Pigmentação</h3>
-                    <span class="font-oswald text-gold-500">R$ 40</span>
-                </div>
-
-                <!-- Card 5: Eyebrow/Details -->
-                <div class="md:col-span-2 md:row-span-1 relative group overflow-hidden border border-white/10 bg-dark-card" data-aos="fade-up" data-aos-delay="400">
-                     <div class="absolute inset-0 bg-gradient-to-r from-neutral-900 to-neutral-800 flex items-center justify-between p-8">
-                        <div>
-                            <h3 class="font-oswald text-2xl text-white uppercase">Dia do Noivo</h3>
-                            <p class="text-gray-400 text-sm max-w-xs">Experiência completa para o seu grande dia com amigos.</p>
-                        </div>
-                        <a href="https://wa.me/558132047136?text=Quero cotar o Dia do Noivo" class="px-6 py-2 border border-gold-500 text-gold-500 hover:bg-gold-500 hover:text-black transition text-sm uppercase font-bold">
-                            Cotar
-                        </a>
-                     </div>
-                </div>
-
-                 <!-- Card 6: Products -->
-                 <div class="md:col-span-1 md:row-span-1 relative group overflow-hidden border border-white/10 bg-dark-card" data-aos="fade-left" data-aos-delay="500">
-                    <img src="https://images.unsplash.com/photo-1597354874632-25769806749f?q=80&w=2070&auto=format&fit=crop" class="absolute inset-0 w-full h-full object-cover opacity-30" alt="Produtos">
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <h3 class="font-oswald text-xl text-white uppercase z-10">Produtos</h3>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="galeria" class="py-20 bg-dark-bg">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12">
-                <h2 class="font-oswald text-4xl text-white uppercase" data-aos="fade-right">Nosso <span class="text-gold-500">Ambiente</span></h2>
-                <div class="hidden md:block w-32 h-1 bg-gold-500" data-aos="fade-left"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="overflow-hidden group h-80" data-aos="fade-up">
-                    <img src="https://images.unsplash.com/photo-1500021804447-2ca2eaaaabeb?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Interior 1">
-                </div>
-                <div class="overflow-hidden group h-80" data-aos="fade-up" data-aos-delay="100">
-                    <img src="https://images.unsplash.com/photo-1635273051937-d7c6b98d4809?q=80&w=2072&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Interior 2">
-                </div>
-                <div class="overflow-hidden group h-80" data-aos="fade-up" data-aos-delay="200">
-                    <img src="https://images.unsplash.com/photo-1634480496840-d3c19207d9d4?q=80&w=2070&auto=format&fit=crop" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0" alt="Interior 3">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact & Map Section -->
-    <section id="contato" class="relative py-24 bg-neutral-950">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
-            
-            <!-- Form -->
-            <div class="w-full lg:w-1/2" data-aos="fade-right">
-                <h2 class="font-oswald text-5xl text-white uppercase mb-2">Agende seu <span class="text-gold-500">Horário</span></h2>
-                <p class="text-gray-400 mb-8">Preencha os dados abaixo e nós te encaminharemos diretamente para o WhatsApp.</p>
                 
-                <form id="whatsappForm" class="space-y-6">
-                    <div>
-                        <label class="block text-xs uppercase text-gold-500 tracking-widest mb-2">Nome Completo</label>
-                        <input type="text" id="name" class="w-full bg-white/5 border border-white/10 p-4 text-white focus:border-gold-500 focus:outline-none transition-colors" placeholder="Seu nome">
-                    </div>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div>
-                            <label class="block text-xs uppercase text-gold-500 tracking-widest mb-2">Serviço</label>
-                            <select id="service" class="w-full bg-white/5 border border-white/10 p-4 text-white focus:border-gold-500 focus:outline-none transition-colors appearance-none">
-                                <option class="bg-black" value="Corte">Corte de Cabelo</option>
-                                <option class="bg-black" value="Barba">Barba</option>
-                                <option class="bg-black" value="Combo">Combo (Corte + Barba)</option>
-                                <option class="bg-black" value="Dia do Noivo">Dia do Noivo</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-xs uppercase text-gold-500 tracking-widest mb-2">Data Preferida</label>
-                            <input type="date" id="date" class="w-full bg-white/5 border border-white/10 p-4 text-white focus:border-gold-500 focus:outline-none transition-colors [color-scheme:dark]">
-                        </div>
-                    </div>
-                    <button type="submit" class="w-full bg-gold-500 text-black font-oswald font-bold uppercase tracking-widest py-5 hover:bg-white transition-colors duration-300">
-                        Confirmar via WhatsApp
-                    </button>
-                </form>
-            </div>
-
-            <!-- Map Info -->
-            <div class="w-full lg:w-1/2 relative h-[400px] lg:h-auto border border-white/10" data-aos="fade-left">
-                <!-- Embed Google Maps (Recife) -->
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3950.390489906688!2d-34.89823432414888!3d-8.061633580553903!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab18a2d00e490f%3A0x8525d0d608a4373!2sRecife%2C%20PE!5e0!3m2!1spt-BR!2sbr!4v1714000000000!5m2!1spt-BR!2sbr" 
-                        class="w-full h-full map-dark" 
-                        style="border:0;" 
-                        allowfullscreen="" 
-                        loading="lazy"></iframe>
-                
-                <!-- Info Box Overlay -->
-                <div class="absolute bottom-4 left-4 bg-dark-bg/90 backdrop-blur-md border-l-4 border-gold-500 p-6 max-w-xs shadow-2xl">
-                    <h4 class="font-oswald text-xl text-white mb-2">Barbearia Recife</h4>
-                    <p class="text-gray-400 text-sm mb-1"><i class="fa-solid fa-location-dot text-gold-500 mr-2"></i> Recife, PE</p>
-                    <p class="text-gray-400 text-sm"><i class="fa-solid fa-phone text-gold-500 mr-2"></i> (81) 3204-7136</p>
+                <!-- Map -->
+                <div class="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Recife&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border-4 border-dark-950/20 rounded-2xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black border-t border-white/5 py-12">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="text-center md:text-left">
-                <span class="font-oswald text-2xl tracking-widest font-bold text-white">BARBEARIA<span class="text-gold-500">RECIFE</span></span>
-                <p class="text-gray-600 text-xs mt-2">&copy; 2023 Barbearia Recife. Todos os direitos reservados.</p>
+    <footer class="bg-dark-900 border-t border-white/5 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-display text-2xl font-bold text-white mb-6 uppercase">Barbearia Recife</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <div class="flex gap-6">
-                <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors text-xl"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors text-xl"><i class="fa-brands fa-facebook"></i></a>
-                <a href="#" class="text-gray-400 hover:text-gold-500 transition-colors text-xl"><i class="fa-brands fa-whatsapp"></i></a>
-            </div>
+            <p class="text-gray-600 text-sm">&copy; 2024 Barbearia Recife. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/558132047136?text=Olá, vi o novo site e gostaria de agendar." 
-       class="fixed bottom-8 right-8 z-50 bg-green-600 hover:bg-green-500 text-white rounded-full p-4 shadow-[0_0_20px_rgba(34,197,94,0.5)] transition-all duration-300 animate-bounce flex items-center justify-center w-16 h-16 border-2 border-white/20"
-       target="_blank">
-        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/558132047136?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/20 flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Init AOS
-        AOS.init({
-            duration: 1000,
-            once: true,
-            offset: 100,
-            easing: 'ease-out-cubic'
-        });
-
-        // WhatsApp Form Logic
-        document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            const name = document.getElementById('name').value;
-            const service = document.getElementById('service').value;
-            const date = document.getElementById('date').value;
-            
-            if(!name || !date) {
-                alert('Por favor, preencha todos os campos.');
-                return;
-            }
-
-            const phone = '558132047136';
-            const message = `Olá! Meu nome é *${name}*. Gostaria de agendar um *${service}* para o dia *${date.split('-').reverse().join('/')}*.`;
-            
-            const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-            
-            window.open(whatsappUrl, '_blank');
-        });
-    </script>
 </body>
 </html>
