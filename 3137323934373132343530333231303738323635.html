@@ -1,380 +1,202 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia Goldman | Barbearia de Luxo em Curitiba, PR</title>
-    <meta name="description" content="Experimente o melhor em serviços de barbearia especializada em Curitiba, PR. Cortes de cabelo, barba e tratamentos premium na Barbearia Goldman.">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💈</text></svg>">
-    
-    <!-- Tailwind CSS CDN -->
+    <title>Barbearia em Curitiba | Barbearia Goldman | Curitiba - PR</title>
+    <meta name="description" content="Barbearia Goldman: Seu estilo em Curitiba em Curitiba - PR">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        neutral: {
-                            50: '#fafafa',
-                            100: '#f5f5f5',
-                            200: '#e5e5e5',
-                            300: '#d4d4d4',
-                            400: '#a3a3a3',
-                            500: '#737373',
-                            600: '#525252',
-                            700: '#404040',
-                            800: '#262626',
-                            900: '#171717',
-                            950: '#0a0a0a',
-                        },
-                        amber: {
-                            50: '#fffbeb',
-                            100: '#fff3c7',
-                            200: '#ffe08a',
-                            300: '#fcd34d',
-                            400: '#fbbf24',
-                            500: '#f59e0b',
-                            600: '#d97706',
-                            700: '#b45309',
-                            800: '#92400e',
-                            900: '#78350f',
-                            950: '#451a03',
-                        }
+                        brand: { 500: '#f59e0b', 600: '#d97706' },
+                        dark: { 900: '#171717', 950: '#0a0a0a' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Font Awesome CDN -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
     <style>
-        /* Custom scrollbar for dark theme */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #171717; /* neutral-900 */
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d97706; /* amber-600 */
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #f59e0b; /* amber-500 */
-        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-100 font-sans antialiased">
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
 
-    <!-- Header / Navigation -->
-    <header class="fixed top-0 left-0 right-0 z-50 py-4 backdrop-blur-md bg-neutral-950/80 border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
-            <a href="#hero" class="text-2xl font-bold text-neutral-100 tracking-tight">
-                Barbearia <span class="text-amber-500">Goldman</span>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Barbearia <span class="text-brand-500">em Curitiba | Barbearia Goldman</span>
             </a>
-            <nav class="hidden md:flex space-x-8">
-                <a href="#hero" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Início</a>
-                <a href="#sobre" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Sobre</a>
-                <a href="#servicos" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Serviços</a>
-                <a href="#depoimentos" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Depoimentos</a>
-                <a href="#contato" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300">Contato</a>
-            </nav>
-            <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-semibold py-2 px-5 rounded-lg transition-colors duration-300 hidden md:block">
-                Agende Já
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Início</a>
+                <a href="#sobre" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Sobre</a>
+                <a href="#servicos" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Serviços</a>
+            </div>
+            <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-brand-500/20 text-sm uppercase tracking-wide">
+                Agendar Agora
             </a>
-            <!-- Mobile Menu Button (Hamburger) -->
-            <button class="md:hidden text-neutral-100 text-2xl">
-                <i class="fas fa-bars"></i>
-            </button>
         </div>
-    </header>
+    </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative h-screen flex items-center justify-center text-center overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1596434300655-e48d380790d9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1920&q=80" alt="Barbeiro cortando cabelo de cliente" class="absolute inset-0 w-full h-full object-cover brightness-75">
-        <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/50 to-transparent"></div>
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6 text-neutral-100">
-                A <span class="bg-gradient-to-r from-amber-400 to-amber-600 text-transparent bg-clip-text">Arte</span> do Cuidado Masculino em Curitiba
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
+        </div>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Curitiba - PR • Barbearia
+            </span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Barbearia Goldman: Seu estilo em Curitiba
             </h1>
-            <p class="text-xl md:text-2xl text-neutral-400 mb-10 max-w-2xl mx-auto">
-                Experimente a excelência em cortes, barbas e tratamentos especializados na Barbearia Goldman. Onde tradição encontra modernidade.
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                O corte perfeito e a barba impecável que você merece no coração de Curitiba.
             </p>
-            <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
-                Agende Seu Horário <i class="fab fa-whatsapp ml-2"></i>
-            </a>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
+                    Nossos Serviços
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- About Section -->
-    <section id="sobre" class="py-24 bg-neutral-900 border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-center">
-            <div>
-                <h2 class="text-4xl font-bold mb-6 text-neutral-100">
-                    Sobre a <span class="text-amber-500">Barbearia Goldman</span>
-                </h2>
-                <p class="text-lg text-neutral-400 leading-relaxed mb-6">
-                    Na Barbearia Goldman, somos mais do que um local para cortar cabelo e fazer a barba; somos um refúgio de estilo e bem-estar masculino em Curitiba. Combinamos a arte clássica da barbearia com técnicas modernas e produtos de alta qualidade para garantir uma experiência impecável.
-                </p>
-                <p class="text-lg text-neutral-400 leading-relaxed mb-8">
-                    Nossos barbeiros são especialistas dedicados, apaixonados por sua arte e comprometidos em oferecer um serviço personalizado que realça sua individualidade. Venha descobrir por que somos a escolha preferida para o homem que valoriza a precisão, o conforto e o luxo.
-                </p>
-                <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="text-amber-500 hover:text-amber-400 font-semibold text-lg flex items-center">
-                    Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-            </div>
-            <div class="relative">
-                <img src="https://images.unsplash.com/photo-1621607509181-e374d6c4e09f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80" alt="Ferramentas de barbeiro de luxo" class="rounded-2xl shadow-xl border border-neutral-800 transform hover:scale-102 transition-transform duration-500 ease-in-out">
-                <div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-neutral-900/20 to-transparent rounded-2xl"></div>
+    <section id="sobre" class="py-24 bg-dark-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?q=80&w=2070&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
+                </div>
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Tradição e Estilo em Curitiba</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Na Barbearia Goldman, unimos técnicas clássicas e modernas para garantir um visual sempre impecável. Nossa prioridade é oferecer um atendimento de excelência com produtos de altíssima qualidade.
+                    </p>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Profissionais Especializados</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Ambiente Exclusivo</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Produtos de Alta Qualidade</li>
+                    </ul>
+                    <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-brand-500 font-bold hover:text-white transition-colors inline-flex items-center border-b-2 border-brand-500 pb-1">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="servicos" class="py-24 bg-neutral-950 border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-neutral-100">
-                Nossos <span class="text-amber-500">Serviços Especializados</span>
-            </h2>
-            <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
-                Oferecemos uma gama completa de serviços para o homem moderno, com foco na qualidade, precisão e seu estilo único.
-            </p>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Service Card 1 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-cut"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Corte Clássico & Moderno</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Do corte tradicional ao estilo mais contemporâneo, nossos barbeiros dominam as técnicas para o visual perfeito.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">A partir de R$ 60</span>
-                </div>
-
-                <!-- Service Card 2 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-beard"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Barba Desenhada & Terapêutica</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Modelagem de barba com navalha, toalha quente e produtos premium para um acabamento impecável e relaxante.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">A partir de R$ 50</span>
-                </div>
-
-                <!-- Service Card 3 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-head-side-mask"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Tratamento Facial Completo</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Limpeza, hidratação e revitalização da pele, complementando seu visual com um rosto saudável e radiante.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">A partir de R$ 80</span>
-                </div>
-
-                <!-- Service Card 4 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-paint-brush"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Coloração & Nuance</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Discreta cobertura de grisalhos ou mudança de cor, com produtos que protegem e realçam a saúde do cabelo.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">A partir de R$ 100</span>
-                </div>
-
-                <!-- Service Card 5 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-spray-can-sparkles"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Dia do Noivo Goldman</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Pacote exclusivo para o noivo, incluindo corte, barba, tratamento facial e relaxamento para o grande dia.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">Personalizado</span>
-                </div>
-
-                <!-- Service Card 6 -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800 hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
-                    <div class="text-amber-500 text-5xl mb-6"><i class="fas fa-hand-sparkles"></i></div>
-                    <h3 class="text-2xl font-semibold mb-3 text-neutral-100">Manicure & Pedicure Masculina</h3>
-                    <p class="text-neutral-400 mb-4 leading-relaxed">
-                        Cuidado completo para mãos e pés, garantindo higiene e bem-estar para o homem que se cuida por inteiro.
-                    </p>
-                    <span class="text-amber-500 text-xl font-bold">A partir de R$ 70</span>
-                </div>
-            </div>
-            <div class="mt-16">
-                <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-3 px-8 rounded-lg text-lg shadow-md transform hover:scale-105 transition-all duration-300">
-                    Ver Todos os Serviços & Agendar <i class="fab fa-whatsapp ml-2"></i>
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="depoimentos" class="py-24 bg-neutral-900 border-b border-neutral-800">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-4 text-neutral-100">
-                O Que Nossos Clientes <span class="text-amber-500">Dizem</span>
-            </h2>
-            <p class="text-xl text-neutral-400 mb-16 max-w-3xl mx-auto">
-                A satisfação dos nossos clientes é a nossa maior recompensa. Veja alguns depoimentos.
-            </p>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Testimonial Card 1 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
-                    <p class="text-neutral-400 italic mb-6 leading-relaxed">
-                        "Ambiente incrível, atendimento de primeira e um corte impecável. A Barbearia Goldman se tornou meu lugar fixo em Curitiba!"
-                    </p>
-                    <div class="flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Foto de perfil de cliente" class="w-16 h-16 rounded-full object-cover border-2 border-amber-500 mr-4">
-                        <div>
-                            <p class="font-semibold text-neutral-100">João Silva</p>
-                            <p class="text-neutral-400 text-sm">Empresário, Curitiba</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Card 2 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
-                    <p class="text-neutral-400 italic mb-6 leading-relaxed">
-                        "A barba ficou perfeita! O cuidado com os detalhes e a atenção do barbeiro foram excepcionais. Recomendo a todos!"
-                    </p>
-                    <div class="flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Foto de perfil de cliente" class="w-16 h-16 rounded-full object-cover border-2 border-amber-500 mr-4">
-                        <div>
-                            <p class="font-semibold text-neutral-100">Carlos Mendes</p>
-                            <p class="text-neutral-400 text-sm">Advogado, Curitiba</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial Card 3 -->
-                <div class="bg-neutral-950 p-8 rounded-2xl shadow-lg border border-neutral-800">
-                    <p class="text-neutral-400 italic mb-6 leading-relaxed">
-                        "Experiência de luxo do início ao fim. O tratamento facial é um diferencial, saí renovado. Voltarei com certeza!"
-                    </p>
-                    <div class="flex items-center justify-center">
-                        <img src="https://images.unsplash.com/photo-1522075469751-3a6694fa2a66?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="Foto de perfil de cliente" class="w-16 h-16 rounded-full object-cover border-2 border-amber-500 mr-4">
-                        <div>
-                            <p class="font-semibold text-neutral-100">Fernando Lima</p>
-                            <p class="text-neutral-400 text-sm">Arquiteto, Curitiba</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-20 bg-gradient-to-r from-neutral-950 to-neutral-900">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-4xl font-bold mb-6 text-neutral-100">
-                Transforme Seu Estilo. <span class="text-amber-500">Agende Agora!</span>
-            </h2>
-            <p class="text-xl text-neutral-400 mb-10">
-                Não espere mais para experimentar o melhor em cuidado masculino. Sua melhor versão começa aqui.
-            </p>
-            <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-10 rounded-xl text-lg shadow-lg transform hover:scale-105 transition-all duration-300">
-                Fazer uma Reserva <i class="fab fa-whatsapp ml-2"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contato" class="py-24 bg-neutral-950">
+    <section id="servicos" class="py-24 bg-dark-900 border-y border-white/5">
         <div class="max-w-7xl mx-auto px-6">
-            <h2 class="text-4xl font-bold text-center mb-4 text-neutral-100">
-                Entre em <span class="text-amber-500">Contato</span>
-            </h2>
-            <p class="text-xl text-neutral-400 text-center mb-16 max-w-3xl mx-auto">
-                Estamos prontos para atendê-lo. Fale conosco ou visite nossa barbearia em Curitiba.
-            </p>
-
-            <div class="grid md:grid-cols-2 gap-16 items-start">
-                <!-- Contact Form -->
-                <div class="bg-neutral-900 p-8 rounded-2xl shadow-lg border border-neutral-800">
-                    <h3 class="text-2xl font-semibold mb-6 text-neutral-100">Envie uma Mensagem</h3>
-                    <form id="contactForm" class="space-y-6">
-                        <div>
-                            <label for="name" class="block text-neutral-400 text-sm font-medium mb-2">Seu Nome</label>
-                            <input type="text" id="name" name="name" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300" placeholder="Seu nome completo" required>
-                        </div>
-                        <div>
-                            <label for="message" class="block text-neutral-400 text-sm font-medium mb-2">Sua Mensagem</label>
-                            <textarea id="message" name="message" rows="6" class="w-full p-4 bg-neutral-800 border border-neutral-700 rounded-lg text-neutral-100 focus:ring-2 focus:ring-amber-500 focus:border-transparent transition-all duration-300" placeholder="Olá, gostaria de agendar um corte..." required></textarea>
-                        </div>
-                        <button type="submit" class="w-full bg-amber-600 hover:bg-amber-500 text-neutral-950 font-bold py-4 px-6 rounded-lg text-lg transform hover:scale-105 transition-all duration-300">
-                            Enviar via WhatsApp <i class="fab fa-whatsapp ml-2"></i>
-                        </button>
-                    </form>
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">O que oferecemos</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Nossos Serviços</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Corte de Cabelo</h4>
+                    <p class="text-gray-400 mb-6">Cortes modernos e clássicos personalizados para valorizar o seu estilo único.</p>
+                    <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
                 </div>
+                <!-- Service 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Barba de Respeito</h4>
+                    <p class="text-gray-400 mb-6">Design de barba com toalha quente e produtos premium para hidratação.</p>
+                    <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Dia do Noivo</h4>
+                    <p class="text-gray-400 mb-6">Experiência exclusiva e relaxante para você se preparar para o grande dia.</p>
+                    <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- Contact Info & Map -->
+    <!-- Location & Contact -->
+    <section id="contato" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
-                    <h3 class="text-2xl font-semibold mb-6 text-neutral-100">Informações de Contato</h3>
-                    <div class="space-y-6 mb-10">
-                        <p class="flex items-center text-neutral-400 text-lg">
-                            <i class="fas fa-map-marker-alt text-amber-500 text-2xl mr-4"></i>
-                            Av. Rep. Argentina, 713 - Sala 05 - Água Verde, Curitiba - PR, 80240-210
-                        </p>
-                        <p class="flex items-center text-neutral-400 text-lg">
-                            <i class="fas fa-phone-alt text-amber-500 text-2xl mr-4"></i>
-                            <a href="tel:+5541997023434" class="hover:text-amber-500 transition-colors duration-300">(41) 99702-3434</a>
-                        </p>
-                        <p class="flex items-center text-neutral-400 text-lg">
-                            <i class="fas fa-clock text-amber-500 text-2xl mr-4"></i>
-                            Horário: Não informado (Entre em contato para agendamento)
-                        </p>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-8">Venha nos Visitar</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fas fa-map-marker-alt text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">Endereço</h4>
+                                <p class="text-gray-400">Curitiba - PR</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fab fa-whatsapp text-brand-500 text-xl mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                                <p class="text-gray-400">(41) 99702-3434</p>
+                            </div>
+                        </div>
                     </div>
-
-                    <h3 class="text-2xl font-semibold mb-6 text-neutral-100">Nossa Localização</h3>
-                    <div class="relative overflow-hidden rounded-2xl shadow-xl border border-neutral-800">
-                        <iframe width="100%" height="450" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Av.%20Rep.%20Argentina%2C%20713%20-%20Sala%2005%20-%20%C3%81gua%20Verde%2C%20Curitiba%20-%20PR%2C%2080240-210%2C%20Brasil%2C%20Curitiba%2C%20PR&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
-                    </div>
+                </div>
+                
+                <!-- Map -->
+                <div class="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=Curitiba%20-%20PR&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border-4 border-dark-950/20 rounded-2xl"></div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-neutral-900 py-12 border-t border-neutral-800">
+    <footer class="bg-dark-900 border-t border-white/5 pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-6 text-center">
-            <div class="mb-8">
-                <a href="#hero" class="text-3xl font-bold text-neutral-100 tracking-tight">
-                    Barbearia <span class="text-amber-500">Goldman</span>
-                </a>
-            </div>
+            <h2 class="font-display text-2xl font-bold text-white mb-6 uppercase">Barbearia em Curitiba | Barbearia Goldman</h2>
             <div class="flex justify-center space-x-6 mb-8">
-                <a href="https://wa.me/5541997023434?text=Olá, gostaria de mais informações." target="_blank" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="#" class="text-neutral-400 hover:text-amber-500 transition-colors duration-300 text-2xl">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-neutral-500 text-sm">
-                &copy; 2024 Barbearia Goldman. Todos os direitos reservados.
-            </p>
-            <p class="text-neutral-500 text-xs mt-2">
-                Desenvolvido com <span class="text-red-500">&hearts;</span> para o luxo e estilo em Curitiba.
-            </p>
+            <p class="text-gray-600 text-sm">&copy; 2024 Barbearia em Curitiba | Barbearia Goldman. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- JavaScript for Contact Form -->
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            var name = document.getElementById('name').value;
-            var msg = document.getElementById('message').value;
-            var url = "https://wa.me/5541997023434?text=" + encodeURIComponent("Olá, me chamo " + name + ". " + msg);
-            window.open(url, '_blank');
-        });
-    </script>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5541997023434?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/20 flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
 </body>
 </html>
