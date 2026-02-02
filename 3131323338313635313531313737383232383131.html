@@ -1,390 +1,202 @@
+
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-br" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbearia 22 luas - Agendamento Online</title>
-    <meta name="description" content="Agende seu horário na Barbearia 22 luas em Maceió. Corte, barba e tratamentos com estilo e qualidade.">
-    
-    <!-- Tailwind CSS -->
+    <title>Barbearia 22 luas | Maceió</title>
+    <meta name="description" content="Qualidade e Excelência em Maceió">
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-
-    <style>
-        body { font-family: 'Inter', sans-serif; }
-        .text-gold { color: #d97706; }
-        .bg-gold { background-color: #d97706; }
-        .hover-bg-gold:hover { background-color: #b45309; }
-        
-        /* Efeito de brilho dourado sutil */
-        .glow-gold {
-            box-shadow: 0 0 15px rgba(217, 119, 6, 0.2);
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 500: '#f59e0b', 600: '#d97706' },
+                        dark: { 900: '#171717', 950: '#0a0a0a' }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Oswald"', 'sans-serif'],
+                    }
+                }
+            }
         }
+    </script>
+    <style>
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+        .glass { background: rgba(10, 10, 10, 0.9); backdrop-filter: blur(12px); }
     </style>
 </head>
-<body class="bg-neutral-950 text-neutral-400 antialiased selection:bg-amber-600 selection:text-white">
+<body class="bg-dark-950 text-gray-100 font-sans antialiased">
 
-    <!-- HEADER / NAV -->
-    <nav class="fixed w-full z-50 bg-neutral-950/90 backdrop-blur-md border-b border-neutral-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <div class="flex-shrink-0 flex items-center gap-2">
-                    <i class="fas fa-moon text-amber-500 text-2xl"></i>
-                    <span class="font-black text-xl text-neutral-100 tracking-tighter uppercase">22 Luas</span>
-                </div>
-                
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="#servicos" class="text-neutral-300 hover:text-amber-500 transition-colors font-medium">Serviços</a>
-                    <a href="#localizacao" class="text-neutral-300 hover:text-amber-500 transition-colors font-medium">Localização</a>
-                    <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
-                            class="bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-lg font-bold transition-all transform hover:scale-105 shadow-lg shadow-amber-900/20">
-                        AGENDAR AGORA
-                    </button>
-                </div>
-
-                <!-- Mobile Button -->
-                <div class="md:hidden">
-                    <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm border border-amber-600/30 px-3 py-1 rounded bg-amber-600/10">
-                        AGENDAR
-                    </button>
-                </div>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-display font-bold uppercase tracking-wider text-white">
+                Barbearia <span class="text-brand-500">22 luas</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Início</a>
+                <a href="#sobre" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Sobre</a>
+                <a href="#servicos" class="hover:text-brand-500 transition-colors text-sm uppercase tracking-wide font-medium">Serviços</a>
             </div>
+            <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-6 py-2 rounded-lg font-bold transition-all shadow-lg shadow-brand-500/20 text-sm uppercase tracking-wide">
+                Agendar Agora
+            </a>
         </div>
     </nav>
 
-    <!-- HERO SECTION -->
-    <section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <!-- Background Image with Overlay -->
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?ixlib=rb-4.0.3&auto=format&fit=crop&w=2074&q=80" alt="Interior Barbearia" class="w-full h-full object-cover opacity-40">
-            <div class="absolute inset-0 bg-gradient-to-t from-neutral-950 via-neutral-950/80 to-neutral-950/60"></div>
+            <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=2074&auto=format&fit=crop" alt="Background" class="w-full h-full object-cover opacity-40">
+            <div class="absolute inset-0 bg-gradient-to-t from-dark-950 via-dark-950/80 to-transparent"></div>
         </div>
-
-        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="inline-block px-4 py-1.5 rounded-full border border-amber-600/30 bg-amber-600/10 text-amber-500 font-semibold text-sm mb-6 animate-fade-in-up">
-                <i class="fas fa-map-marker-alt mr-2"></i> Jatiúca, Maceió
-            </div>
-            
-            <h1 class="text-4xl md:text-6xl lg:text-7xl font-black text-neutral-100 mb-6 leading-tight tracking-tight">
-                Seu Estilo, <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-amber-700">Nossa Tradição.</span>
+        <div class="relative z-10 max-w-4xl mx-auto px-6 text-center pt-20">
+            <span class="inline-block py-1 px-3 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-500 text-xs font-bold tracking-[0.2em] uppercase mb-6 backdrop-blur-sm">
+                Maceió • Barbearia
+            </span>
+            <h1 class="text-5xl md:text-7xl font-display font-bold text-white mb-6 leading-tight">
+                Qualidade e Excelência
             </h1>
-            
-            <p class="text-lg md:text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
-                Cortes modernos, barboterapia e um ambiente exclusivo. Agende seu horário na Barbearia 22 luas e renove sua confiança.
+            <p class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto leading-relaxed">
+                O melhor serviço da região esperando por você.
             </p>
-            
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
-                        class="w-full sm:w-auto bg-amber-600 hover:bg-amber-700 text-white text-lg px-8 py-4 rounded-xl font-bold transition-all transform hover:-translate-y-1 shadow-xl shadow-amber-600/20 flex items-center justify-center gap-2">
-                    <i class="fab fa-whatsapp text-xl"></i> AGENDAR HORÁRIO
-                </button>
-                <a href="#servicos" class="text-neutral-300 hover:text-white font-medium underline underline-offset-4 decoration-amber-600/50 hover:decoration-amber-500 transition-all">
-                    Ver serviços disponíveis
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-xl shadow-brand-500/20 flex items-center justify-center gap-2">
+                    <i class="fab fa-whatsapp"></i> Agendar Horário
+                </a>
+                <a href="#servicos" class="bg-white/5 hover:bg-white/10 border border-white/10 text-white px-8 py-4 rounded-xl font-bold text-lg transition-all backdrop-blur-sm">
+                    Nossos Serviços
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- SERVICES SECTION -->
-    <section id="servicos" class="py-20 bg-neutral-950 relative">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-neutral-100 mb-4">Nossos Serviços</h2>
-                <div class="w-20 h-1 bg-amber-600 mx-auto rounded-full"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-cut"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Corte de Cabelo</h3>
-                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
-                        Do clássico ao degradê moderno. Nossos barbeiros são especialistas em visagismo para encontrar o melhor estilo para você.
-                    </p>
-                    <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 flex items-center gap-2">
-                        Agendar Corte <i class="fas fa-arrow-right"></i>
-                    </button>
+    <!-- About Section -->
+    <section id="sobre" class="py-24 bg-dark-950 relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand-500/20 rounded-2xl blur-xl"></div>
+                    <img src="https://images.unsplash.com/photo-1503951914875-452162b7f300?q=80&w=2070&auto=format&fit=crop" class="relative rounded-2xl border border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-700 w-full object-cover h-[500px]">
                 </div>
-
-                <!-- Card 2 -->
-                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Barba & Bigode</h3>
-                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
-                        Modelagem perfeita com toalha quente e produtos premium para hidratação e alinhamento dos fios.
+                <div>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Sobre Nós</h2>
+                    <h3 class="text-4xl md:text-5xl font-bold text-white mb-6">Sobre Nós</h3>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">
+                        Somos referência em Barbearia em Maceió, oferecendo sempre o melhor para nossos clientes.
                     </p>
-                    <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 flex items-center gap-2">
-                        Agendar Barba <i class="fas fa-arrow-right"></i>
-                    </button>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="group bg-neutral-900 rounded-2xl p-8 border border-neutral-800 hover:border-amber-600/50 transition-all duration-300 hover:shadow-2xl hover:shadow-amber-900/10 relative overflow-hidden">
-                    <div class="absolute top-0 right-0 w-20 h-20 bg-amber-600/10 rounded-bl-full -mr-4 -mt-4 transition-transform group-hover:scale-150"></div>
-                    <div class="w-14 h-14 bg-neutral-800 rounded-xl flex items-center justify-center text-amber-500 text-2xl mb-6 group-hover:bg-amber-600 group-hover:text-white transition-colors">
-                        <i class="fas fa-pump-soap"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-neutral-100 mb-3">Tratamentos</h3>
-                    <p class="text-neutral-400 mb-6 text-sm leading-relaxed">
-                        Hidratação, pigmentação, sobrancelha e relaxamento capilar. O cuidado completo que você merece.
-                    </p>
-                    <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" class="text-amber-500 font-bold text-sm uppercase tracking-wide hover:text-amber-400 flex items-center gap-2">
-                        Agendar Tratamento <i class="fas fa-arrow-right"></i>
-                    </button>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Profissionais Especializados</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Ambiente Exclusivo</li>
+                        <li class="flex items-center text-gray-300"><i class="fas fa-check-circle text-brand-500 mr-3"></i> Produtos de Alta Qualidade</li>
+                    </ul>
+                    <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-brand-500 font-bold hover:text-white transition-colors inline-flex items-center border-b-2 border-brand-500 pb-1">
+                        Fale Conosco <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- LOCATION & MAP SECTION -->
-    <section id="localizacao" class="py-20 bg-neutral-900 border-t border-neutral-800">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Services Section -->
+    <section id="servicos" class="py-24 bg-dark-900 border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">O que oferecemos</h2>
+                <h3 class="text-4xl md:text-5xl font-bold text-white">Nossos Serviços</h3>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-star text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Serviço Principal</h4>
+                    <p class="text-gray-400 mb-6">Alta qualidade e precisão.</p>
+                    <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 2 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 bg-brand-600 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">POPULAR</div>
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-fire text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Atendimento Vip</h4>
+                    <p class="text-gray-400 mb-6">Experiência exclusiva.</p>
+                    <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+                <!-- Service 3 -->
+                <div class="bg-dark-950 p-8 rounded-2xl border border-white/5 hover:border-brand-500/50 transition-all group hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-dark-900 rounded-xl flex items-center justify-center mb-6 text-brand-500 group-hover:bg-brand-500 group-hover:text-white transition-all">
+                        <i class="fas fa-certificate text-2xl"></i>
+                    </div>
+                    <h4 class="text-xl font-bold text-white mb-3">Produtos Premium</h4>
+                    <p class="text-gray-400 mb-6">Apenas o melhor para você.</p>
+                    <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="text-sm font-bold text-brand-500 uppercase tracking-wider group-hover:text-white transition-colors">Agendar</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location & Contact -->
+    <section id="contato" class="py-24 bg-dark-950">
+        <div class="max-w-7xl mx-auto px-6">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Text Info -->
                 <div>
-                    <h2 class="text-3xl font-bold text-neutral-100 mb-6">Onde Estamos</h2>
-                    <p class="text-neutral-400 mb-8">
-                        Localizada no coração da Jatiúca, a Barbearia 22 luas oferece fácil acesso e um ambiente climatizado esperando por você.
-                    </p>
+                    <h2 class="text-brand-500 font-display font-bold text-xl tracking-widest uppercase mb-2">Contato</h2>
+                    <h3 class="text-4xl font-bold text-white mb-8">Venha nos Visitar</h3>
                     
                     <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 shrink-0">
-                                <i class="fas fa-map-pin"></i>
-                            </div>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fas fa-map-marker-alt text-brand-500 text-xl mt-1 mr-4"></i>
                             <div>
-                                <h4 class="text-neutral-100 font-bold">Endereço</h4>
-                                <p class="text-sm text-neutral-400">R. Lourenço Moreira da Silva, 257<br>Jatiúca, Maceió - AL</p>
+                                <h4 class="font-bold text-white text-lg">Endereço</h4>
+                                <p class="text-gray-400">R. Lourenço Moreira da Silva, 257 - Jatiúca, Maceió - AL, 57035-751, Brasil, Maceió</p>
                             </div>
                         </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 rounded-full bg-neutral-800 flex items-center justify-center text-amber-500 shrink-0">
-                                <i class="fas fa-phone-alt"></i>
-                            </div>
+                        <div class="flex items-start p-4 rounded-xl bg-dark-900 border border-white/5">
+                            <i class="fab fa-whatsapp text-brand-500 text-xl mt-1 mr-4"></i>
                             <div>
-                                <h4 class="text-neutral-100 font-bold">Contato</h4>
-                                <p class="text-sm text-neutral-400">(82) 98861-1487</p>
+                                <h4 class="font-bold text-white text-lg">WhatsApp</h4>
+                                <p class="text-gray-400">(82) 98861-1487</p>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="mt-10">
-                        <button onclick="window.open('https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.', '_blank')" 
-                                class="w-full bg-amber-600 hover:bg-amber-700 text-white py-4 rounded-lg font-bold shadow-lg transition-all flex items-center justify-center gap-3">
-                            <i class="fab fa-whatsapp text-xl"></i> FALAR COM BARBEIRO
-                        </button>
                     </div>
                 </div>
-
+                
                 <!-- Map -->
-                <div class="h-[400px] w-full rounded-2xl overflow-hidden shadow-2xl border border-neutral-800 relative group">
-                    <!-- Overlay to prevent scroll capture until clicked (optional UX improvement) -->
-                    <div class="absolute inset-0 bg-transparent pointer-events-none group-hover:bg-transparent z-10"></div>
-                    <iframe width="100%" height="400" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Louren%C3%A7o%20Moreira%20da%20Silva%2C%20257%20-%20Jati%C3%BAca%2C%20Macei%C3%B3%20-%20AL%2C%2057035-751%2C%20Brasil%2C%20Macei%C3%B3&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border-radius: 1rem; border: 1px solid #333;"></iframe>
+                <div class="h-[400px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative">
+                    <iframe width="100%" height="100%" frameborder="0" scrolling="no" src="https://maps.google.com/maps?width=100%25&height=400&hl=pt-br&q=R.%20Louren%C3%A7o%20Moreira%20da%20Silva%2C%20257%20-%20Jati%C3%BAca%2C%20Macei%C3%B3%20-%20AL%2C%2057035-751%2C%20Brasil%2C%20Macei%C3%B3&t=&z=15&ie=UTF8&iwloc=B&output=embed" style="filter: grayscale(100%) invert(92%) contrast(83%); border: 0;"></iframe>
+                    <div class="absolute inset-0 pointer-events-none border-4 border-dark-950/20 rounded-2xl"></div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- FOOTER -->
-    <footer class="bg-neutral-950 py-8 border-t border-neutral-800">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <div class="flex justify-center items-center gap-2 mb-4">
-                <i class="fas fa-moon text-amber-600"></i>
-                <span class="font-bold text-neutral-100 uppercase tracking-widest">Barbearia 22 luas</span>
+    <!-- Footer -->
+    <footer class="bg-dark-900 border-t border-white/5 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <h2 class="font-display text-2xl font-bold text-white mb-6 uppercase">Barbearia 22 luas</h2>
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="w-10 h-10 rounded-full bg-dark-950 flex items-center justify-center text-gray-400 hover:text-white hover:bg-brand-600 transition-all"><i class="fab fa-whatsapp"></i></a>
             </div>
-            <p class="text-neutral-600 text-sm">
-                &copy; <script>document.write(new Date().getFullYear())</script> Todos os direitos reservados.
-            </p>
+            <p class="text-gray-600 text-sm">&copy; 2024 Barbearia 22 luas. Todos os direitos reservados.</p>
         </div>
     </footer>
 
-    <!-- WIDGET DE CHATBOT INTERATIVO -->
-    <div id="z-widget-container" class="fixed bottom-6 right-6 z-[9999] flex flex-col items-end gap-4 font-sans isolation-auto">
-        
-        <!-- Janela do Chat -->
-        <div id="z-chat-window" class="hidden w-[350px] max-w-[90vw] bg-white rounded-2xl shadow-2xl overflow-hidden border border-gray-200 origin-bottom-right transition-all duration-300 transform scale-95 opacity-0 flex flex-col h-[500px]">
-            <!-- Header -->
-            <div class="bg-[#00a884] p-4 text-white flex items-center justify-between shadow-sm shrink-0">
-               <div class="flex items-center gap-3">
-                   <div class="relative">
-                       <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center font-bold text-lg backdrop-blur-sm">
-                         <i class="fas fa-robot"></i>
-                       </div>
-                       <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-green-300 border border-[#00a884] rounded-full"></span>
-                   </div>
-                   <div>
-                      <h3 class="font-bold text-sm leading-tight">Assistente Virtual</h3>
-                      <p class="text-[10px] text-white/90">Online agora</p>
-                   </div>
-               </div>
-               <button onclick="toggleChat()" class="text-white/80 hover:text-white transition-colors p-2 rounded-full hover:bg-white/10">
-                   <i class="fas fa-times"></i>
-               </button>
-            </div>
-            
-            <!-- Body -->
-            <div id="z-chat-body" class="flex-1 p-4 bg-[#e5ddd5] overflow-y-auto flex flex-col space-y-3 bg-opacity-30 relative scroll-smooth">
-                <div class="absolute inset-0 opacity-5 bg-[url('https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png')] pointer-events-none z-0"></div>
-                
-                <div class="z-10 text-center text-[10px] text-gray-500 my-2 uppercase bg-white/50 self-center px-2 rounded-full">Hoje</div>
-                
-                <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in">
-                    Olá! 👋 Bem-vindo à <strong>Barbearia 22 luas</strong>.
-                </div>
-                 <div class="z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in" style="animation-delay: 0.5s; animation-fill-mode: forwards; opacity: 0;">
-                    Sou o assistente virtual. Posso agendar seu horário rapidinho por aqui. Vamos lá?
-                </div>
-            </div>
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/5582988611487?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." class="fixed bottom-6 right-6 z-50 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full shadow-lg shadow-green-500/20 flex items-center justify-center text-3xl transition-all transform hover:scale-110 animate-bounce">
+        <i class="fab fa-whatsapp"></i>
+    </a>
 
-            <!-- Footer -->
-            <div id="z-chat-footer" class="p-3 bg-[#f0f2f5] border-t border-gray-200 shrink-0">
-                 <!-- Initial Buttons -->
-                 <div id="z-initial-options" class="flex flex-col gap-2">
-                     <button onclick="startFlow()" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-sm active:scale-95 cursor-pointer">
-                        <i class="fas fa-calendar-check mr-2"></i> Quero Agendar
-                    </button>
-                    <button onclick="directWhatsApp()" class="w-full bg-white hover:bg-gray-50 text-gray-700 font-medium py-2 rounded-lg border border-gray-300 flex items-center justify-center transition-all text-sm cursor-pointer">
-                        Tenho uma dúvida
-                    </button>
-                 </div>
-
-                 <!-- Input Form -->
-                 <form id="z-input-form" class="hidden flex gap-2" onsubmit="handleUserSubmit(event)">
-                    <input type="text" id="z-user-input" class="flex-1 border border-gray-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:border-[#00a884]" placeholder="Digite aqui..." autocomplete="off">
-                    <button type="submit" class="w-10 h-10 bg-[#00a884] text-white rounded-full flex items-center justify-center hover:bg-[#008f6f] transition-colors cursor-pointer">
-                        <i class="fas fa-paper-plane"></i>
-                    </button>
-                 </form>
-            </div>
-        </div>
-
-        <!-- Toggle Button -->
-        <button onclick="toggleChat()" id="z-chat-toggle" class="w-16 h-16 bg-[#25d366] hover:bg-[#20bd5a] rounded-full text-white shadow-lg flex items-center justify-center transition-all duration-300 transform hover:scale-110 active:scale-95 group relative z-50 cursor-pointer">
-            <span class="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping group-hover:hidden"></span>
-            <i class="fab fa-whatsapp text-3xl relative z-10"></i>
-            <div class="absolute -top-1 -right-1 w-5 h-5 bg-red-500 rounded-full text-[10px] flex items-center justify-center font-bold border-2 border-white text-white">1</div>
-        </button>
-    </div>
-
-    <style>
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-        .animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
-    </style>
-
-    <script>
-        const cleanPhone = "5582988611487"; 
-        let step = 0;
-        let userData = { name: '', service: '', time: '' };
-        
-        const chatWindow = document.getElementById('z-chat-window');
-        const chatBody = document.getElementById('z-chat-body');
-        const initialOptions = document.getElementById('z-initial-options');
-        const inputForm = document.getElementById('z-input-form');
-        const userInput = document.getElementById('z-user-input');
-
-        function toggleChat() {
-            chatWindow.classList.toggle('hidden');
-            if(!chatWindow.classList.contains('hidden')) {
-                 setTimeout(() => {
-                    chatWindow.classList.remove('scale-95', 'opacity-0');
-                    chatWindow.classList.add('scale-100', 'opacity-100');
-                }, 10);
-            } else {
-                 chatWindow.classList.remove('scale-100', 'opacity-100');
-                 chatWindow.classList.add('scale-95', 'opacity-0');
-            }
-        }
-
-        function addMessage(text, sender = 'bot') {
-            const div = document.createElement('div');
-            const isBot = sender === 'bot';
-            div.className = isBot 
-                ? 'z-10 self-start bg-white p-3 rounded-lg rounded-tl-none shadow-sm text-sm text-gray-800 border border-gray-100 max-w-[85%] animate-fade-in'
-                : 'z-10 self-end bg-[#d9fdd3] p-3 rounded-lg rounded-tr-none shadow-sm text-sm text-gray-800 border border-green-100 max-w-[85%] animate-fade-in';
-            div.innerHTML = text;
-            chatBody.appendChild(div);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function startFlow() {
-            step = 1;
-            initialOptions.classList.add('hidden');
-            inputForm.classList.remove('hidden');
-            userInput.focus();
-            setTimeout(() => {
-                addMessage('Ótimo! Para começarmos, qual é o seu **nome**?');
-            }, 500);
-        }
-
-        function handleUserSubmit(e) {
-            e.preventDefault();
-            const text = userInput.value.trim();
-            if (!text) return;
-            addMessage(text, 'user');
-            userInput.value = '';
-            setTimeout(() => processStep(text), 600);
-        }
-
-        function processStep(text) {
-            if (step === 1) {
-                userData.name = text;
-                step = 2;
-                addMessage(`Prazer, ${userData.name}! Qual **serviço** você gostaria? (Ex: Corte, Barba, Combo)`);
-            } else if (step === 2) {
-                userData.service = text;
-                step = 3;
-                addMessage('Entendi. E qual seria o melhor **dia e horário** para você?');
-            } else if (step === 3) {
-                userData.time = text;
-                step = 4;
-                finishFlow();
-            }
-        }
-
-        function finishFlow() {
-            inputForm.classList.add('hidden');
-            const finalMsg = `Olá, sou ${userData.name}. Gostaria de agendar ${userData.service} para ${userData.time}.`;
-            const link = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(finalMsg)}`;
-            addMessage('Perfeito! Já preparei tudo. Clique abaixo para confirmar no WhatsApp:');
-            
-            const btnDiv = document.createElement('div');
-            btnDiv.className = 'z-10 self-center w-full mt-2';
-            btnDiv.innerHTML = `<button onclick="window.open('${link}', '_blank')" class="w-full bg-[#00a884] hover:bg-[#008f6f] text-white font-bold py-3 rounded-lg flex items-center justify-center transition-all shadow-md animate-pulse cursor-pointer">
-                <i class="fab fa-whatsapp mr-2 text-lg"></i> Confirmar Agendamento
-            </button>`;
-            chatBody.appendChild(btnDiv);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function directWhatsApp() {
-             window.open("https://wa.me/5582988611487?text=Ol%C3%A1%2C%20gostaria%20de%20ver%20os%20hor%C3%A1rios%20dispon%C3%ADveis%20para%20agendamento.", '_blank');
-        }
-
-        setTimeout(() => {
-            if (chatWindow.classList.contains('hidden')) {
-                toggleChat();
-            }
-        }, 5000);
-    </script>
 </body>
 </html>
