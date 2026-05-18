@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+  <title>teste | Barbearia em jardim angela, são paulo</title>
+  <meta name="description" content="aajkçsdb.l,asd Agende seu horário online na teste, barbearia premium em jardim angela, são paulo — São Paulo." />
+  <meta name="keywords" content="barbearia, jardim angela, são paulo, corte masculino, barba, barbeiro, teste" />
+  <meta name="author" content="teste" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#1B3A2D" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="business.business" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="teste" />
+  <meta property="og:title" content="teste | Barbearia em jardim angela, são paulo" />
+  <meta property="og:description" content="aajkçsdb.l,asd Agende seu horário online de forma rápida pelo WhatsApp." />
+  <meta property="business:contact_data:locality" content="são paulo" />
+  <meta property="business:contact_data:region" content="São Paulo" />
+  <meta property="business:contact_data:postal_code" content="04963-000" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="teste — Barbearia em jardim angela" />
+  <meta name="twitter:description" content="aajkçsdb.l,asd" />
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2288%22>%F0%9F%92%88</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       VARIÁVEIS
+    ============================================================ */
+    :root {
+      --verde-escuro: #1B3A2D;
+      --verde-medio: #2A5A42;
+      --verde-claro: #3D8B5E;
+      --creme-claro: #F7F3EE;
+      --creme-medio: #EDE8E1;
+      --dourado: #C8A96E;
+      --dourado-suave: #D9C29A;
+      --texto: #1A1A1A;
+      --texto-sec: #666666;
+      --branco: #FFFFFF;
+      --whatsapp: #25D366;
+      --erro: #C0392B;
+
+      --borda-card: 22px;
+      --borda-suave: 16px;
+      --borda-pill: 100px;
+
+      --sombra-suave: 0 6px 24px rgba(27, 58, 45, 0.06);
+      --sombra-media: 0 16px 44px rgba(27, 58, 45, 0.10);
+      --sombra-forte: 0 26px 64px rgba(27, 58, 45, 0.18);
+
+      --nav-altura: 78px;
+      --container: 1200px;
+      --transicao: 0.35s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+
+    /* ============================================================
+       RESET / BASE
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+
+    body {
+      font-family: 'DM Sans', system-ui, -apple-system, sans-serif;
+      color: var(--texto);
+      background: var(--creme-claro);
+      line-height: 1.65;
+      font-size: 17px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body.menu-aberto { overflow: hidden; }
+
+    img { max-width: 100%; display: block; }
+
+    a { color: inherit; text-decoration: none; }
+
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    ul { list-style: none; }
+
+    h1, h2, h3 { font-family: 'DM Serif Display', Georgia, serif; font-weight: 400; line-height: 1.12; }
+
+    h1 em, h2 em, h3 em { font-style: italic; color: var(--dourado); }
+
+    section { scroll-margin-top: 92px; }
+
+    ::selection { background: var(--dourado); color: var(--verde-escuro); }
+
+    :focus-visible { outline: 3px solid var(--dourado); outline-offset: 3px; border-radius: 4px; }
+
+    /* ============================================================
+       UTILITÁRIOS
+    ============================================================ */
+    .container {
+      width: 100%;
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .secao { padding: clamp(70px, 10vw, 128px) 0; }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      margin-bottom: 18px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 32px;
+      height: 2px;
+      background: var(--dourado);
+      display: inline-block;
+    }
+
+    .secao-header {
+      max-width: 660px;
+      margin: 0 auto clamp(44px, 6vw, 68px);
+      text-align: center;
+    }
+
+    .secao-header .eyebrow { justify-content: center; }
+
+    .secao-titulo { font-size: clamp(2rem, 4.2vw, 3.1rem); }
+
+    .secao-desc {
+      margin-top: 16px;
+      color: var(--texto-sec);
+      font-size: 1.05rem;
+    }
+
+    .escuro .secao-titulo { color: var(--creme-claro); }
+    .escuro .secao-desc { color: rgba(247, 243, 238, 0.72); }
+
+    /* Botões */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 32px;
+      border-radius: var(--borda-pill);
+      font-weight: 600;
+      font-size: 1rem;
+      letter-spacing: 0.01em;
+      transition: transform var(--transicao), box-shadow var(--transicao), background var(--transicao), color var(--transicao);
+      white-space: nowrap;
+      will-change: transform;
+    }
+
+    .btn-primario {
+      background: var(--verde-escuro);
+      color: var(--creme-claro);
+      box-shadow: var(--sombra-suave);
+    }
+    .btn-primario:hover { background: var(--verde-medio); transform: translateY(-3px); box-shadow: var(--sombra-media); }
+
+    .btn-dourado {
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      box-shadow: 0 8px 24px rgba(200, 169, 110, 0.32);
+    }
+    .btn-dourado:hover { background: var(--dourado-suave); transform: translateY(-3px); box-shadow: 0 14px 34px rgba(200, 169, 110, 0.42); }
+
+    .btn-contorno {
+      background: transparent;
+      color: var(--verde-escuro);
+      border: 1.6px solid rgba(27, 58, 45, 0.28);
+    }
+    .btn-contorno:hover { border-color: var(--verde-escuro); background: var(--verde-escuro); color: var(--creme-claro); transform: translateY(-3px); }
+
+    .btn-bloco { width: 100%; }
+
+    /* Estrelas */
+    .estrelas { color: var(--dourado); letter-spacing: 2px; font-size: 1rem; }
+
+    /* Reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    [data-reveal].is-visible { opacity: 1; transform: none; }
+    [data-delay="1"] { transition-delay: 0.1s; }
+    [data-delay="2"] { transition-delay: 0.2s; }
+    [data-delay="3"] { transition-delay: 0.3s; }
+    [data-delay="4"] { transition-delay: 0.4s; }
+
+    /* ============================================================
+       NAVEGAÇÃO
+    ============================================================ */
+    .site-header {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      transition: background var(--transicao), box-shadow var(--transicao), backdrop-filter var(--transicao);
+    }
+
+    .site-header.rolado {
+      background: rgba(247, 243, 238, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      box-shadow: 0 4px 30px rgba(27, 58, 45, 0.08);
+    }
+
+    .nav {
+      height: var(--nav-altura);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo { display: flex; align-items: center; gap: 12px; }
+
+    .logo-marca {
+      width: 44px; height: 44px;
+      border-radius: 13px;
+      background: var(--verde-escuro);
+      color: var(--dourado);
+      display: grid;
+      place-items: center;
+      font-size: 1.35rem;
+      flex-shrink: 0;
+      box-shadow: var(--sombra-suave);
+    }
+
+    .logo-texto {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.32rem;
+      color: var(--verde-escuro);
+      line-height: 1.05;
+    }
+    .logo-texto small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      font-weight: 600;
+    }
+
+    .nav-menu { display: flex; align-items: center; gap: 38px; }
+
+    .nav-links { display: flex; gap: 30px; }
+
+    .nav-links a {
+      font-size: 0.96rem;
+      font-weight: 500;
+      color: var(--texto);
+      position: relative;
+      padding: 4px 0;
+      transition: color var(--transicao);
+    }
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0; bottom: -2px;
+      width: 100%; height: 2px;
+      background: var(--dourado);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transicao);
+    }
+    .nav-links a:hover, .nav-links a.ativo { color: var(--verde-escuro); }
+    .nav-links a:hover::after, .nav-links a.ativo::after { transform: scaleX(1); }
+
+    .nav-cta { padding: 13px 26px; font-size: 0.95rem; }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      padding: 10px;
+      z-index: 1100;
+    }
+    .nav-toggle span {
+      width: 26px; height: 2.5px;
+      background: var(--verde-escuro);
+      border-radius: 2px;
+      transition: transform var(--transicao), opacity var(--transicao);
+    }
+    .nav-toggle.ativo span:nth-child(1) { transform: translateY(7.5px) rotate(45deg); }
+    .nav-toggle.ativo span:nth-child(2) { opacity: 0; }
+    .nav-toggle.ativo span:nth-child(3) { transform: translateY(-7.5px) rotate(-45deg); }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      position: relative;
+      padding-top: calc(var(--nav-altura) + clamp(40px, 7vw, 78px));
+      padding-bottom: clamp(64px, 9vw, 116px);
+      background:
+        radial-gradient(680px 540px at 88% 8%, rgba(200, 169, 110, 0.16), transparent 70%),
+        radial-gradient(620px 520px at 5% 95%, rgba(61, 139, 94, 0.10), transparent 68%),
+        var(--creme-claro);
+      overflow: hidden;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: clamp(36px, 5vw, 72px);
+      align-items: center;
+    }
+
+    .status-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--branco);
+      border: 1px solid var(--creme-medio);
+      padding: 9px 18px;
+      border-radius: var(--borda-pill);
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--verde-escuro);
+      box-shadow: var(--sombra-suave);
+      margin-bottom: 26px;
+    }
+    .status-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--verde-claro);
+      box-shadow: 0 0 0 0 rgba(61, 139, 94, 0.5);
+      animation: piscar 2s infinite;
+    }
+    @keyframes piscar {
+      0% { box-shadow: 0 0 0 0 rgba(61, 139, 94, 0.55); }
+      70% { box-shadow: 0 0 0 11px rgba(61, 139, 94, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(61, 139, 94, 0); }
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 6vw, 4.4rem);
+      color: var(--verde-escuro);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      margin-top: 22px;
+      font-size: 1.14rem;
+      color: var(--texto-sec);
+      max-width: 510px;
+    }
+
+    .hero-botoes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-top: 36px;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      margin-top: 42px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item { display: flex; align-items: center; gap: 12px; }
+
+    .trust-avatares { display: flex; }
+    .trust-avatares span {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--creme-claro);
+      border: 2.5px solid var(--creme-claro);
+      margin-left: -12px;
+    }
+    .trust-avatares span:first-child { margin-left: 0; }
+    .trust-avatares span:nth-child(1) { background: var(--verde-escuro); }
+    .trust-avatares span:nth-child(2) { background: var(--verde-medio); }
+    .trust-avatares span:nth-child(3) { background: var(--verde-claro); }
+    .trust-avatares span:nth-child(4) { background: var(--dourado); color: var(--verde-escuro); }
+
+    .trust-texto { font-size: 0.88rem; line-height: 1.35; }
+    .trust-texto strong { display: block; color: var(--verde-escuro); font-size: 0.96rem; }
+    .trust-texto span { color: var(--texto-sec); }
+
+    .trust-sep { width: 1px; height: 42px; background: rgba(27, 58, 45, 0.14); }
+
+    /* Painel do hero */
+    .hero-painel-wrap { position: relative; }
+    .hero-painel-wrap::before {
+      content: "";
+      position: absolute;
+      inset: 26px -22px -22px 26px;
+      background: linear-gradient(135deg, rgba(200, 169, 110, 0.32), rgba(200, 169, 110, 0.08));
+      border-radius: var(--borda-card);
+      z-index: 0;
+    }
+
+    .hero-painel {
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(160deg, var(--verde-medio), var(--verde-escuro) 72%);
+      border-radius: var(--borda-card);
+      padding: clamp(34px, 4vw, 50px);
+      color: var(--creme-claro);
+      box-shadow: var(--sombra-forte);
+      overflow: hidden;
+    }
+    .hero-painel::after {
+      content: "💈";
+      position: absolute;
+      right: -14px; top: -22px;
+      font-size: 8rem;
+      opacity: 0.08;
+      transform: rotate(12deg);
+    }
+
+    .painel-eyebrow {
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--dourado);
+    }
+
+    .painel-numero {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      margin: 8px 0 4px;
+    }
+    .painel-numero b {
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      font-size: clamp(4.6rem, 9vw, 6.6rem);
+      line-height: 0.9;
+      color: var(--branco);
+    }
+    .painel-numero i {
+      font-family: 'DM Serif Display', serif;
+      font-style: normal;
+      font-size: 2.4rem;
+      color: var(--dourado);
+      margin-top: 8px;
+    }
+
+    .painel-label { font-size: 1.04rem; color: rgba(247, 243, 238, 0.82); max-width: 260px; }
+
+    .painel-divisor {
+      height: 1px;
+      background: linear-gradient(90deg, var(--dourado), transparent);
+      margin: 28px 0;
+    }
+
+    .painel-quote {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.22rem;
+      line-height: 1.5;
+      color: var(--creme-claro);
+    }
+
+    .painel-autor {
+      margin-top: 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.92rem;
+    }
+    .painel-autor .traco { width: 28px; height: 2px; background: var(--dourado); }
+    .painel-autor strong { color: var(--branco); }
+    .painel-autor span { color: rgba(247, 243, 238, 0.62); }
+
+    /* ============================================================
+       SERVIÇOS
+    ============================================================ */
+    .servicos { background: var(--branco); }
+
+    .servicos-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .servico-card {
+      position: relative;
+      background: var(--branco);
+      border: 1px solid var(--creme-medio);
+      border-radius: var(--borda-card);
+      padding: 34px 28px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+    }
+    .servico-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--dourado), var(--verde-claro));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--transicao);
+    }
+    .servico-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--sombra-media);
+      border-color: transparent;
+    }
+    .servico-card:hover::before { transform: scaleX(1); }
+
+    .servico-icone {
+      width: 60px; height: 60px;
+      border-radius: 16px;
+      background: var(--creme-claro);
+      display: grid;
+      place-items: center;
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+      transition: background var(--transicao);
+    }
+    .servico-card:hover .servico-icone { background: var(--creme-medio); }
+
+    .servico-nome { font-size: 1.32rem; color: var(--verde-escuro); }
+
+    .servico-desc {
+      margin: 10px 0 22px;
+      font-size: 0.95rem;
+      color: var(--texto-sec);
+      flex-grow: 1;
+    }
+
+    .servico-rodape {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-top: 18px;
+      border-top: 1px solid var(--creme-medio);
+    }
+    .servico-preco {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.7rem;
+      color: var(--verde-escuro);
+    }
+    .servico-tempo {
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--texto-sec);
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    /* ============================================================
+       GALERIA
+    ============================================================ */
+    .galeria { background: var(--verde-escuro); }
+
+    .galeria-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: minmax(190px, 1fr);
+      gap: 18px;
+    }
+
+    .galeria-item {
+      position: relative;
+      border-radius: var(--borda-suave);
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .galeria-item:nth-child(1) { grid-column: span 2; grid-row: span 2; }
+
+    .galeria-fundo {
+      position: absolute;
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: 2.6rem;
+      transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    .galeria-item:nth-child(1) .galeria-fundo { font-size: 4.4rem; }
+    .galeria-item:nth-child(1) .galeria-fundo { background: linear-gradient(150deg, #356b50, #1f4030); }
+    .galeria-item:nth-child(2) .galeria-fundo { background: linear-gradient(150deg, #2f5f47, #233d31); }
+    .galeria-item:nth-child(3) .galeria-fundo { background: linear-gradient(150deg, #3d8b5e, #2a5a42); }
+    .galeria-item:nth-child(4) .galeria-fundo { background: linear-gradient(150deg, #244438, #14271e); }
+    .galeria-item:nth-child(5) .galeria-fundo { background: linear-gradient(150deg, #c8a96e, #a8884f); }
+
+    .galeria-item:hover .galeria-fundo { transform: scale(1.08); }
+
+    .galeria-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(20, 39, 30, 0.92) 0%, rgba(20, 39, 30, 0.1) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      opacity: 0;
+      transition: opacity var(--transicao);
+    }
+    .galeria-item:hover .galeria-overlay { opacity: 1; }
+
+    .galeria-tag {
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      font-weight: 600;
+      transform: translateY(12px);
+      transition: transform var(--transicao);
+    }
+    .galeria-legenda {
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      color: var(--creme-claro);
+      transform: translateY(12px);
+      transition: transform var(--transicao) 0.05s;
+    }
+    .galeria-item:hover .galeria-tag,
+    .galeria-item:hover .galeria-legenda { transform: translateY(0); }
+
+    .galeria-borda {
+      position: absolute;
+      inset: 0;
+      border: 1.5px solid transparent;
+      border-radius: var(--borda-suave);
+      transition: border-color var(--transicao);
+      pointer-events: none;
+    }
+    .galeria-item:hover .galeria-borda { border-color: rgba(200, 169, 110, 0.55); }
+
+    /* ============================================================
+       SOBRE
+    ============================================================ */
+    .sobre { background: var(--creme-claro); }
+
+    .sobre-grid {
+      display: grid;
+      grid-template-columns: 0.92fr 1.08fr;
+      gap: clamp(40px, 6vw, 84px);
+      align-items: center;
+    }
+
+    .sobre-foto-wrap { position: relative; }
+
+    .sobre-foto {
+      border-radius: var(--borda-card);
+      aspect-ratio: 4 / 5;
+      background: linear-gradient(155deg, #356b50, #1b3a2d 78%);
+      display: grid;
+      place-items: center;
+      font-size: 5rem;
+      box-shadow: var(--sombra-media);
+      overflow: hidden;
+      position: relative;
+    }
+    .sobre-foto::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 30% 25%, rgba(200, 169, 110, 0.22), transparent 60%);
+    }
+
+    .sobre-badge {
+      position: absolute;
+      right: -22px;
+      bottom: 48px;
+      width: 138px; height: 138px;
+      border-radius: 50%;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      box-shadow: var(--sombra-forte);
+      border: 6px solid var(--creme-claro);
+    }
+    .sobre-badge b {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.9rem;
+      line-height: 0.9;
+    }
+    .sobre-badge span {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .sobre-texto h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--verde-escuro); }
+    .sobre-texto .sobre-p {
+      margin-top: 18px;
+      color: var(--texto-sec);
+      font-size: 1.05rem;
+    }
+    .sobre-texto .sobre-p strong { color: var(--verde-escuro); }
+
+    .sobre-features {
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .feature-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: var(--branco);
+      border: 1px solid var(--creme-medio);
+      border-radius: var(--borda-suave);
+      padding: 20px 22px;
+      transition: transform var(--transicao), box-shadow var(--transicao);
+    }
+    .feature-card:hover { transform: translateX(6px); box-shadow: var(--sombra-suave); }
+
+    .feature-icone {
+      width: 50px; height: 50px;
+      border-radius: 13px;
+      background: var(--verde-escuro);
+      color: var(--dourado);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .feature-card h3 { font-size: 1.15rem; color: var(--verde-escuro); }
+    .feature-card p { font-size: 0.93rem; color: var(--texto-sec); margin-top: 3px; }
+
+    /* ============================================================
+       DEPOIMENTOS
+    ============================================================ */
+    .depoimentos { background: var(--branco); }
+
+    .depo-resumo {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      color: var(--texto-sec);
+    }
+    .depo-resumo b { color: var(--verde-escuro); font-size: 1.05rem; }
+
+    .depoimentos-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .depo-card {
+      background: var(--creme-claro);
+      border-radius: var(--borda-card);
+      padding: 36px 30px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: transform var(--transicao), box-shadow var(--transicao);
+    }
+    .depo-card:hover { transform: translateY(-8px); box-shadow: var(--sombra-media); }
+
+    .depo-aspas {
+      font-family: 'DM Serif Display', serif;
+      font-size: 4rem;
+      color: var(--dourado);
+      line-height: 0.5;
+      height: 28px;
+    }
+
+    .depo-texto {
+      font-family: 'DM Serif Display', serif;
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.55;
+      color: var(--texto);
+      flex-grow: 1;
+      margin: 14px 0 26px;
+    }
+
+    .depo-autor { display: flex; align-items: center; gap: 14px; }
+
+    .depo-avatar {
+      width: 50px; height: 50px;
+      border-radius: 50%;
+      background: var(--verde-escuro);
+      color: var(--dourado);
+      display: grid;
+      place-items: center;
+      font-family: 'DM Serif Display', serif;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .depo-autor strong { display: block; color: var(--verde-escuro); font-size: 1rem; }
+    .depo-autor span { font-size: 0.83rem; color: var(--texto-sec); }
+
+    /* ============================================================
+       AGENDAMENTO
+    ============================================================ */
+    .agendamento { background: var(--verde-escuro); position: relative; }
+    .agendamento::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(620px 480px at 90% 0%, rgba(200, 169, 110, 0.12), transparent 70%);
+      pointer-events: none;
+    }
+
+    .agendamento-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      gap: 28px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .form-card {
+      background: var(--branco);
+      border-radius: var(--borda-card);
+      padding: clamp(28px, 3.6vw, 46px);
+      box-shadow: var(--sombra-forte);
+    }
+    .form-card h3 { font-size: 1.7rem; color: var(--verde-escuro); }
+    .form-card .form-intro { color: var(--texto-sec); font-size: 0.96rem; margin: 6px 0 26px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+    .campo { display: flex; flex-direction: column; }
+    .campo.col-2 { grid-column: span 2; }
+
+    .campo label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--verde-escuro);
+      margin-bottom: 8px;
+    }
+    .campo label .obrig { color: var(--dourado); }
+
+    .campo input,
+    .campo select,
+    .campo textarea {
+      font-family: inherit;
+      font-size: 0.98rem;
+      color: var(--texto);
+      background: var(--creme-claro);
+      border: 1.6px solid var(--creme-medio);
+      border-radius: 12px;
+      padding: 14px 16px;
+      width: 100%;
+      transition: border-color var(--transicao), box-shadow var(--transicao), background var(--transicao);
+    }
+    .campo textarea { resize: vertical; min-height: 92px; }
+    .campo select { cursor: pointer; appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%231B3A2D' stroke-width='3'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      padding-right: 42px;
+    }
+
+    .campo input:focus,
+    .campo select:focus,
+    .campo textarea:focus {
+      outline: none;
+      border-color: var(--dourado);
+      background: var(--branco);
+      box-shadow: 0 0 0 4px rgba(200, 169, 110, 0.18);
+    }
+
+    .erro-msg {
+      font-size: 0.8rem;
+      color: var(--erro);
+      margin-top: 6px;
+      display: none;
+    }
+    .campo.erro input,
+    .campo.erro select,
+    .campo.erro textarea {
+      border-color: var(--erro);
+      box-shadow: 0 0 0 4px rgba(192, 57, 43, 0.12);
+    }
+    .campo.erro .erro-msg { display: block; }
+
+    .form-aviso {
+      margin-top: 16px;
+      font-size: 0.82rem;
+      color: var(--texto-sec);
+      text-align: center;
+    }
+    .form-noscript {
+      margin-top: 14px;
+      padding: 12px 16px;
+      background: var(--creme-claro);
+      border-radius: 10px;
+      font-size: 0.86rem;
+      color: var(--verde-escuro);
+      text-align: center;
+    }
+
+    /* Card lateral */
+    .info-card {
+      background: var(--verde-medio);
+      border: 1px solid rgba(200, 169, 110, 0.22);
+      border-radius: var(--borda-card);
+      padding: clamp(28px, 3.4vw, 40px);
+      color: var(--creme-claro);
+      display: flex;
+      flex-direction: column;
+    }
+    .info-card h3 {
+      font-size: 1.4rem;
+      color: var(--creme-claro);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .horario-lista { margin-top: 22px; }
+    .horario-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 13px 0;
+      border-bottom: 1px solid rgba(247, 243, 238, 0.12);
+      font-size: 0.96rem;
+    }
+    .horario-row:last-child { border-bottom: none; }
+    .horario-row span { color: rgba(247, 243, 238, 0.78); }
+    .horario-row strong { color: var(--branco); font-weight: 600; }
+    .horario-row.fechado strong { color: var(--dourado-suave); }
+
+    .info-divisor {
+      height: 1px;
+      background: linear-gradient(90deg, var(--dourado), transparent);
+      margin: 26px 0;
+    }
+
+    .info-confianca { display: flex; gap: 16px; align-items: flex-start; }
+    .info-confianca .ic {
+      width: 46px; height: 46px;
+      border-radius: 12px;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      display: grid;
+      place-items: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .info-confianca h4 { font-family: 'DM Sans', sans-serif; font-size: 1.02rem; color: var(--branco); font-weight: 700; }
+    .info-confianca p { font-size: 0.9rem; color: rgba(247, 243, 238, 0.72); margin-top: 4px; }
+
+    .info-tel {
+      margin-top: auto;
+      padding-top: 24px;
+      font-size: 0.92rem;
+      color: rgba(247, 243, 238, 0.78);
+    }
+    .info-tel a { color: var(--dourado); font-weight: 600; }
+
+    /* ============================================================
+       LOCALIZAÇÃO
+    ============================================================ */
+    .localizacao { background: var(--creme-claro); }
+
+    .local-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: clamp(32px, 4.5vw, 56px);
+      align-items: stretch;
+    }
+
+    .local-infos { display: flex; flex-direction: column; gap: 14px; }
+
+    .local-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+      background: var(--branco);
+      border: 1px solid var(--creme-medio);
+      border-radius: var(--borda-suave);
+      padding: 22px 24px;
+      transition: transform var(--transicao), box-shadow var(--transicao);
+    }
+    .local-item:hover { transform: translateY(-4px); box-shadow: var(--sombra-suave); }
+
+    .local-icone {
+      width: 48px; height: 48px;
+      border-radius: 12px;
+      background: var(--creme-claro);
+      display: grid;
+      place-items: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .local-item h3 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dourado);
+    }
+    .local-item p { font-size: 1rem; color: var(--texto); margin-top: 4px; }
+    .local-item a { color: var(--verde-escuro); font-weight: 600; }
+    .local-item a:hover { color: var(--verde-claro); }
+
+    .local-mapa {
+      position: relative;
+      border-radius: var(--borda-card);
+      overflow: hidden;
+      box-shadow: var(--sombra-media);
+      min-height: 380px;
+      background: var(--creme-medio);
+    }
+    .local-mapa iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: 0;
+      display: block;
+      filter: saturate(0.92);
+    }
+    .mapa-btn {
+      position: absolute;
+      left: 20px; bottom: 20px;
+      background: var(--branco);
+      color: var(--verde-escuro);
+      padding: 12px 22px;
+      border-radius: var(--borda-pill);
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: var(--sombra-media);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: transform var(--transicao);
+    }
+    .mapa-btn:hover { transform: translateY(-3px); }
+
+    /* ============================================================
+       WHATSAPP FLUTUANTE
+    ============================================================ */
+    .whatsapp-float {
+      position: fixed;
+      right: 24px; bottom: 24px;
+      width: 62px; height: 62px;
+      border-radius: 50%;
+      background: var(--whatsapp);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      z-index: 900;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, 0.45);
+      transition: transform var(--transicao);
+    }
+    .whatsapp-float svg { width: 32px; height: 32px; }
+    .whatsapp-float:hover { transform: scale(1.1); }
+    .whatsapp-float::before,
+    .whatsapp-float::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 2px solid var(--whatsapp);
+      animation: ondas 2.4s infinite;
+    }
+    .whatsapp-float::after { animation-delay: 1.2s; }
+    @keyframes ondas {
+      0% { transform: scale(1); opacity: 0.7; }
+      100% { transform: scale(1.9); opacity: 0; }
+    }
+
+    /* ============================================================
+       TOAST
+    ============================================================ */
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 28px;
+      transform: translateX(-50%) translateY(160%);
+      z-index: 1200;
+      background: var(--verde-escuro);
+      color: var(--creme-claro);
+      padding: 16px 24px;
+      border-radius: 14px;
+      box-shadow: var(--sombra-forte);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      font-weight: 500;
+      max-width: calc(100vw - 32px);
+      opacity: 0;
+      transition: transform 0.5s cubic-bezier(0.22, 0.61, 0.36, 1), opacity 0.5s ease;
+    }
+    .toast.visivel { transform: translateX(-50%) translateY(0); opacity: 1; }
+    .toast .check {
+      width: 26px; height: 26px;
+      border-radius: 50%;
+      background: var(--dourado);
+      color: var(--verde-escuro);
+      display: grid;
+      place-items: center;
+      font-size: 0.9rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: #14271E;
+      color: rgba(247, 243, 238, 0.7);
+      padding: clamp(56px, 7vw, 84px) 0 0;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.6fr 1fr 1fr 1.2fr;
+      gap: 40px;
+      padding-bottom: 52px;
+    }
+
+    .footer-marca .logo-texto { color: var(--creme-claro); }
+    .footer-sobre { margin-top: 18px; font-size: 0.93rem; max-width: 280px; }
+    .footer-desde {
+      margin-top: 16px;
+      display: inline-block;
+      font-size: 0.76rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--dourado);
+      font-weight: 600;
+    }
+
+    .footer-col h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--creme-claro);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 11px; }
+    .footer-col a, .footer-col li { font-size: 0.93rem; transition: color var(--transicao); }
+    .footer-col a:hover { color: var(--dourado); }
+
+    .footer-row { display: flex; justify-content: space-between; }
+    .footer-row span:last-child { color: var(--creme-claro); font-weight: 600; }
+    .footer-row.fechado span:last-child { color: var(--dourado-suave); }
+
+    .footer-social { display: flex; gap: 12px; margin-top: 18px; }
+    .footer-social a {
+      width: 42px; height: 42px;
+      border-radius: 11px;
+      background: rgba(247, 243, 238, 0.08);
+      display: grid;
+      place-items: center;
+      transition: background var(--transicao), transform var(--transicao);
+    }
+    .footer-social a:hover { background: var(--dourado); color: var(--verde-escuro); transform: translateY(-3px); }
+    .footer-social svg { width: 19px; height: 19px; }
+
+    .footer-base {
+      border-top: 1px solid rgba(247, 243, 238, 0.1);
+      padding: 24px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.84rem;
+      flex-wrap: wrap;
+    }
+    .footer-base .dev { color: rgba(247, 243, 238, 0.45); }
+
+    /* ============================================================
+       RESPONSIVO
+    ============================================================ */
+    @media (max-width: 1080px) {
+      .servicos-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    }
+
+    @media (max-width: 960px) {
+      .nav-toggle { display: flex; }
+      .nav-menu {
+        position: fixed;
+        top: var(--nav-altura);
+        left: 0; right: 0;
+        background: var(--creme-claro);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 18px 24px 30px;
+        box-shadow: 0 24px 40px rgba(27, 58, 45, 0.16);
+        transform: translateY(-12px);
+        opacity: 0;
+        pointer-events: none;
+        transition: transform var(--transicao), opacity var(--transicao);
+      }
+      .nav-menu.aberto { transform: translateY(0); opacity: 1; pointer-events: auto; }
+      .nav-links { flex-direction: column; gap: 0; }
+      .nav-links a { padding: 15px 0; border-bottom: 1px solid var(--creme-medio); font-size: 1.05rem; }
+      .nav-links a::after { display: none; }
+      .nav-cta { margin-top: 18px; padding: 15px; font-size: 1rem; }
+
+      .hero-grid { grid-template-columns: 1fr; }
+      .hero-painel-wrap { max-width: 480px; margin: 0 auto; width: 100%; }
+      .hero-painel-wrap::before { inset: 18px -14px -14px 18px; }
+
+      .agendamento-grid { grid-template-columns: 1fr; }
+      .local-grid { grid-template-columns: 1fr; }
+      .sobre-grid { grid-template-columns: 1fr; }
+      .sobre-foto-wrap { max-width: 420px; margin: 0 auto; }
+      .depoimentos-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; }
+    }
+
+    @media (max-width: 620px) {
+      body { font-size: 16px; }
+      .servicos-grid { grid-template-columns: 1fr; }
+      .galeria-grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: minmax(150px, 1fr); }
+      .galeria-item:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+      .form-grid { grid-template-columns: 1fr; }
+      .campo.col-2 { grid-column: span 1; }
+      .hero-trust { gap: 16px; }
+      .trust-sep { display: none; }
+      .sobre-badge { width: 110px; height: 110px; right: -10px; bottom: 28px; }
+      .sobre-badge b { font-size: 2.3rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .footer-base { justify-content: center; text-align: center; }
+      .whatsapp-float { width: 56px; height: 56px; right: 18px; bottom: 18px; }
+      .btn { width: 100%; }
+      .hero-botoes { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
+      [data-reveal] { opacity: 1 !important; transform: none !important; }
+    }
+
+    /* ===== InBarber Booking Widget (bk- prefix) ===== */
+    .bk-widget{max-width:760px;margin:0 auto;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;overflow:hidden;}
+    .bk-steps{display:flex;border-bottom:1px solid rgba(255,255,255,.08);}
+    .bk-step{flex:1;padding:14px 8px;text-align:center;font-size:12px;font-weight:600;color:rgba(255,255,255,.35);letter-spacing:.4px;cursor:default;transition:color .2s,background .2s;}
+    .bk-step.active{color:var(--dourado);background:rgba(255,255,255,.04);}
+    .bk-step.done{color:var(--verde-escuro);}
+    .bk-panel{display:none;padding:28px 24px;}
+    .bk-panel.active{display:block;}
+    .bk-panel-title{font-size:15px;font-weight:700;color:#fff;margin-bottom:18px;}
+    .bk-svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;}
+    .bk-svc{border:2px solid rgba(255,255,255,.1);border-radius:12px;padding:16px 14px;cursor:pointer;transition:border-color .15s,background .15s;}
+    .bk-svc:hover{border-color:var(--dourado);background:rgba(255,255,255,.05);}
+    .bk-svc.selected{border-color:var(--dourado);background:rgba(255,255,255,.07);}
+    .bk-svc-name{font-size:14px;font-weight:700;color:#fff;margin-bottom:4px;}
+    .bk-svc-price{font-size:13px;color:var(--dourado);}
+    .bk-svc-time{font-size:11px;color:rgba(255,255,255,.45);margin-top:2px;}
+    .bk-cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
+    .bk-cal-nav button{background:none;border:1px solid rgba(255,255,255,.15);color:#fff;border-radius:8px;width:32px;height:32px;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;}
+    .bk-cal-title{font-size:14px;font-weight:600;color:#fff;}
+    .bk-cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;text-align:center;}
+    .bk-cal-dow{font-size:10px;font-weight:700;color:rgba(255,255,255,.35);padding:4px 0;letter-spacing:.5px;}
+    .bk-cal-day{padding:8px 4px;border-radius:8px;font-size:13px;font-weight:500;cursor:pointer;color:rgba(255,255,255,.7);transition:background .15s,color .15s;}
+    .bk-cal-day:hover:not(.disabled){background:rgba(255,255,255,.08);}
+    .bk-cal-day.selected{background:var(--dourado);color:#000;font-weight:700;}
+    .bk-cal-day.disabled{color:rgba(255,255,255,.2);cursor:default;pointer-events:none;}
+    .bk-cal-day.empty{pointer-events:none;}
+    .bk-hora-grid{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px;}
+    .bk-hora-pill{padding:8px 14px;border:1px solid rgba(255,255,255,.15);border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;color:rgba(255,255,255,.75);background:none;transition:border-color .15s,background .15s,color .15s;}
+    .bk-hora-pill:hover{border-color:var(--dourado);color:var(--dourado);}
+    .bk-hora-pill.selected{background:var(--dourado);border-color:var(--dourado);color:#000;}
+    .bk-field{margin-bottom:16px;}
+    .bk-field label{display:block;font-size:12px;font-weight:600;color:rgba(255,255,255,.5);margin-bottom:6px;letter-spacing:.4px;text-transform:uppercase;}
+    .bk-field input,.bk-field textarea{width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;color:#fff;padding:10px 14px;font-size:14px;font-family:inherit;transition:border-color .15s;}
+    .bk-field input:focus,.bk-field textarea:focus{outline:none;border-color:var(--dourado);}
+    .bk-field input::placeholder,.bk-field textarea::placeholder{color:rgba(255,255,255,.25);}
+    .bk-field.error input,.bk-field.error textarea{border-color:#ef4444;}
+    .bk-field-err{font-size:11px;color:#ef4444;margin-top:4px;display:none;}
+    .bk-field.error .bk-field-err{display:block;}
+    .bk-resumo{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:18px;margin-bottom:20px;}
+    .bk-resumo-row{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:13px;}
+    .bk-resumo-row:last-child{border-bottom:none;}
+    .bk-resumo-row span:first-child{color:rgba(255,255,255,.45);}
+    .bk-resumo-row span:last-child{color:#fff;font-weight:600;}
+    .bk-nav{display:flex;gap:10px;margin-top:20px;}
+    .bk-btn{padding:12px 24px;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;border:none;transition:opacity .15s,transform .15s;font-family:inherit;}
+    .bk-btn:active{transform:scale(.97);}
+    .bk-btn-primary{background:var(--dourado);color:#000;flex:1;}
+    .bk-btn-primary:disabled{opacity:.4;cursor:default;}
+    .bk-btn-secondary{background:rgba(255,255,255,.07);color:#fff;border:1px solid rgba(255,255,255,.12);}
+    .bk-btn-wpp{background:#25d366;color:#fff;flex:1;display:flex;align-items:center;justify-content:center;gap:8px;}
+    .bk-confirma-icon{font-size:48px;text-align:center;margin-bottom:12px;}
+    .bk-confirma-title{font-size:20px;font-weight:800;color:#fff;text-align:center;margin-bottom:8px;}
+    .bk-confirma-sub{font-size:14px;color:rgba(255,255,255,.55);text-align:center;margin-bottom:24px;}
+    .bk-float{position:fixed;bottom:90px;left:20px;z-index:999;background:var(--dourado);color:#000;font-weight:700;font-size:13px;padding:10px 16px;border-radius:30px;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.4);transition:transform .2s;}
+    .bk-float:hover{transform:translateY(-2px);}
+  </style>
+</head>
+<body>
+
+  <!-- ============================ NAV ============================ -->
+  <header class="site-header" id="topo">
+    <nav class="nav container" aria-label="Navegação principal">
+      <a href="#inicio" class="logo" aria-label="teste — início">
+        <span class="logo-marca" aria-hidden="true">💈</span>
+        <span class="logo-texto">teste<small>Barbearia</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu de navegação" aria-expanded="false" aria-controls="navMenu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-menu" id="navMenu">
+        <ul class="nav-links">
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#galeria">Galeria</a></li>
+          <li><a href="#sobre">Sobre</a></li>
+          <li><a href="#depoimentos">Depoimentos</a></li>
+          <li><a href="#localizacao">Contato</a></li>
+        </ul>
+        <a href="#agendamento" class="btn btn-dourado nav-cta">Agendar horário</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ============================ HERO ============================ -->
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-conteudo" data-reveal>
+          <span class="status-pill">
+            <span class="status-dot" aria-hidden="true"></span>
+            Aberto agora · são paulo
+          </span>
+
+          <h1>O cuidado que o seu <em>estilo</em> merece</h1>
+
+          <p class="hero-sub">
+            Na teste, cada detalhe é pensado para você sair com mais
+            confiança. Barbearia premium em jardim angela, são paulo.
+          </p>
+
+          <div class="hero-botoes">
+            <a href="#agendamento" class="btn btn-primario">Agendar meu horário</a>
+            <a href="#servicos" class="btn btn-contorno">Ver serviços</a>
+          </div>
+
+          <div class="hero-trust">
+            <div class="trust-item">
+              <div>
+                <span class="estrelas" aria-hidden="true">★★★★★</span>
+                <p class="trust-texto"><strong>5.0 no Google</strong></p>
+              </div>
+            </div>
+            <span class="trust-sep" aria-hidden="true"></span>
+            <div class="trust-item">
+              <div class="trust-avatares" aria-hidden="true">
+                <span>A</span><span>R</span><span>J</span><span>+</span>
+              </div>
+              <p class="trust-texto">
+                <strong>1.000+</strong>
+                <span>clientes atendidos</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-painel-wrap" data-reveal data-delay="2">
+          <div class="hero-painel">
+            <span class="painel-eyebrow">Desde 2018</span>
+            <div class="painel-numero">
+              <b>8</b><i>+</i>
+            </div>
+            <p class="painel-label">anos aperfeiçoando a arte da barbearia</p>
+
+            <div class="painel-divisor" aria-hidden="true"></div>
+
+            <p class="painel-quote">
+              "Cada cliente que senta na cadeira sai daqui com a autoestima
+              renovada. Esse é, e sempre será, o nosso compromisso."
+            </p>
+            <div class="painel-autor">
+              <span class="traco" aria-hidden="true"></span>
+              <span><strong>joao victor lopes santana</strong> · Fundador</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SERVIÇOS ============================ -->
+    <section class="secao servicos" id="servicos">
+      <div class="container">
+        <div class="secao-header" data-reveal>
+          <span class="eyebrow">Nossos serviços</span>
+          <h2 class="secao-titulo">Serviços feitos com <em>capricho</em></h2>
+          <p class="secao-desc">
+            Técnica, produtos premium e atenção aos detalhes em cada atendimento.
+          </p>
+        </div>
+
+        <div class="servicos-grid">
+          <article class="servico-card" data-reveal data-delay="1">
+            <div class="servico-icone" aria-hidden="true">✂️</div>
+            <h3 class="servico-nome">Corte Clássico</h3>
+            <p class="servico-desc">Corte tradicional com acabamento impecável.</p>
+            <div class="servico-rodape">
+              <span class="servico-preco">R$40</span>
+              <span class="servico-tempo">🕐 40 min</span>
+            </div>
+          </article>
+
+          <article class="servico-card" data-reveal data-delay="2">
+            <div class="servico-icone" aria-hidden="true">🪒</div>
+            <h3 class="servico-nome">Barba Completa</h3>
+            <p class="servico-desc">Modelagem artesanal com produtos premium.</p>
+            <div class="servico-rodape">
+              <span class="servico-preco">R$35</span>
+              <span class="servico-tempo">🕐 30 min</span>
+            </div>
+          </article>
+
+          <article class="servico-card" data-reveal data-delay="3">
+            <div class="servico-icone" aria-hidden="true">💈</div>
+            <h3 class="servico-nome">Combo Completo</h3>
+            <p class="servico-desc">Corte + barba + sobrancelha.</p>
+            <div class="servico-rodape">
+              <span class="servico-preco">R$65</span>
+              <span class="servico-tempo">🕐 60 min</span>
+            </div>
+          </article>
+
+          <article class="servico-card" data-reveal data-delay="4">
+            <div class="servico-icone" aria-hidden="true">⭐</div>
+            <h3 class="servico-nome">Tratamento VIP</h3>
+            <p class="servico-desc">Experiência completa com hidratação.</p>
+            <div class="servico-rodape">
+              <span class="servico-preco">R$95</span>
+              <span class="servico-tempo">🕐 90 min</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ GALERIA ============================ -->
+    <section class="secao galeria escuro" id="galeria">
+      <div class="container">
+        <div class="secao-header" data-reveal>
+          <span class="eyebrow">Galeria</span>
+          <h2 class="secao-titulo">Nosso <em>trabalho</em> fala por nós</h2>
+          <p class="secao-desc">
+            Um pouco do ambiente e dos resultados que entregamos todos os dias.
+          </p>
+        </div>
+
+        <div class="galeria-grid">
+          <!-- substituir .galeria-fundo por <img> com foto real -->
+          <figure class="galeria-item" data-reveal data-delay="1" role="img" aria-label="Ambiente interno da teste">
+            <div class="galeria-fundo" aria-hidden="true">💈</div>
+            <div class="galeria-overlay">
+              <span class="galeria-tag">O espaço</span>
+              <span class="galeria-legenda">Ambiente da barbearia</span>
+            </div>
+            <span class="galeria-borda" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="galeria-item" data-reveal data-delay="2" role="img" aria-label="Corte masculino na tesoura">
+            <div class="galeria-fundo" aria-hidden="true">✂️</div>
+            <div class="galeria-overlay">
+              <span class="galeria-tag">Cortes</span>
+              <span class="galeria-legenda">Corte na tesoura</span>
+            </div>
+            <span class="galeria-borda" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="galeria-item" data-reveal data-delay="3" role="img" aria-label="Barba modelada e finalizada">
+            <div class="galeria-fundo" aria-hidden="true">🧔</div>
+            <div class="galeria-overlay">
+              <span class="galeria-tag">Barba</span>
+              <span class="galeria-legenda">Barba completa</span>
+            </div>
+            <span class="galeria-borda" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="galeria-item" data-reveal data-delay="2" role="img" aria-label="Acabamento feito na navalha">
+            <div class="galeria-fundo" aria-hidden="true">🪒</div>
+            <div class="galeria-overlay">
+              <span class="galeria-tag">Detalhe</span>
+              <span class="galeria-legenda">Acabamento na navalha</span>
+            </div>
+            <span class="galeria-borda" aria-hidden="true"></span>
+          </figure>
+
+          <figure class="galeria-item" data-reveal data-delay="3" role="img" aria-label="Atendimento premium ao cliente">
+            <div class="galeria-fundo" aria-hidden="true">⭐</div>
+            <div class="galeria-overlay">
+              <span class="galeria-tag">Experiência</span>
+              <span class="galeria-legenda">Atendimento premium</span>
+            </div>
+            <span class="galeria-borda" aria-hidden="true"></span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ SOBRE ============================ -->
+    <section class="secao sobre" id="sobre">
+      <div class="container sobre-grid">
+        <div class="sobre-foto-wrap" data-reveal>
+          <!-- substituir por <img> da equipe / fachada -->
+          <div class="sobre-foto" role="img" aria-label="Equipe da teste" aria-hidden="false">
+            <span aria-hidden="true">💈</span>
+          </div>
+          <div class="sobre-badge" aria-label="8 anos de experiência">
+            <div>
+              <b>8</b>
+              <span>anos de história</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="sobre-texto" data-reveal data-delay="2">
+          <span class="eyebrow">Sobre nós</span>
+          <h2>Mais que uma barbearia, uma <em>experiência</em></h2>
+          <p class="sobre-p">aajkçsdb.l,asd</p>
+          <p class="sobre-p">
+            Fundada em 2018 por <strong>joao victor lopes santana</strong>, a
+            teste se tornou referência em jardim angela. Hoje, nossa
+            equipe de <strong>2 profissionais</strong>
+            atende com a mesma dedicação do primeiro dia.
+          </p>
+
+          <div class="sobre-features">
+            <div class="feature-card">
+              <div class="feature-icone" aria-hidden="true">✂️</div>
+              <div>
+                <h3>Profissionais experientes</h3>
+                <p>Barbeiros especializados em cortes clássicos e nas tendências atuais.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icone" aria-hidden="true">🛋️</div>
+              <div>
+                <h3>Ambiente premium</h3>
+                <p>Espaço confortável e acolhedor, pensado para o seu momento de cuidado.</p>
+              </div>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icone" aria-hidden="true">⏱️</div>
+              <div>
+                <h3>Sem espera</h3>
+                <p>Agendamento online prático. Seu horário reservado, sem filas.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ DEPOIMENTOS ============================ -->
+    <section class="secao depoimentos" id="depoimentos">
+      <div class="container">
+        <div class="secao-header" data-reveal>
+          <span class="eyebrow">Depoimentos</span>
+          <h2 class="secao-titulo">Quem senta na cadeira, <em>volta</em></h2>
+          <span class="depo-resumo">
+            <span class="estrelas" aria-hidden="true">★★★★★</span>
+            <b>5.0 de 5</b> · avaliações reais de clientes
+          </span>
+        </div>
+
+        <div class="depoimentos-grid">
+          <article class="depo-card" data-reveal data-delay="1">
+            <span class="depo-aspas" aria-hidden="true">&ldquo;</span>
+            <span class="estrelas" aria-hidden="true">★★★★★</span>
+            <p class="depo-texto">Melhor barbearia do bairro!</p>
+            <div class="depo-autor">
+              <span class="depo-avatar" aria-hidden="true">C</span>
+              <div>
+                <strong>Cliente Satisfeito</strong>
+                <span>Cliente fiel · jardim angela</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="depo-card" data-reveal data-delay="2">
+            <span class="depo-aspas" aria-hidden="true">&ldquo;</span>
+            <span class="estrelas" aria-hidden="true">★★★★★</span>
+            <p class="depo-texto">Profissionalismo e qualidade incomparáveis.</p>
+            <div class="depo-autor">
+              <span class="depo-avatar" aria-hidden="true">J</span>
+              <div>
+                <strong>João Silva</strong>
+                <span>Cliente fiel · jardim angela</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="depo-card" data-reveal data-delay="3">
+            <span class="depo-aspas" aria-hidden="true">&ldquo;</span>
+            <span class="estrelas" aria-hidden="true">★★★★★</span>
+            <p class="depo-texto">Virei cliente fiel. Indico a todos!</p>
+            <div class="depo-autor">
+              <span class="depo-avatar" aria-hidden="true">P</span>
+              <div>
+                <strong>Pedro Costa</strong>
+                <span>Cliente fiel · jardim angela</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ AGENDAMENTO ============================ -->
+    <section class="secao agendamento escuro" id="agendamento" data-client="{{CLIENT_ID}}">
+      <div class="container">
+        <div class="secao-header" data-reveal>
+          <span class="eyebrow">Agendamento</span>
+          <h2 class="secao-titulo">Reserve o seu <em>horário</em></h2>
+          <p class="secao-desc">Quatro passos rápidos — confirme pelo WhatsApp em segundos.</p>
+        </div>
+
+        <div class="bk-widget" data-reveal>
+          <!-- Step indicators -->
+          <div class="bk-steps">
+            <div class="bk-step active" id="bkS1">1 · Serviço</div>
+            <div class="bk-step" id="bkS2">2 · Data</div>
+            <div class="bk-step" id="bkS3">3 · Dados</div>
+            <div class="bk-step" id="bkS4">4 · Confirmado</div>
+          </div>
+
+          <!-- Panel 1: service selection -->
+          <div class="bk-panel active" id="bkP1">
+            <p class="bk-panel-title">Escolha o serviço</p>
+            <div class="bk-svc-grid">
+              <div class="bk-svc" data-name="Corte Clássico" data-price="R$40" data-time="30 min">
+                <div class="bk-svc-name">Corte Clássico</div>
+                <div class="bk-svc-price">R$40</div>
+                <div class="bk-svc-time">~30 min</div>
+              </div>
+              <div class="bk-svc" data-name="Barba Completa" data-price="R$35" data-time="45 min">
+                <div class="bk-svc-name">Barba Completa</div>
+                <div class="bk-svc-price">R$35</div>
+                <div class="bk-svc-time">~45 min</div>
+              </div>
+              <div class="bk-svc" data-name="Combo Completo" data-price="R$65" data-time="60 min">
+                <div class="bk-svc-name">Combo Completo</div>
+                <div class="bk-svc-price">R$65</div>
+                <div class="bk-svc-time">~60 min</div>
+              </div>
+              <div class="bk-svc" data-name="Tratamento VIP" data-price="R$95" data-time="30 min">
+                <div class="bk-svc-name">Tratamento VIP</div>
+                <div class="bk-svc-price">R$95</div>
+                <div class="bk-svc-time">~30 min</div>
+              </div>
+            </div>
+            <div class="bk-nav">
+              <button class="bk-btn bk-btn-primary" id="bkNext1" disabled>Próximo →</button>
+            </div>
+          </div>
+
+          <!-- Panel 2: date + time -->
+          <div class="bk-panel" id="bkP2">
+            <p class="bk-panel-title">Escolha a data e horário</p>
+            <div class="bk-cal-nav">
+              <button id="bkCalPrev" aria-label="Mês anterior">‹</button>
+              <span class="bk-cal-title" id="bkCalTitle"></span>
+              <button id="bkCalNext" aria-label="Próximo mês">›</button>
+            </div>
+            <div class="bk-cal-grid" id="bkCalGrid"></div>
+            <div class="bk-hora-grid" id="bkHoraGrid"></div>
+            <div class="bk-nav">
+              <button class="bk-btn bk-btn-secondary" id="bkBack2">← Voltar</button>
+              <button class="bk-btn bk-btn-primary" id="bkNext2" disabled>Próximo →</button>
+            </div>
+          </div>
+
+          <!-- Panel 3: customer data -->
+          <div class="bk-panel" id="bkP3">
+            <p class="bk-panel-title">Seus dados</p>
+            <div class="bk-field" id="bkFNome">
+              <label>Nome completo *</label>
+              <input type="text" id="bkNome" placeholder="Seu nome" autocomplete="name" />
+              <div class="bk-field-err">Informe seu nome.</div>
+            </div>
+            <div class="bk-field" id="bkFTel">
+              <label>WhatsApp *</label>
+              <input type="tel" id="bkTel" placeholder="(11) 99999-9999" inputmode="numeric" />
+              <div class="bk-field-err">Informe um WhatsApp com DDD.</div>
+            </div>
+            <div class="bk-field">
+              <label>Observações (opcional)</label>
+              <textarea id="bkObs" placeholder="Preferência de profissional ou algum detalhe?" rows="3"></textarea>
+            </div>
+            <div class="bk-nav">
+              <button class="bk-btn bk-btn-secondary" id="bkBack3">← Voltar</button>
+              <button class="bk-btn bk-btn-primary" id="bkConfirmar">Confirmar ✓</button>
+            </div>
+          </div>
+
+          <!-- Panel 4: confirmed -->
+          <div class="bk-panel" id="bkP4">
+            <div class="bk-confirma-icon">✅</div>
+            <div class="bk-confirma-title">Agendamento confirmado!</div>
+            <div class="bk-confirma-sub">Seu WhatsApp foi aberto com os dados do agendamento. Aguarde a confirmação da barbearia.</div>
+            <div class="bk-resumo">
+              <div class="bk-resumo-row"><span>Serviço</span><span id="bkResS"></span></div>
+              <div class="bk-resumo-row"><span>Data</span><span id="bkResD"></span></div>
+              <div class="bk-resumo-row"><span>Horário</span><span id="bkResH"></span></div>
+              <div class="bk-resumo-row"><span>Nome</span><span id="bkResN"></span></div>
+            </div>
+            <div class="bk-nav">
+              <a id="bkWpp" href="#" target="_blank" rel="noopener" class="bk-btn bk-btn-wpp">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+                Abrir WhatsApp
+              </a>
+              <button class="bk-btn bk-btn-secondary" id="bkReset">Novo agendamento</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================ LOCALIZAÇÃO ============================ -->
+    <section class="secao localizacao" id="localizacao">
+      <div class="container">
+        <div class="secao-header" data-reveal>
+          <span class="eyebrow">Localização</span>
+          <h2 class="secao-titulo">Venha nos <em>visitar</em></h2>
+          <p class="secao-desc">
+            Estamos em jardim angela, prontos para receber você.
+          </p>
+        </div>
+
+        <div class="local-grid">
+          <div class="local-infos" data-reveal data-delay="1">
+            <div class="local-item">
+              <div class="local-icone" aria-hidden="true">📍</div>
+              <div>
+                <h3>Endereço</h3>
+                <p>RUA ALBERGATI CAPACELLI<br />são paulo – São Paulo · CEP 04963-000</p>
+              </div>
+            </div>
+
+            <div class="local-item">
+              <div class="local-icone" aria-hidden="true">💬</div>
+              <div>
+                <h3>WhatsApp</h3>
+                <p><a href="https://wa.me/11988072027?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio." target="_blank" rel="noopener">11988072027</a></p>
+              </div>
+            </div>
+
+            <div class="local-item">
+              <div class="local-icone" aria-hidden="true">📷</div>
+              <div>
+                <h3>Instagram</h3>
+                <p><a href="#" data-instagram="" target="_blank" rel="noopener"></a></p>
+              </div>
+            </div>
+
+            <div class="local-item">
+              <div class="local-icone" aria-hidden="true">🚇</div>
+              <div>
+                <h3>Como chegar</h3>
+                <p>Fácil acesso por transporte público e com estacionamento na região.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="local-mapa" data-reveal data-delay="2">
+            <iframe
+              src="https://maps.google.com"
+              title="Mapa — teste"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen></iframe>
+            <a href="https://maps.google.com" class="mapa-btn" target="_blank" rel="noopener">
+              <span aria-hidden="true">🧭</span> Ver rota no Google Maps
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================ FOOTER ============================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-marca">
+          <a href="#topo" class="logo">
+            <span class="logo-marca" aria-hidden="true">💈</span>
+            <span class="logo-texto">teste<small>Barbearia</small></span>
+          </a>
+          <p class="footer-sobre">
+            Tradição, estilo e cuidado em jardim angela, são paulo. Sua barbearia
+            de confiança.
+          </p>
+          <span class="footer-desde">Desde 2018</span>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navegação</h4>
+          <ul>
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#galeria">Galeria</a></li>
+            <li><a href="#sobre">Sobre nós</a></li>
+            <li><a href="#agendamento">Agendar</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Horários</h4>
+          <ul>
+            <li class="footer-row"><span>Seg–Sex</span><span>09:00 – 20:00</span></li>
+            <li class="footer-row"><span>Sábado</span><span>08:00 – 18:00</span></li>
+            <li class="footer-row fechado"><span>Domingo</span><span>Fechado</span></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+            <li>RUA ALBERGATI CAPACELLI</li>
+            <li><a href="https://wa.me/11988072027" target="_blank" rel="noopener">11988072027</a></li>
+          </ul>
+          <div class="footer-social">
+            <a href="#" data-instagram="" target="_blank" rel="noopener" aria-label="Instagram da teste">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.42 2.17 8.8 2.16 12 2.16zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.22-.94.47-1.35.88-.41.41-.66.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.22.55.47.94.88 1.35.41.41.8.66 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.22.94-.47 1.35-.88.41-.41.66-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm6.95-9.22a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+            </a>
+            <a href="https://wa.me/11988072027" target="_blank" rel="noopener" aria-label="WhatsApp da teste">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-base">
+        <span>© <span id="ano">2026</span> teste · Todos os direitos reservados.</span>
+        <span class="dev">RUA ALBERGATI CAPACELLI · são paulo/São Paulo</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================ AGENDAR FLUTUANTE ============================ -->
+  <a href="#agendamento" class="bk-float" aria-label="Agendar horário">📅 Agendar</a>
+
+  <!-- ============================ WHATSAPP FLUTUANTE ============================ -->
+  <a class="whatsapp-float"
+     href="https://wa.me/11988072027?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20agendar%20um%20hor%C3%A1rio."
+     target="_blank" rel="noopener"
+     aria-label="Conversar no WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.788-.607zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  </a>
+
+  <!-- ============================ TOAST ============================ -->
+  <div class="toast" id="toast" role="status" aria-live="polite">
+    <span class="check" aria-hidden="true">✓</span>
+    <span>Abrindo o WhatsApp para confirmar seu agendamento!</span>
+  </div>
+
+  <!-- ============================ SCRIPT ============================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* Ano atual no rodapé */
+      var anoEl = document.getElementById('ano');
+      if (anoEl) anoEl.textContent = new Date().getFullYear();
+
+      /* Links do Instagram (remove o @ da URL) */
+      document.querySelectorAll('[data-instagram]').forEach(function (el) {
+        var user = (el.getAttribute('data-instagram') || '').replace('@', '').trim();
+        if (user) el.setAttribute('href', 'https://instagram.com/' + user);
+      });
+
+      /* Navegação mobile */
+      var nav = document.querySelector('.site-header');
+      var navToggle = document.getElementById('navToggle');
+      var navMenu = document.getElementById('navMenu');
+
+      function fecharMenu() {
+        navMenu.classList.remove('aberto');
+        navToggle.classList.remove('ativo');
+        navToggle.setAttribute('aria-expanded', 'false');
+        document.body.classList.remove('menu-aberto');
+      }
+
+      if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function () {
+          var aberto = navMenu.classList.toggle('aberto');
+          navToggle.classList.toggle('ativo', aberto);
+          navToggle.setAttribute('aria-expanded', aberto ? 'true' : 'false');
+          document.body.classList.toggle('menu-aberto', aberto);
+        });
+        navMenu.querySelectorAll('a').forEach(function (a) {
+          a.addEventListener('click', fecharMenu);
+        });
+      }
+
+      /* Fundo da nav ao rolar */
+      function aoRolar() {
+        if (window.scrollY > 24) nav.classList.add('rolado');
+        else nav.classList.remove('rolado');
+      }
+      aoRolar();
+      window.addEventListener('scroll', aoRolar, { passive: true });
+
+      /* Scroll reveal */
+      var reveals = document.querySelectorAll('[data-reveal]');
+      if ('IntersectionObserver' in window) {
+        var obs = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              e.target.classList.add('is-visible');
+              obs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
+        reveals.forEach(function (el) { obs.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('is-visible'); });
+      }
+
+      /* Link ativo na navegação */
+      var secoes = document.querySelectorAll('main section[id]');
+      var linksNav = document.querySelectorAll('.nav-links a');
+      if ('IntersectionObserver' in window && secoes.length) {
+        var obsAtivo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) {
+              var id = e.target.getAttribute('id');
+              linksNav.forEach(function (l) {
+                l.classList.toggle('ativo', l.getAttribute('href') === '#' + id);
+              });
+            }
+          });
+        }, { threshold: 0.55 });
+        secoes.forEach(function (s) { obsAtivo.observe(s); });
+      }
+
+      /* Data mínima do agendamento = hoje */
+      var inputData = document.getElementById('data');
+      if (inputData) {
+        var hoje = new Date();
+        inputData.min = hoje.getFullYear() + '-' +
+          String(hoje.getMonth() + 1).padStart(2, '0') + '-' +
+          String(hoje.getDate()).padStart(2, '0');
+      }
+
+      /* Máscara de WhatsApp */
+      var inputZap = document.getElementById('whatsapp');
+      function mascararTelefone(v) {
+        var d = v.replace(/\D/g, '').slice(0, 11);
+        if (d.length <= 2) return d.length ? '(' + d : '';
+        if (d.length <= 6) return '(' + d.slice(0, 2) + ') ' + d.slice(2);
+        if (d.length <= 10) return '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+        return '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
+      }
+      if (inputZap) {
+        inputZap.addEventListener('input', function () {
+          inputZap.value = mascararTelefone(inputZap.value);
+        });
+      }
+
+      /* Toast de confirmação */
+      var toast = document.getElementById('toast');
+      var toastTimer;
+      function mostrarToast() {
+        if (!toast) return;
+        toast.classList.add('visivel');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          toast.classList.remove('visivel');
+        }, 4800);
+      }
+
+      /* Formata a data para PT-BR (sem problema de fuso) */
+      function formatarData(valor) {
+        if (!valor) return '';
+        var p = valor.split('-');
+        var ano = parseInt(p[0], 10);
+        var mes = parseInt(p[1], 10);
+        var dia = parseInt(p[2], 10);
+        var d = new Date(ano, mes - 1, dia);
+        var dias = ['domingo', 'segunda-feira', 'terça-feira', 'quarta-feira', 'quinta-feira', 'sexta-feira', 'sábado'];
+        return dias[d.getDay()] + ', ' +
+          String(dia).padStart(2, '0') + '/' +
+          String(mes).padStart(2, '0') + '/' + ano;
+      }
+
+      function marcarErro(campo, temErro) {
+        var grupo = campo.closest('.campo');
+        if (grupo) grupo.classList.toggle('erro', temErro);
+      }
+
+      /* Envio do formulário */
+      var form = document.getElementById('form-agendamento');
+      if (form) {
+        form.addEventListener('submit', function (ev) {
+          ev.preventDefault();
+
+          var nome = document.getElementById('nome');
+          var zap = document.getElementById('whatsapp');
+          var servico = document.getElementById('servico');
+          var data = document.getElementById('data');
+          var horario = document.getElementById('horario');
+          var obs = document.getElementById('obs');
+
+          var invalidos = [];
+
+          var nomeOk = nome.value.trim().length >= 2;
+          marcarErro(nome, !nomeOk);
+          if (!nomeOk) invalidos.push(nome);
+
+          var digitos = zap.value.replace(/\D/g, '');
+          var zapOk = digitos.length >= 10 && digitos.length <= 11;
+          marcarErro(zap, !zapOk);
+          if (!zapOk) invalidos.push(zap);
+
+          var servicoOk = !!servico.value;
+          marcarErro(servico, !servicoOk);
+          if (!servicoOk) invalidos.push(servico);
+
+          var dataOk = !!data.value;
+          marcarErro(data, !dataOk);
+          if (!dataOk) invalidos.push(data);
+
+          var horarioOk = !!horario.value;
+          marcarErro(horario, !horarioOk);
+          if (!horarioOk) invalidos.push(horario);
+
+          if (invalidos.length) {
+            invalidos[0].focus();
+            return;
+          }
+
+          var obsTxt = obs.value.trim();
+          var linhaObs = obsTxt ? '\n📝 *Obs:* ' + obsTxt : '';
+
+          var mensagem =
+            'Olá! Gostaria de agendar um horário na teste.\n' +
+            '📋 *Serviço:* ' + servico.value + '\n' +
+            '📅 *Data:* ' + formatarData(data.value) + '\n' +
+            '🕐 *Horário:* ' + horario.value + '\n' +
+            '👤 *Nome:* ' + nome.value.trim() + '\n' +
+            '📱 *WhatsApp:* ' + zap.value + linhaObs;
+
+          var url = 'https://wa.me/11988072027?text=' + encodeURIComponent(mensagem);
+
+          mostrarToast();
+          window.open(url, '_blank');
+          form.reset();
+        });
+
+        /* Limpa o estado de erro ao corrigir o campo */
+        form.querySelectorAll('input, select, textarea').forEach(function (el) {
+          var evento = el.tagName === 'SELECT' ? 'change' : 'input';
+          el.addEventListener(evento, function () { marcarErro(el, false); });
+        });
+      }
+    })();
+  </script>
+
+  <!-- ============================ INBARBER SCRIPT ============================ -->
+  <script>
+  (function(){
+    var NOME_BARBEARIA = 'teste';
+    var WHATSAPP = '11988072027';
+    var CLIENT_ID = (document.getElementById('agendamento').dataset||{}).client||'';
+
+    var HORAS = ['09:00','09:30','10:00','10:30','11:00','11:30','12:00','12:30',
+                 '13:00','13:30','14:00','14:30','15:00','15:30','16:00','16:30',
+                 '17:00','17:30','18:00','18:30','19:00'];
+    var MESES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho',
+                 'Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+    var DIAS_SEMANA = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
+
+    var bk = { step:1, service:null, dateObj:null, dateStr:'', hora:'', nome:'', tel:'', obs:'' };
+    var calYear, calMonth;
+
+    function goTo(n){
+      bk.step = n;
+      document.querySelectorAll('.bk-panel').forEach(function(p,i){ p.classList.toggle('active', i===n-1); });
+      document.querySelectorAll('.bk-step').forEach(function(s,i){
+        s.classList.remove('active','done');
+        if(i===n-1) s.classList.add('active');
+        else if(i<n-1) s.classList.add('done');
+      });
+    }
+
+    /* === Step 1: service === */
+    document.querySelectorAll('.bk-svc').forEach(function(el){
+      el.addEventListener('click', function(){
+        document.querySelectorAll('.bk-svc').forEach(function(e){ e.classList.remove('selected'); });
+        el.classList.add('selected');
+        bk.service = { name: el.dataset.name, price: el.dataset.price };
+        document.getElementById('bkNext1').disabled = false;
+      });
+    });
+    document.getElementById('bkNext1').addEventListener('click', function(){ goTo(2); renderCal(); });
+
+    /* === Step 2: calendar === */
+    function renderCal(){
+      var today = new Date();
+      if(!calYear){ calYear=today.getFullYear(); calMonth=today.getMonth(); }
+      document.getElementById('bkCalTitle').textContent = MESES[calMonth] + ' ' + calYear;
+      var grid = document.getElementById('bkCalGrid');
+      grid.innerHTML = '';
+      DIAS_SEMANA.forEach(function(d){ var el=document.createElement('div'); el.className='bk-cal-dow'; el.textContent=d; grid.appendChild(el); });
+      var first = new Date(calYear, calMonth, 1).getDay();
+      for(var i=0;i<first;i++){ var e=document.createElement('div'); e.className='bk-cal-day empty'; grid.appendChild(e); }
+      var days = new Date(calYear, calMonth+1, 0).getDate();
+      for(var d=1;d<=days;d++){
+        (function(day){
+          var e=document.createElement('div'); e.className='bk-cal-day'; e.textContent=day;
+          var dt=new Date(calYear,calMonth,day);
+          if(dt<new Date(today.getFullYear(),today.getMonth(),today.getDate())) e.classList.add('disabled');
+          if(bk.dateObj && bk.dateObj.getTime()===dt.getTime()) e.classList.add('selected');
+          e.addEventListener('click', function(){
+            if(e.classList.contains('disabled')) return;
+            bk.dateObj=dt;
+            var y=dt.getFullYear(),m=('0'+(dt.getMonth()+1)).slice(-2),dd=('0'+dt.getDate()).slice(-2);
+            bk.dateStr=dd+'/'+m+'/'+y;
+            renderCal(); renderHoras();
+          });
+          grid.appendChild(e);
+        })(d);
+      }
+    }
+
+    function renderHoras(){
+      var grid=document.getElementById('bkHoraGrid'); grid.innerHTML='';
+      HORAS.forEach(function(h){
+        var el=document.createElement('button'); el.className='bk-hora-pill'; el.textContent=h;
+        if(bk.hora===h) el.classList.add('selected');
+        el.addEventListener('click', function(){
+          bk.hora=h;
+          document.querySelectorAll('.bk-hora-pill').forEach(function(p){ p.classList.remove('selected'); });
+          el.classList.add('selected');
+          document.getElementById('bkNext2').disabled = !bk.dateObj;
+        });
+        grid.appendChild(el);
+      });
+    }
+
+    document.getElementById('bkCalPrev').addEventListener('click', function(){
+      calMonth--; if(calMonth<0){calMonth=11;calYear--;} renderCal();
+    });
+    document.getElementById('bkCalNext').addEventListener('click', function(){
+      calMonth++; if(calMonth>11){calMonth=0;calYear++;} renderCal();
+    });
+    document.getElementById('bkNext2').addEventListener('click', function(){ goTo(3); });
+    document.getElementById('bkBack2').addEventListener('click', function(){ goTo(1); });
+
+    /* === Step 3: customer data === */
+    document.getElementById('bkBack3').addEventListener('click', function(){ goTo(2); });
+    document.getElementById('bkConfirmar').addEventListener('click', function(){
+      var nome=document.getElementById('bkNome').value.trim();
+      var tel=document.getElementById('bkTel').value.trim();
+      var valid=true;
+      document.getElementById('bkFNome').classList.toggle('error',!nome); if(!nome) valid=false;
+      document.getElementById('bkFTel').classList.toggle('error',tel.replace(/\D/g,'').length<10); if(tel.replace(/\D/g,'').length<10) valid=false;
+      if(!valid) return;
+      bk.nome=nome; bk.tel=tel; bk.obs=document.getElementById('bkObs').value.trim();
+      document.getElementById('bkResS').textContent=bk.service.name+' — '+bk.service.price;
+      document.getElementById('bkResD').textContent=bk.dateStr;
+      document.getElementById('bkResH').textContent=bk.hora;
+      document.getElementById('bkResN').textContent=bk.nome;
+      var msg='Olá! Gostaria de agendar:\n\n'+'Barbearia: '+NOME_BARBEARIA+'\nServiço: '+bk.service.name+' ('+bk.service.price+')\nData: '+bk.dateStr+'\nHorário: '+bk.hora+'\nNome: '+bk.nome+'\nWhatsApp: '+bk.tel+(bk.obs?'\nObs: '+bk.obs:'');
+      var url='https://wa.me/55'+WHATSAPP+'?text='+encodeURIComponent(msg);
+      document.getElementById('bkWpp').href=url;
+      goTo(4);
+      window.open(url,'_blank');
+      if(CLIENT_ID){
+        var d=bk.dateObj,y=d.getFullYear(),mo=('0'+(d.getMonth()+1)).slice(-2),dy=('0'+d.getDate()).slice(-2);
+        fetch('/api/appointments',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({client_id:CLIENT_ID,barbershop_name:NOME_BARBEARIA,barbershop_whatsapp:WHATSAPP,customer_name:bk.nome,customer_phone:bk.tel,service_name:bk.service.name,service_price:bk.service.price,appointment_date:y+'-'+mo+'-'+dy,appointment_time:bk.hora,notes:bk.obs})}).catch(function(){});
+      }
+    });
+
+    /* === Step 4: reset === */
+    document.getElementById('bkReset').addEventListener('click', function(){
+      bk={step:1,service:null,dateObj:null,dateStr:'',hora:'',nome:'',tel:'',obs:''};
+      calYear=null; calMonth=null;
+      document.querySelectorAll('.bk-svc').forEach(function(e){ e.classList.remove('selected'); });
+      document.getElementById('bkNext1').disabled=true;
+      document.getElementById('bkNext2').disabled=true;
+      document.getElementById('bkNome').value='';
+      document.getElementById('bkTel').value='';
+      document.getElementById('bkObs').value='';
+      document.getElementById('bkFNome').classList.remove('error');
+      document.getElementById('bkFTel').classList.remove('error');
+      document.getElementById('bkHoraGrid').innerHTML='';
+      goTo(1);
+    });
+  })();
+  </script>
+
+</body>
+</html>
